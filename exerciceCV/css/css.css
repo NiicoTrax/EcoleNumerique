@@ -65,8 +65,8 @@
     margin-bottom: 8rem;
   }
   
-  /* LEFT COLUMN */
-  .left-column{
+  /* COLONNE DE GAUCHE */
+  .colonne-gauche{
     grid-area: left-column;
     padding: 50px;
     background-color: #4472C4;
@@ -89,8 +89,8 @@
     margin: 0 0 1rem;
   }
   
-  /* RIGHT COLUMN */
-  .right-column{
+  /* COLONNE DE DROITE */
+  .colonne-droite{
     grid-area: right-column;
     display: grid;
     grid-template-rows: 250px 1fr;
