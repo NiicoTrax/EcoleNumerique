@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="FR">
+    <head>
+       <meta charset="UTF-8">
+        <title>Contact</title>  
+        
+        
+        <link rel="stylesheet" href="style.css">
+       
+    </head>
+
+
+    <body>
+
+<div id="Menu">
+   
+    <a href="index.html">Page D'accueil</a>
+    <a href="https://take-off.tech/">take-off</a>
+</div>
+
+<div>
+    <form>
+
+        <fieldset>
+
+            <legend>Informations personnelles</legend>
+
+        <!--classic--> 
+            <label for="Nom"></label> Nom</label> <br/>
+            <input type="text" name="nom" id="Nom" > <br/>
+
+            <label for="Prenom">Prénom</label> <br/>
+            <input type="text" name="prenom" id="Prenom"> <br/>
+
+        <!--avec attributs placeholder et required-->    
+            <label for="mail">Votre Mail</label>
+            <input type="text" name="email" id="mail" placeholder="monmail@gmail.com" required><br/>
+
+
+        <!--Mot de passe-->
+
+            <label for="password" >Mot de passe</label>
+            <input type="password" name="pass" id="password" required>
+
+        </fieldset>
+
+        <!--textarea-->    
+            <label for="commentaire"> Commentaires :</label> <br/>
+            <textarea name="Comm" id="commentaire" rows="4" cols="48"> </textarea> <br/>
+
+        <!--Fichier joint-->    
+            <label for="fileinput">Joindre un document</label> <br/>
+            <input type="file" name="File" id="fileinput"> <br/>
+        
+        <!--liste deroulante--> 
+        <span>Liste déroulante:</span> <br>   
+            <select name="liste" id="selection">
+                <option value="">--Choisissez une option--</option>
+                <option value="choix1">Choix 1</option>
+                <option value="choix2">Choix 2</option>
+                <option value="choix3">Choix 3</option>
+                <option value="choix4">Choix 4</option>
+                <option value="choix5">Choix 5</option>
+                <option value="choix6">Choix 6</option>
+            </select> <br> <br>
+        
+        <!--choix mutiple -->
+        <span>choix multiples:</span> <br>
+        <input type="checkbox" id="choix1" name="choix1" checked>
+        <label for="choix1">Choix 1</label><br>
+
+        <input type="checkbox" id="choix2" name="choix2">
+        <label for="choix2">Choix 2</label><br>
+
+        <!--Choix unique-->
+        <span>choix uniques:</span> <br>
+        <input type="radio" id="Masculin" name="Masculin" value="Masculin" >
+        <label for="Masculin">Masculin</label><br>
+
+        <input type="radio" id="Feminin" name="Feminin" value="Feminin" >
+        <label for="Feminin">Féminin</label><br>
+
+        <!--bouton-->
+            <label for="button"></label>
+            <button type="submit">Envoyer</button>
+    </form>
+</div>
+
+    </body>
+</html>
