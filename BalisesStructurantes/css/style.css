@@ -17,12 +17,16 @@ a {
 
 .container {
     float:right;
-    margin-right: -85%;
+    margin-right: -80%;
 }
 
 #logo {
     width: 150px;
     max-height: 50px;
+}
+
+#titrage {
+    text-align: center;
 }
 
 .footer{
