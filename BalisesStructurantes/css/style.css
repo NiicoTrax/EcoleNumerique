@@ -22,4 +22,13 @@ a {
 
 #logo {
     width: 150px;
+    max-height: 50px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    background-color: #424242;
+    color: #fff;
 }
