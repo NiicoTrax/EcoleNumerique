@@ -2,7 +2,6 @@ nav {
     background-color:#333333;
     overflow:hidden;
     scroll-behavior:smooth;
-    
 }
 
 section {
@@ -13,11 +12,10 @@ section {
 a {
         border:solid 1px transparent;
         padding:1em;
-        color:white
+        color:white;
 }
 
-
-
-p {
-    margin:1em;
+.container {
+    float:right;
+    margin-right: -85%;
 }
