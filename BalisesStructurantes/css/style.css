@@ -32,7 +32,7 @@ font-family: 'Play', sans-serif;
 text-align:center;
 }
 
-.footer .row{
+.footer .icone123{
 width:100%;
 margin:1% 0%;
 padding:0.6% 0%;
@@ -40,26 +40,26 @@ color:gray;
 font-size:0.8em;
 }
 
-.footer .row a{
+.footer .icone123 a{
 text-decoration:none;
 color:gray;
 transition:0.5s;
 }
 
-.footer .row a:hover{
+.footer .icone123 a:hover{
 color:#fff;
 }
 
-.footer .row ul{
+.footer .icone123 ul{
 width:100%;
 }
 
-.footer .row ul li{
+.footer .icone123 ul li{
 display:inline-block;
 margin:0px 20px;
 }
 
-.footer .row a i{
+.footer .icone123 a i{
 font-size:2em;
 margin:0% 1%;
 }
