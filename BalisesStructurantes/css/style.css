@@ -4,7 +4,7 @@ nav {
     scroll-behavior:smooth;
 }
 
-section {
+#menuheader {
     padding:calc(1em + 2px);
     width:100vw;
 }
@@ -27,6 +27,11 @@ a {
 
 #titre1 {
     text-align: center;
+}
+
+#arti1  {
+    border:solid 5px red;
+    text-align: right;
 }
 
 .footer{
