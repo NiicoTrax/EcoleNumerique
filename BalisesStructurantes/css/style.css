@@ -1,12 +1,14 @@
+body {
+    max-width: 100%;
+}
+
 nav {
     background-color:#333333;
-    overflow:hidden;
-    scroll-behavior:smooth;
 }
 
 #menuheader {
     padding:calc(1em + 2px);
-    width:100vw;
+    width:100%;
 }
 
 a {
@@ -17,11 +19,12 @@ a {
 
 .container {
     float:right;
-    margin-right: -80%;
+    max-width: 25%;
 }
 
 #logo {
     width: 150px;
+    max-width: 50%;
     max-height: 50px;
 }
 
@@ -29,8 +32,14 @@ a {
     text-align: center;
 }
 
-#arti1  {
-    border:solid 5px red;
+.row {
+        display: flex;
+}
+      
+.col1 {
+        flex: 1; 
+        padding: 1em;
+        border: solid;
 }
 
 .footer{
