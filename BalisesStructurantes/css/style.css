@@ -1,22 +1,20 @@
 nav {
-    background-color:#eee;
+    background-color:#333333;
     overflow:hidden;
     scroll-behavior:smooth;
+    
 }
 
-.container {
-        height:calc(3em + 4px);
-    }
-
 section {
-        padding:calc(1em + 2px);
-        width:100vw;
+    padding:calc(1em + 2px);
+    width:100vw;
 }
 
 a {
         border:solid 1px transparent;
         padding:1em;
-        }
+        color:white
+}
 
 
 
