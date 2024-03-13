@@ -17,6 +17,10 @@ a {
         color:white;
 }
 
+p {
+    font-family: Roboto ;
+}
+
 .container {
     float:right;
     max-width: 25%;
@@ -27,6 +31,14 @@ a {
     max-width: 50%;
     max-height: 50px;
 }
+
+#imgarticle {
+    width: 150px;
+    max-width: 50%;
+    max-height: 100px;
+}
+
+
 
 #titre1 {
     text-align: center;
