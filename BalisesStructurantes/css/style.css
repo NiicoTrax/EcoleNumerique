@@ -14,16 +14,16 @@ nav {
 a {
         border:solid 1px transparent;
         padding:1em;
-        color:white;
+        color:rgb(255, 255, 255);
+}
+
+#lien1 {
+    color:blue;
+    text-align: right;
 }
 
 p {
     font-family: Roboto ;
-}
-
-h3 {
-    color:blue;
-    text-align: right;
 }
 
 h2 {
@@ -86,6 +86,7 @@ font-size:0.8em;
 text-decoration:none;
 color:rgb(255, 255, 255);
 transition:0.5s;
+
 }
 
 .footer .icone123 a:hover{
@@ -102,6 +103,6 @@ margin:0px 20px;
 }
 
 .footer .icone123 a i{
-font-size:2em;
-margin:0% 1%;
-}
+    font-size:2em;
+    margin:0% 1%;
+    }
