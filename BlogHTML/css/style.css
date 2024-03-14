@@ -1,0 +1,45 @@
+header {
+    color:blue;
+    text-align: center;
+    background-image: url("../img/fond.jpg");
+    padding: 2em;
+    border: 1px double;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat; 
+}
+
+.divi1 {
+    color:brown;
+    background-color: pink;
+    width:200px;
+    padding: 1em 3em 2em 2em;
+    margin: 0.5em;
+    color: whitesmoke; 
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 90px;
+
+}
+
+h2 {
+  text-align: center;
+  letter-spacing: 0.4em;
+}
+
+.post {
+  background: rgba(0, 0,0, .2);
+  padding: 30px;
+  margin-left: 350px;
+  margin-right: 350px;
+  margin-top: -160px;
+  line-height: 2;
+  text-align: justify;
+  word-spacing: 0.1em;
+  border-bottom-style: groove;
+  border-left-style: dotted;
+  border-width: thin;
+  border-color: rgb(192, 232, 255);
+     
+}
