@@ -1,0 +1,64 @@
+body {
+    border:2px solid black
+}
+
+.header {
+    background: rgba(19,53,81,255);
+    width: 100%;
+    height: 150px;
+}
+
+h1 {
+    color:white;
+    text-align: center;
+    font-weight: 100%;
+    font-size: 25px;
+}
+
+h2 {
+    text-align: center;
+    color: rgb(192,155,26)
+}
+
+img {
+    width: 600px;
+    height: 480px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 15px;
+    background-color: white;
+    margin: 50px 35%;
+}
+
+
+.contenaire {
+    background-color: rgba(170,186,212,255);
+    width: 100%;
+    height: 600px;
+}
+
+footer {
+    background-color: rgba(81,78,75,255);
+    width: 100%;
+    height:100px;
+    text-align: center;
+}
+
+a {
+    color:white;
+    border: 2px solid white;
+    line-height: 90px;
+}
+
+#haut {
+    float: right;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin:10px;
+
+}
+
+i {
+    width: 50px;
+    height: 80px;
+}
