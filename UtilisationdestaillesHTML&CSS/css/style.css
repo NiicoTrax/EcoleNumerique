@@ -1,0 +1,37 @@
+img {
+    max-width: 150px;
+    max-height: 150px;
+    float:right;
+}
+
+p {
+    color: #E73E01;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+a {
+    color: #ff2600;
+    text-decoration:none;
+    cursor: pointer;
+}
+
+.shadow {
+    color:blueviolet;
+    box-shadow: 10px 5px 5px rgb(0, 47, 255);
+}
+
+.liste_non_ordonnée_italique {
+    font-style: italic;
+}
+
+.liste_non_ordonnée_gras {
+    font-weight: bold;
+}
+
+.cadre {
+    border: 1px solid black;
+    max-height: 300px;
+    max-width: 500px;
+}
