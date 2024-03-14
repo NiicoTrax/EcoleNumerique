@@ -103,6 +103,7 @@ nav ul li ul li a {
     height: 200px;
     margin: auto;
     display: block;
+    filter: drop-shadow(15px 10px 4px #4444dd54);
 }
 
 #imgarticle2 {
@@ -110,7 +111,7 @@ nav ul li ul li a {
     height: 100%;
     margin: auto;
     display: block;
-    border-radius: 5%;
+    border-radius: 3%;
 }
 
 .row {
@@ -119,16 +120,81 @@ nav ul li ul li a {
 
 .col1 {
         flex: 1; 
-        border: solid;
-        border-color: rgb(255, 0, 0);
+        border: solid 10px;
+        border-style: dashed;
+        border-color: rgba(223, 11, 11, 0.959);
         border-radius: 5%;
-        box-shadow: 5px 5px 5px red;
 }
 
 .col2 {
     flex: 1; 
-    border: solid;
+    border: solid 10px;
+    border-style:groove;
     border-color: rgb(229, 255, 0);
     border-radius: 5%;
-    box-shadow: 5px 5px 5px rgb(229, 255, 0);
+}
+
+.col3 {
+    flex: 1; 
+    border: solid 10px;
+    border-color: rgb(51, 255, 0);
+    border-style: dashed double none;
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px rgb(51, 255, 0);
+}
+
+.col4 {
+    flex: 1; 
+    border: solid 10px;
+    border-color: #00ffaa;
+    border-style: dashed solid;
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px rgb(0, 255, 128);
+}
+
+.col5 {
+    flex: 1; 
+    border: solid 10px;
+    border-color: rgb(0, 255, 213);
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px rgb(0, 255, 221);
+}
+
+.col6 {
+    flex: 1; 
+    border: solid 10px;
+    border-color: rgb(0, 119, 255);
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px rgb(0, 110, 255);
+}
+
+.col7 {
+    flex: 1; 
+    border: solid 10px;
+    border-color: rgb(111, 0, 255);
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px rgb(119, 0, 255);
+}
+.col8 {
+    flex: 1; 
+    border: solid 10px;
+    border-color: rgb(204, 0, 255);
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px rgb(195, 0, 255);
+}
+
+.col9 {
+    flex: 1; 
+    border: solid 10px;
+    border-color: rgb(255, 0, 242);
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px rgb(255, 0, 179);
+}
+
+.col10 {
+    flex: 1; 
+    border: solid 10px;
+    border-color: rgb(255, 0, 119);
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px rgb(255, 0, 119);
 }
