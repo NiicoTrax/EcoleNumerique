@@ -11,16 +11,15 @@ header {
 
 .divi1 {
     color:brown;
-    background-color: pink;
+    background-color: rgb(192, 240, 255);
     width:200px;
     padding: 1em 3em 2em 2em;
     margin: 0.5em;
-    color: whitesmoke; 
+    color: rgb(25, 0, 255); 
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     padding-top: 90px;
-
 }
 
 h2 {
@@ -32,14 +31,15 @@ h2 {
   background: rgba(0, 0,0, .2);
   padding: 30px;
   margin-left: 350px;
-  margin-right: 350px;
-  margin-top: -160px;
+  margin-right: 110px;
+  margin-top: -200px;
   line-height: 2;
   text-align: justify;
-  word-spacing: 0.1em;
-  border-bottom-style: groove;
-  border-left-style: dotted;
-  border-width: thin;
   border-color: rgb(192, 232, 255);
+  border-radius: 5%;
      
+}
+
+img {
+    max-width: 400px;
 }
