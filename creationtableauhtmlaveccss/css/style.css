@@ -1,0 +1,13 @@
+.Table1 {
+    width: 100%!important;
+    border: 1px solid#cccccc;
+    background: #ffffff;
+ }
+ 
+ .Table1>thead {
+    background: #eeeeee;
+ }
+ 
+ td, th {
+    border: 1px solid #cccccc;
+ }
