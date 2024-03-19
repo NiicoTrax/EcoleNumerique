@@ -1,5 +1,5 @@
 nav {
-   background-color:#979797;
+   background-color:#000000;
 }
 
 #menuheader {
@@ -27,4 +27,15 @@ a {
 body {
    max-width: 50%;
    margin: auto;
+}
+
+form {
+   border: 1px solid rgb(0, 0, 0);
+   background: gray;
+   text-align: center;
+}
+
+#tex1 {
+   color:rgb(0, 0, 0);
+   font-weight: bold;
 }
