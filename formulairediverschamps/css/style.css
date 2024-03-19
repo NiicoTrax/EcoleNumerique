@@ -1,0 +1,57 @@
+nav {
+   background-color:#000000;
+}
+
+#menuheader {
+   padding:calc(1em + 2px);
+   width:100%;
+}
+
+#logo {
+   width: 150px;
+   max-width: 50%;
+   max-height: 50px;
+}
+
+a {
+   border:solid 1px transparent;
+   padding:1em;
+   color:rgb(255, 255, 255);
+}
+
+.container {
+   float:right;
+   max-width: 25%;
+}
+
+h1 {
+   text-align: Center;
+   color: red;
+}
+
+body {
+   max-width: 50%;
+   margin: auto;
+}
+
+form {
+   border: 1px solid rgb(0, 0, 0);
+   background: gray;
+   text-align: center;
+}
+
+#tex1 {
+   color:rgb(0, 0, 0);
+   font-weight: bold;
+}
+
+button {
+   background: rgb(255, 255, 255);
+   color:rgb(0, 0, 0);
+   font-weight: bold;
+}
+
+input {
+   background-color: rgb(255, 255, 255);
+   color: rgb(0, 4, 255);
+}
