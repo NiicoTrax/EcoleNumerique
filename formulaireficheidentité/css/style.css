@@ -1,0 +1,25 @@
+nav {
+   background-color:#979797;
+}
+
+#menuheader {
+   padding:calc(1em + 2px);
+   width:100%;
+}
+
+#logo {
+   width: 150px;
+   max-width: 50%;
+   max-height: 50px;
+}
+
+a {
+   border:solid 1px transparent;
+   padding:1em;
+   color:rgb(255, 255, 255);
+}
+
+.container {
+   float:right;
+   max-width: 25%;
+}
