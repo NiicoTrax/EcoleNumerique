@@ -39,3 +39,14 @@ form {
    color:rgb(0, 0, 0);
    font-weight: bold;
 }
+
+button {
+   background: rgb(255, 255, 255);
+   color:rgb(0, 0, 0);
+   font-weight: bold;
+}
+
+input {
+   background-color: rgb(255, 255, 255);
+   color: rgb(0, 4, 255);
+}
