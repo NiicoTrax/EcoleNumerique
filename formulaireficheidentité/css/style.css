@@ -23,3 +23,8 @@ a {
    float:right;
    max-width: 25%;
 }
+
+body {
+   max-width: 50%;
+   margin: auto;
+}
