@@ -24,6 +24,11 @@ a {
    max-width: 25%;
 }
 
+h1 {
+   text-align: Center;
+   color: red;
+}
+
 body {
    max-width: 50%;
    margin: auto;
