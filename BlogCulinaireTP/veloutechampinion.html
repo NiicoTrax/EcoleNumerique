@@ -4,78 +4,60 @@
         <meta charset="UTF-8">
         <title> Excercice Blog Culinaire </title>
         <link rel="stylesheet" href="css/style.css">
-        <script src="https://kit.fontawesome.com/45e38e596f.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"> </script>
+        <script> 
+          $(function(){
+            $("#header").load("includes/header.html"); 
+          });
+          </script> 
     </head>
+
     <header>
-      <img id="logo" src="img/logo.png" alt="Logo">
-      <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-          <li class="deroulant"><a href="#">Entrée</a>
-            <ul class="sous">
-              <li><a href="cake.html">Cake Salé au jambon et aux olives</a></li>
-              <li><a href="veloutechampinion.html">Velouté de champignons</a></li>
-            </ul>
-          </li>
-          <li class="deroulant"><a href="#">Plats</a>
-            <ul class="sous">
-              <li><a href="#">Blanquette de veau traditionnelle</a></li>
-              <li><a href="#">Boeuf Bourguignon</a></li>
-            </ul>
-          </li>
-          <li class="deroulant"><a href="#">Desserts</a>
-            <ul class="sous">
-              <li><a href="#">Flan Pâtissiere</a></li>
-              <li><a href="#">Ramequins fondants au chocolat</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
+      <div id="header"></div>
     </header>
 
     <body>
 
               <div class="post10">
-                <h2>Cake salé au jambon et aux olives</h2>
-                <img id="imagerecette" src="img/cakejambonolive.jpg" alt="Image de la recette 1">
-
+                <h2>Velouté de champignons</h2>
+                <img id="imagerecette" src="img/veloutechampignion.jpg" alt="Image de la recette 2">
+                <br>
                 <table>
                     <tr>
                       <td id="ingrédients">Ingrédients</td>
                       <td id="quantités">Quantités</td>
                     </tr>
                     <tr>
-                      <td><img id="iconeTab" src="img/ingredients/huile.png" alt="Huile" title="Huile" width="30px" height="30px">Huile</td>
-                      <td>1 Cuillère a soupe</td>
+                      <td><img id="iconeTab" src="img/ingredients/poivre.png" alt="Poivre" title="Poivre" width="30px" height="30px">Poivre</td>
+                      <td> </td>
                     </tr>
                     <tr>
-                      <td><img id="iconeTab" src="img/ingredients/levure.png" alt="Levure" title="Levure" width="30px" height="30px">Levure Chimique</td>
-                      <td>1 Sachet</td>
+                      <td><img id="iconeTab" src="img/ingredients/sel.png" alt="Sel" title="Sel" width="30px" height="30px">Sel</td>
+                      <td> </td>
                     </tr>
                     <tr>
-                        <td><img id="iconeTab" src="img/ingredients/gruyere.png" alt="Gruyere" title="Gruyere" width="30px" height="30px">Gruyère râpé</td>
-                        <td>75g</td>
+                        <td><img id="iconeTab" src="img/ingredients/persilhache.png" alt="Persil haché" title="Persil haché" width="30px" height="30px">Persil Haché</td>
+                        <td>1 cuillère à soupe</td>
+                      </tr>
+                      <tr>
+                        <td><img id="iconeTab" src="img/ingredients/cremefraiche.png" alt="Crème fraiche" title="Crème Fraiche" width="30px" height="30px">Crème Fraiche</td>
+                        <td>2 cuillère à soupe</td>
                       </tr>
                       <tr>
                         <td><img id="iconeTab" src="img/ingredients/farine.png" alt="Farine" title="Farine" width="30px" height="30px">Farine</td>
-                        <td>150g</td>
+                        <td>2 cuillère à soupe</td>
                       </tr>
                       <tr>
-                        <td><img id="iconeTab" src="img/ingredients/desjambon.png" alt="Des de Jambon" title="Des de Jambon" width="30px" height="30px">dés de jambon</td>
-                        <td>100g</td>
+                        <td><img id="iconeTab" src="img/ingredients/beurre.png" alt="Beurre" title="Beurre" width="30px" height="30px">Beurre</td>
+                        <td>3 cuillère à soupe</td>
                       </tr>
                       <tr>
-                        <td><img id="iconeTab" src="img/ingredients/olive.png" alt="Olive" title="Olive" width="30px" height="30px">Olive vertes dénoyautées</td>
-                        <td>150g</td>
+                        <td><img id="iconeTab" src="img/ingredients/champignons.png" alt="Champignions" title="Champignions" width="30px" height="30px">Champignions</td>
+                        <td>250g</td>
                       </tr>
                       <tr>
-                        <td><img id="iconeTab" src="img/ingredients/oeuf.png" alt="Oeuf" title="Oeuf" width="30px" height="30px">Oeuf</td>
-                        <td>4</td>
-                      </tr>
-                      <tr>
-                        <td><img id="iconeTab" src="img/ingredients/lait.png" alt="Lait" title="Lait" width="30px" height="30px">Lait</td>
-                        <td>10cl</td>
+                        <td><img id="iconeTab" src="img/ingredients/bouillon.png" alt="Bouillon" title="Bouillon" width="30px" height="30px">Bouillon</td>
+                        <td>0,25 litre</td>
                       </tr>
                   </table>
 
@@ -85,31 +67,27 @@
                       <td id="quantités">Quantités</td>
                     </tr>
                     <tr>
-                      <td><img id="iconeTab"src="img/ustenciles/grille.png" alt="Grille à pâtisserie" title="Grille à pâtisserie" width="30px" height="30px"> Grille à pâtisserie</td>
+                      <td><img id="iconeTab"src="img/ustenciles/louche.png" alt="Louche" title="Louche" width="30px" height="30px"> Louche</td>
                       <td>1</td>
                     </tr>
                     <tr>
-                      <td><img id="iconeTab" src="img/ustenciles/four.png" alt="Four" title="Four" width="30px" height="30px"> Four</td>
+                      <td><img id="iconeTab" src="img/ustenciles/mixeur.png" alt="Mixeur" title="Mixeur Plongeant" width="30px" height="30px"> Mixeur Plongeant</td>
                       <td>1</td>
                     </tr>
                     <tr>
-                        <td><img id="iconeTab" src="img/ustenciles/couteau.png" alt="Couteau" title="Couteau" width="30px" height="30px"> Couteau</td>
+                        <td><img id="iconeTab" src="img/ustenciles/casserole.png" alt="Casserole" title="Casserole" width="30px" height="30px"> Casserole</td>
                         <td>1</td>
                       </tr>
                       <tr>
-                        <td><img id="iconeTab" src="img/ustenciles/cuillereenbois.png" alt="Cuillère en bois" title="Cuillère en bois" width="30px" height="30px"> Cuillère a bois</td>
+                        <td><img id="iconeTab" src="img/ustenciles/couvercle.png" alt="Couvercle" title="Couvercle" width="30px" height="30px"> Couvercle</td>
                         <td>1</td>
                       </tr>
                       <tr>
-                        <td><img id="iconeTab" src="img/ustenciles/dénoyauteur.png" alt="Dénoyauteur" title="Dénoyauteur" width="30px" height="30px"> Dénoyauteur</td>
+                        <td><img id="iconeTab" src="img/ustenciles/cuillereenbois.png" alt="Cuillère en bois" title="Cuillère en bois" width="30px" height="30px"> Cuillère en bois</td>
                         <td>1</td>
                       </tr>
                       <tr>
                         <td><img id="iconeTab" src="img/ustenciles/balance.png" alt="Balance de Cuisine" title="Balance de Cuisine" width="30px" height="30px"> Balance de cuisine</td>
-                        <td>1</td>
-                      </tr>
-                      <tr>
-                        <td><img id="iconeTab" src="img/ustenciles/plat1.png" alt="Un Plat de Cuisine" title="Un Plat de Cuisine" width="30px" height="30px"> Plat</td>
                         <td>1</td>
                       </tr>
                   </table>
@@ -125,11 +103,11 @@
                           <td id="prépa2">Nombre de personne :</td>
                         </tr>
                         <tr>
-                          <td id="prépa2">20 min</td>
+                          <td id="prépa2">10 min</td>
                           <td id="prépa2"> X </td>
-                          <td id="prépa2"> 45 min </td>
-                          <td id="prépa2"> 1h05 </td>
-                          <td id="prépa2"> 6 </td>
+                          <td id="prépa2"> 40 min </td>
+                          <td id="prépa2"> 50 min </td>
+                          <td id="prépa2"> 3 </td>
                         </tr>
                         </table>
                     </div>
@@ -138,32 +116,30 @@
 
         <div class="listetape"> <br>
         <h2 id="etape">Etape 1</h2>
-        <img id="icone"src="img/ustenciles/four.png" alt="Four" title="Four">
-        <p>Préchauffer le four à 180°C (thermostat 6).</p>
+        <p>Faire fondre dans une casserole 3 cuillères à soupe de beurre. <img id="icone"src="img/ingredients/beurre.png" alt="beurre" title="beurre"></p>
 
         <h2 id="etape">Etape 2</h2>
-        <img id="icone"src="img/ingredients/olive.png" alt="Olive" title="Olive">
-        <p>Couper les olives en rondelles.</p>
+        <p>Ajouter un petit oignon haché et les champignons de Paris coupés en tout petits morceaux. <img id="icone"src="img/ingredients/oignon.png" alt="Oignon" title="Oignon">         <img id="icone"src="img/ingredients/champignons.png" alt="Champignons" title="Champignons"> </p>
 
         <h2 id="etape">Etape 3</h2>
-        <img id="icone"src="img/ingredients/oeuf.png" alt="Oeuf" title="Oeuf"> <img id="icone2"src="img/ingredients/farine.png" alt="Farine" title="Farine">
-        <p>Verser les oeufs dans la farine et mélanger.</p>
+        <p>Saler, poivrer, saupoudrer d’une cuillère à soupe de persil haché.<img id="icone"src="img/ingredients/persilhache.png" alt="Persil" title="Persil haché"> <img id="icone"src="img/ingredients/poivre.png" alt="Poivre" title="Poivre"></p>
 
         <h2 id="etape">Etape 4</h2>
-        <img id="icone"src="img/ingredients/lait.png" alt="Lait" title="Lait"> <img id="icone2"src="img/ingredients/huile.png" alt="Huile" title="Huile">
-        <p>Ajouter le lait et l'huile puis mélanger.</p>
+        <p>Remuer bien les champignons dans le beurre chaud. Couvrir et laisser cuire à feu doux 1/4 heure.<img id="icone"src="img/ingredients/champignons.png" alt="Champignons" title="Champignons"> <img id="icone"src="img/ingredients/beurre.png" alt="Beurre" title="Beurre"></p>
 
         <h2 id="etape">Etape 5</h2>
-        <img id="icone"src="img/ingredients/desjambon.png" alt="Dés de Jambon" title="Dés de Jambon"> <img id="icone2"src="img/ingredients/olive.png" alt="Olive" title="Olive"> <img id="icone3"src="img/ingredients/gruyere.png" alt="Gruyere" title="Gruyere">
-        <p>Ajouter le jambon, les olives et le gruyère puis mélanger.</p>
+        <p>Ajouter alors 2 cuillères à soupe de farine en remuant sans cesse. Ajouter 1/4 litre de bouillon (ou d’eau) et 1/2 litre de lait. <img id="icone"src="img/ingredients/farine.png" alt="Farine" title="Farine"> <img id="icone"src="img/ingredients/bouillon.png" alt="Bouillon" title="Bouillon"> <img id="icone"src="img/ingredients/lait.png" alt="Lait" title="Lait"></p>
 
         <h2 id="etape">Etape 6</h2>
-        <img id="icone"src="img/ingredients/levure.png" alt="Levure" title="Levure">
-        <p>Ajouter la levure et, pour ne pas changer, mélanger.</p>
+        <p>Faire cuire à feu doux en remuant de temps en temps.</p>
 
         <h2 id="etape">Etape 7</h2>
-        <p>Mettre le tout dans un plat à cake au préalable beurré et placer au four 45 min.</p>
-      <br>
+        <p>Lorsque le potage commence à bouillir, baisser le feu et laisser cuire à découvert encore 1/4 d’heure.</p>
+      
+        <h2 id="etape">Etape 8</h2>
+        <p>Quelques minutes avant de servir ajouter le jus d’un citron puis 2 cuillères à soupe de crème fraîche. <img id="icone"src="img/ingredients/citron.png" alt="citron" title="Citron"> <img id="icone"src="img/ingredients/cremefraiche.png" alt="Crème Fraiche" title="Crème Fraiche"></p>
+
+        <br>
       </div>
 
 

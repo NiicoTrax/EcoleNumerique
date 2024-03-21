@@ -252,30 +252,8 @@ p {
 }
 
 #icone {
-  float:right;
   width: 34px;
   height: 34px;
-  margin-right: 38%;
-  margin-left: -40%;
-  margin-top: -10px;
-}
-
-#icone2 {
-  float:right;
-  width: 34px;
-  height: 34px;
-  margin-right: 35%;
-  margin-left: -40%;
-  margin-top: -10px;
-}
-
-#icone3 {
-  float:right;
-  width: 34px;
-  height: 34px;
-  margin-right: 32%;
-  margin-left: -40%;
-  margin-top: -10px;
 }
 
 #iconeTab {
