@@ -1,16 +1,88 @@
 header {
-    color:blue;
-    text-align: center;
-    background-image: url("../img/fond.jpg");
-    padding: 2em;
-    border: 1px double;
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat; 
+  background-color: gray;
+  border: 1px solid;
+  border-radius: 30px;
+}
+
+#logo {
+  max-width: 100;
+  max-height: 100px;
+  float: left;
+}
+
+nav{
+  width: 50%;
+  margin: -90px auto;
+  position: sticky;
+  top: 0px;
+}
+
+nav ul{
+  list-style-type: none;
+  padding: 10%;
+}
+
+nav ul li{
+  float: left;
+  width: 25%;
+  text-align: center;
+  position: relative;
+}
+
+nav ul::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav a{
+  display: block;
+  text-decoration: none;
+  color: black;
+  border-bottom: 2px solid transparent;
+  padding: 10px 0px;
+}
+
+nav a:hover{
+  color: orange;
+  border-bottom: 2px solid gold;
+}
+
+.sous{
+  display: none;
+  box-shadow: 0px 1px 2px #CCC;
+  background-color: rgb(82, 82, 82);
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+}
+nav > ul li:hover .sous{
+  display: block;
+}
+.sous li{
+  float: none;
+  width: 100%;
+  text-align: left;
+}
+.sous a{
+  padding: 10px;
+  border-bottom: none;
+}
+.sous a:hover{
+  border-bottom: none;
+  background-color: RGBa(200,200,200,0.1);
+}
+.deroulant > a::after{
+  content:" ▼";
+  font-size: 12px;
+}
+
+.conteneur{
+margin: 50px 20px;
+height: 1500px;
 }
 
 .divi1 {
-    color:brown;
     background-color: rgb(192, 240, 255);
     width:200px;
     padding: 1em 3em 2em 2em;
@@ -30,16 +102,61 @@ h2 {
 .post {
   background: rgba(0, 0,0, .2);
   padding: 30px;
-  margin-left: 350px;
-  margin-right: 110px;
-  margin-top: -200px;
+  margin-right: 50%;
+  margin-top: 20px;
   line-height: 2;
   text-align: justify;
   border-color: rgb(192, 232, 255);
   border-radius: 5%;
+  float:right;
      
 }
 
-img {
-    max-width: 400px;
+.post2 {
+  background: rgba(0, 0,0, .2);
+  padding: 18px;
+  margin-left: 51%;
+  margin-top: -480px;
+  line-height: 2;
+  text-align: justify;
+  border-color: rgb(192, 232, 255);
+  border-radius: 5%;
+  float: left;
+     
+}
+
+.post3 {
+  background: rgba(0, 0,0, .2);
+  padding: 18px;
+  margin-left: 51%;
+  margin-top: -525px;
+  line-height: 2;
+  text-align: justify;
+  border-color: rgb(192, 232, 255);
+  border-radius: 5%;
+  float: left;
+     
+}
+
+.post4 {
+  background: rgba(0, 0,0, .2);
+  padding: 40px;
+  margin-left: 51%;
+  margin-top: -505px;
+  line-height: 2;
+  text-align: justify;
+  border-color: rgb(192, 232, 255);
+  border-radius: 5%;
+  float: left;
+     
+}
+#imagerecette {
+    max-width: 250px;
+    max-height: 250ox;
+    margin: auto;
+    display: flex;
+}
+
+#lienrecette {
+  text-align: center;
 }
