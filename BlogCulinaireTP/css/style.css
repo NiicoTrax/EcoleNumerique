@@ -5,7 +5,7 @@ nav {
 
 #menuheader {
    padding:calc(2em + 8px);
-   width:78%;
+   width:150%;
 }
 
 #logo {
@@ -22,7 +22,7 @@ a {
 
 .container {
    float:right;
-   max-width: 50%;
+   max-width: 80%;
 }
 
 body {
