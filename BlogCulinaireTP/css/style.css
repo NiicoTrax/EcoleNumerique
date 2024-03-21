@@ -12,7 +12,7 @@ header {
 
 nav{
   width: 50%;
-  margin: -90px auto;
+  margin: -120px auto;
   position: sticky;
   top: 0px;
 }
@@ -116,7 +116,7 @@ h2 {
   background: rgba(0, 0,0, .2);
   padding: 18px;
   margin-left: 51%;
-  margin-top: -480px;
+  margin-top: -445px;
   line-height: 2;
   text-align: justify;
   border-color: rgb(192, 232, 255);
@@ -127,9 +127,9 @@ h2 {
 
 .post3 {
   background: rgba(0, 0,0, .2);
-  padding: 18px;
+  padding: 28px;
   margin-left: 51%;
-  margin-top: -525px;
+  margin-top: -490px;
   line-height: 2;
   text-align: justify;
   border-color: rgb(192, 232, 255);
@@ -140,9 +140,9 @@ h2 {
 
 .post4 {
   background: rgba(0, 0,0, .2);
-  padding: 40px;
+  padding: 38px;
   margin-left: 51%;
-  margin-top: -505px;
+  margin-top: -470px;
   line-height: 2;
   text-align: justify;
   border-color: rgb(192, 232, 255);
@@ -158,5 +158,5 @@ h2 {
 }
 
 #lienrecette {
-  text-align: center;
+  margin:370px;
 }
