@@ -24,7 +24,7 @@ nav ul{
 
 nav ul li{
   float: left;
-  width: 25%;
+  width: 20%;
   text-align: center;
   position: relative;
 }
@@ -150,6 +150,18 @@ h2 {
   float: left;
      
 }
+
+.post10 {
+  background: rgba(0, 0,0, .2);
+  padding: 38px;
+  line-height: 2;
+  margin-top: 5px;
+  text-align: justify;
+  border-color: rgb(192, 232, 255);
+  border-radius: 50px;
+     
+}
+
 #imagerecette {
     max-width: 250px;
     max-height: 250ox;
@@ -159,4 +171,66 @@ h2 {
 
 #lienrecette {
   margin:370px;
+}
+
+table{
+  border-collapse: collapse;
+  margin-top: -300px;
+}
+
+td{
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+#ingrédients {
+  color:blue;
+  text-align: center;
+  font-weight: bold;
+}
+
+#quantités {
+  color:red;
+  text-align: center;
+  font-weight: bold;
+}
+
+#table2{
+  border-collapse: collapse;
+  margin-top: -480px;
+  float: right;
+}
+
+#ustenciles {
+  color:rgb(89, 0, 255);
+  text-align: center;
+  font-weight: bold;
+}
+
+.préparation {
+  text-align: center;
+  border: 1px solid;
+  border-radius: 30px;
+  max-width: 50%;
+  margin: auto;
+  margin-top: -170px;
+  background-color: grey;
+  color: black;
+}
+
+#prépa{
+  margin-top: 0px;
+  margin:20px;
+  margin-left: 280px;
+  border:none;
+  background-color: rgb(139, 139, 139);
+  border-radius: 15px;
+}
+
+#prépa2 {
+  border:none;
+  text-align: center;
+
+
 }
