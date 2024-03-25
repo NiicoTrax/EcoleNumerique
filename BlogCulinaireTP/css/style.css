@@ -326,3 +326,16 @@ p {
 #iconeTab {
   float:left;
 }
+
+
+.footer {
+  padding: 2rem;
+  background: rgba(128, 0, 128, 0);
+  color: white;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+
