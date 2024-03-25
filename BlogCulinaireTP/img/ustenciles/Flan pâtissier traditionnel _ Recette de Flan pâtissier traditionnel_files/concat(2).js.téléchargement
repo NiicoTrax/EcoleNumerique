@@ -1,0 +1,43 @@
+/********** https://www.marmiton.org/reloaded/static/preconcat_%2Freloaded%2Fstatic%2FFront%2FVendor%2Fauf%2Fads%2Fplugins%2FaufContentKeywords.js.202403141721.js **********/
+
+/** https://www.marmiton.org/reloaded/static/Front/Vendor/auf/ads/plugins/aufContentKeywords.js?v=202403141721 **/
+var AufAds=window.AufAds||{};AufAds.ContentKeywords=(function(){var singleInstance;function init(){if(content_keywords){sas_target+=';content_keywords='+get()+';';}
+return{};}
+function get(){var main_cleanup_regexp=new RegExp(/[-_:;,\'\.#\(\)\[\]=+?!"&$€*% ]/g);var content_keywords=document.title.toLowerCase().replace(main_cleanup_regexp,',');if(typeof(document.getElementsByTagName)==='function'){var h1s=document.getElementsByTagName('h1');for(var i=0;i<h1s.length;i++){content_keywords+=' '+h1s[i].innerText.trim();}
+var metas=document.getElementsByTagName('meta');for(var i=0;i<metas.length;i++){if(metas[i].getAttribute('name')==='keywords'){content_keywords+=' '+metas[i].getAttribute('content');}}}
+content_keywords=content_keywords.toLowerCase().replace(main_cleanup_regexp,' ');content_keywords=content_keywords.replace(/[àáâãäå]/g,'a').replace(/[èéêë]/g,'e').replace(/[ìíîï]/g,'i').replace(/[òóôõöø]/g,'o');content_keywords=content_keywords.replace(/[ùúûü]/g,'u').replace(/[ÿ]/g,'y').replace(/[ç]/g,'c').replace(/[ñ]/g,'n');var content_keywords_tab=content_keywords.split(' ').sort();var content_keywords_clean=new Array();for(var i=0;i<content_keywords_tab.length;i++){if(content_keywords_tab[i].length>=3){if(typeof(content_keywords_clean.includes)!=='function'||!content_keywords_clean.includes(content_keywords_tab[i])){content_keywords_clean.push(content_keywords_tab[i]);}}}
+content_keywords=content_keywords_clean.join(',');return content_keywords;}
+return{init:function(){if(!singleInstance){singleInstance=init();}
+return singleInstance;},get:function(){return get();}};})();
+
+
+
+
+/********** https://www.marmiton.org/reloaded/static/preconcat_%2Freloaded%2Fstatic%2FFront%2FComponent%2FdailymotionPlayer%2FdailymotionPlayer.js.202403141721.js **********/
+
+/** https://www.marmiton.org/reloaded/static/Front/Component/dailymotionPlayer/dailymotionPlayer.js?v=202403141721 **/
+var dm_player_ready=false;var dm_player_content_load=false;function init_dailymotion_player(id_bloc,id_video,id_playlist,is_pubstack){var player_param={referrerPolicy:'no-referrer-when-downgrade',params:{mute:true}};if(!is_pubstack){player_param.video=id_video;if(id_playlist){player_param.playlist=id_playlist;}
+player_param.params.customConfig={keyvalues:af_buildParams()};}
+if(window.dailymotion===undefined){window.dailymotion={onScriptLoaded:()=>{af_createPlayer(id_bloc,player_param);}}}else{af_createPlayer(id_bloc,player_param);};}
+function af_buildParams(){var dm_section='';var dm_contenttype='';var dm_subsection='';var dm_tag='';var dm_story='';var dm_hasvideo='';var dm_params='';if(typeof window.adsConf!=='undefined'&&typeof window.adsConf.params!=='undefined'){var pArray={};for(p in window.adsConf.params){if(p!='keywords'&&!pArray.hasOwnProperty(p)){pArray[p]=window.adsConf.params[p];}}
+if(typeof window.adsConf.params.keywords!=='undefined'){var p=(window.adsConf.params.keywords).split(';');for(i=0;i<p.length;i++){var pa=p[i].split('=');if(!pa[0]){continue;}
+if(pArray.hasOwnProperty(pa[0])){pArray[pa[0]]=pArray[pa[0]]+','+pa[1];}
+else{if(pa[0]=='contenttype'){pArray[pa[0]]=pa[1]+','+af_replaceAccentsAndSpaces(pa[1]);}
+else{pArray[pa[0]]=pa[1];}}}}
+for(p in pArray){dm_params+=p+'='+pArray[p]+'&';}
+dm_params=dm_params.slice(0,-1);}
+else if(typeof unify_dataSlayer!=='undefined'){var ds_page=af_getUnifyDataslayerParam('page');var ds_content=af_getUnifyDataslayerParam('content');dm_section='section='+ds_page.sectionId+'r';dm_subsection='&subsection='+ds_page.subSectionId+'s';if(typeof ds_page.mainTagIds!=='undefined'){dm_tag='&tag='+ds_page.mainTagIds.split(',').map(function(v){return v+'t';}).join(',');}
+dm_contenttype='&contenttype='+ds_content.type+','+af_replaceAccentsAndSpaces(ds_content.type);if(typeof ds_content.class!=='undefined'&&ds_content.class==='article'&&typeof ds_content.id!=='undefined'){dm_story='&story='+ds_content.id+'s';}
+if(typeof ds_content.hasVideo!=='undefined'&&ds_content.hasVideo==='1'){dm_hasvideo='&hasvideo=1';}
+dm_params=dm_section+dm_subsection+dm_contenttype+dm_tag+dm_story+dm_hasvideo;}
+var param_permutive=JSON.parse(window.localStorage._pdfps||'[]').slice(0,250).toString();var param_content_keywords=window.AufAds.ContentKeywords.get();var params=dm_params+((dm_params!='')?'&':'')+'permutive='+param_permutive+'&content_keywords='+param_content_keywords+'&url='+location.pathname;return params;}
+function af_createPlayer(id_bloc,player_param){console.log('DEBUG DM player param: ');console.log(player_param);dailymotion.createPlayer(id_bloc,player_param).then(function(player){player.on(dailymotion.events.PLAYER_VIEWABILITYCHANGE,(state)=>{if(!state.playerPipIsExpanded){dailymotion.pipExpand();}});});dm_player_ready=true;}
+function af_getUnifyDataslayerParam(param){var value=null;for(var i=0;i<unify_dataSlayer.length;i++){var element=unify_dataSlayer[i];if(element.hasOwnProperty(param)){value=element[param];break;}}
+return value;}
+function af_replaceAccentsAndSpaces(text){return text.normalize("NFD").replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(' ','-');}
+async function load_dailymotion_content(id_bloc,id_video,id_playlist){if(!dm_player_ready)return;if(dm_player_content_load)return;const player=await dailymotion.getPlayer(id_bloc);var player_param={video:id_video,};if(id_playlist){player_param.playlist=id_playlist;}
+player.loadContent(player_param);dm_player_content_load=true;}
+
+
+
+
