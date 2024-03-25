@@ -4,17 +4,34 @@
         <meta charset="UTF-8">
         <title> Excercice Blog Culinaire </title>
         <link rel="stylesheet" href="css/style.css">
-        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"> </script>
-        <script> 
-          $(function(){
-            $("#header").load("includes/header.html"); 
-            $("#footer").load("includes/footer.html"); 
-          });
-          </script> 
     </head>
 
     <header>
-      <div id="header"></div>
+      <img id="logo" src="img/logo/logo.png" alt="Logo">
+      <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+          <li class="deroulant"><a href="#">Entrée</a>
+            <ul class="sous">
+              <li><a href="cake.html">Cake Salé au jambon et aux olives</a></li>
+              <li><a href="veloutechampignion.html">Velouté de champignons</a></li>
+            </ul>
+          </li>
+          <li class="deroulant"><a href="#">Plats</a>
+            <ul class="sous">
+              <li><a href="blanquettedeveau.html">Blanquette de veau traditionnelle</a></li>
+              <li><a href="boeufbourguignon.html">Boeuf Bourguignon</a></li>
+            </ul>
+          </li>
+          <li class="deroulant"><a href="#">Desserts</a>
+            <ul class="sous">
+              <li><a href="flan.html">Flan Pâtissiere</a></li>
+              <li><a href="fondantchocolat.html">Ramequins fondants au chocolat</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
     <body>
