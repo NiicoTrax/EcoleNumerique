@@ -116,7 +116,7 @@ h2 {
   background: rgba(0, 0,0, .2);
   padding: 18px;
   margin-left: 51%;
-  margin-top: -445px;
+  margin-top: -450px;
   line-height: 2;
   text-align: justify;
   border-color: rgb(192, 232, 255);
@@ -153,6 +153,7 @@ h2 {
 
 .post10 {
   background: rgba(0, 0,0, .2);
+  background-image: url();
   padding: 38px;
   line-height: 2;
   margin-top: 5px;
@@ -163,15 +164,15 @@ h2 {
 }
 
 #imagerecette {
-    max-width: 300px;
-    max-height: 300ox;
+    max-width: 250px;
+    max-height: 250px;
     margin: auto;
     display: flex;
 }
 
 #imagerecette1 {
   max-width: 400px;
-  max-height: 400ox;
+  max-height: 400px;
   margin: auto;
   display: flex;
 }
