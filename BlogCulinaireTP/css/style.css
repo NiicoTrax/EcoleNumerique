@@ -123,6 +123,8 @@ h2 {
   text-align: center;
   color: white;
 }
+
+
 .post2 {
   background-color: rgb(0, 0, 0);
   padding: 18px;
@@ -190,6 +192,7 @@ h2 {
 
 #lienrecette {
   margin: 335px;
+  color: rgb(0, 204, 255);
 }
 
 table{
