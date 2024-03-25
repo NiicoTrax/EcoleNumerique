@@ -5,7 +5,7 @@ header {
 }
 
 #logo {
-  max-width: 100;
+  max-width: 100px;
   max-height: 100px;
   float: left;
 }
@@ -38,7 +38,8 @@ nav ul::after{
 nav a{
   display: block;
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
   border-bottom: 2px solid transparent;
   padding: 10px 0px;
 }
@@ -94,9 +95,8 @@ height: 1500px;
     padding-top: 90px;
 }
 
-h2 {
+#titrage {
   text-align: center;
-  letter-spacing: 0.4em;
 }
 
 .post {
@@ -116,7 +116,7 @@ h2 {
   background: rgba(0, 0,0, .2);
   padding: 18px;
   margin-left: 51%;
-  margin-top: -450px;
+  margin-top: -480px;
   line-height: 2;
   text-align: justify;
   border-color: rgb(192, 232, 255);
@@ -129,7 +129,7 @@ h2 {
   background: rgba(0, 0,0, .2);
   padding: 28px;
   margin-left: 51%;
-  margin-top: -490px;
+  margin-top: -525px;
   line-height: 2;
   text-align: justify;
   border-color: rgb(192, 232, 255);
@@ -142,7 +142,7 @@ h2 {
   background: rgba(0, 0,0, .2);
   padding: 38px;
   margin-left: 51%;
-  margin-top: -470px;
+  margin-top: -504px;
   line-height: 2;
   text-align: justify;
   border-color: rgb(192, 232, 255);
@@ -184,6 +184,12 @@ h2 {
 table{
   border-collapse: collapse;
   margin-top: -300px;
+}
+
+#fondtable {
+  background-image: url("../img/fond/fondetape.jpg");
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .tab1 {
@@ -249,8 +255,11 @@ td{
   max-width: 50%;
   margin: auto;
   margin-top: -30px;
-  background-color: grey;
-  color: black;
+  background-color: rgb(128, 128, 128);
+  color: rgb(255, 255, 255);
+  background-image: url(../img/fond/fondprépa.jpg);
+  background-size: 100%;
+  background-position: 0cm;
 }
 
 #prépa{
@@ -258,7 +267,7 @@ td{
   margin:20px;
   margin-left: 200px;
   border:none;
-  background-color: rgb(139, 139, 139);
+  background-color: rgba(139, 139, 139, 0);
   border-radius: 15px;
 }
 
@@ -268,20 +277,28 @@ td{
 }
 
 p {
+  color:white;
+  width: 80%;
+  height: 100%;
   text-align: center;
 }
 
 #etape {
   color:rgb(0, 0, 0);
+  width: 80%;
+  height: 100%;
   text-align: center;
   text-decoration: underline  overline black;
   text-shadow: 0px 0px 5px red;
   letter-spacing: 1px;
+  letter-spacing: 0.4em;
   
 }
 
 .listetape {
   background-color: rgb(78, 78, 78);
+  background-image: url("../img/fond/fondetape2.jpg");
+  background-size: 100%;
   border-radius: 20px;
 }
 
