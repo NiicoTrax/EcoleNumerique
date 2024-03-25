@@ -112,6 +112,9 @@ height: 1500px;
      
 }
 
+h2 {
+  text-align: center;
+}
 .post2 {
   background: rgba(0, 0,0, .2);
   padding: 18px;
@@ -178,7 +181,7 @@ height: 1500px;
 }
 
 #lienrecette {
-  margin:370px;
+  margin: 335px;
 }
 
 table{
