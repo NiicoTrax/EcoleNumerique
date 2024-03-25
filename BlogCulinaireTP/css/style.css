@@ -186,6 +186,30 @@ table{
   margin-top: -300px;
 }
 
+.tab1 {
+  margin-top: -160px;
+  width: auto;
+  float:left;
+}
+
+.tab11 {
+  margin-top: -130px;
+  width: auto;
+  float:left;
+}
+
+.tab3 {
+  margin-top: -160px;
+  width: auto;
+  float:right;
+}
+
+.tab4 {
+  margin-top: -130px;
+  width: auto;
+  float:right;
+}
+
 td{
   border: 1px solid black;
   padding: 10px;
@@ -204,18 +228,6 @@ td{
   font-weight: bold;
 }
 
-#table2{
-  border-collapse: collapse;
-  margin-top: -480px;
-  float: right;
-}
-
-#table3 {
-  border-collapse: collapse;
-  margin-top: -600px;
-  float: right;
-}
-
 #ustenciles {
   color:rgb(89, 0, 255);
   text-align: center;
@@ -228,7 +240,7 @@ td{
   border-radius: 30px;
   max-width: 50%;
   margin: auto;
-  margin-top: -170px;
+  margin-top: -30px;
   background-color: grey;
   color: black;
 }
