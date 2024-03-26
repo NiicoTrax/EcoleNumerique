@@ -108,8 +108,8 @@ height: 1500px;
 
 .post {
   background-color: rgb(0, 0, 0);
-  padding: 30px;
-  margin-right: 50%;
+  padding: 44px;
+  margin-right: 51%;
   margin-top: 20px;
   line-height: 2;
   text-align: justify;
@@ -131,9 +131,9 @@ h2 {
 
 .post2 {
   background-color: rgb(0, 0, 0);
-  padding: 18px;
+  padding: 35px;
   margin-left: 51%;
-  margin-top: -450px;
+  margin-top: -477px;
   line-height: 2;
   text-align: justify;
   border-color: rgb(192, 232, 255);
@@ -143,9 +143,9 @@ h2 {
 
 .post3 {
   background-color: rgb(0, 0, 0);
-  padding: 28px;
+  padding: 60px;
   margin-left: 51%;
-  margin-top: -490px;
+  margin-top: -521px;
   line-height: 2;
   text-align: justify;
   border-color: rgb(192, 232, 255);
@@ -155,9 +155,9 @@ h2 {
 
 .post4 {
   background-color: rgb(0, 0, 0);
-  padding: 38px;
+  padding: 54px;
   margin-left: 51%;
-  margin-top: -470px;
+  margin-top: -500px;
   line-height: 2;
   text-align: justify;
   border-color: rgb(192, 232, 255);
@@ -191,8 +191,9 @@ h2 {
 }
 
 #lienrecette {
-  margin: 370px;
+  margin: 350px;
   color: rgb(0, 204, 255);
+  font-weight: bold;
 }
 
 table{
@@ -359,6 +360,7 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-left: 100px;
 }
 
 
@@ -366,12 +368,27 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
+input[type=reset] {
+  background-color: #ff0000;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+
+input[type=reset]:hover {
+  background-color: #bd2a2a;
+}
+
 
 .container {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
-  width: 40%;
-  margin-left: 500px;
+  width: 30%;
+  margin-left: 34%;
 }
 
