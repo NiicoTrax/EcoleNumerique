@@ -192,3 +192,8 @@ h3 {
   left: 370px;
   position: relative;
 }
+
+#titrefooter {
+  color:black;
+  font-size: 10px;
+}
