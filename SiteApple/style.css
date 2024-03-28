@@ -188,3 +188,7 @@ h3 {
   -moz-transition: .1s;
 }
 
+.contenairefooter {
+  left: 370px;
+  position: relative;
+}
