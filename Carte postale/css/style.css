@@ -14,7 +14,10 @@
   color:rgb(94, 94, 94);
   position: relative;
   left: 20px;
-  top: 50px
+  top: 50px;
+  text-decoration-line: unset;
+  font-size: 18px;
+  line-height: 20px;
 }
 
 .timbre {
@@ -24,15 +27,15 @@
   float: right;
   position: relative;
   right: 10px;
-  top: -130px;
+  top: -150px;
 }
 
 .adresse {
   color: rgb(0, 0, 0);
   float: right;
   position: relative;
-  right: 50px;
-  top: -60px;
+  right: 54px;
+  top: -70px;
 }
 
 .barreadresse1 {
@@ -41,7 +44,7 @@
   float: right;
   position: relative;
   right: -205px;
-  top: 30px;
+  top:-20px
 }
 
 .barreadresse2 {
@@ -50,6 +53,7 @@
   float: right;
   position: relative;
   right: -205px;
+  top: 10px;
 }
 
 .barreadresse3 {
@@ -58,5 +62,45 @@
   float: right;
   position: relative;
   right: -205px;
-  top: 60px;
+  top: 40px;
+}
+
+.carre1 {
+  border: 2px solid gray;
+  width: 30px;
+  height: 30px;
+  float: right;
+  position: relative;
+  right: -240px;
+  top: 50px;
+}
+
+.carre2 {
+  border: 2px solid gray;
+  width: 30px;
+  height: 30px;
+  float: right;
+  position: relative;
+  right: -315px;
+  top: 50px;
+}
+
+.carre3 {
+  border: 2px solid gray;
+  width: 30px;
+  height: 30px;
+  float: right;
+  position: relative;
+  right: -390px;
+  top: 50px;
+}
+
+.carre4 {
+  border: 2px solid gray;
+  width: 30px;
+  height: 30px;
+  float: right;
+  position: relative;
+  right: -465px;
+  top: 50px;
 }
