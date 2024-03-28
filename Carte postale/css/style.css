@@ -1,17 +1,17 @@
 .postale {
-  border: 3px solid gray;
+  border: 3px solid #9a9a9a;
   box-shadow:inset ;
   border-left-color: #ecebea;
   border-top-color: #ecebea;
-  max-width: 33%;
+  max-width: 32%;
   height: 300px;
-  margin-left: 500px;
-  margin-top: 200px;
+  margin-left: 600px;
+  margin-top: 300px;
 
 }
 
 .text1 {
-  color:rgb(94, 94, 94);
+  color: #918a84;
   position: relative;
   left: 20px;
   top: 50px;
@@ -21,86 +21,87 @@
 }
 
 .timbre {
-  border: 2px solid gray;
+  border: 2px solid #808080;
   width: 70px;
   height: 70px;
   float: right;
   position: relative;
   right: 10px;
-  top: -150px;
+  top: -145px;
 }
 
 .adresse {
   color: rgb(0, 0, 0);
   float: right;
   position: relative;
-  right: 54px;
-  top: -70px;
+  right: 47px;
+  top: -65px;
+  font-size: 13px;
 }
 
 .barreadresse1 {
   border-bottom:1px solid gray;
-  width: 41%;
+  width: 37%;
   float: right;
   position: relative;
-  right: -205px;
+  right: -178px;
   top:-20px
 }
 
 .barreadresse2 {
   border-bottom:1px solid gray;
-  width: 41%;
+  width: 37%;
   float: right;
   position: relative;
-  right: -205px;
+  right: -178px;
   top: 10px;
 }
 
 .barreadresse3 {
   border-bottom:1px solid gray;
-  width: 41%;
+  width: 37%;
   float: right;
   position: relative;
-  right: -205px;
+  right: -178px;
   top: 40px;
 }
 
 .carre1 {
-  border: 2px solid gray;
+  border: 2px solid #808080;
   width: 30px;
   height: 30px;
   float: right;
   position: relative;
-  right: -240px;
+  right: -212px;
   top: 50px;
 }
 
 .carre2 {
-  border: 2px solid gray;
+  border: 2px solid #808080;
   width: 30px;
   height: 30px;
   float: right;
   position: relative;
-  right: -315px;
+  right: -283px;
   top: 50px;
 }
 
 .carre3 {
-  border: 2px solid gray;
+  border: 2px solid #808080;
   width: 30px;
   height: 30px;
   float: right;
   position: relative;
-  right: -390px;
+  right: -354px;
   top: 50px;
 }
 
 .carre4 {
-  border: 2px solid gray;
+  border: 2px solid #808080;
   width: 30px;
   height: 30px;
   float: right;
   position: relative;
-  right: -465px;
+  right: -425px;
   top: 50px;
 }
