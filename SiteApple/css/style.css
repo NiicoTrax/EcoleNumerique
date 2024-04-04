@@ -2,7 +2,7 @@ body {
 	margin: 0;
 	padding: 0;
   font-family: sans-serif;
-  background-color: black;
+  background-color: #F5F5F7;
 }
 
 a {
@@ -33,9 +33,7 @@ nav {
 	font-size: 0;
 	position: relative;
   
-}
-
-nav > ul > li {
+}nav > ul > li {
 	display: inline-block;
   font-size: 12px;
   padding: 3px 26px;
@@ -84,7 +82,7 @@ h3 {
   color: #B2B2B3;
   text-align: center;
   position: relative;
-  right:-400px;
+  left:43%;
   font-size: 13px;
 }
 
@@ -98,23 +96,12 @@ h3 {
 #appletv {
   color: #B2B2B3;
   position: relative;
-  right: -390px;
+  left: 43%;
   font-size: 13px;
 }
 
 .menufooter {
-  border-top-color: 1px gray;
-  width: 100%;
-  background-color: #F5F5F7;
-  height: 100%;
-  display:flex;
-}
 
-#menufooter1 {
-  color: #B2B2B3;
-}
-
-.menufooter {
   width: 100%;
   position: relative;
   height: auto;
@@ -149,7 +136,7 @@ h3 {
   padding: 0;
 }
 
-.menufooter .col .footer2 .titrefooter1 {
+.menufooter .col .footer2 {
   color: #999999;
   font-size: 14px;
   font-family: inherit;
@@ -160,7 +147,7 @@ h3 {
   -moz-transition: .2s;
 }
 
-.menufooter .col .footer2 .titrefooter1:hover {
+.menufooter .col .footer2{
   color: #B2B2B3;
   transition: .1s;
   -webkit-transition: .1s;
@@ -168,21 +155,26 @@ h3 {
 }
 
 .contenairefooter {
-  left: 21%;
+  left: 23%;
   position: relative;
   display: flex;
+  width: 60%;
 }
 
 #titrefooter {
-  color:black;
-  font-size: 55%;
-  font-weight: bold;
+  color:#454546;
+  font-size: 11px;
+  font-weight:bold;
+  font-weight: 600;
+  line-height: 2;
+  letter-spacing: normal;
+  text-align: left;
 }
 
-.titrefooter2 {
-  color:black;
-  font-size: 80%;
-  font-weight: bold;
+.titrefooter1 {
+  color: #8B8B8C;
+  font-size: 12px;
+  text-align: left;
 }
 
 .baspage {
@@ -194,7 +186,7 @@ h3 {
   color: #B2B2B3;
   text-align: center;
   position: relative;
-  right:-430px;
+  left: 24%;
   font-size: 14px;
 }
 
@@ -203,6 +195,12 @@ h3 {
   color: #B2B2B3;
   text-align: center;
   position: relative;
-  right:-430px;
+  left:24%;
   font-size: 13px;
+}
+
+#barrehaut  {
+  width: 55%;
+  left:24%;
+  position: relative;
 }
