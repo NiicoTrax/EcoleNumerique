@@ -5,7 +5,9 @@ body {
   background-color: black;
 }
 
-a {text-decoration: none;}
+a {
+  text-decoration: none;
+}
 
 #logo {
   width: 12px;
