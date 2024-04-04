@@ -80,10 +80,9 @@ h3 {
 #footer1 {
   font:1rem 'Fira Sans',sans-serif;
   color: #B2B2B3;
-  text-align: center;
   position: relative;
-  left:43%;
-  font-size: 13px;
+  left:49%;
+  font-size: 12px;
 }
 
 .footer {
@@ -96,7 +95,7 @@ h3 {
 #appletv {
   color: #B2B2B3;
   position: relative;
-  left: 43%;
+  left: 46%;
   font-size: 13px;
 }
 
@@ -212,6 +211,16 @@ h3 {
 .lien {
   color: grey;
   padding: 0px 1px 5px 10px;
+}
+
+.lien2 {
+  color: #B2B2B3;
+  text-decoration: underline;
+}
+
+.lien3 {
+  color: #64A0DE;
+  text-decoration: underline;
 }
 
 .langue {
