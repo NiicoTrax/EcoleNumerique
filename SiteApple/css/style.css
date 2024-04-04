@@ -7,9 +7,16 @@ body {
 
 a {text-decoration: none;}
 
+#logo {
+  width: 12px;
+  height: 16px;
+  left: -15px;
+  position: relative;
+}
+
 .container {
 	margin: auto;
-	width: 1000px;
+	width: 940px;
 }
 
 ul {
@@ -20,7 +27,7 @@ ul {
 }
 
 nav {
-	background:#1212125e;
+	background:#121212;
 	font-size: 0;
 	position: relative;
   
@@ -28,51 +35,17 @@ nav {
 
 nav > ul > li {
 	display: inline-block;
-  font-size: 14px;
-  padding: 0 15px;
+  font-size: 12px;
+  padding: 3px 26px;
   position: relative;
+  margin: -8px;
 }
 
 nav > ul > li > a {
-	color: #fff;
+	color: #afafaf;
   display: block;
   padding: 20px 0;
   transition: all .3s ease;
-}
-
-.mega-menu {
-	background: #161617;
- 	visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.5s linear;
-	position: absolute;
-  left: 0;
-	width: 100%;
-  padding-bottom: 20px;
-}
-.mega-menu h3 {color: #444;}
-
-.mega-menu .container {
-    display: flex;
-}
-.mega-menu .item {
-	flex-grow: 1;
-    margin: 0 10px;
-}
-.mega-menu .item img {
-    width: 100%;
-}
-.mega-menu a {
-  color: white;
-  display: block;
-  padding: 10px 0;
-}
-
-.dropdown {position: static;}
-
-.dropdown:hover .mega-menu {
-    visibility: visible;
-    opacity: 1;
 }
 
 h3 {
@@ -86,8 +59,6 @@ h3 {
 
 .img1 {
   background-color: White;
-  width: 100%;
-  height: 100%;
 }
 
 #IMG1 {
@@ -95,6 +66,17 @@ h3 {
  height: 100%;
 }
 
+#IMG3 {
+  width: 50%;
+  height: 50%;
+  float:right
+}
+
+#IMG2 {
+  width: 49%;
+  height: 49%;
+  float:left;
+}
 #footer1 {
   font:1rem 'Fira Sans',sans-serif;
   color: #B2B2B3;
@@ -124,12 +106,6 @@ h3 {
   background-color: #F5F5F7;
   height: 100%;
   display:flex;
-}
-
-h3 {
-  text-align: center;
-  width: 52%;
-  height: 100%;
 }
 
 #menufooter1 {
@@ -164,12 +140,12 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.250em;
 }
-.menufooter .col ul {
+.menufooter .col .footer2 {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-.menufooter .col ul li {
+.menufooter .col .footer2 #titrefooter1 {
   color: #999999;
   font-size: 14px;
   font-family: inherit;
@@ -181,7 +157,7 @@ h3 {
   -moz-transition: .2s;
 }
 
-.menufooter .col ul li:hover {
+.menufooter .col .footer2 #titrefooter1:hover {
   color: #B2B2B3;
   transition: .1s;
   -webkit-transition: .1s;
