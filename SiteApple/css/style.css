@@ -131,27 +131,14 @@ h3 {
 }
 
 .menufooter .col .footer2 {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menufooter .col .footer2 {
   color: #999999;
   font-size: 14px;
   font-family: inherit;
-  padding: 5px 0px 5px 0px;
   cursor: pointer;
-  transition: .2s;
-  -webkit-transition: .2s;
-  -moz-transition: .2s;
 }
 
 .menufooter .col .footer2{
   color: #B2B2B3;
-  transition: .1s;
-  -webkit-transition: .1s;
-  -moz-transition: .1s;
 }
 
 .contenairefooter {
@@ -175,6 +162,7 @@ h3 {
   color: #8B8B8C;
   font-size: 12px;
   text-align: left;
+  margin-top: 10px;
 }
 
 .baspage {
@@ -187,7 +175,7 @@ h3 {
   text-align: center;
   position: relative;
   left: 24%;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 #footer3 {
@@ -196,11 +184,49 @@ h3 {
   text-align: center;
   position: relative;
   left:24%;
-  font-size: 13px;
+  font-size: 12px;
+  float:right;
 }
 
 #barrehaut  {
   width: 55%;
   left:24%;
+  position: relative;
+}
+
+.basdepage1 {
+  width: 100%;
+  margin: -0.5%;
+}
+
+.lienbasdepage {
+  display: inline;
+  left:23.3%;
+  position: relative;
+  font-size: 12px;
+  text-align: inherit;
+  text-decoration: none;
+
+}
+
+.lien {
+  color: grey;
+  padding: 0px 1px 5px 10px;
+}
+
+.langue {
+  float:left;
+  left:60%;
+  position: relative;
+  font-size: 12px;
+  color:grey;
+  padding: 10px;
+}
+
+.lignevertical{
+  border-left: 1px solid #CECECF;
+  display: inline-block;
+  height: 11px;
+  left: 24%;
   position: relative;
 }
