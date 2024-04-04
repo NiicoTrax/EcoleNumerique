@@ -120,16 +120,16 @@ h3 {
   height: auto;
   background-color: #F5F5F7;
 }
+
 .menufooter .col {
-  width: 190px;
   height: auto;
-  float:left;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   padding: 0px 20px 20px 20px;
   text-align: center;
 }
+
 .menufooter .col h1 {
   margin: 0;
   padding: 0;
@@ -142,16 +142,17 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.250em;
 }
+
 .menufooter .col .footer2 {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-.menufooter .col .footer2 #titrefooter1 {
+
+.menufooter .col .footer2 .titrefooter1 {
   color: #999999;
   font-size: 14px;
   font-family: inherit;
-  font-weight: bold;
   padding: 5px 0px 5px 0px;
   cursor: pointer;
   transition: .2s;
@@ -159,7 +160,7 @@ h3 {
   -moz-transition: .2s;
 }
 
-.menufooter .col .footer2 #titrefooter1:hover {
+.menufooter .col .footer2 .titrefooter1:hover {
   color: #B2B2B3;
   transition: .1s;
   -webkit-transition: .1s;
@@ -167,11 +168,41 @@ h3 {
 }
 
 .contenairefooter {
-  left: 370px;
+  left: 21%;
   position: relative;
+  display: flex;
 }
 
 #titrefooter {
   color:black;
-  font-size: 10px;
+  font-size: 55%;
+  font-weight: bold;
+}
+
+.titrefooter2 {
+  color:black;
+  font-size: 80%;
+  font-weight: bold;
+}
+
+.baspage {
+  color: white;
+}
+
+#footer2 {
+  font:1rem 'Fira Sans',sans-serif;
+  color: #B2B2B3;
+  text-align: center;
+  position: relative;
+  right:-430px;
+  font-size: 14px;
+}
+
+#footer3 {
+  font:1rem 'Fira Sans',sans-serif;
+  color: #B2B2B3;
+  text-align: center;
+  position: relative;
+  right:-430px;
+  font-size: 13px;
 }
