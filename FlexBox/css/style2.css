@@ -12,54 +12,54 @@
 
 .image1 {
     background-color: #1abc9c;
-    min-height: 800px;
-    width: 100%;
+    min-height: 400px;
+    width: 25%;
 }
 
 .image2 {
     background-color: #3498db;
-    width: 100%;
-    min-height: 800px;
+    width: 25%;
+    min-height: 400px;
 }
 
 .image3 {
     background-color: #9b59b6;
-    width: 100%;
-    min-height: 800px;
+    width: 25%;
+    min-height: 400px;
 }
 
 .image4 {
     background-color: #e67e22;
-    width: 100%;
-    min-height: 800px;
+    width: 25%;
+    min-height: 400px;
 }
 
 .image5 {
     background-color: #e74c3c;
-    width: 100%;
-    min-height: 800px;
+    width: 25%;
+    min-height: 400px;
 }
 
 .image6 {
     background-color: #1abc9c;
-    width: 100%;
-    min-height: 800px;
+    width: 25%;
+    min-height: 400px;
 }
 
 .image7 {
     background-color: #3498db;
-    width: 100%;
-    min-height: 800px;
+    width: 25%;
+    min-height: 400px;
 }
 
 .image8 {
     background-color: #9b59b6;
-    width: 100%;
-    min-height: 800px;
+    width: 25%;
+    min-height: 400px;
 }
 
 body {
-    display: flex;
-    flex-direction: row;
+    display:flex;
+    flex-flow: row wrap;
     border: 8px solid black;
 }
