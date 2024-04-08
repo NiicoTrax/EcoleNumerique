@@ -5,10 +5,8 @@
     width: 80px;
     height: 80px;
     color: rgb(0, 0, 0);
-    flex-direction:column;
-    align-items: center;
-    
-
+    margin: 40%;
+    justify-content: space-around;
     }
 
 .image1 {
