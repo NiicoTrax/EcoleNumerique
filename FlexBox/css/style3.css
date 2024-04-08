@@ -5,9 +5,19 @@
     width: 80px;
     height: 80px;
     color: rgb(0, 0, 0);
-    margin: 40%;
     justify-content: space-around;
+
+
     }
+
+h1 {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 .image1 {
     background-color: #1abc9c;
@@ -58,6 +68,8 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
     display:flex;
     flex-flow: row wrap;
     border: 8px solid black;
