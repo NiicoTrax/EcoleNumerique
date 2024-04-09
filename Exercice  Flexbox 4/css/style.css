@@ -7,10 +7,6 @@
     flex-direction: column;
 }
 
-.colo2 {
-    flex-direction: column;
-}
-
 .container .box {
     background-color: #1abc9c;
     margin: 10px;
