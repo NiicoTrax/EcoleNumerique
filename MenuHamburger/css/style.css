@@ -1,0 +1,28 @@
+body {
+    margin:0;
+    padding: 0;
+    width: 100%;
+}
+
+#main {
+    margin: auto;
+    padding: 10px;
+    width: 80%;
+    background-color: black;
+}
+
+header {
+    width: 100%;
+}
+
+#menugauche {
+    width: 20%;
+    float:left;
+    background-color: aqua;
+}
+
+#contenu {
+    width: 80%;
+    float:left;
+    background-color: blueviolet;
+}
