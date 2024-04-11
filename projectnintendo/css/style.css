@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    margin:0;
+    padding: 0;
+    width: 100%;
+}
+
+header {
+    background-color: red;
+    margin: auto;
+    width: 100%;
+}
+
+.vertical-menu {
+    width: 200px;
+  }
+  
+  .vertical-menu a {
+    background-color: #ff0000;
+    color: rgb(255, 255, 255);
+    display: block;
+    padding: 12px; 
+    text-decoration: none; 
+  }
+
+.icone {
+    width: 20%;
+}
