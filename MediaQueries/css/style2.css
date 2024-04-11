@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: black;
 }
 
 .contenu1 {
@@ -124,6 +125,7 @@ body {
     .contenu1 {
         width: 100%;
         height: 100px;
+        
     }
 
     .contenu2 {
