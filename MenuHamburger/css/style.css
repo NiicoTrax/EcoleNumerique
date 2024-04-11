@@ -8,21 +8,78 @@ body {
     margin: auto;
     padding: 10px;
     width: 80%;
-    background-color: black;
 }
 
 header {
     width: 100%;
+    background: black;
+    color:white
 }
 
 #menugauche {
     width: 20%;
     float:left;
-    background-color: aqua;
+    background: aqua;
 }
 
 #contenu {
     width: 80%;
     float:left;
-    background-color: blueviolet;
+    background: blueviolet;
+}
+
+footer {
+    clear:both;
+    width: 100%;
+}
+
+#hamburger-menu > a {
+    display: inline-block;
+    width: auto;
+    padding: 10px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+#hamburger-menu > span {
+    display: none;
+    text-align: center;
+    line-height: 5px;
+    padding-bottom: 20px;
+}
+
+@media(max-width:812px)
+{
+    #main {
+        width: 100%;
+    }
+
+    #menu-gauche {
+        width: 100%;
+    }
+
+    #contenu {
+        width: 100%;
+    }
+
+    #hamburger-menu > a {
+        display: none;
+    }
+
+    #hamburger-menu > span
+    {
+        display: inline-block;
+    }
+
+    #hamburger-menu:hover > a {
+        width: 80%;
+        display: block;
+        margin: 10px auto;
+    }
+   
+    #hamburger-menu:hover > span {
+        transform : rotate(90deg);
+        transition-property : transform;
+        transition-duration : 0.5s;
+    }
 }
