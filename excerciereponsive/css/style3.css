@@ -11,6 +11,10 @@ body {
     width: 80%;
 }
 
+#menu1 > a:hover {
+    padding: 20px;
+}
+
 #color1 {
     background-color: #1abc9c;
 }
