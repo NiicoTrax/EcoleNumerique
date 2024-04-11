@@ -124,8 +124,7 @@ body {
 @media (max-width:896px) {
     .contenu1 {
         width: 100%;
-        height: 100px;
-        
+        height: 100px;    
     }
 
     .contenu2 {
