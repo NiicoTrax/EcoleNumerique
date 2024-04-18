@@ -13,15 +13,15 @@ header {
 
 .vertical-menu {
     width: 200px;
-  }
-  
-  .vertical-menu a {
+}
+
+.vertical-menu a {
     background-color: #ff0000;
     color: rgb(255, 255, 255);
     display: block;
     padding: 12px; 
     text-decoration: none; 
-  }
+}
 
 .icone {
     width: 20%;
