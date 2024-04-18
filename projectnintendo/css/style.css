@@ -75,7 +75,6 @@ i {
 
 .sidenav {
     height: 100%;
-    width: 4%; 
     position: fixed;
     z-index: 1;
     left: 0;
