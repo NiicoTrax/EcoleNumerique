@@ -13,7 +13,6 @@ header {
         width: 100%;
         height: 72px;
         padding-left: 12px;
-        border-bottom: 1px solid #bf0010;
         background: #e60012;
         color: #fff;
         line-height: 0;
@@ -24,23 +23,30 @@ nav {
 }
 
 button {
-
     background-color: #e60012;
-    border:0px solid;
+    border: 0px solid;
     color: white;
+    font-size: 11px;
+    text-align: center;
+    color: inherit;
+    text-decoration: none;
+}
+
+.radius {
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    border-top-right-radius: 10px;
 }
 
 #menuhaut {
-        display: inline-flex;
-        justify-content: flex-end;
-        width: 99%;
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 99%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
     }
 
-.sidenav > span
-{
+.sidenav > span {
 display: none;
 text-align: center;
 line-height: 5px;
@@ -49,16 +55,14 @@ padding-bottom: 20px;
 
 
 .sidenav .icone {
-    width: 15%;
+    width: 48px;
+    color: white;
+    height: 40px;
 }
 
 i {
     color:white;
     font-size: 20px;
-}
-
-.icone {
-    color: white;
 }
 
 
@@ -71,25 +75,31 @@ i {
 
 .sidenav {
     height: 100%;
-    width: 160px; 
+    width: 4%; 
     position: fixed;
     z-index: 1;
     left: 0;
-    top:50px;
-    background-color: #e60012; 
+    top: 53px;
+    background-color: #BF0010; 
     overflow-x: hidden;
     padding-top: 20px;
 }
 
 .sidenav a {
-    padding: 6px 8px 6px 16px;
+    padding: 10px 0px 5px 0px;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 10px;
+    background-color: #e60012;
     color: #ffffff;
     display: block;
     text-align: center;
-    border: 1px solid rgba(172, 1, 1, 0.24);
-    border-top-right-radius: 10%;
+    font-weight: 400;
+    line-height: 1.2;
+    border: 0.1em solid rgba(0, 0, 0, 0.116);
+}
+
+#fondcolor {
+    background-color: black;
 }
 
 
@@ -98,10 +108,6 @@ i {
 }
 
 
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
 
 @media(max-width:812px)
 {
@@ -115,9 +121,8 @@ i {
     }
 
     .sidenav:hover > a {
-        width: 80%;
+        width: 100%;
         display: block;
-        margin: 10px auto;
     }
 
     .sidenav:hover > span {
@@ -127,7 +132,11 @@ i {
     }
 
     .sidenav .icone {
-        width: 20%;
+        width: 30%;
+    }
+
+    .sidenav {
+        width: 30%;
     }
 }
 
