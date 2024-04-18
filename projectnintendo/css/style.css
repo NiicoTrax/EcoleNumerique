@@ -46,7 +46,7 @@ button {
     list-style-type: none;
     }
 
-.sidenav > span {
+.sidenav  > span {
 display: none;
 text-align: center;
 line-height: 5px;
@@ -97,7 +97,8 @@ i {
     border: 0.1em solid rgba(0, 0, 0, 0.116);
 }
 
-#fondcolor {
+
+.fondcolor {
     background-color: black;
 }
 
@@ -114,14 +115,14 @@ i {
         display: none;
     }
 
-    .sidenav > span
-    {
+    .sidenav > span {
         display: inline-block;
     }
 
     .sidenav:hover > a {
         width: 100%;
         display: block;
+        background-color: #e60012;
     }
 
     .sidenav:hover > span {
@@ -135,7 +136,7 @@ i {
     }
 
     .sidenav {
-        width: 30%;
+        width: 0px;
     }
 }
 
