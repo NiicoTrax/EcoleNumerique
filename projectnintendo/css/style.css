@@ -136,7 +136,8 @@ i {
     }
 
     .sidenav {
-        width: 0px;
+        width: 100px;
+        background-color: #ffffff00;
     }
 }
 
