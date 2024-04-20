@@ -125,8 +125,8 @@ i {
 }
 
 #image4 {
-    width: 80%;
-    height: 100%;
+    width: 100%;
+    height: 60%;
     
 }
 
@@ -142,6 +142,12 @@ i {
     
 }
 
+#news3 {
+    width: 100%;
+    height: 2%;
+    
+}
+
 .center {
     width: 50%;
     margin-left: 10px;
@@ -152,8 +158,8 @@ i {
 }
 
 .droite {
-    width: 10%;
-    margin-left: 20px;
+    width: 17%;
+    margin-left: 10px;
 }
 
 .imageaccueil {
