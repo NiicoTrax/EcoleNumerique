@@ -138,6 +138,7 @@ i {
     .sidenav {
         width: 100px;
         background-color: #ffffff00;
+        height: 100%;
     }
 }
 
