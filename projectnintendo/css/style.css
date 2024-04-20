@@ -109,7 +109,7 @@ i {
 
 #image1 {
     width: 100%;
-    height: 60%;
+    height: 40%;
 }
 
 #image2 {
@@ -120,7 +120,7 @@ i {
 
 #image3 {
     width: 99%;
-    height: 38.7%;
+    height: 18.5%;
     
 }
 
@@ -136,7 +136,37 @@ i {
     
 }
 
+#gauche5{
+    width: 820px;
+    height: 10%;
+}
+
+#gauche6{
+    width: 600px;
+    height: 10%;
+}
+
+#center10 {
+    width: 640px;
+    height: 10%;
+    padding: 22px;
+    margin-left: 170px;
+}
+
 #image7 {
+    width: 49%;
+    height: 20%;
+    
+}
+
+#image8 {
+    width: 49%;
+    height: 20%;
+    
+}
+
+
+#image9 {
     width: 49%;
     height: 20%;
     
