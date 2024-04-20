@@ -108,17 +108,57 @@ i {
 }
 
 #image1 {
-    width: 25%;
+    width: 100%;
+    height: 60%;
 }
 
 #image2 {
-    width: 25%;
-    height: 5%;
+    width: 49%;
+    height: 21%;
     
+}
+
+#image3 {
+    width: 99%;
+    height: 39%;
+    
+}
+
+#image4 {
+    width: 80%;
+    height: 100%;
+    
+}
+
+#image6 {
+    width: 100%;
+    height: 35%;
+    
+}
+
+#image7 {
+    width: 49%;
+    height: 35%;
+    
+}
+
+.center {
+    width: 50%;
+    margin-left: 10px;
+}
+
+.gauche {
+    width: 30%;
+}
+
+.droite {
+    width: 10%;
+    margin-left: 20px;
 }
 
 .imageaccueil {
     display: flex;
+    flex-wrap: wrap;
     padding: 70px;
     margin-top: 10px;
 }
@@ -162,6 +202,22 @@ i {
         display: flex;
         flex-direction: column;
         width: 100%;
+        height: 100%;
+    }
+
+    .center {
+        width: 80%;
+        height: 100%;
+        margin-left: 0px;
+    }
+
+    .gauche {
+        width: 80%;
+        height: 100%;
+    }
+
+    .droite {
+        width: 80%;
         height: 100%;
     }
 }
