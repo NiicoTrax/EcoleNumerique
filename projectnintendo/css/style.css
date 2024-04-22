@@ -108,36 +108,170 @@ i {
     color: #f1f1f1;
 }
 
-.imageaccueil {
+.container {
     display: flex;
-    padding: 77px;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 70px;
 }
 
-.gauche {
+.container .colo {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    height: 100%;
 }
 
-#gauche1 {
-    width: 50%;
-    height: 70%;
-}
-
-.centre {
+.container .colo2 {
     display: flex;
-    flex-direction: row;
-    width: 40%;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.container .colo3 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+
+.container .box {
+    background-color: #1abc9c;
+    margin: 10px;
+    width: 500px;
+    height: 200px;
+}
+
+.container .box2 {
+    background-color: #3498db;
+    margin: 10px;
+    width: 500px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .box3 {
+    background-color: #9b59b6;
+    margin: 10px;
+    width: 500px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .box4 {
+    background-color: #e67e22;
+    margin: 10px;
+    width: 500px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .box5 {
+    background-color: #e74c3c;
+    margin: 10px;
+    width: 800px;
+    height: 410px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .box6 {
+    background-color: #1abc9c;
+    margin: 10px;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .box7 {
+    background-color: #3498db;
+    margin: 10px;
+    width: 500px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .box8 {
+    background-color: #9b59b6;
+    margin: 10px;
+    width: 500px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .box9 {
+    background-color: #e67e22;
+    margin: 10px;
+    width: 380px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+
+.container .box img {
+    margin: 0;
+    width: 100%;
     height: 100%;
 }
 
-#centre1 {
+.container .box2 img {
+    margin: 0;
     width: 100%;
-    height: 20%;
+    height: 100%;
+}
+
+.container .box3 img {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container .box4 img {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container .box5 img {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container .box6 img {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container .box7 img {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container .box8 img {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container .box9 img {
+    margin: 0;
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -169,42 +303,67 @@ i {
     }
 
     .sidenav {
-        width: 100px;
+        width: 0px;
         background-color: #ffffff00;
         height: 100%;
     }
 
-    .imageaccueil {
+    body {
+        width: 98%;
+    }
+
+    .container {
         display: flex;
         flex-direction: column;
+        padding: 0px;
+        margin-top: 70px;
+    }
+
+    .container .box {
         width: 100%;
-        height: 100%;
+        height: 200px;
     }
 
-    .center {
-        width: 80%;
-        height: 100%;
-        margin-left: 0px;
-    }
-
-    .gauche {
-        width: 80%;
-        height: 100%;
-    }
-
-    .droite {
-        width: 80%;
-        height: 100%;
-    }
-
-    #image2 {
+    .container .box2 {
         width: 100%;
+        height: 200px;
     }
 
-    #image1 {
+    .container .box3 {
         width: 100%;
-        height: 500px
+        height: 50%;
     }
+
+    .container .box4 {
+        width: 100%;
+        height: 200px;
+    }
+
+    .container .box5 {
+        width: 100%;
+        height: 200px;
+    }
+
+    .container .box6 {
+        width: 100%;
+        height: 50%;
+    }
+
+    .container .box7 {
+        width: 100%;
+        height: 50%;
+    }
+
+    .container .box8 {
+        width: 100%;
+        height: 50%;
+    }
+
+    .container .box9 {
+        width: 100%;
+        height: 50%;
+    }
+
 }
 
 
