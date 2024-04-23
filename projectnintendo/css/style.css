@@ -110,7 +110,6 @@ i {
 
 .container {
     display: flex;
-    flex-wrap: wrap;
     padding: 70px;
 }
 
@@ -122,13 +121,11 @@ i {
 .container .colo2 {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
 }
 
 .container .colo3 {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
 }
 
 
@@ -173,10 +170,7 @@ i {
     background-color: #e74c3c;
     margin: 10px;
     width: 800px;
-    height: 410px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 420px;
 }
 
 .container .box6 {
@@ -184,9 +178,6 @@ i {
     margin: 10px;
     width: 400px;
     height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .container .box7 {
@@ -194,9 +185,6 @@ i {
     margin: 10px;
     width: 500px;
     height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .container .box8 {
@@ -204,20 +192,13 @@ i {
     margin: 10px;
     width: 500px;
     height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .container .box9 {
     background-color: #e67e22;
     margin: 10px;
     width: 380px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: auto;
+    height: 800px;
 }
 
 .container .box img {
