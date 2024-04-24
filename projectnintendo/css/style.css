@@ -202,6 +202,7 @@ i {
 
 @media(max-width:812px)
 {
+    
     .sidenav > a {
         display: none;
     }
