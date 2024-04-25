@@ -2,45 +2,30 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header Nintendo Style</title>
+    <title>Titre de Votre Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style2.css">
 </head>
 <body>
     <header>
-        <button class="menu-button">&#9776;</button>
-        <div class="logo-container">
-            <img src="images/logo/logo.png" alt="Logo" class="logo">
-        </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#">Jeux</a></li>
-                <li><a href="#">Hardware</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Support</a></li>
-            </ul>
-        </nav>
-        <div class="header-tools">
-            <button class="search-button">&#128269;</button>
-        </div>
+        <!-- Checkbox pour contrôler le sidenav -->
+        <input type="checkbox" id="hamburger-checkbox" class="hamburger-checkbox" hidden>
+        <label for="hamburger-checkbox" class="hamburger">☰</label>
+        <!-- Logo après le hamburger -->
+        <img src="path_to_logo/logo.png" alt="Logo" class="logo">
     </header>
+    <nav class="sidenav">
+        <!-- Contenus du sidenav ici -->
+        <a href="#">Accueil</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+    <!-- Autres sections du site -->
     <main>
-    <div class="row">
-        <div class="column">
-            <img src="https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Nintendo Jeu">
-            <p>Jeu de stratégie</p>
-        </div>
-        <div class="column">
-            <img src="https://images.pexels.com/photos/163064/play-station-game-controller-gaming-game-163064.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Console de jeu">
-            <p>Console de pointe</p>
-        </div>
-        <div class="column">
-            <img src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Accessoires de jeu">
-            <p>Accessoires innovants</p>
-        </div>
-    </div>
-</html>
-
+        <!-- Contenu principal -->
     </main>
+    <footer>
+        <!-- Pied de page -->
+    </footer>
 </body>
 </html>

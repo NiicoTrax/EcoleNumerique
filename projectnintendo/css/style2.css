@@ -1,80 +1,67 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
+/* Style général pour le header */
 header {
-  background-color: #E60012; 
-  color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
+  background-color: #ff0000;
+  padding: 10px;
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
+/* Masquer la checkbox */
+.hamburger-checkbox {
+  display: none;
 }
 
-.logo {
-  height: 50px;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar ul li {
-  padding: 0 20px;
-}
-
-.navbar ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.header-tools {
-  display: flex;
-  align-items: center;
-}
-
-.search-button, .menu-button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
+/* Styler le label hamburger pour le rendre visible */
+.hamburger {
+  font-size: 30px; /* Taille de l'icône */
   cursor: pointer;
+  margin-right: 10px; /* Espace entre l'icône et le logo */
 }
 
-/* styles.css */
-.row {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+/* Logo */
+.logo {
+  height: 50px; /* Ajustez selon la taille de votre logo */
 }
 
-.column {
-  flex: 1 1 30%;
-  text-align: center;
-  margin: 10px;
+/* Styles du sidenav */
+.sidenav {
+  height: 100%;
+  width: 0; /* Le sidenav est masqué par défaut */
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden; /* Empêche le débordement horizontal */
+  transition: 0.5s; /* Transition fluide pour l'affichage du sidenav */
+  padding-top: 60px;
 }
 
-.column img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 10px;
+.sidenav a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 22px;
+  color: white;
+  display: block;
+  transition: 0.3s;
 }
 
-@media (max-width: 768px) {
-  .column {
-      flex-basis: 100%;
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Montrer le sidenav quand la checkbox est cochée */
+.hamburger-checkbox:checked + .sidenav {
+  width: 250px; /* Largeur désirée du sidenav */
+}
+
+/* Media queries pour ajustements sur mobile */
+@media screen and (max-width: 600px) {
+  .sidenav {
+      padding-top: 45px;
+  }
+
+  .sidenav a {
+      font-size: 18px;
   }
 }
-
