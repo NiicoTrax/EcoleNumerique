@@ -3,42 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nintendo France</title>
+    <title>Header Nintendo Style</title>
     <link rel="stylesheet" href="css/style2.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="sidebar">
-                <ul>
-                    <li><a href="#">Nouveautés</a></li>
-                    <li><a href="#">Promotions</a></li>
-                    <li><a href="#">Plus Vendus</a></li>
-                    <li><a href="#">À venir</a></li>
-                </ul>
-            </div>
-            <nav class="main-nav">
-              <div class="menu-toggle"></div>
-              <a href="#" class="logo">
-                  <img src="images/logo/logo.png" alt="Nintendo">
-              </a>
-                <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Jeux</a></li>
-                    <li><a href="#">Nintendo Switch</a></li>
-                    <li><a href="#">Support</a></li>
-                </ul>
-            </nav>
+        <button class="menu-button">&#9776;</button>
+        <div class="logo-container">
+            <img src="images/logo/logo.png" alt="Logo" class="logo">
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Jeux</a></li>
+                <li><a href="#">Hardware</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </nav>
+        <div class="header-tools">
+            <button class="search-button">&#128269;</button>
         </div>
     </header>
     <main>
-        <section class="content">
-            <h1>Bienvenue chez Nintendo</h1>
-            <p>Découvrez les derniers jeux et nouvelles fonctionnalités de Nintendo Switch.</p>
-        </section>
+    <div class="row">
+        <div class="column">
+            <img src="https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Nintendo Jeu">
+            <p>Jeu de stratégie</p>
+        </div>
+        <div class="column">
+            <img src="https://images.pexels.com/photos/163064/play-station-game-controller-gaming-game-163064.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Console de jeu">
+            <p>Console de pointe</p>
+        </div>
+        <div class="column">
+            <img src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Accessoires de jeu">
+            <p>Accessoires innovants</p>
+        </div>
+    </div>
+</html>
+
     </main>
-    <footer>
-        <p>© 2024 Nintendo. Tous droits réservés.</p>
-    </footer>
 </body>
 </html>
