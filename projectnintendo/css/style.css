@@ -194,10 +194,14 @@ i {
 
 #logobaspage  {
     background-color: #E60012;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 #logofooter {
     width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 
