@@ -185,77 +185,85 @@ i {
 }
 
 .row-footer {
-    background-color: #BF0010;
-    font-family: Arial, sans-serif;
+    color: #fff;
+    margin-left: 4%;
     width: 68%;
-    margin-left: 75px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
+
+#logobaspage  {
+    background-color: #E60012;
+}
+
+#logofooter {
+    width: 100%;
+}
+
 
 .footer-content {
     display: flex;
-    flex-direction: row;
-    width: 70%;
-    flex-wrap: wrap;
-}
-
-.footer-section {
-    flex: 1;
-}
-
-.footer-section h4 {
-    color: #333;
-    margin-bottom: 10px;
+    background-color: #BF0010;
 }
 
 .footer-section ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .footer-section ul li a {
+    padding: 0px 10px;
     color: #ffffff;
     text-decoration: none;
-    font-size: 14px;
+    transition: color 0.3s;
+    margin-right: 50px;
 }
 
 .footer-section ul li a:hover {
-    text-decoration: underline;
+    color: #fff;
 }
 
-.logofooter {
-background-color: #e60012;
+.social-links a {
+    display: inline-block;
 }
+
+#logofrance {
+float: right;
+}
+
 
 .hamburger-checkbox {
-    display: none; /* Masquer la checkbox */
+    display: none;
 }
 
 .hamburger-icon {
-    display: none; /* Masquer l'icône par défaut */
-    font-size: 24px; /* Taille de l'icône */
+    display: none;
+    font-size: 24px; 
     cursor: pointer;
 }
 
 
 
 /* POUR MOBILE */
-@media(max-width:812px)
+@media only screen and (min-width: 100px) and (max-width: 769px)
 {
     .hamburger-checkbox {
         display: none;
     }
     
     .hamburger-icon {
-        display: block; /* Afficher en mode mobile */
+        display: block; 
         cursor: pointer;
     }
     
     .sidenav {
-        transform: translateX(-100%); /* Cacher initialement le menu */
+        transform: translateX(-100%);
         transition: transform 0.3s ease;
     }
     
-    /* Quand la checkbox est cochée, déplacer le sidenav pour qu'il soit visible */
     .hamburger-checkbox:checked + .sidenav {
         transform: translateX(0);
         left: 0;
@@ -329,14 +337,106 @@ background-color: #e60012;
         height: 100%;
     }
 
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
+    #logofooter {
+        width: 100%;
+        height: 100%;
     }
-
-    .footer-section {
-        margin-bottom: 20px;
-    }
-
 }
+
+/* POUR TABLETTE */
+@media only screen and (min-width: 769px) and (max-width: 900px)
+{
+    .hamburger-checkbox {
+        display: none;
+    }
+    
+    .hamburger-icon {
+        display: block; 
+        cursor: pointer;
+    }
+    
+    .sidenav {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .hamburger-checkbox:checked + .sidenav {
+        transform: translateX(0);
+        left: 0;
+    }
+
+    .sidenav > a {
+        display: none;
+    }
+
+    .sidenav {
+        display: flex;
+        flex-direction: row;
+        width: 100px;
+        background-color: #ffffff00;
+        height: 100%;
+    }
+
+    body {
+        width: 100%;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 70px;
+        
+    }
+
+    .container .box {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container .box2 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container .box2 #centre1 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container .box2 #gauche6 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container .box2 #centre3 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container .box2 #centre4 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container .box2 #gauche5 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container .box2 #centre1 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container .box3 {
+        width: 100%;
+        height: 100%;
+    }
+
+    #logofooter {
+        width: 100%;
+        height: 100%;
+    }
+}
+
 
