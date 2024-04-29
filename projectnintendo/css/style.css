@@ -12,7 +12,7 @@ header {
         align-items: center;
         width: 100%;
         height: 72px;
-        padding-left: 12px;
+        padding-left: 5px;
         background: #e60012;
         color: #fff;
         line-height: 0;
@@ -71,11 +71,11 @@ i {
     width: 70px;
     position: fixed;
     z-index: 1;
-    left: 0;
-    top: 53px;
+    top: 40px;
     background-color: #BF0010; 
     overflow-x: hidden;
     padding-top: 20px;
+    transform: translate(0,0);
 }
 
 .sidenav a {
@@ -90,7 +90,6 @@ i {
     line-height: 1.2;
     border: 0.1em solid rgba(0, 0, 0, 0.116);
 }
-
 
 .fondcolor {
     background-color: black;
@@ -243,8 +242,12 @@ h4 {
 }
 
 
-.hamburger-checkbox {
+#hamburger-checkbox {
     display: none;
+}
+
+#hamburger-checkbox:checked ~ .sidenav {
+    transform: translateX(0%);
 }
 
 .hamburger-icon {
@@ -255,10 +258,12 @@ h4 {
 
 
 
+
 /* POUR MOBILE */
 @media only screen and (min-width: 100px) and (max-width: 769px)
 {
-    .hamburger-checkbox {
+    
+    #hamburger-checkbox {
         display: none;
     }
     
@@ -268,13 +273,14 @@ h4 {
     }
     
     .sidenav {
-        transform: translateX(-100%);
+        transform: translate(-100%);
         transition: transform 0.3s ease;
     }
     
-    .hamburger-checkbox:checked + .sidenav {
-        transform: translateX(0);
-        left: 0;
+    #hamburger-checkbox:checked ~ .sidenav {
+        transform: translateX(0%);
+        position:fixed;
+        display:block;
     }
 
     .sidenav > a {
@@ -284,9 +290,10 @@ h4 {
     .sidenav {
         display: flex;
         flex-direction: row;
-        width: 100px;
+        width: 100%;
         background-color: #ffffff00;
         height: 100%;
+        z-index: 1000;
     }
 
     body {
@@ -372,9 +379,11 @@ h4 {
         transition: transform 0.3s ease;
     }
     
-    .hamburger-checkbox:checked + .sidenav {
-        transform: translateX(0);
-        left: 0;
+    #hamburger-checkbox:checked ~ .sidenav {
+        transform: translateX(0%);
+        position:absolute;
+        z-index: 1000;
+        display:block;
     }
 
     .sidenav > a {
@@ -387,6 +396,7 @@ h4 {
         width: 100px;
         background-color: #ffffff00;
         height: 100%;
+        z-index: 1000;
     }
 
     body {
