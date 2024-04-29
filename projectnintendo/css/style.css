@@ -47,7 +47,7 @@ button {
     }
 
 
-.sidenav .icone {
+.navigation .icone {
     width: 48px;
     color: white;
     height: 40px;
@@ -66,19 +66,17 @@ i {
     margin: 5px 0;
 }
 
-.sidenav {
+.navigation {
     height: 100%;
-    width: 70px;
+    width:90px;
     position: fixed;
     z-index: 1;
-    top: 40px;
+    top: 70px;
     background-color: #BF0010; 
-    overflow-x: hidden;
-    padding-top: 20px;
     transform: translate(0,0);
 }
 
-.sidenav a {
+.navigation a {
     padding: 10px 0px 5px 0px;
     text-decoration: none;
     font-size: 10px;
@@ -90,6 +88,8 @@ i {
     line-height: 1.2;
     border: 0.1em solid rgba(0, 0, 0, 0.116);
 }
+
+
 
 .fondcolor {
     background-color: black;
@@ -241,230 +241,128 @@ h4 {
     margin-left: 10px;
 }
 
-
-#hamburger-checkbox {
+#hamburger-checkbox  {
     display: none;
-}
-
-#hamburger-checkbox:checked ~ .sidenav {
-    transform: translateX(0%);
 }
 
 .hamburger-icon {
-    display: none;
-    font-size: 24px; 
-    cursor: pointer;
+    display:none;
 }
-
 
 
 
 /* POUR MOBILE */
+
 @media only screen and (min-width: 100px) and (max-width: 769px)
 {
-    
-    #hamburger-checkbox {
-        display: none;
-    }
-    
-    .hamburger-icon {
-        display: block; 
+    .hamburger-checkbox, .hamburger-icon {
+        display: block;
         cursor: pointer;
-    }
-    
-    .sidenav {
-        transform: translate(-100%);
-        transition: transform 0.3s ease;
-    }
-    
-    #hamburger-checkbox:checked ~ .sidenav {
-        transform: translateX(0%);
-        position:fixed;
-        display:block;
-    }
+}
 
-    .sidenav > a {
+    .hamburger-icon {
+        font-size: 30px;
+        color: white;
+        padding: 10px;
+}
+
+    .radius {
+        border: 1px solid rgba(0, 0, 0, 0.24);
+        border-top-right-radius: 0px;
+}
+
+    .navigation {
+        flex-direction:row;
         display: none;
-    }
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.938);
+        text-align: center;
+        padding: 15px;
+        border-top: 1px solid #aaa; 
+        height: 1000px;
+}
 
-    .sidenav {
+    .navigation a {
+        height: 90px;
+        width: 85px;
+        font-size: 13px;
+        border-radius: 5px;
+}
+
+    #hamburger-checkbox:checked ~ .navigation {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap; 
+        align-content:flex-start;
         width: 100%;
-        background-color: #ffffff00;
-        height: 100%;
-        z-index: 1000;
-    }
-
-    body {
-        width: 100%;
-    }
+        gap: 10px;
+        padding-left: 20px;
+}
 
     .container {
         display: flex;
         flex-direction: column;
-        padding: 70px;
+        top: 100px;
+        padding: 70px 0px;
+        width: 100%;
         
-    }
+}
 
     .container .box {
         width: 100%;
         height: 100%;
-    }
+}
 
     .container .box2 {
         width: 100%;
         height: 100%;
-    }
+}
 
     .container .box2 #centre1 {
         width: 100%;
         height: 100%;
-    }
+}
 
     .container .box2 #gauche6 {
         width: 100%;
         height: 100%;
-    }
+}
 
     .container .box2 #centre3 {
         width: 100%;
         height: 100%;
-    }
+}
 
     .container .box2 #centre4 {
         width: 100%;
         height: 100%;
-    }
+}
 
     .container .box2 #gauche5 {
         width: 100%;
         height: 100%;
-    }
+}
 
     .container .box2 #centre1 {
         width: 100%;
         height: 100%;
-    }
+}
 
     .container .box3 {
         width: 100%;
         height: 100%;
-    }
+}
 
     .row-footer {
         width: 95%;
-    }
+}
 
     #logofooter {
         width: 100%;
         height: 100%;
-    }
 }
-
-/* POUR TABLETTE */
-@media only screen and (min-width: 769px) and (max-width: 900px)
-{
-    .hamburger-checkbox {
-        display: none;
-    }
-    
-    .hamburger-icon {
-        display: block; 
-        cursor: pointer;
-    }
-    
-    .sidenav {
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-    }
-    
-    #hamburger-checkbox:checked ~ .sidenav {
-        transform: translateX(0%);
-        position:absolute;
-        z-index: 1000;
-        display:block;
-    }
-
-    .sidenav > a {
-        display: none;
-    }
-
-    .sidenav {
-        display: flex;
-        flex-direction: row;
-        width: 100px;
-        background-color: #ffffff00;
-        height: 100%;
-        z-index: 1000;
-    }
-
-    body {
-        width: 100%;
-    }
-
-    .container {
-        display: flex;
-        flex-direction: column;
-        padding: 70px;
-        
-    }
-
-    .container .box {
-        width: 100%;
-        height: 100%;
-    }
-
-    .container .box2 {
-        width: 100%;
-        height: 100%;
-    }
-
-    .container .box2 #centre1 {
-        width: 100%;
-        height: 100%;
-    }
-
-    .container .box2 #gauche6 {
-        width: 100%;
-        height: 100%;
-    }
-
-    .container .box2 #centre3 {
-        width: 100%;
-        height: 100%;
-    }
-
-    .container .box2 #centre4 {
-        width: 100%;
-        height: 100%;
-    }
-
-    .container .box2 #gauche5 {
-        width: 100%;
-        height: 100%;
-    }
-
-    .container .box2 #centre1 {
-        width: 100%;
-        height: 100%;
-    }
-
-    .container .box3 {
-        width: 100%;
-        height: 100%;
-    }
-
-    #logofooter {
-        width: 100%;
-        height: 100%;
-    }
-
-    .row-footer {
-        width: 95%;
-
-    }
-
 }
-
 

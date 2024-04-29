@@ -1,67 +1,68 @@
-/* Style général pour le header */
-header {
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navigation {
+  background: #333;
+  padding: 10px 20px;
+  color: white;
+  position: relative;
+}
+
+.navigation .menu {
+  list-style: none;
   display: flex;
-  align-items: center;
-  background-color: #ff0000;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation .menu li {
   padding: 10px;
 }
 
-/* Masquer la checkbox */
-.hamburger-checkbox {
-  display: none;
-}
-
-/* Styler le label hamburger pour le rendre visible */
-.hamburger {
-  font-size: 30px; /* Taille de l'icône */
-  cursor: pointer;
-  margin-right: 10px; /* Espace entre l'icône et le logo */
-}
-
-/* Logo */
-.logo {
-  height: 50px; /* Ajustez selon la taille de votre logo */
-}
-
-/* Styles du sidenav */
-.sidenav {
-  height: 100%;
-  width: 0; /* Le sidenav est masqué par défaut */
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden; /* Empêche le débordement horizontal */
-  transition: 0.5s; /* Transition fluide pour l'affichage du sidenav */
-  padding-top: 60px;
-}
-
-.sidenav a {
-  padding: 10px 15px;
+.navigation .menu li a {
   text-decoration: none;
-  font-size: 22px;
   color: white;
-  display: block;
-  transition: 0.3s;
+  font-weight: bold;
 }
 
-.sidenav a:hover {
-  color: #f1f1f1;
+.hamburger-checkbox,
+.hamburger-icon {
+  display: none; /* Cachez le hamburger et la checkbox par défaut */
 }
 
-/* Montrer le sidenav quand la checkbox est cochée */
-.hamburger-checkbox:checked + .sidenav {
-  width: 250px; /* Largeur désirée du sidenav */
-}
-
-/* Media queries pour ajustements sur mobile */
-@media screen and (max-width: 600px) {
-  .sidenav {
-      padding-top: 45px;
+@media (max-width: 768px) {
+  .hamburger-checkbox,
+  .hamburger-icon {
+      display: block; /* Afficher l'icône hamburger */
+      cursor: pointer;
   }
 
-  .sidenav a {
-      font-size: 18px;
+  .hamburger-icon {
+      font-size: 30px;
+      color: white;
+      padding: 10px;
+      background: #333;
+  }
+
+  .navigation .menu {
+      flex-direction: column;
+      background-color: black;
+      display: none; /* Masquer le menu par défaut */
+      position: absolute;
+      width: 100%;
+      top: 50px;
+      left: 0;
+  }
+
+  .navigation .menu li {
+      text-align: center;
+      padding: 15px;
+      border-top: 1px solid #aaa; /* Ajoute une ligne entre les éléments */
+  }
+
+  #hamburger-checkbox:checked ~ .menu {
+      display: flex; /* Afficher le menu quand la checkbox est cochée */
   }
 }
