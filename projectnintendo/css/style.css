@@ -77,24 +77,23 @@ a:hover {
 .navigation {
     height: 100%;
     width:90px;
-    position: fixed;
-    z-index: 1;
+    margin-left: -125px;
+    position: relative;
     top: 70px;
     background-color: #BF0010; 
-    transform: translate(0,0);
 }
 
 .navigation a {
-    padding: 10px 0px 5px 0px;
+    padding: 10px 0px 10px 0px;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 13px;
     background-color: #e60012;
     color: #ffffff;
     display: block;
     text-align: center;
     font-weight: 400;
     line-height: 1.2;
-    border: 0.1em solid rgba(0, 0, 0, 0.116);
+    border: 0.1em solid rgba(0, 0, 0, 0.199);
 }
 
 
@@ -103,8 +102,12 @@ a:hover {
     background-color: black;
 }
 
+.container img {
+    border-radius: 5px;
+}
+
 .container {
-    padding: 75px;
+    padding: 80px 90px;
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -283,12 +286,12 @@ h4 {
         flex-direction:row;
         display: none;
         position: absolute;
-        width: 100%;
+        margin: auto;
         top: 70px;
         left: 0;
         background-color: rgba(255, 255, 255, 0.938);
         text-align: center;
-        padding: 15px;
+        padding: 10px 0px;
         border-top: 1px solid #aaa; 
         height: 1000px;
 }
@@ -319,7 +322,7 @@ h4 {
         flex-direction: column;
         top: 100px;
         padding: 70px 0px;
-        width: 100%;
+        width: 99%;
         
 }
 
