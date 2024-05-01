@@ -1,0 +1,29 @@
+.col-md-8 {
+    color: white;
+    text-align: center;
+    border: black solid;
+}
+
+.col-md-3 {
+    color: white;
+    text-align: center;
+    border: black solid;
+}
+
+.col-md-4 {
+    color: white;
+    text-align: center;
+    border: black solid;
+}
+
+.col-md-6 {
+    color: white;
+    text-align: center;
+    border: black solid;
+}
+
+.col {
+    background-color: rgb(255, 166, 0);
+    color: white;
+    border: black solid;
+}
