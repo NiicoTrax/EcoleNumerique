@@ -1,0 +1,151 @@
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#menu-gauche {
+    width: 20%;
+    height:10em;
+    float:left;
+    background-color:aquamarine;
+    transition: background-color 5s, height 5s;
+}
+
+#menu-gauche:active{
+    background-color:darkcyan;
+    height: 100em;
+}
+
+#text {
+    position: absolute;
+    left:-100px;
+-webkit-animation: slide 0.5s forwards;
+-webkit-animation-delay: 2s;
+animation: slide 0.5s forwards;
+animation-delay: 2s;
+}
+
+@-webkit-keyframes slide {
+100% { left: 200px; }
+}
+
+@keyframes slide {
+100% { left: 200px; }
+}
+
+
+#contenu {
+    width: 80%;
+    height:100em;
+    float:left;
+    background-color: coral;
+}
+
+#main {
+    margin: auto;
+    padding: 10px;
+    background-color:darkgrey;
+    width: 80%;
+    height: 110em;
+}
+
+header {
+    width: 100%;
+}
+
+footer {
+    clear:both;
+    width: 100%;
+
+}
+
+#hamburger-menu > a
+{
+display: inline-block;
+width: auto;
+padding: 10px;
+margin-right: 15px;
+cursor: pointer;
+}
+
+#hamburger-menu > span
+{
+display: none;
+text-align: center;
+line-height: 5px;
+padding-bottom: 20px;
+}
+
+/*------transitions et transformations----*/
+
+.box {
+    border-style: solid;
+    border-width: 1px;
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #0000FF;
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
+
+.box:hover {
+    background-color: #FFCCCC;
+    width: 200px;
+    height: 200px;
+    transform: rotate(180deg);
+}
+
+
+
+
+
+
+/*----------------MEDIA QUERIES ---------------------------*/
+
+/*tablette*/
+@media(max-width:1388px)
+{
+    #main {
+        width: 100%;
+    }
+   
+}
+
+/*mobile*/
+@media(max-width:812px)
+{
+    #main {
+        width: 100%;
+    }
+
+    #menu-gauche {
+        width: 100%;
+    }
+
+    #contenu {
+        width: 100%;
+    }
+
+    #hamburger-menu > a {
+        display: none;
+    }
+
+    #hamburger-menu > span
+    {
+        display: inline-block;
+    }
+
+    #hamburger-menu:hover > a {
+        width: 80%;
+        display: block;
+        margin: 10px auto;
+    }
+   
+    #hamburger-menu:hover > span {
+        transform : rotate(90deg);
+        transition-property : transform;
+        transition-duration : 0.5s;
+    }
+}
+
