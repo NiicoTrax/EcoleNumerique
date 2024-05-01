@@ -1,0 +1,20 @@
+.container {
+    width: 500px;
+    height: 500px;
+    border: 2px solid red;
+    background-color: black;
+    color: white;
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+
+}
+
+.container:hover {
+    background-color: blueviolet;
+    width: 800px;
+    height: 800px;
+    font-size: 20px;
+    font-style: italic;
+    transform: rotate(180deg) scale(80%);
+    transition-duration: 10s;
+
+}
