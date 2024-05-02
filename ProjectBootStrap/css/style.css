@@ -170,3 +170,8 @@ body {
 
   .animated {
   visibility: visible; }
+
+  .carousel-inner img {
+    height: 100vh;
+    object-fit: cover;
+}
