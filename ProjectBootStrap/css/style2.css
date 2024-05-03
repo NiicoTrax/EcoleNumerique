@@ -4,6 +4,11 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
+a {
+    text-decoration:none;
+    color:white;
+}
+
 .container-fluid, .row {
     height: 100%;
 }
@@ -12,7 +17,7 @@ body, html {
     background-color: #35BC7A;
     width: 100%;
     height: 300px;
-    padding: 40px 20px;
+    padding: 40px 50px;
 }
 
 .buttonprofile {
@@ -21,7 +26,7 @@ body, html {
 	color: white;
 	width: 150px;
 	height: 50px;
-    transition: transform 3s;
+    transition: transform 2s;
 }
 
 .buttonprofile:hover {
@@ -45,7 +50,7 @@ body, html {
 .exprerience {
     background-color: #1E8BC4;
     height: 300px;
-    padding: 100px 100px;
+    padding: 100px 130px;
     font-size: 40px;
     transition: transform .1s;
 }
@@ -57,7 +62,7 @@ body, html {
 .social {
     background-color: #F86925;
     height: 300px;
-    padding: 100px 90px;
+    padding: 100px 120px;
     font-size: 40px;
     transition: transform .1s;
 }
@@ -69,7 +74,7 @@ body, html {
 .education {
     background-color: #F15A49;
     height: 300px;
-    padding: 100px 110px;
+    padding: 100px 140px;
     font-size: 40px;
     transition: transform .1s;
 }
@@ -81,7 +86,7 @@ body, html {
 .contact {
         background-color: #1e8bc4;
         height: 300px;
-        padding: 100px 120px;
+        padding: 100px 140px;
         font-size: 40px;
         transition: transform .1s;
 }
@@ -89,7 +94,7 @@ body, html {
 .blog {
     background-color: #35BC7A;
     height: 300px;
-    padding: 100px 120px;
+    padding: 100px 200px;
     font-size: 40px;
     color: white;
     transition: transform .1s;
@@ -98,7 +103,7 @@ body, html {
 .portfolio {    
     background-color: #F86925;
     height: 300px;
-    padding: 100px 110px;
+    padding: 100px 180px;
     font-size: 40px;
     color: white;
     transition: transform .1s;
@@ -112,63 +117,69 @@ body, html {
 	margin: 10px;
 }
 
-.carousel-item img {
-    width: 50%;
+.carousel-inner img {
     height: 900px;
-    object-fit: cover; 
+}
+
+i {
+    transition: transform 3s;
+}
+
+i:hover {
+    transform: rotate(360deg); 
 }
 
 .profile:hover{
-    -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-    background-color: rgb(255, 0, 0);
+    -ms-transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    background-color: aqua;
 }
 
 .exprerience:hover{
-    -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-    background-color: red;
+    -ms-transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    background-color: aqua;
 }
 
 .education:hover{
-    -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-    background-color: red;
+    -ms-transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    background-color: aqua;
 }
 
 
 .blog:hover{
-    -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-    background-color: red;
+    -ms-transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    background-color: aqua;
 }
 
 .social:hover{
-    -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-    background-color: red;
+    -ms-transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    background-color: aqua;
 }
 
 .contact:hover{
-    -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-    background-color: red;
+    -ms-transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    background-color: aqua;
 }
 
 .portfolio:hover{
-    -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-    background-color: red;
+    -ms-transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    background-color: aqua;
 }
 
-    @media only screen and  (max-width: 769px)
+    @media only screen and  (max-width: 767px)
     { 
 
         .exprerience {
@@ -179,19 +190,19 @@ body, html {
 
         .education {
             height: 300px;
-            padding: 100px 50px;
+            padding: 100px 80px;
             width: 100%;
         }
 
         .social {
             height: 300px;
-            padding: 100px 35px;
+            padding: 100px 50px;
             width: 100%;
         }
 
         .contact {
             height: 300px;
-            padding: 100px 60px;
+            padding: 100px 80px;
             width: 100%;
         }
 
@@ -206,4 +217,44 @@ body, html {
             padding: 100px 160px;
             width: 100%;
         }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1420px)
+{ 
+
+    .exprerience {
+        height: 300px;
+        padding: 100px 50px;
+        width: 100%;
+    }
+
+    .education {
+        height: 300px;
+        padding: 100px 50px;
+        width: 100%;
+    }
+
+    .social {
+        height: 300px;
+        padding: 100px 30px;
+        width: 100%;
+    }
+
+    .contact {
+        height: 300px;
+        padding: 100px 60px;
+        width: 100%;
+    }
+
+    .blog {
+        height: 300px;
+        padding: 100px 100px;
+        width: 100%;
+    }
+
+    .portfolio {
+        height: 300px;
+        padding: 100px 80px;
+        width: 100%;
+    }
 }
