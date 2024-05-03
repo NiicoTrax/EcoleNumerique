@@ -3,52 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project BootStrap - Bradley Cooper</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style2.css">
-    <title>Bradley Cooper Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="css/style2.css" rel="stylesheet">
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">
-            <!-- Sidebar -->
-            <div class="col-7 px-0">
-                <div class="sidebar">
-                    <div class="header p-3">
+            <!-- Colonne de gauche -->
+            <div class="col-md-4 p-0">
+                <div class="d-flex flex-column  text-light">
+                    <div class="colo1">
+                        <div class="presentation">
                         <h1>Bradley Cooper</h1>
-                        <p>I'm a Graphic Designer, Coder & Entrepreneur. Take a look at my portfolio to see what I was working.</p>
+                        <p>I'm a Graphic Designer, Coder & Entrepreneur. <br> Take a look at my portfolio to see what I was working.</p>
+                        <button class="buttonprofile"><i class="fa-solid fa-download" style="color: #ffffff;"></i> RESUME</button> <button class="buttonprofile"><i class="fa-solid fa-info" style="color: #ffffff;"></i> CONTACT</button>
                     </div>
-                    <div class="d-flex flex-wrap">
-                        <div class="box orange"><span class="icon">&#128100;</span>Profile</div>
-                        <div class="box red"><span class="icon">&#127891;</span>Education</div>
-                        <div class="box green"><span class="icon">&#128188;</span>Experience</div>
-                        <div class="box blue"><span class="icon">&#128240;</span>Blog</div>
-                        <div class="box teal"><span class="icon">&#128101;</span>Contact</div>
-                        <div class="box purple"><span class="icon">&#128202;</span>Portfolio</div>
-                        <div class="box pink"><span class="icon">&#128221;</span>Social Menu</div>
+                    </div>
+                    <div class="row gx-0">
+                        <div class="col-12">
+                        </div>
+                        <div class="col-6">
+                            <div class="exprerience">
+                                <p><i class="fa-solid fa-battery-quarter fa-2xl" style="color: #ffffff;"></i></p>
+                                <h5>EXPERIENCE</h5>
+                        </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="education">
+                            <p><i class="fa-solid fa-book fa-2xl" style="color: #ffffff;"></i></p>
+                            <h5>EDUCATION</h5>
+                        </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="social">
+                            <p><i class="fa-solid fa-plus fa-2xl" style="color: #ffffff;"></i></p>
+                            <h5>SOCIAL MENU</h5>
+                        </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="contact">
+                            <p><i class="fa-solid fa-paper-plane fa-2xl" style="color: #ffffff;"></i></p>
+                            <h5>CONTACT</h5>
+                            
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Image Slider -->
-            <div class="col-5 px-0">
-                <div id="carouselExampleControls" class="carousel slide h-100" data-bs-ride="carousel">
+
+            <div class="col-md-2 p-0">
+                <div class="d-flex flex-column text-center text-light">
+                    <div class="col-15">
+                        <div class="profile">
+                            <p><i class="fa-regular fa-address-card fa-2xl" style="color: #ffffff;"></i></p> 
+                            <h5>PROFILE</h5>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-15">
+                    <div class="blog">
+                    <p><i class="fa-regular fa-pen-to-square fa-2xl" style="color: #ffffff;"></i></p>
+                    <h5>BLOG</h5>
+                </div>
+                </div>
+                <div class="col-15">
+                    <div class="portfolio">
+                    <p><i class="fa-solid fa-desktop fa-2xl" style="color: #ffffff;"></i></p>
+                    <h5>PORTFOLIO</h5>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 p-0">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="https://fr.web.img6.acsta.net/pictures/19/02/21/10/42/0074317.jpg" class="d-block w-100" alt="...">
+                            <img src="https://fr.web.img6.acsta.net/pictures/19/02/21/10/42/0074317.jpg" class="d-block w-100" alt="Image 1">
                         </div>
                         <div class="carousel-item">
-                            <img src="https://sf1.closermag.fr/wp-content/uploads/closermag/2023/04/Bradley-Cooper.jpg" class="d-block w-100" alt="...">
+                            <img src="https://sf1.closermag.fr/wp-content/uploads/closermag/2023/04/Bradley-Cooper.jpg" class="d-block w-100" alt="Image 2">
                         </div>
                         <div class="carousel-item">
-                            <img src="https://www.usmagazine.com/wp-content/uploads/2024/02/Bradley-Cooper-2024-Bio-Page.jpg?w=800&h=1421&crop=1&quality=86&strip=all" class="d-block w-100" alt="...">
+                            <img src="https://www.usmagazine.com/wp-content/uploads/2024/02/Bradley-Cooper-2024-Bio-Page.jpg?w=800&h=1421&crop=1&quality=86&strip=all" class="d-block w-100" alt="Image 3">
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
+                        <span class="visually-hidden">Précédent</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
+                        <span class="visually-hidden">Suivant</span>
                     </button>
                 </div>
             </div>
