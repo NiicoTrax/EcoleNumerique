@@ -5,6 +5,9 @@ body {
 header {
     background: #3768ba;
     padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
 }
 
 a {
@@ -16,6 +19,22 @@ header h1 {
     color:#fff;
     text-align: center;
     font-family: sans-serif;
+    flex-grow: 1;
+}
+
+header > a {
+    flex-grow: 1;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+header nav a {
+    font-family: sans-serif;
+    color: white;
 }
 
 .container {
@@ -44,7 +63,9 @@ ul {
     list-style-type: none;
     padding-left: 0;
     display: flex;
-    justify-content: space-around;
+    overflow: auto;
+    justify-content: flex-start;
+    gap: 15px;
 }
 
 ul li {
@@ -76,6 +97,8 @@ ul li.active a {
 .event-container {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 50px 30px;
 }
 
 .event-container img {
@@ -114,7 +137,7 @@ hr {
 }
 
 .eventDetail h2 {
-    margin-bottom: 0;
+    margin-bottom: 30px;
 }
 
 .eventDetail h3 {
@@ -140,4 +163,68 @@ table th {
 
 table td {
     text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-family: sans-serif;
+    text-align: left;
+    font-size: 15px;
+}
+
+form input {
+    width: 100%;
+    margin: 0;
+    margin-top: 0.35rem;
+    border: 1px solid #c2c0c0;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 1.35rem;
+    box-sizing: border-box;
+}
+
+form .event-button {
+    width: 100%;
+    cursor: pointer;
+}
+
+#registrationContainer {
+    margin-top: 80px;
+}
+
+@media only screen and (min-width: 600px) {
+
+    .event-container {
+        gap: 50px 14px;
+    }
+
+}
+
+@media only screen and (min-width: 769px) {
+
+    header nav {
+        flex-direction: row;
+    }
+
+    ul {
+    justify-content: space-around;
+    gap: 0;
+    }
+
+    form input {
+        width: 80%;
+    }
+
+    form .event-button {
+        width: 80%;
+    }
+
+    .event-container {
+        gap: 50px 30px;
+    }
+
 }
