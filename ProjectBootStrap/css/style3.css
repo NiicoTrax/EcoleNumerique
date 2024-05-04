@@ -12,11 +12,24 @@ a {
 
 .container-fluid, .row {
     display: flex;
+    flex-direction: column;
     height: 100%;
 }
 
-i {
+.container-fluid {
+    margin: auto;
+}
+
+.work-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     align-content: center;
+}
+
+
+.col-6 {
+    width: 100%;
 }
 
 .colo1 {
@@ -30,7 +43,7 @@ i {
 	background-color: #2d303300;
 	border: 2px solid white;
 	color: white;
-	width: 150px;
+	width: 130px;
 	height: 50px;
     transition: transform 2s;
 }
@@ -56,7 +69,7 @@ i {
 .exprerience {
     background-color: #1E8BC4;
     height: 300px;
-    padding: 100px 130px;
+    padding: 100px 125px;
     font-size: 40px;
     transition: transform .1s;
 }
@@ -68,19 +81,19 @@ i {
 .social {
     background-color: #F86925;
     height: 300px;
-    padding: 100px 120px;
+    padding: 100px 150px;
     font-size: 40px;
     transition: transform .1s;
 }
 
 .social i {
-    padding: 0px 30px;
+    padding: 0px 0px;
 }
 
 .education {
     background-color: #F15A49;
     height: 300px;
-    padding: 100px 140px;
+    padding: 100px 130px;
     font-size: 40px;
     transition: transform .1s;
 }
@@ -100,7 +113,7 @@ i {
 .blog {
     background-color: #35BC7A;
     height: 300px;
-    padding: 100px 200px;
+    padding: 100px 150px;
     font-size: 40px;
     color: white;
     transition: transform .1s;
@@ -109,7 +122,7 @@ i {
 .portfolio {    
     background-color: #F86925;
     height: 300px;
-    padding: 100px 180px;
+    padding: 100px 130px;
     font-size: 40px;
     color: white;
     transition: transform .1s;
@@ -185,298 +198,60 @@ i:hover {
     background-color: aqua;
 }
 
-@media only screen and (max-width: 800px)
-{ 
 
-    .container-fluid .row{
-        flex-direction: column;
-        flex-wrap: nowrap;
+@media only screen and (min-width: 769px) {
+
+    .container-fluid, .row {
+        display: flex;
+        flex-direction: unset;
+        height: 100%;
     }
 
-    .buttonprofile {
-        width: 110px;
-        height: 50px;
+    .col-6 {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .container-fluid, .row {
+        display: flex;
+        flex-direction: unset;
+        height: 100%;
+        width: 100%;
     }
 
-    .colo1 {
-        width: 380px;
-        height: 300px;
-        padding: 40px 50px;
+    .carousel-inner {
+        width: 498px;
+        height: 100%;
     }
 
-    .exprerience {
-        height: 300px;
+    .col-6 {
+        width: 50%;
+    }
+
+    .portfolio {    
         padding: 100px 50px;
-        width: 100%;
-    }
 
-    .education {
-        height: 300px;
-        padding: 100px 50px;
-        width: 100%;
-    }
-
-    .social {
-        height: 300px;
-        padding: 100px 30px;
-        width: 100%;
     }
 
     .contact {
-        height: 300px;
-        padding: 100px 60px;
-        width: 100%;
+        padding: 100px 50px;
+    }
+
+    .social {
+        padding: 100px 50px;
+    }
+
+    .exprerience {
+        padding: 100px 30px;
+    }
+
+    .education {
+        padding: 100px 40px;
     }
 
     .blog {
-        height: 300px;
-        padding: 100px 100px;
-        width: 100%;
+        padding: 100px 70px;
     }
-
-    .portfolio {
-        height: 300px;
-        padding: 100px 80px;
-        width: 100%;
-    }
-}
-
-@media only screen and  (max-width: 769px)
-    { 
-
-        .container-fluid .row{
-            flex-direction: column;
-            flex-wrap: nowrap;
-        }
-
-        .buttonprofile {
-            width: 130px;
-            height: 50px;
-        }
-
-        .colo1 {
-            width: 765px;
-            height: 300px;
-            padding: 40px 50px;
-        }
-
-
-        .exprerience {
-            height: 300px;
-            padding: 100px 340px;
-            width: 765px;
-        }
-
-        .education {
-            height: 300px;
-            padding: 100px 340px;
-            width: 765px;
-        }
-
-        .social {
-            height: 300px;
-            padding: 100px 310px;
-            width: 765px;
-        }
-
-        .contact {
-            height: 300px;
-            padding: 100px 340px;
-            width: 765px;
-        }
-
-        .blog {
-            height: 300px;
-            padding: 100px 340px;
-            width: 765px;
-        }
-
-        .portfolio {
-            height: 300px;
-            padding: 100px 320px;
-            width: 765px;
-        }
-
-        .profile {
-            width: 765px;
-        }
-
-        .carousel-inner {
-            width: 765px;
-        }
-}
-
-@media only screen and  (max-width: 420px)
-    { 
-
-        .container-fluid .row{
-            flex-direction: column;
-            flex-wrap: nowrap;
-        }
-
-        .buttonprofile {
-            width: 130px;
-            height: 50px;
-        }
-
-        .colo1 {
-            width: 380px;
-            height: 300px;
-            padding: 40px 50px;
-        }
-
-
-        .exprerience {
-            height: 300px;
-            padding: 100px 130px;
-            width: 375px;
-        }
-
-        .education {
-            height: 300px;
-            padding: 100px 130px;
-            width: 375px;
-        }
-
-        .social {
-            height: 300px;
-            padding: 100px 120px;
-            width: 375px;
-        }
-
-        .contact {
-            height: 300px;
-            padding: 100px 150px;
-            width: 375px;
-        }
-
-        .blog {
-            height: 300px;
-            padding: 100px 150px;
-            width: 375px;
-        }
-
-        .portfolio {
-            height: 300px;
-            padding: 100px 130px;
-            width: 375px;
-        }
-
-        .profile {
-            width: 375px;
-        }
-
-        .carousel-inner {
-            width: 375px 
-        }
-}
-
-@media only screen and  (max-width: 431px)
-    { 
-
-        .container-fluid .row{
-            flex-direction: column;
-            flex-wrap: nowrap;
-            width: 100%;
-        }
-
-        .buttonprofile {
-            width: 130px;
-            height: 50px;
-        }
-
-        .colo1 {
-            width: 430px;
-            height: 300px;
-            padding: 40px 50px;
-        }
-
-
-        .exprerience {
-            height: 300px;
-            padding: 100px 130px;
-            width: 430px;
-        }
-
-        .education {
-            height: 300px;
-            padding: 100px 130px;
-            width: 430px;
-        }
-
-        .social {
-            height: 300px;
-            padding: 100px 120px;
-            width: 430px;
-        }
-
-        .contact {
-            height: 300px;
-            padding: 100px 150px;
-            width: 430px;
-        }
-
-        .blog {
-            height: 300px;
-            padding: 100px 150px;
-            width: 430px;
-        }
-
-        .portfolio {
-            height: 300px;
-            padding: 100px 130px;
-            width: 430px;
-        }
-
-        .profile {
-            width: 430px;
-        }
-
-        .carousel-inner {
-            width: 430px;
-        }
-}
-
-.container-fluid, .row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-    .col-md-5, .col-md-3, .col-md-4 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .col-md-5 {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-    .col-md-3, .col-md-4 {
-        flex: 0 0 25%;
-        max-width: 25%;
-    }
-}
-
-@media (min-width: 1025px) {
-    .col-md-5 {
-        flex: 0 0 42%;
-        max-width: 42%;
-    }
-    .col-md-3 {
-        flex: 0 0 25%;
-        max-width: 25%;
-    }
-    .col-md-4 {
-        flex: 0 0 33%;
-        max-width: 33%;
-    }
-}
-
-i {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
 }
