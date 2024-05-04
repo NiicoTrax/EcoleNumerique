@@ -194,6 +194,16 @@ i:hover {
     background: radial-gradient(blue, rgb(108, 213, 255));
 }
 
+.work-box {
+    transition: transform .1s;
+}
+
+.work-box:hover {
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
 
 @media only screen and (min-width: 769px) {
 
