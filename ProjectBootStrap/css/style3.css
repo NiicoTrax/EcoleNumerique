@@ -148,21 +148,21 @@ i:hover {
     -ms-transform: scale(1.0);
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
-    background: radial-gradient(blue, rgb(108, 213, 255));
+    background: radial-gradient(#ff9900, rgb(255, 243, 136));
 }
 
 .exprerience:hover{
     -ms-transform: scale(1.0);
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
-    background: radial-gradient(blue, rgb(108, 213, 255));
+    background: radial-gradient(#1E8BC4, rgb(108, 213, 255));
 }
 
 .education:hover{
     -ms-transform: scale(1.0);
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
-    background: radial-gradient(blue, rgb(108, 213, 255));
+    background: radial-gradient(#F15A49, rgb(255, 153, 121));
 }
 
 
@@ -170,28 +170,28 @@ i:hover {
     -ms-transform: scale(1.0);
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
-    background: radial-gradient(blue, rgb(108, 213, 255));
+    background: radial-gradient(#35BC7A, rgb(145, 255, 202));
 }
 
 .social:hover{
     -ms-transform: scale(1.0);
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
-    background: radial-gradient(blue, rgb(108, 213, 255));
+    background: radial-gradient(#F86925, #ffab84);
 }
 
 .contact:hover{
     -ms-transform: scale(1.0);
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
-    background: radial-gradient(blue, rgb(108, 213, 255));
+    background: radial-gradient(#1E8BC4, rgb(108, 213, 255));
 }
 
 .portfolio:hover{
     -ms-transform: scale(1.0);
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
-    background: radial-gradient(blue, rgb(108, 213, 255));
+    background: radial-gradient(#F86925, #ffab84);
 }
 
 .work-box {
