@@ -92,15 +92,17 @@ h1,h2,h3,h4,h5,h6 {
   text-transform: uppercase;
   transition: 0.3s;
   color: #fff;
-  background: #27a776;
+  background: #ff0000;
+  transition-delay: 2s;
 }
 
 .page-header .cta-btn:hover {
   background: #2cbc85;
+  rotate: 380deg;
 }
 
 /*--------------------------------------------------------------
-# Scroll top button
+# Scroll Bouton
 --------------------------------------------------------------*/
 .scroll-top {
   position: fixed;
@@ -563,7 +565,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .services .service-item:hover:before {
-  background: #27a776;
+  background: #a05a18;
   right: 0;
   top: 0;
   width: 100%;
@@ -940,10 +942,12 @@ h1,h2,h3,h4,h5,h6 {
   transition: 0.3s;
   color: #fff;
   background: #27a776;
+  transition: background 5s, rotate 3s;
 }
 
 .header2 .btn-get-started:hover {
   background: #2cbc85;
+  rotate: 360deg;
 }
 
 @media (max-width: 768px) {
