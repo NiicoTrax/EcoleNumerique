@@ -1,7 +1,7 @@
 
-var myVar  = 'Bonjour cher inconnue !';
+var myVar  = 'Bonjour cher inconnu !';
 
-myVar = "Bonjour cher Niico"
+myVar = "Bonjour cher Joe"
 
 /* Le code suivant va modifier la propriété innerHTML de l'élément myDiv et lui attribuer la valeur de myVar */
 
