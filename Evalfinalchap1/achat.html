@@ -69,11 +69,11 @@
       <div class="container">
         <div class="row justify-content-center mt-4">
           <div class="col-lg-9">
-            <form action="" method="post" role="form" class="php-email-form">
+            <form action="mailto:nicolaslegaye@life.fr" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                     <label for="choiximage">Sélectionnez votre images :</label>
-                    <select name="choiximage" id="choiximage">
+                    <select name="choiximage" id="choiximage"  required>
                       <option>Nature</option>
                       <option>Animaux</option>
                       <option>Architecture</option>
@@ -82,7 +82,7 @@
                   </div>
                   <div class="col-md-6 form-group mt-3 mt-md-0">
                     <label for="numeroimage">Selectionner le numéro de votre image :</label>
-                    <select name="numeroimage" id="numeroimage">
+                    <select name="numeroimage" id="numeroimage"  required>
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -106,17 +106,17 @@
                     </select>
                   </div>
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Votre nom" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Votre Email" required>
                 </div>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Sujet" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                <textarea class="form-control" name="message" rows="5" placeholder="Votre message" required></textarea>
               </div>
               <div class="my-3">
                 <div class="loading">Chargement</div>
