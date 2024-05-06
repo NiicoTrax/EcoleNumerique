@@ -857,6 +857,16 @@ h1,h2,h3,h4,h5,h6 {
   background: rgba(39, 167, 118, 0.8);
 }
 
+#choiximage {
+  background-color: black;
+  color:white;
+}
+
+#numeroimage {
+  background-color: black;
+  color:white;
+}
+
 @keyframes animate-loading {
   0% {
     transform: rotate(0deg);
