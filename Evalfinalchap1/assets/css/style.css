@@ -93,12 +93,11 @@ h1,h2,h3,h4,h5,h6 {
   transition: 0.3s;
   color: #fff;
   background: #ff0000;
-  transition-delay: 2s;
+  transition: background-color 4s;
 }
 
 .page-header .cta-btn:hover {
-  background: #2cbc85;
-  rotate: 380deg;
+  background-color: #ffa600;
 }
 
 /*--------------------------------------------------------------
@@ -920,7 +919,7 @@ h1,h2,h3,h4,h5,h6 {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #27a776;
+  background: #ff0000;
   z-index: -1;
 }
 
@@ -942,11 +941,11 @@ h1,h2,h3,h4,h5,h6 {
   transition: 0.3s;
   color: #fff;
   background: #27a776;
-  transition: background 5s, rotate 3s;
+  transition: background-color 4s, rotate 3s;
 }
 
 .header2 .btn-get-started:hover {
-  background: #2cbc85;
+  background-color: #ff0000;
   rotate: 360deg;
 }
 
