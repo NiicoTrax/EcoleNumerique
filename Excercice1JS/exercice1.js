@@ -1,2 +1,2 @@
 
-document.getElementById('myDiv').innerHTML = "Mon texte inséré en utilisant javascript";
+document.getElementById('myDiv').innerHTML = "Bonjour !";
