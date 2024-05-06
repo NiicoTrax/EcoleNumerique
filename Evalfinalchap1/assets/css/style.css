@@ -14,12 +14,7 @@ a:hover {
   text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
   font-family: "Inter", sans-serif;
 }
 
@@ -61,7 +56,7 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Header dans les autres pages 
+# Header dans les autres pages (PRESENTATION DES AUTRES PAGES)
 --------------------------------------------------------------*/
 .page-header {
   padding: 120px 0 60px 0;
@@ -740,9 +735,9 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# PRESENTATION PAGE ACCUEIL & PRESENTATION AUTRES PAGES
+# PRESENTATION PAGE ACCUEIL
 --------------------------------------------------------------*/
-.hero {
+.header2 {
   width: 100%;
   min-height: 30vh;
   background: #000;
@@ -751,7 +746,7 @@ h6 {
   padding: 140px 0 60px 0;
 }
 
-.hero h2 {
+.header2 h2 {
   margin: 0 0 10px 0;
   font-size: 38px;
   font-weight: 700;
@@ -759,14 +754,14 @@ h6 {
   font-family: "Cardo", sans-serif;
 }
 
-.hero h2 span {
+.header2 h2 span {
   position: relative;
   z-index: 1;
   padding: 0 5px;
   display: inline-block;
 }
 
-.hero h2 span:before {
+.header2 h2 span:before {
   content: "";
   position: absolute;
   height: 50%;
@@ -777,13 +772,13 @@ h6 {
   z-index: -1;
 }
 
-.hero p {
+.header2 p {
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 30px;
   font-size: 18px;
 }
 
-.hero .btn-get-started {
+.header2 .btn-get-started {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -797,12 +792,12 @@ h6 {
   background: #27a776;
 }
 
-.hero .btn-get-started:hover {
+.header2 .btn-get-started:hover {
   background: #2cbc85;
 }
 
 @media (max-width: 768px) {
-  .hero h2 {
+  .header2 h2 {
     font-size: 32px;
   }
 }
