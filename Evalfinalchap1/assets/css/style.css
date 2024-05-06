@@ -447,22 +447,22 @@ h1,h2,h3,h4,h5,h6 {
 /*--------------------------------------------------------------
 # Toute les pages Galeries
 --------------------------------------------------------------*/
-.gallery {
+.galerie {
   margin-top: 40px;
 }
 
-.gallery .gallery-item {
+.galerie .galerie-item {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
 }
 
-.gallery .gallery-item img {
+.galerie .galerie-item img {
   transition: 0.3s;
   height: 100%;
 }
 
-.gallery .gallery-links {
+.galerie .galerie-links {
   position: absolute;
   inset: 0;
   opacity: 0;
@@ -471,8 +471,8 @@ h1,h2,h3,h4,h5,h6 {
   z-index: 3;
 }
 
-.gallery .gallery-links .preview-link,
-.gallery .gallery-links .details-link {
+.galerie .galerie-links .preview-link,
+.galerie .galerie-links .details-link {
   font-size: 20px;
   color: rgba(255, 255, 255, 0.5);
   transition: 0.3s;
@@ -480,26 +480,26 @@ h1,h2,h3,h4,h5,h6 {
   margin: 30px 8px 0 8px;
 }
 
-.gallery .gallery-links .preview-link:hover,
-.gallery .gallery-links .details-link:hover {
+.galerie .galerie-links .preview-link:hover,
+.galerie .galerie-links .details-link:hover {
   color: #fff;
 }
 
-.gallery .gallery-links .details-link {
+.galerie .galerie-links .details-link {
   font-size: 30px;
   line-height: 0;
 }
 
-.gallery .gallery-item:hover .gallery-links {
+.galerie .galerie-item:hover .galerie-links {
   opacity: 1;
 }
 
-.gallery .gallery-item:hover .preview-link,
-.gallery .gallery-item:hover .details-link {
+.galerie .galerie-item:hover .preview-link,
+.galerie .galerie-item:hover .details-link {
   margin-top: 0;
 }
 
-.gallery .gallery-item:hover img {
+.galerie .galerie-item:hover img {
   transform: scale(1.1);
 }
 
@@ -514,9 +514,9 @@ h1,h2,h3,h4,h5,h6 {
 
 
 /*--------------------------------------------------------------
-# PAGE SERVICES
+# PAGE PRIX
 --------------------------------------------------------------*/
-.services .service-item {
+.prix .prix-item {
   padding: 50px 30px;
   transition: all ease-in-out 0.4s;
   background: #161718;
@@ -525,7 +525,7 @@ h1,h2,h3,h4,h5,h6 {
   z-index: 1;
 }
 
-.services .service-item:before {
+.prix .prix-item:before {
   content: "";
   position: absolute;
   background: #1d1f20;
@@ -534,7 +534,7 @@ h1,h2,h3,h4,h5,h6 {
   z-index: -1;
 }
 
-.services .service-item i {
+.prix .prix-item i {
   background: #27a776;
   color: #fff;
   font-size: 24px;
@@ -547,24 +547,24 @@ h1,h2,h3,h4,h5,h6 {
   border-radius: 50%;
 }
 
-.services .service-item h4 {
+.prix .prix-item h4 {
   font-weight: 600;
   margin: 15px 0 0 0;
   transition: 0.3s;
   font-size: 20px;
 }
 
-.services .service-item h4 a {
+.prix .prix-item h4 a {
   color: #fff;
 }
 
-.services .service-item p {
+.prix .prix-item p {
   line-height: 24px;
   font-size: 14px;
   margin: 15px 0 0 0;
 }
 
-.services .service-item:hover:before {
+.prix .prix-item:hover:before {
   background: #a05a18;
   right: 0;
   top: 0;
@@ -573,38 +573,38 @@ h1,h2,h3,h4,h5,h6 {
   border-radius: 0px;
 }
 
-.services .service-item:hover h4 a,
-.services .service-item:hover p {
+.prix .prix-item:hover h4 a,
+.prix .prix-item:hover p {
   color: #fff;
 }
 
-.services .service-item:hover i {
+.prix .prix-item:hover i {
   background: #fff;
   color: #27a776;
 }
 
 /*--------------------------------------------------------------
-# PAGE SERVICE - PRIX BAS DE PAGE
+# PAGE PRIX - PRIX BAS DE PAGE
 --------------------------------------------------------------*/
-.pricing {
+.infoprix {
   margin-top: 80px;
 }
 
-.pricing .pricing-item {
+.infoprix .infoprix-item {
   border-bottom: 1px dashed #474a4d;
   width: 100%;
   height: 100%;
   padding: 0 0 15px 0;
 }
 
-.pricing .pricing-item h3 {
+.infoprix .infoprix-item h3 {
   margin: 0;
   font-size: 18px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.6);
 }
 
-.pricing .pricing-item h4 {
+.infoprix .infoprix-item h4 {
   margin: 0;
   font-size: 16px;
 }
