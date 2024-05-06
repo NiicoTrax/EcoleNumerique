@@ -19,12 +19,11 @@
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center  me-auto me-lg-0">
-        <i class="bi bi-camera"></i>
+        <i class="bi bi-camera2"></i>
         <h1>Nom du Site</h1>
       </a>
-      
+
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.html" class="active">Accueil</a></li>
@@ -47,7 +46,6 @@
         <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
       </div>
-
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
     </div>
@@ -58,91 +56,79 @@
       <div class="container position-relative">
         <div class="row d-flex justify-content-center">
           <div class="col-lg-6 text-center">
-            <h2>Information sur nos prix</h2>
+            <h2>Acheter une image </h2>
             <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
-            <a class="cta-btn" href="achat.html">Acheter</a>
           </div>
         </div>
       </div>
     </div>
 
 
-    <section id="services" class="services">
+    <section id="achat" class="achat">
       <div class="container">
-        <div class="row gy-4">
-          <div class="col-xl-3 col-md-6 d-flex">
-            <div class="service-item position-relative">
-              <i class="bi bi-brightness-alt-high-fill"></i>
-              <h4><a href="" class="stretched-link">Nature</a></h4>
-              <p>Choisir votre image à acheter (1 à 16)</p>
-            </div>
-          </div>
-          <div class="col-xl-3 col-md-6 d-flex">
-            <div class="service-item position-relative">
-              <i class="bi bi-bank"></i>
-              <h4><a href="" class="stretched-link">Architecture</a></h4>
-              <p>Choisir votre image à acheter (1 à 14)</p>
-            </div>
-          </div>
-          <div class="col-xl-3 col-md-6 d-flex">
-            <div class="service-item position-relative">
-              <i class="bi bi-bug"></i>
-              <h4><a href="" class="stretched-link">Animaux</a></h4>
-              <p>Choisir votre image à acheter (1 à 20)</p>
-            </div>
-          </div>
-          <div class="col-xl-3 col-md-6 d-flex">
-            <div class="service-item position-relative">
-              <i class="bi bi-8-circle"></i>
-              <h4><a href="" class="stretched-link">Sports</a></h4>
-              <p>Choisir votre image à acheter (1 à 15)</p>
-            </div>
+        <div class="row justify-content-center mt-4">
+          <div class="col-lg-9">
+            <form action="" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                    <label for="choiximage">Sélectionnez votre images :</label>
+                    <select name="choiximage" id="choiximage">
+                      <option>Nature</option>
+                      <option>Animaux</option>
+                      <option>Architecture</option>
+                      <option>Sports</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <label for="numeroimage">Selectionner le numéro de votre image :</label>
+                    <select name="numeroimage" id="numeroimage">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                      <option>11</option>
+                      <option>12</option>
+                      <option>13</option>
+                      <option>14</option>
+                      <option>15</option>
+                      <option>16</option>
+                      <option>17</option>
+                      <option>18</option>
+                      <option>19</option>
+                      <option>20</option>
+                    </select>
+                  </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Chargement</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Votre message a bien été envoyer. Merci!</div>
+              </div>
+              <div class="text-center"><button type="submit">Envoyer votre achat</button></div>
+            </form>
           </div>
         </div>
       </div>
     </section>
-
-    <section id="pricing" class="pricing">
-      <div class="container">
-        <div class="section-header">
-          <h2>Prix</h2>
-          <p>Voici nos prix :</p>
-        </div>
-        <div class="row gy-4 gx-lg-5">
-          <div class="col-lg-6">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>Portrait</h3>
-              <h4>50.00 €</h4>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>Nature</h3>
-              <h4>100 €</h4>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>Sports</h3>
-              <h4>70 €</h4>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>Architectures</h3>
-              <h4>120.00 €</h4>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>Animaux</h3>
-              <h4>70 €</h4>
-            </div>
-          </div>
-        </div>
-    </section>
   </main>
-
 
   <footer id="footer" class="footer">
     <div class="container">
@@ -155,7 +141,7 @@
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 
-
+ 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>

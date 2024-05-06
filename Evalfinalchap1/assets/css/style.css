@@ -735,6 +735,139 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 /*--------------------------------------------------------------
+# Page ACHAT
+--------------------------------------------------------------*/
+.achat .info-item+.info-item {
+  margin-top: 40px;
+}
+
+.achat .info-item i {
+  font-size: 20px;
+  color: #27a776;
+  float: left;
+  width: 44px;
+  height: 44px;
+  background: #222425;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  margin-right: 15px;
+}
+
+.achat .info-item h4 {
+  padding: 0;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.achat .info-item p {
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #fff;
+}
+
+.achat .info-item:hover i {
+  background: #27a776;
+  color: #fff;
+}
+
+.achat .php-email-form {
+  width: 100%;
+}
+
+.achat .php-email-form .form-group {
+  padding-bottom: 8px;
+}
+
+.achat .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #df1529;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.achat .php-email-form .error-message br+br {
+  margin-top: 25px;
+}
+
+.achat .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #27a776;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.achat .php-email-form .loading {
+  display: none;
+  background: #161718;
+  text-align: center;
+  padding: 15px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.achat .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #27a776;
+  border-top-color: #161718;
+  animation: animate-loading 1s linear infinite;
+}
+
+.achat .php-email-form input,
+.achat .php-email-form textarea {
+  border-radius: 4px;
+  box-shadow: none;
+  font-size: 14px;
+  background-color: #161718;
+  border: 1px solid #2e3133;
+  color: #fff;
+}
+
+.achat .php-email-form input {
+  height: 44px;
+}
+
+.achat .php-email-form textarea {
+  padding: 10px 12px;
+}
+
+.achat .php-email-form button[type=submit] {
+  background: #27a776;
+  border: 0;
+  padding: 10px 35px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.achat .php-email-form button[type=submit]:hover {
+  background: rgba(39, 167, 118, 0.8);
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
 # PRESENTATION PAGE ACCUEIL
 --------------------------------------------------------------*/
 .header2 {
