@@ -1,1 +1,4 @@
-// Le code ici
+var alerte = "Oups ceci est une alerte !";
+
+alert(alerte);
+
