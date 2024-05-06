@@ -1,17 +1,17 @@
 
 
-var firstName =  'Prénom';
+var firstName =  'Nicolas';
 
-document.getElementById('firstName').innerHTML ='Nicolas';
+document.getElementById('firstName').innerHTML =firstName;
 
 
 
-var age = 'votre age';
+var age = 30;
 
-document.getElementById('age').innerHTML ='30';
+document.getElementById('age').innerHTML =age;
 
 
 
 
 var addition = 2;
-document.getElementById('ageFuture').innerHTML =    30 + addition;
+document.getElementById('ageFuture').innerHTML =age+ addition;
