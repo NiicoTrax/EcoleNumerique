@@ -27,7 +27,11 @@
                     <script>
                         document.write (eventName)
                     </script>
-                    <p>Description de l'événement</p>
+                    <p>                    
+                        <script>
+                        document.write (eventDescription)
+                        </script>
+                    </p>
                     <h3>Billet</h3>
                     <table>
                         <tr>
@@ -36,12 +40,20 @@
                             <th></th>
                         </tr>
                         <tr>
-                            <td>Billet classique</td>
+                            <td>
+                                <script>
+                                document.write (ticketType1)
+                                </script>
+                            </td>
                             <td>35€</td>
                             <td><a href="purchaseTickets.html" class="event-button">Acheter</a></td>
                         </tr>
                         <tr>
-                            <td>Second Tarif</td>
+                            <td>
+                                <script>
+                                document.write (ticketType2)
+                                </script>
+                            </td>
                             <td>65€</td>
                             <td><a href="purchaseTickets.html" class="event-button">Acheter</a></td>
                         </tr>
