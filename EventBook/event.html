@@ -41,32 +41,10 @@
                             <th></th>
                             <th></th>
                         </tr>
-                        <tr>
-                            <td>
-                                <script>
-                                document.write (ticketType1)
-                                </script>
-                            </td>
-                            <td>
-                                <script>
-                                    document.write (ticketType1Price)
-                                </script>
-                            </td>
-                            <td><a href="purchaseTickets.html" class="event-button">Acheter</a></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <script>
-                                document.write (ticketType2)
-                                </script>
-                            </td>
-                            <td>
-                                <script>
-                                document.write (ticketType2Price)
-                                </script>
-                            </td>
-                            <td><a href="purchaseTickets.html" class="event-button">Acheter</a></td>
-                        </tr>
+                        <script>document.write(displayTicket("Billet classique", 35));</script>
+                        <script>document.write(displayTicket("Billet VIP", 65));</script>
+                        <script>document.write(displayTicket("Billet VIP2", 95));</script>
+                        <script>document.write(displayTicket("Billet enfant", 15));</script>
                     </table>
                 </div>
             </div>
