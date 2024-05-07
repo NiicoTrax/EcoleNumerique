@@ -24,9 +24,11 @@
                 <div>
                     <img src="assets/img/event/concert.jpg" width="150">
                     <time datetime="2024-04-30">30 Avril 2024</time>
+                    <h2>
                     <script>
                         document.write (eventName)
                     </script>
+                    </h2>
                     <p>                    
                         <script>
                         document.write (eventDescription)
@@ -45,7 +47,11 @@
                                 document.write (ticketType1)
                                 </script>
                             </td>
-                            <td>35€</td>
+                            <td>
+                                <script>
+                                    document.write (ticketType1Price)
+                                </script>
+                            </td>
                             <td><a href="purchaseTickets.html" class="event-button">Acheter</a></td>
                         </tr>
                         <tr>
@@ -54,7 +60,11 @@
                                 document.write (ticketType2)
                                 </script>
                             </td>
-                            <td>65€</td>
+                            <td>
+                                <script>
+                                document.write (ticketType2Price)
+                                </script>
+                            </td>
                             <td><a href="purchaseTickets.html" class="event-button">Acheter</a></td>
                         </tr>
                     </table>
