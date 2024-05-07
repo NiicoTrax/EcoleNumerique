@@ -41,10 +41,17 @@
                             <th></th>
                             <th></th>
                         </tr>
-                        <script>document.write(displayTicket("Billet classique", 35));</script>
-                        <script>document.write(displayTicket("Billet VIP", 65));</script>
-                        <script>document.write(displayTicket("Billet VIP2", 95));</script>
-                        <script>document.write(displayTicket("Billet enfant", 15));</script>
+                        <script>
+                            if(eventID == 1)
+                            {
+                            document.write(displayTicket("Billet classique", 35));
+                            document.write(displayTicket("Billet VIP", 65));
+                            }  
+                            else
+                            {
+                            document.write(displayTicket("Billet classique", 35));
+                            }                 
+                        </script>
                     </table>
                 </div>
             </div>

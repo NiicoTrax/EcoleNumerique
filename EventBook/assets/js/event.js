@@ -5,6 +5,10 @@ const ticketType2 = "Billet VIP" ;
 const ticketType1Price = 35 ;
 const ticketType2Price = 65 ;
 
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const eventID = urlParams.get('id');
+
 const displayTicket = function(ticketType, ticketPrice)
 {
     return  `<tr>
