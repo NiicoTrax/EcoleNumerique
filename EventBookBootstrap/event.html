@@ -10,7 +10,6 @@
     </head>
 
     <body>
-        <script src="assets/js/event.js"></script>
         <main class="eventDetail">
             <header>
                 <a href="index.html"><h1>EventBook</h1></a>
@@ -28,16 +27,8 @@
                 <div>
                     <img src="assets/img/event/concert.jpg" width="150">
                     <time datetime="2024-04-30">30 Avril 2024</time>
-                    <h2>
-                    <script>
-                        document.write (eventName)
-                    </script>
-                    </h2>
-                    <p>                    
-                        <script>
-                        document.write (eventDescription)
-                        </script>
-                    </p>
+                    <h2>Nom de l'évenements</h2>
+                    <p>Description de L'évenements</p>
                     <h3>Billet</h3>
                     <table>
                         <tr>
@@ -45,23 +36,21 @@
                             <th></th>
                             <th></th>
                         </tr>
-                        <script>
-                            if(eventID == 1)
-                            {
-                            document.write(displayTicket("Billet classique", 35));
-                            document.write(displayTicket("Billet VIP", 65));
-                            }  
-                            else
-                            {
-                            document.write(displayTicket("Billet classique", 35));
-                            }                 
-                        </script>
+                        <tr>
+                            <th>Billet Classique</th>
+                            <th>35€</th>
+                            <th><a href="#" class="event-button">Acheter</a></th>
+                        </tr>
+                        <tr>
+                            <th>Second Tarif</th>
+                            <th>65€</th>
+                            <th><a href="#" class="event-button">Acheter</a></th>
+                        </tr>
                     </table>
                 </div>
             </div>
 
             <footer>
-
             </footer>
         </main>
     </body>
