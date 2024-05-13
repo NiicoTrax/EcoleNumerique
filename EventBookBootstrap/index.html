@@ -14,8 +14,12 @@
             <header>
                 <h1>EventBook</h1>
                 <nav>
-                    <a href="connexion.html">Se Connecter</a>
-                    <a href="connexion.html#registrationContainer">Créer un compte</a>
+                    <input type="checkbox" id="mobile-menu-button">
+                    <label for="mobile-menu-button" id="mobile-menu-button-label"></label>
+                    <ul>
+                        <li><a href="connexion.html">Se Connecter</a></li>
+                        <li><a href="connexion.html#registrationContainer">Créer un compte</a></li>
+                    </ul>
                 </nav>
             </header>
 
@@ -32,7 +36,7 @@
                 </div>
     
                 <div class="event-container">
-                    <div>        
+                    <div class="animation-progressiveDisplay">        
                         <img src="assets/img/event/concert.jpg" width="150">
                         <h3>Evenement 1</h3>
                         <p>Description du premier événement. <br>Seconde ligne de la description.</p>
@@ -40,7 +44,7 @@
                         <a href="event.html?id=1" class="event-button">En savoir plus</a>
                     </div>
             
-                    <div>
+                    <div class="animation-progressiveDisplay">
                         <img src="assets/img/event/conference.jpg" width="150">
                         <h3>Evenement 2</h3>
                         <p>Description du second événement. <br>Seconde ligne de la description.</p>
