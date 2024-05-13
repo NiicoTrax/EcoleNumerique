@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>EventBook</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.svg">
+        <meta charset="UTF-8">
+        <meta name="description" content="Découvez les évenements à venir">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+
+    <body>
+        <script src="assets/js/event.js"></script>
+        <main class="eventDetail">
+            <header>
+                <a href="index.html"><h1>EventBook</h1></a>
+                <nav>
+                    <a href="connexion.html">Se Connecter</a>
+                    <a href="connexion.html#registrationContainer">Créer un compte</a>
+                </nav>
+            </header>
+
+            <div class="container">
+                <div>
+                    <img src="assets/img/event/concert.jpg" width="150">
+                    <time datetime="2024-04-30">30 Avril 2024</time>
+                    <h2>
+                    <script>
+                        document.write (eventName)
+                    </script>
+                    </h2>
+                    <p>                    
+                        <script>
+                        document.write (eventDescription)
+                        </script>
+                    </p>
+                    <h3>Billet</h3>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <script>
+                            if(eventID == 1)
+                            {
+                            document.write(displayTicket("Billet classique", 35));
+                            document.write(displayTicket("Billet VIP", 65));
+                            }  
+                            else
+                            {
+                            document.write(displayTicket("Billet classique", 35));
+                            }                 
+                        </script>
+                    </table>
+                </div>
+            </div>
+
+            <footer>
+
+            </footer>
+        </main>
+    </body>
+</html>
