@@ -12,8 +12,12 @@
 
     <body>
         <main class="eventDetail">
-            <header>
-                <a href="index.html"><h1>EventBook</h1></a>
+            <header class="container-fluid p-3">
+                <div class="row align-items-baseline">
+                    <div class="col-8 order-2 order-md-1">
+                <a class="text-decoration-none" href="index.html"><h1>EventBook</h1></a>
+                    </div>
+                    <div class="col-4 order-1 order-md-2">
                 <nav>
                     <input type="checkbox" id="mobile-menu-button">
                     <label for="mobile-menu-button" id="mobile-menu-button-label"></label>
@@ -22,17 +26,19 @@
                         <li><a href="connexion.html#registrationContainer">Créer un compte</a></li>
                     </ul>
                 </nav>
+                    </div>
+            </div>
             </header>
 
             <div class="container">
                 <div>
-                    <h2>Acheter des Billets</h2>
+                    <h2 class="md-3">Acheter des Billets</h2>
                     <form>
-                        <label for="billet_classique_quantity">Billets Classiques</label>
-                        <input type="number" name="billet_classique_quantity" id="billet_classque_quantity">
-                        <label for="billet_second_tarif_quantity">Billets second tarif</label>
-                        <input type="number" name="billet_second_tarif_quantity" id="billet_second_tarif_quantity">
-                        <input type="submit" value="Acheter" class="event-button">
+                        <label for="billet_classique_quantity" class="form-label">Billets Classiques</label>
+                        <input type="number" name="billet_classique_quantity" id="billet_classque_quantity" class="form-control">
+                        <label for="billet_second_tarif_quantity" class="form-label">Billets second tarif</label>
+                        <input type="number" name="billet_second_tarif_quantity" id="billet_second_tarif_quantity" class="form-control">
+                        <input type="submit" value="Acheter" class="btn btn-primary w-100">
                     </form>
                 </div>
             </div>

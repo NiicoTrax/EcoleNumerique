@@ -15,9 +15,6 @@ body {
 header {
     background: #3768ba;
     padding: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
 }
 
 a {
@@ -81,7 +78,7 @@ header nav ul li:hover {
 
 h2 {
     font-family: sans-serif;
-    color:#234176;
+    color:#234176 !important;
     margin-top: 30px;
     margin-bottom: 40px;
 }
@@ -99,7 +96,6 @@ div {
 ul {
     list-style-type: none;
     padding-left: 0;
-    display: flex;
     overflow: auto;
     justify-content: flex-start;
     gap: 15px;

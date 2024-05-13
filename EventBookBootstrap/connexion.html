@@ -12,8 +12,12 @@
 
     <body>
         <main class="connexion">
-            <header>
-                <a href="index.html"><h1>EventBook</h1></a>
+            <header class="container-fluid p-3">
+                <div class="row align-items-baseline">
+                    <div class="col-8 order-2 order-md-1">
+                <a class="text-decoration-none" href="index.html"><h1>EventBook</h1></a>
+                    </div>
+                    <div class="col-4 order-1 order-md-2">
                 <nav>
                     <input type="checkbox" id="mobile-menu-button">
                     <label for="mobile-menu-button" id="mobile-menu-button-label"></label>
@@ -22,27 +26,29 @@
                         <li><a href="connexion.html#registrationContainer">Créer un compte</a></li>
                     </ul>
                 </nav>
+                    </div>
+            </div>
             </header>
 
             <div class="container">
                 <div>
-                    <h2>Se connecter</h2>
+                    <h2 class="mt-3">Se connecter</h2>
                     <form method="post">
-                        <label for="email">Email</label>
-                        <input type="text" name="email" id="email" autofocus>
-                        <label for="password">Mot de passe</label>
-                        <input type="password" name="password" id="password" required>
-                        <input type="submit" value="Envoyer" class="event-button">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" name="email" id="email" class="form-control" autofocus>
+                        <label for="password" class="form-label">Mot de passe</label>
+                        <input type="password" name="password" id="password" class="form-control" required>
+                        <input type="submit" value="Envoyer" class="btn btn-primary w-100">
                     </form>
                 </div>
                 <div id="registrationContainer">
-                    <h2>Créer un compte</h2> 
+                    <h2 class="mt-3">Créer un compte</h2> 
                     <form method="post">
-                        <label for="email">Email</label>
-                        <input type="text" name="email" id="email" required>
-                        <label for="password">Mot de passe</label>
-                        <input type="password" name="password" id="password" required>
-                        <input type="submit" value="Envoyer" class="event-button">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" name="email" id="email" class="form-control" required>
+                        <label for="password" class="form-label">Mot de passe</label>
+                        <input type="password" name="password" id="password" class="form-control" required>
+                        <input type="submit" value="Envoyer" class="btn btn-primary w-100">
                 </form>
                 </div>
             </div>

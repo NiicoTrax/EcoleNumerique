@@ -12,8 +12,12 @@
     
     <body>
         <main>
-            <header>
+            <header class="container-fluid p-3">
+                <div class="row align-items-baseline">
+                    <div class="col-8 order-2 order-md-1">
                 <h1>EventBook</h1>
+                    </div>
+                    <div class="col-4 order-1 order-md-2">
                 <nav>
                     <input type="checkbox" id="mobile-menu-button">
                     <label for="mobile-menu-button" id="mobile-menu-button-label"></label>
@@ -22,13 +26,15 @@
                         <li><a href="connexion.html#registrationContainer">Créer un compte</a></li>
                     </ul>
                 </nav>
+                    </div>
+            </div>
             </header>
 
             <div class="container">
                 <div>
-                    <h2>Découvrez les évenements à venir:</h2>
-                    <nav>
-                        <ul>
+                    <h2 class="mt-5 mb-5">Découvrez les évenements à venir:</h2>
+                    <nav class="mt-5 mb-5">
+                        <ul class="d-flex">
                             <li class="active"><a href="#">Tous</a></li>
                             <li><a href="#">Musique</a></li>
                             <li><a href="#">Conférences</a></li>
@@ -36,21 +42,21 @@
                     </nav>
                 </div>
     
-                <div class="event-container">
-                    <div class="animation-progressiveDisplay">        
-                        <img src="assets/img/event/concert.jpg" width="150">
-                        <h3>Evenement 1</h3>
+                <div class="row justify-content-around gap-md-3 gap-lg-5 gap-3">
+                    <div class="animation-progressiveDisplay col-12 col-md-5">        
+                        <img src="assets/img/event/concert.jpg" width="150" class="w-100 rounded">
+                        <h3 class="mt-3">Evenement 1</h3>
                         <p>Description du premier événement. <br>Seconde ligne de la description.</p>
                         <hr>
-                        <a href="event.html" class="event-button">En savoir plus</a>
+                        <a href="event.html" class="btn btn-primary w-100">En savoir plus</a>
                     </div>
             
-                    <div class="animation-progressiveDisplay">
-                        <img src="assets/img/event/conference.jpg" width="150">
-                        <h3>Evenement 2</h3>
+                    <div class="animation-progressiveDisplay col-12 col-md-5">
+                        <img src="assets/img/event/conference.jpg" width="150" class="w-100 rounded">
+                        <h3 class="mt-3">Evenement 2</h3>
                         <p>Description du second événement. <br>Seconde ligne de la description.</p>
                         <hr>
-                        <a href="event.html" class="event-button">En savoir plus</a>
+                        <a href="event.html" class="btn btn-primary w-100">En savoir plus</a>
                     </div>
                 </div>
             </div>
