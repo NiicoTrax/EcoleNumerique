@@ -1,3 +1,13 @@
+@keyframes progressiveDisplay {
+    0% {opacity: 0; transform: scale(0.5)}
+    100% {opacity: 1; transform: scale(1)}
+}
+
+.animation-progressiveDisplay {
+    animation-name: progressiveDisplay;
+    animation-duration: 1.5s;
+}
+
 body {
     margin:0;
 }
@@ -47,6 +57,8 @@ header nav ul {
     height: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: height .5s, padding .5s;
+    transition-timing-function: ease-out;
 }
 
 
