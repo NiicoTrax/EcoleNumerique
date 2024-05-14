@@ -1,7 +1,7 @@
 Consignes :
 
-    - Compléter le code pour créer un nouveau div en utilisant javascript
-    - Ajouter du code pour que le div créé contienne le texte suivant "Ce div a été ajouté en utilisant javascript"
+    GOOD- Compléter le code pour créer un nouveau div en utilisant javascript
+    GOOD- Ajouter du code pour que le div créé contienne le texte suivant "Ce div a été ajouté en utilisant javascript"
     - Créer un second div puis l'intégrer au div "viewport"
     - Définir la couleur de fond de ce nouveau div en rouge
     - Modifier l'attribut style.width et style.height pour que ce div fasse 100px sur 100px
