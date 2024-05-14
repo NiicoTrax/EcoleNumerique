@@ -14,9 +14,6 @@ function addElement() {
 
 
 
-document.getElementById('viewport').appendChild(monDiv);
-
-
 var divSupprime = document.getElementById ('aSupprimer');
 document.body.removeChild(divSupprime);
 
