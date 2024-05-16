@@ -26,7 +26,7 @@ const displayTicket = function(ticketType, ticketPrice){
 
     td1.innerHTML = ticketType;
     td2.innerHTML = ticketPrice;
-    td3.innerHTML = '<a href="purchaseTickets.html" class="event-button">Acheter</a>'
+    td3.innerHTML = `<a href="purchaseTickets.html?eventId=${eventID}" class="event-button">Acheter</a>`
 
     tr.appendChild(td1);
     tr.appendChild(td2);
