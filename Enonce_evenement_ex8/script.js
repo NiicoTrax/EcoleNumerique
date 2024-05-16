@@ -4,7 +4,9 @@ document.getElementById('valider').addEventListener('click',
 
         if(age > 18) {
             alert('Vous êtes majeur')
-        } else {
+        } 
+        
+        else {
             alert('Vous êtes mineur')
         }
     }
