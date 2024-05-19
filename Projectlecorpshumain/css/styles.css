@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+#logo {
+    width: 10%;
+}
+
+nav {
+    margin-bottom: 1rem;
+}
+
+.container {
+    padding: 1rem;
+}
+
+#titre {
+    text-align: center;
+}
+
+.image-container {
+    position: relative;
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 173px;
+    height: auto;
+}
+
+.cercle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cercle.active {
+    background-color: rgba(255, 123, 0, 0.7);
+}
+
+
+#cercle1 { top: 16%; left: 34%; }
+#cercle2 { top: 38%; left: 58%; }
+#cercle3 { top: 45%; left: 32%; }
+#cercle4 { top: 50%; left: 51%; }
+#cercle5 { top: 70%; left: 40%; }
+#cercle6 { top: 88%; left: 50%; }
+
+#info-box {
+    font-family: 'Arvo', serif;
+    background-color: rgba(194, 194, 194, 0.164);
+}
+
+
+@media (min-width: 300px) {
+
+#cercle1 { top: 16%; left: 25%; }
+#cercle2 { top: 38%; left: 63%; }
+#cercle3 { top: 45%; left: 22%; }
+#cercle4 { top: 50%; left: 51%; }
+#cercle5 { top: 70%; left: 34%; }
+#cercle6 { top: 88%; left: 50%; }
+
+}
+
+@media (min-width: 400px) {
+
+    #cercle1 { top: 16%; left: 30%; }
+    #cercle2 { top: 38%; left: 60%; }
+    #cercle3 { top: 45%; left: 28%; }
+    #cercle4 { top: 50%; left: 51%; }
+    #cercle5 { top: 70%; left: 38%; }
+    #cercle6 { top: 88%; left: 50%; }
+    
+}
+
+@media (min-width: 913px) {
+
+    #cercle1 { top: 16%; left: 30%; }
+    #cercle2 { top: 38%; left: 60%; }
+    #cercle3 { top: 45%; left: 28%; }
+    #cercle4 { top: 50%; left: 51%; }
+    #cercle5 { top: 70%; left: 38%; }
+    #cercle6 { top: 88%; left: 50%; }
+    
+}
+
+@media (min-width: 1000px) {
+
+    #cercle1 { top: 16%; left: 33%; }
+    #cercle2 { top: 38%; left: 60%; }
+    #cercle3 { top: 45%; left: 32%; }
+    #cercle4 { top: 50%; left: 51%; }
+    #cercle5 { top: 70%; left: 40%; }
+    #cercle6 { top: 88%; left: 50%; }
+    
+}
