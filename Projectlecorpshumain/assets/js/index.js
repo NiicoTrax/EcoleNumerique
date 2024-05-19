@@ -1,36 +1,29 @@
-const eventCategoryContainer = document.getElementById('event-category-container');
-const eventCategoryLis= eventCategoryContainer.getElementsByTagName('li');
+$(document).ready(function() {
+    $('area').on('click', function(event) {
+        event.preventDefault();
+        var areaId = $(this).attr('id');
+        var infoText = '';
 
-eventCategoryLis[0].addEventListener('click', function(event) {
-    let tempElement = eventCategoryContainer.querySelector('.active');
-    if(tempElement != this )
-        {
-            tempElement.classList.toggle('active');
+        switch(areaId) {
+            case 'circle1':
+                infoText = 'Information about area 1.';
+                break;
+            case 'circle2':
+                infoText = 'Information about area 2.';
+                break;
+            case 'circle3':
+                infoText = 'Information about area 3.';
+                break;
+            case 'circle4':
+                infoText = 'Information about area 4.';
+                break;
+            case 'circle5':
+                infoText = 'Information about area 5.';
+                break;
+            default:
+                infoText = 'Click on the black circles to see information.';
         }
-        
-        this.classlist.toggle('active');
 
+        $('#info-box').html('<p>' + infoText + '</p>');
+    });
 });
-
-eventCategoryLis[1].addEventListener('click', function(event) {
-    let tempElement = eventCategoryContainer.querySelector('.active');
-    if(tempElement)
-        {
-            tempElement.classList.toggle('active');
-        }
-
-
-    this.classlist.toggle('active');
-});
-
-eventCategoryLis[2].addEventListener('click', function(event) {
-    let tempElement = eventCategoryContainer.querySelector('.active');
-    if(tempElement)
-        {
-            tempElement.classList.toggle('active');
-        } 
-
-
-    this.classlist.toggle('active');
-});
-

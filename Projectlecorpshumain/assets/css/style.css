@@ -1,1 +1,8 @@
 /*** font-family: "Arvo", serif; ***/
+
+.info-box {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}

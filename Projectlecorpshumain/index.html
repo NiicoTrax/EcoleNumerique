@@ -1,24 +1,36 @@
 <!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <title>Project Le Corps Humain</title>
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.svg">
-        <meta charset="UTF-8">
-        <meta name="description" content="Information sur le Corps Humain">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    </head>
-    
-    <body>
-        <main>
-            
-
-            <footer>
-            </footer>
-        </main>
-        <script src="assets/js/index.js"></script>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Body Image</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="image-container">
+                    <img src="assets/img/corps2.PNG" alt="Corps humain" class="img-fluid" usemap="#bodymap">
+                    <map name="bodymap">
+                        <area shape="circle" coords="200,80,30" href="#" alt="Circle 1" id="circle1">
+                        <area shape="circle" coords="270,200,30" href="#" alt="Circle 2" id="circle2">
+                        <area shape="circle" coords="200,320,30" href="#" alt="Circle 3" id="circle3">
+                        <area shape="circle" coords="270,440,30" href="#" alt="Circle 4" id="circle4">
+                        <area shape="circle" coords="200,560,30" href="#" alt="Circle 5" id="circle5">
+                    </map>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div id="info-box" class="info-box">
+                    <p>Click on the black circles to see information.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="assets/js/index.js"></script>
+</body>
 </html>
