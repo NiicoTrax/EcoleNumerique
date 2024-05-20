@@ -27,7 +27,7 @@ $(document).ready(function() {
                 infoText = 'Cheville : <br><br> La cheville est le segment du membre inférieur qui relie la jambe et le pied. En Anatomie, on la nomme la région talo-crurale et elle contient l\'articulation talo-crurale.';
                 break;
             default:
-                infoText = 'Click on the black cercles to see information.';
+                infoText = 'Cliquez sur un cercle pour afficher les informations.';
         }
 
         $('#info-box').html('<p>' + infoText + '</p>');
