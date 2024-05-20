@@ -6,7 +6,7 @@ $(document).ready(function() {
         var cercleId = $(this).attr('id');
         var infoText = '';
 
-        /// AJOUTER DE LA CASE ACTIVE OU NON ACTIVE ///
+        /// AJOUT DE LA CASE ACTIVE OU NON ACTIVE ///
 
         $('.cercle').removeClass('active');
         $(this).addClass('active');
