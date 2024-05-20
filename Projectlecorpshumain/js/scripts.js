@@ -1,4 +1,4 @@
-        /// AJOUTER LA FONCTION CLIQUABLE SUR LES CERCLES ///
+        /// AJOUT DE LA FONCTION CLIQUABLE SUR LES CERCLES ///
 
 $(document).ready(function() {
     $('.cercle').on('click', function(event) {
