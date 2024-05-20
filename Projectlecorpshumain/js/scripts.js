@@ -38,7 +38,7 @@ $(document).ready(function() {
         }
 
 
-        /// AJOUTE LE TEXTE DANS LA DIV INFO BOX (A COTER DE L IMAGE) SUR LE CLERCLE CLIQUER ///
+        /// AJOUTE LE TEXTE DANS LA DIV INFO BOX (A COTER DE L IMAGE) POUR LE CLERCLE CLIQUER ///
 
 
         $('#info-box').html('<p>' + infoText + '</p>');
