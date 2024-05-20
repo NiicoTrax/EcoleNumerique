@@ -1,11 +1,18 @@
+        /// AJOUTER LA FONCTION CLIQUABLE SUR LES CERCLES ///
+
 $(document).ready(function() {
     $('.cercle').on('click', function(event) {
         event.preventDefault();
         var cercleId = $(this).attr('id');
         var infoText = '';
 
+        /// AJOUTER DE LA CASE ACTIVE OU NON ACTIVE ///
+
         $('.cercle').removeClass('active');
         $(this).addClass('active');
+
+
+        /// INFORMATION SUR CHAQUE CERCLE EN CAS DE CLIQUAGE ///
 
         switch(cercleId) {
             case 'cercle1':
@@ -29,6 +36,10 @@ $(document).ready(function() {
             default:
                 infoText = 'Cliquez sur un cercle pour afficher les informations.';
         }
+
+
+        /// AJOUTE LE TEXTE DANS LA DIV INFO BOX (A COTER DE L IMAGE) SUR LE CLERCLE CLIQUER ///
+
 
         $('#info-box').html('<p>' + infoText + '</p>');
     });
