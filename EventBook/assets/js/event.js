@@ -25,7 +25,7 @@ const displayTicket = function(ticketType, ticketPrice){
     let td3 = document.createElement('td');
 
     td1.innerHTML = ticketType;
-    td2.innerHTML = ticketPrice;
+    td2.innerHTML = ticketPrice+'€';
     td3.innerHTML = `<a href="purchaseTickets.html?eventId=${eventID}" class="event-button">Acheter</a>`
 
     tr.appendChild(td1);
@@ -33,6 +33,23 @@ const displayTicket = function(ticketType, ticketPrice){
     tr.appendChild(td3);
 
     domEventTicketsTable.appendChild(tr);
+}
+
+try {
+    if(eventID == 1 || evendID == 2 || eventID == 3 )
+{
+
+}
+    else {
+        throw " Aucun Evenement n'existe avec cet identifiant";
+    }
+}
+catch(error)
+{
+    document.getElementsByClassName('container')[0].innerHTML = error;
+}
+finally {
+    alert ('ok');
 }
 
 switch (eventID)
