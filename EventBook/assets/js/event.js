@@ -35,12 +35,18 @@ const displayTicket = function(ticketType, ticketPrice){
     domEventTicketsTable.appendChild(tr);
 }
 
-
-if(eventID == 1)
-    {
+switch (eventID)
+{
+    case "1":
         displayTicket("Billet Classique", 35);
         displayTicket("Billet VIP", 65);
-    }
-else {
+    break;
+
+    case "2":
         displayTicket("Billet classique", 35);
+    break;
+
+    default:
+        displayTicket("Billet classique", 20);
+    break;
 }
