@@ -1,0 +1,26 @@
+body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+h1{
+    font-size: 3.2em !important;
+}
+.container{
+    background-color: rgb(237, 236, 235);
+    font-family: 'Arvo', Arial;
+    height: 1000px;
+}
+#img-corps{
+    height: 44em;
+    width: 100% !important;
+}
+
+
+
+
+
+
+
+
+
