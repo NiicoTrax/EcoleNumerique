@@ -1,0 +1,49 @@
+body {
+    height: 2000px;
+    font-family: fantasy;
+    color: white;
+    text-shadow: 3px 3px 1px black;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff3019+58,cf0404+88&0.5+16,1+83 */
+    background: -moz-radial-gradient(center, ellipse cover, rgba(255,48,25,0.5) 16%, rgba(255,48,25,0.81) 58%, rgba(215,11,8,1) 83%, rgba(207,4,4,1) 88%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(255,48,25,0.5) 16%,rgba(255,48,25,0.81) 58%,rgba(215,11,8,1) 83%,rgba(207,4,4,1) 88%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, rgba(255,48,25,0.5) 16%,rgba(255,48,25,0.81) 58%,rgba(215,11,8,1) 83%,rgba(207,4,4,1) 88%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ff3019', endColorstr='#cf0404',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background-repeat: no-repeat;
+}
+
+h1{
+    text-align: center;
+}
+
+
+#regles, #jouer, #choixClick, #PlusOuMoins, #bouton2{
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+
+#bouton, #choixU {
+    background-color: white;
+    border-radius: 5px;
+    width: 100px;
+    height: 45px;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+#reset {
+    background-color: white;
+    border-radius: 5px;
+    width:  200px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: fantasy;
+}
+
+#essaiRestants{
+    text-align: center;
+    margin-top: 30px;
+}
