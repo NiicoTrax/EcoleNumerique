@@ -49,6 +49,7 @@ eventCategoryLis[2].addEventListener('click', function(event) {
     this.classList.toggle('active');
 });
 
+let evendID = 0;
 
 for(let i = 0; i<5; i=i++ )
 {
