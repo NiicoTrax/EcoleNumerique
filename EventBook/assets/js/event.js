@@ -36,7 +36,7 @@ const displayTicket = function(ticketType, ticketPrice){
 }
 
 try {
-    if(eventID == 1 || evendID == 2 || eventID == 3 )
+    if(eventID == 1 || evendID == 2 || eventID == 3 || eventID == 4 || eventID == 5 )
 {
 
 }
