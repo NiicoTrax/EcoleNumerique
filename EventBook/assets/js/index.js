@@ -64,6 +64,3 @@ while(i2 < 10)
         displayEvent ('conference',evendID, 'premiere du premier événement. <br>Seconde ligne de la description.');
         i2++;
     }
-
-
-    26min 40 ARRET VIDEO 
