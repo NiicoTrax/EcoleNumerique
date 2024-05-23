@@ -51,7 +51,7 @@ eventCategoryLis[2].addEventListener('click', function(event) {
 
 let evendID = 1;
 
-for(let i = 0; i<5; i++ )
+for(let i = 0; i < 5; i++ )
 {
         evendID++;
         displayEvent ('concert',evendID, 'premiere du premier événement. <br>Seconde ligne de la description.');
@@ -60,7 +60,7 @@ for(let i = 0; i<5; i++ )
 let i2 = 0;
 while(i2 < 10)
     {
-        eventID++;
+        evendID++;
         displayEvent ('conference',evendID, 'premiere du premier événement. <br>Seconde ligne de la description.');
         i2++;
     }
