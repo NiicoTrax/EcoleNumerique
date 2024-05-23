@@ -49,9 +49,9 @@ eventCategoryLis[2].addEventListener('click', function(event) {
     this.classList.toggle('active');
 });
 
-let evendID = 0;
+let evendID = 1;
 
-for(let i = 0; i<5; i=i++ )
+for(let i = 0; i<5; i++ )
 {
         evendID++;
         displayEvent ('concert',evendID, 'premiere du premier événement. <br>Seconde ligne de la description.');
