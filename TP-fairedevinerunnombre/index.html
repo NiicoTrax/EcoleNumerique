@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP - Faire deveniner un nombre </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Jeu du hasard</h1>
+        <p>Devinez le nombre entre 1 et 100</p>
+        <input type="number" id="guessInput" placeholder="Entrez votre nombre">
+        <button onclick="makeGuess()">Deviner</button>
+        <p id="message"></p>
+        <p id="previousGuesses"></p>
+        <button onclick="restartGame()" id="restartButton" style="display:none;">Nouvelle Partie</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
