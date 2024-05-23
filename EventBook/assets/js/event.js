@@ -17,6 +17,8 @@ domEventDescription.innerHTML = eventDescription;
 
 const domEventTicketsTable = document.querySelector('table')
 
+const randomPrice = Math.floor((Math.random()*100))+1;
+
 const displayTicket = function(ticketType, ticketPrice){
 
     let tr = document.createElement('tr');
@@ -36,21 +38,16 @@ const displayTicket = function(ticketType, ticketPrice){
 }
 
 try {
-    if(eventID == 1 || evendID == 2 || eventID == 3 || eventID == 4 || eventID == 5 )
+    if(eventID > 15)
 {
-
+    throw " Aucun Evenement n'existe avec cet identifiant";
 }
-    else {
-        throw " Aucun Evenement n'existe avec cet identifiant";
-    }
 }
 catch(error)
 {
     document.getElementsByClassName('container')[0].innerHTML = error;
 }
-finally {
-    alert ('ok');
-}
+
 
 switch (eventID)
 {
@@ -64,6 +61,6 @@ switch (eventID)
     break;
 
     default:
-        displayTicket("Billet classique", 20);
+        displayTicket("Billet classique",randomPrice);
     break;
 }
