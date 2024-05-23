@@ -1,14 +1,18 @@
-const eventName = "Nom de l'événement stocké dans une variable" ;
-const eventDescription = "Description de l'événement stocké dans une variable" ;
-
-const ticketType1 = "Billet Classique" ;
-const ticketType2 = "Billet VIP" ;
-const ticketType1Price = 35 ;
-const ticketType2Price = 65 ;
-
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const eventID = parseInt(urlParams.get('id'));
+
+try {
+    if(eventID > eventsData.length)
+{
+    throw " Aucun Evenement n'existe avec cet identifiant";
+}
+}
+catch(error)
+{
+    document.getElementsByClassName('container')[0].innerHTML = error;
+}
+
 
 const domEventTitle = document.querySelector('h2');
 domEventTitle.innerHTML = eventsData[eventID-1][0];
@@ -21,6 +25,8 @@ document.getElementById('event-image').src = "assets/img/event/"+eventsData[even
 const domEventTicketsTable = document.querySelector('table')
 
 const randomPrice = Math.floor((Math.random()*100))+1;
+
+const tickets = eventsData[eventID-1][3];
 
 const displayTicket = function(ticketType, ticketPrice){
 
@@ -40,30 +46,11 @@ const displayTicket = function(ticketType, ticketPrice){
     domEventTicketsTable.appendChild(tr);
 }
 
-try {
-    if(eventID > 15)
+
+
+if(tickets) 
 {
-    throw " Aucun Evenement n'existe avec cet identifiant";
-}
-}
-catch(error)
-{
-    document.getElementsByClassName('container')[0].innerHTML = error;
-}
-
-
-switch (eventID)
-{
-    case "1":
-        displayTicket("Billet Classique", 35);
-        displayTicket("Billet VIP", 65);
-    break;
-
-    case "2":
-        displayTicket("Billet classique", 35);
-    break;
-
-    default:
-        displayTicket("Billet classique",randomPrice);
-    break;
+    tickets.forEach(function(ticket) {
+        displayTicket(ticket[0],ticket[1]);
+    });
 }
