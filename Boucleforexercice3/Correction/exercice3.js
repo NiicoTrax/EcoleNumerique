@@ -1,5 +1,4 @@
 
-
 /* Modifier le code ci dessous pour réaliser l'exercice */
 
 for( var i =35 ; i >= 25 ; i-- )
