@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="fr">
+<head>
     <meta charset="UTF-8">
-    <title>Liste de course</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste de Course</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/18320cfd27.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-<div id="viewport">
-    <ul id="listeCourse">
-
-    </ul>
-</div>
-
-<script type="text/javascript" src="exercice1.js"></script>
+    <div class="container">
+        <h1>Liste de course</h1>
+        <ul id="listeCourse"></ul>
+        <div class="controls">
+            <input type="text" id="newArticle" placeholder="Ajouter un élément">
+            <button onclick="addArticle()">Ajouter</button>
+            <button onclick="removeLastArticle()">Supprimer le dernier</button>
+        </div>
+        <div id="articleDisplay" class="article-display">
+            <h1>Article dans le tableau :</h1>
+        </div>
+    </div>
+    <script src="exercice1.js"></script>
 </body>
 </html>
