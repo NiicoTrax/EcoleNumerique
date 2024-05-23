@@ -40,7 +40,7 @@ function makeGuess() {
 function endGame() {
     document.getElementById('guessInput').disabled = true;
     document.querySelector('button[onclick="makeGuess()"]').disabled = true;
-    document.getElementById('restartButton').style.display = 'block';
+    document.getElementById('restartButton').style.display = '';
 }
 
 function restartGame() {
