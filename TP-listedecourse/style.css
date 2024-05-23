@@ -36,6 +36,7 @@ li {
     align-items: center;
     cursor: move;
     transition: background-color 0.2s, transform 0.2s;
+    border-radius: 5px;
 }
 
 li.dragging {
