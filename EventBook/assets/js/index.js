@@ -11,30 +11,19 @@ const displayEvent = function(img,id,description) {
 
     eventContainer.innerHTML = `<img src="assets/img/event/${img}.jpg" width="150">
     <h3>Evenement ${id}</h3>
-    <p${description}</p>
+    <p>${description}</p>
     <hr>
-    <a href="event.html?${id}" class="event-button">En savoir plus</a>`;
+    <a href="event.html?id=${id}" class="event-button">En savoir plus</a>`;
 
     eventsContainer.appendChild(eventContainer);
 }
 
 
+eventsData.forEach(function(event, index) {
+    displayEvent (event[2],(index+1), event[1]);
+});
 
-let evendID = 0;
 
-for(let i = 0; i < 5; i++ )
-{
-        evendID++;
-        displayEvent ('concert',evendID, 'premiere du premier événement. <br>Seconde ligne de la description.');
-}
-
-let i2 = 0;
-while(i2 < 10)
-    {
-        evendID++;
-        displayEvent ('conference',evendID, 'premiere du premier événement. <br>Seconde ligne de la description.');
-        i2++;
-    }
 
     for (let item of eventCategoryLis) {
         item.addEventListener('click', function(event) {
