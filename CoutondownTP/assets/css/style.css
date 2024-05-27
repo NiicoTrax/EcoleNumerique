@@ -14,6 +14,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
 }
 
 .timer-display {
@@ -21,10 +23,23 @@ body {
     margin-bottom: 20px;
 }
 
-input[type="time"] {
+.time-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.time-inputs input {
     font-size: 1.5em;
     padding: 5px;
-    margin-bottom: 20px;
+    width: 60px;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
 }
 
 .buttons button {
@@ -34,6 +49,7 @@ input[type="time"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 45%;
 }
 
 #start-stop-button {
@@ -53,7 +69,7 @@ input[type="time"] {
     color: white;
     border-radius: 5px;
     font-size: 1.2em;
-    display: none;
+    display: none; 
 }
 
 .blink {
@@ -63,5 +79,25 @@ input[type="time"] {
 @keyframes blinker {
     50% {
         opacity: 0;
+    }
+}
+
+/* Media query pour les petits écrans */
+@media (max-width: 600px) {
+    .timer-display {
+        font-size: 2em;
+    }
+
+    .time-inputs input {
+        font-size: 1.2em;
+    }
+
+    .buttons button {
+        font-size: 0.8em;
+        padding: 8px 10px;
+    }
+
+    .alert {
+        font-size: 1em;
     }
 }

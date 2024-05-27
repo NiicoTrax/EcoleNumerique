@@ -10,7 +10,11 @@
 <body>
     <div class="container">
         <div class="timer-display" id="timer-display">00:00:00</div>
-        <input type="time" id="time-input" step="1">
+        <div class="time-inputs">
+            <input type="number" id="hours-input" placeholder="HH" min="0" max="23">
+            <input type="number" id="minutes-input" placeholder="MM" min="0" max="59">
+            <input type="number" id="seconds-input" placeholder="SS" min="0" max="59">
+        </div>
         <div class="buttons">
             <button id="start-stop-button">Lancer</button>
             <button id="reset-button">Reset</button>

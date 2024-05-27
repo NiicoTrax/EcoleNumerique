@@ -1,5 +1,7 @@
 let timerDisplay = document.getElementById("timer-display");
-let timeInput = document.getElementById("time-input");
+let hoursInput = document.getElementById("hours-input");
+let minutesInput = document.getElementById("minutes-input");
+let secondsInput = document.getElementById("seconds-input");
 let startStopButton = document.getElementById("start-stop-button");
 let resetButton = document.getElementById("reset-button");
 let alertDiv = document.getElementById("alert");
@@ -18,10 +20,9 @@ startStopButton.addEventListener("click", () => {
         // Si le chronomètre est arrêté, démarre ou reprend le décompte
         if (totalSeconds === 0) {
             // Si c'est le premier démarrage, récupère le temps saisi par l'utilisateur
-            let timeParts = timeInput.value.split(":");
-            let hours = parseInt(timeParts[0]);
-            let minutes = parseInt(timeParts[1]);
-            let seconds = parseInt(timeParts[2] || 0);
+            let hours = parseInt(hoursInput.value) || 0;
+            let minutes = parseInt(minutesInput.value) || 0;
+            let seconds = parseInt(secondsInput.value) || 0;
             totalSeconds = hours * 3600 + minutes * 60 + seconds;
         }
         startCountdown();  // Démarre ou reprend le décompte
