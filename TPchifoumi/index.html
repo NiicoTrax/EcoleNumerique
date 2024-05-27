@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP - Chifoumi</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div id="tableau-de-score">
+        <p>Score: Vous: <span id="score-joueur">0</span> - Ordinateur: <span id="score-ordinateur">0</span></p>
+    </div>
+    <div id="jeu">
+        <h1>Jeu du Chifoumi</h1>
+        <div id="choix">
+            <img id="pierre" src="assets/img/Rock-paper-scissors_(rock).png" alt="Pierre" class="choix">
+            <img id="papier" src="assets/img/Rock-paper-scissors_(paper).png" alt="Feuille" class="choix">
+            <img id="ciseaux" src="assets/img/Rock-paper-scissors_(scissors).png" alt="Ciseaux" class="choix">
+        </div>
+        <div id="resultat">
+            <p>Choix de l'ordinateur: <span id="choix-ordinateur"></span></p>
+            <p>Résultat: <span id="resultat-jeu"></span></p>
+        </div>
+        <div id="historique">
+            <h2>Historique des parties</h2>
+            <ul id="historique-jeu"></ul>
+        </div>
+        <button id="reinitialiser-jeu">Rejouer</button>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
