@@ -11,8 +11,8 @@ TicketsAvailableDiv.innerHTML ='';
 
 
 function displayTicketinput(name) {
-    return `<label for="${name}">${name}</label>
-    <input type="number" name="${name}" id="${name}">`;
+    return `<label for="${name.replace(' ','_').toLowerCase()}">${name}</label>
+    <input type="number" name="${name.replace(' ','_').toLowerCase()}" id="${name.replace(' ','_').toLowerCase()}">`;
 }
 
 eventTicketsArray.forEach(function(ticket){

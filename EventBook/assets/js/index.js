@@ -1,7 +1,7 @@
 const eventCategoryContainer = document.getElementById('event-category-container');
 const eventCategoryLis= eventCategoryContainer.getElementsByTagName('li');
 const eventsContainer = document.querySelector('.event-container');
-
+const search = document.getElementById('search');
 
 
 const displayEvent = function(img,id,description,date) {
@@ -61,5 +61,23 @@ eventsData.forEach(function(event, index) {
                         });
                     break;
                 }
+
          });
+}
+
+search.addEventListener('input', function(ev) {
+    let searchTerm = (ev.target.value);
+    let eventsDataFiltered = eventsData.filter(function(event) {
+        return (event[0].indexOf(searchTerm) > -1);
+    });
+
+    if(eventsDataFiltered.length > 0)
+    {
+        eventsContainer.innerHTML = '';
+        eventsDataFiltered.forEach(function(event) {
+            let eventID = eventsData.indexOf(event)+1;
+            displayEvent (event[2],eventID, event[1], event[4]);
+        });
     }
+
+});

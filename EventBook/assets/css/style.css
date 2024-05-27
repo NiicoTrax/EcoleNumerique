@@ -255,6 +255,20 @@ form .event-button {
     padding: 15px;
 }
 
+#search {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 13px;
+    border: 0;
+    border-bottom: 3px solid #3768ba;
+    padding-bottom: 13px;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+}
+
 @media only screen and (min-width: 600px) {
 
     .event-container {
