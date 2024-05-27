@@ -22,6 +22,9 @@ domEventDescription.innerHTML = eventsData[eventID-1][1];
 
 document.getElementById('event-image').src = "assets/img/event/"+eventsData[eventID-1][2]+".jpg";
 
+document.getElementById('event-start-date').innerHTML = 'le ' +eventsData[eventID-1][4].toLocaleDateString()+ ' à ' +eventsData[eventID-1][4].toLocaleTimeString();
+document.getElementById('event-start-date').datetime = eventsData[eventID-1][4].toISOString();
+
 const domEventTicketsTable = document.querySelector('table')
 
 const randomPrice = Math.floor((Math.random()*100))+1;
