@@ -3,7 +3,8 @@ const eventCategoryLis= eventCategoryContainer.getElementsByTagName('li');
 const eventsContainer = document.querySelector('.event-container');
 
 
-const displayEvent = function(img,id,description) {
+
+const displayEvent = function(img,id,description,date) {
 
     let eventContainer = document.createElement('div');
     eventContainer.className = 'animation-progressiveDisplay';
@@ -11,6 +12,7 @@ const displayEvent = function(img,id,description) {
 
     eventContainer.innerHTML = `<img src="assets/img/event/${img}.jpg" width="150">
     <h3>Evenement ${id}</h3>
+    <time>Le ${date.toLocaleDateString()} à ${date.toLocaleTimeString()}</time>
     <p>${description}</p>
     <hr>
     <a href="event.html?id=${id}" class="event-button">En savoir plus</a>`;
@@ -20,7 +22,7 @@ const displayEvent = function(img,id,description) {
 
 
 eventsData.forEach(function(event, index) {
-    displayEvent (event[2],(index+1), event[1]);
+    displayEvent (event[2],(index+1), event[1], event[4]);
 });
 
 

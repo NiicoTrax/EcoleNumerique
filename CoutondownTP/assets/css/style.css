@@ -1,0 +1,112 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.timer-display {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.time-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.time-inputs input {
+    font-size: 1.5em;
+    padding: 5px;
+    width: 60px;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons button {
+    font-size: 1em;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 45%;
+}
+
+#start-stop-button {
+    background-color: #28a745;
+    color: white;
+}
+
+#reset-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.alert {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.2em;
+    display: none; 
+}
+
+.blink {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Media query pour les petits écrans */
+@media (max-width: 600px) {
+    .timer-display {
+        font-size: 2em;
+    }
+
+    .time-inputs input {
+        font-size: 1.2em;
+    }
+
+    .buttons button {
+        font-size: 0.8em;
+        padding: 8px 10px;
+    }
+
+    .alert {
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}
