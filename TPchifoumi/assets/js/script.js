@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialise les scores des joueurs et de l'ordinateur
     let scoreJoueur = 0;
     let scoreOrdinateur = 0;
-    // Objet pour compter les occurrences des résultats dans l'historique
-    const historiqueComptes = {};
+    // Objet pour stocker l'historique des parties
+    let historiqueJeu = [];
 
     // Ajoute un écouteur d'événement de clic à chaque élément de choix
     document.querySelectorAll('.choix').forEach(choixElement => {
@@ -48,13 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function mettreAJourResultatJeu(resultat) {
         const resultatJeuElement = document.getElementById('resultat-jeu');
         resultatJeuElement.textContent = resultat;
-        resultatJeuElement.classList.remove('victoire', 'defaite', 'egalite');
+        resultatJeuElement.classList.remove('victoire', 'défaite', 'égalité');
         if (resultat === 'Victoire') {
             resultatJeuElement.classList.add('victoire');
         } else if (resultat === 'Défaite') {
-            resultatJeuElement.classList.add('defaite');
+            resultatJeuElement.classList.add('défaite');
         } else {
-            resultatJeuElement.classList.add('egalite');
+            resultatJeuElement.classList.add('égalité');
         }
     }
 
@@ -83,41 +83,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fonction pour mettre à jour l'historique des parties
     function mettreAJourHistorique(joueur, ordinateur, resultat) {
-        // Génère une clé unique pour chaque combinaison de résultats
-        const cleHistorique = `${joueur}-${ordinateur}-${resultat}`;
-        // Incrémente le compteur pour cette combinaison de résultats
-        if (historiqueComptes[cleHistorique]) {
-            historiqueComptes[cleHistorique]++;
-        } else {
-            historiqueComptes[cleHistorique] = 1;
-        }
+        // Ajoute le nouveau résultat à l'historique
+        historiqueJeu.unshift({ joueur, ordinateur, resultat });
         // Affiche l'historique mis à jour
-        afficherHistorique(joueur, ordinateur, resultat, historiqueComptes[cleHistorique]);
+        afficherHistorique();
     }
 
     // Fonction pour afficher l'historique des parties
-    function afficherHistorique(joueur, ordinateur, resultat, compte) {
+    function afficherHistorique() {
         const historique = document.getElementById('historique-jeu');
-        // Retire la classe last-entry de l'ancienne dernière entrée et lui ajoute la classe du résultat
-        const ancienneDerniereEntree = document.querySelector('#historique-jeu li.last-entry');
-        if (ancienneDerniereEntree) {
-            ancienneDerniereEntree.classList.remove('last-entry');
-            ancienneDerniereEntree.classList.add(ancienneDerniereEntree.dataset.resultat);
-        }
-        // Ajoute un nouvel élément de liste pour le dernier résultat
-        const listItem = document.createElement('li');
-        listItem.textContent = `Vous: ${joueur}, Ordinateur: ${ordinateur} - ${resultat} (x${compte})`;
-        listItem.classList.add('last-entry');
-        listItem.dataset.resultat = resultat.toLowerCase(); // Stocke le résultat dans un data-attribute
-        historique.insertBefore(listItem, historique.firstChild);
+        // Efface l'historique actuel
+        historique.innerHTML = '';
+        // Regroupe les résultats par type
+        const groupes = historiqueJeu.reduce((acc, partie) => {
+            const cle = `${partie.joueur}-${partie.ordinateur}-${partie.resultat}`;
+            if (!acc[cle]) {
+                acc[cle] = { ...partie, count: 0 };
+            }
+            acc[cle].count++;
+            return acc;
+        }, {});
+
+        // Ajoute chaque groupe de résultats à l'historique
+        Object.values(groupes).forEach((partie, index) => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `Vous: ${partie.joueur}, Ordinateur: ${partie.ordinateur} - ${partie.resultat} (x${partie.count})`;
+            listItem.classList.add(partie.resultat.toLowerCase());
+            if (index === 0) {
+                listItem.classList.add('last-entry');
+            }
+            historique.appendChild(listItem);
+        });
     }
 
     // Fonction pour réinitialiser le jeu
     function reinitialiserJeu() {
         scoreJoueur = 0;
         scoreOrdinateur = 0;
-        // Réinitialise les compteurs d'historique
-        Object.keys(historiqueComptes).forEach(cle => delete historiqueComptes[cle]);
+        historiqueJeu = [];
         // Réinitialise les scores affichés
         document.getElementById('score-joueur').textContent = scoreJoueur;
         document.getElementById('score-ordinateur').textContent = scoreOrdinateur;
