@@ -91,10 +91,33 @@ h1 {
     border-color: #61dafb;
 }
 
+#vous {
+    color:blue;
+}
+
+#ordinateur {
+    color:#e57373;
+}
+
+#resultat {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 5px 25px;
+}
+
 #resultat p {
     font-size: 18px;
+    margin: 10px 5px;
+}
+
+#resultat2 {
+    font-size: 18px;
     color: #61dafb;
-    margin: 10px 0;
+    margin: 10px 50px !important;
 }
 
 #resultat-jeu {

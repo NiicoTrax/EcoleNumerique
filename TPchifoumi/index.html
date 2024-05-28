@@ -8,18 +8,19 @@
 </head>
 <body>
     <div id="tableau-de-score">
-        <p>Score: Vous: <span id="score-joueur">0</span> - Ordinateur: <span id="score-ordinateur">0</span></p>
+        <p id="vous">Vous: <span id="score-joueur">0</span></p> <p id="ordinateur">Ordinateur: <span id="score-ordinateur">0</span></p>
     </div>
     <div id="jeu">
         <h1>Jeu du Chifoumi</h1>
         <div id="choix">
-            <img id="pierre" src="assets/img/Rock-paper-scissors_(rock).png" alt="Pierre" class="choix">
-            <img id="papier" src="assets/img/Rock-paper-scissors_(paper).png" alt="Feuille" class="choix">
-            <img id="ciseaux" src="assets/img/Rock-paper-scissors_(scissors).png" alt="Ciseaux" class="choix">
+            <img id="pierre" src="assets/img/Rock-paper-scissors_(rock).png" alt="Pierre" class="choix" title="Pierre">
+            <img id="papier" src="assets/img/Rock-paper-scissors_(paper).png" alt="Papier" class="choix" title="Papier">
+            <img id="ciseaux" src="assets/img/Rock-paper-scissors_(scissors).png" alt="Ciseaux" class="choix" title="Ciseaux">
         </div>
         <div id="resultat">
-            <p>Choix de l'ordinateur: <span id="choix-ordinateur"></span></p>
-            <p>Résultat: <span id="resultat-jeu"></span></p>
+            <p id="vous">Vous: <span id="choix-vous"></span></p>
+            <p id="ordinateur">l'ordinateur: <span id="choix-ordinateur"></span></p>
+            <p id="resultat2">Résultat: <span id="resultat-jeu"></span></p>
         </div>
         <div id="historique">
             <h2>Historique des parties</h2>

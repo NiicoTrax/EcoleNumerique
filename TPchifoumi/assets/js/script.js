@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const choixJoueur = choixElement.id;
             // Génère un choix aléatoire pour l'ordinateur
             const choixOrdinateur = choix[Math.floor(Math.random() * choix.length)];
+            // Affiche le choix de vous
+            document.getElementById('choix-vous').textContent = choixJoueur;
             // Affiche le choix de l'ordinateur
             document.getElementById('choix-ordinateur').textContent = choixOrdinateur;
             // Détermine le résultat de la partie
@@ -126,7 +128,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('score-ordinateur').textContent = scoreOrdinateur;
         // Réinitialise les choix et le résultat affichés
         document.getElementById('choix-ordinateur').textContent = '';
+        document.getElementById('choix-vous').textContent = '';
         document.getElementById('resultat-jeu').textContent = '';
+        document.getElementById('resultat-jeu').classList.remove('victoire', 'défaite', 'égalité');
         // Efface l'historique
         const historique = document.getElementById('historique-jeu');
         historique.innerHTML = '';
