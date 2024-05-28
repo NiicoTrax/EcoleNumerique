@@ -288,3 +288,9 @@ h1 {
 #reinitialiser-jeu:hover {
     background-color: #4aa3d8;
 }
+
+@media screen and (max-width: 400px) {
+    #tableau-de-score {
+        font-size: 12px;
+    }
+    }
