@@ -291,6 +291,10 @@ h1 {
 
 @media screen and (max-width: 400px) {
     #tableau-de-score {
-        font-size: 12px;
+        font-size: 10px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
     }
     }
