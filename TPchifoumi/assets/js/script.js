@@ -1,35 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Définit les choix possibles pour le jeu
+    // Define possible choices for the game
     const choix = ['pierre', 'papier', 'ciseaux'];
-    // Initialise les scores des joueurs et de l'ordinateur
+    // Initialize player and computer scores
     let scoreJoueur = 0;
     let scoreOrdinateur = 0;
-    // Compteur de parties
+    // Game round counter
     let compteurParties = 0;
-    // Objet pour stocker l'historique des parties
+    // Object to store game history
     let historiqueJeu = [];
 
-    // Ajoute un écouteur d'événement de clic à chaque élément de choix
+    // Add click event listener to each choice element
     document.querySelectorAll('.choix').forEach(choixElement => {
         choixElement.addEventListener('click', () => {
             if (compteurParties < 10) {
-                // Obtient le choix du joueur à partir de l'ID de l'image cliquée
+                // Get the player's choice from the clicked image ID
                 const choixJoueur = choixElement.id;
-                // Génère un choix aléatoire pour l'ordinateur
+                // Generate a random choice for the computer
                 const choixOrdinateur = choix[Math.floor(Math.random() * choix.length)];
-                // Affiche le choix de vous
+                // Display the player's choice
                 document.getElementById('choix-vous').textContent = choixJoueur;
-                // Affiche le choix de l'ordinateur
+                // Display the computer's choice
                 document.getElementById('choix-ordinateur').textContent = choixOrdinateur;
-                // Détermine le résultat de la partie
+                // Determine the result of the game
                 const resultat = obtenirResultat(choixJoueur, choixOrdinateur);
-                // Affiche le résultat de la partie
+                // Display the game result
                 mettreAJourResultatJeu(resultat);
-                // Met à jour les scores en fonction du résultat
+                // Update the scores based on the result
                 mettreAJourScores(resultat);
-                // Met à jour l'historique des parties
+                // Update the game history
                 mettreAJourHistorique(choixJoueur, choixOrdinateur, resultat);
-                // Incrémente le compteur de parties
+                // Increment the round counter
                 compteurParties++;
                 
                 if (compteurParties === 10) {
@@ -39,12 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Ajoute un écouteur d'événement de clic au bouton de réinitialisation
+    // Add click event listener to the reset button
     document.getElementById('reinitialiser-jeu').addEventListener('click', () => {
         reinitialiserJeu();
     });
 
-    // Fonction pour déterminer le résultat de la partie
+    // Function to determine the result of the game
     function obtenirResultat(joueur, ordinateur) {
         if (joueur === ordinateur) return 'Égalité';
         if ((joueur === 'pierre' && ordinateur === 'ciseaux') ||
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Fonction pour afficher le résultat du jeu avec une animation
+    // Function to display the game result with an animation
     function mettreAJourResultatJeu(resultat) {
         const resultatJeuElement = document.getElementById('resultat-jeu');
         resultatJeuElement.textContent = resultat;
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Fonction pour mettre à jour les scores en fonction du résultat
+    // Function to update the scores based on the result
     function mettreAJourScores(resultat) {
         const scoreJoueurElement = document.getElementById('score-joueur');
         const scoreOrdinateurElement = document.getElementById('score-ordinateur');
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Fonction pour animer le changement de score
+    // Function to animate the score change
     function animerChangementDeScore(element) {
         element.classList.add('changement-de-score');
         setTimeout(() => {
@@ -93,20 +93,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500);
     }
 
-    // Fonction pour mettre à jour l'historique des parties
+    // Function to update the game history
     function mettreAJourHistorique(joueur, ordinateur, resultat) {
-        // Ajoute le nouveau résultat à l'historique
+        // Add the new result to the history
         historiqueJeu.unshift({ joueur, ordinateur, resultat });
-        // Affiche l'historique mis à jour
+        // Display the updated history
         afficherHistorique();
     }
 
-    // Fonction pour afficher l'historique des parties
+    // Function to display the game history
     function afficherHistorique() {
         const historique = document.getElementById('historique-jeu');
-        // Efface l'historique actuel
+        // Clear the current history
         historique.innerHTML = '';
-        // Regroupe les résultats par type
+        // Group results by type
         const groupes = historiqueJeu.reduce((acc, partie) => {
             const cle = `${partie.joueur}-${partie.ordinateur}-${partie.resultat}`;
             if (!acc[cle]) {
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return acc;
         }, {});
 
-        // Ajoute chaque groupe de résultats à l'historique
+        // Add each group of results to the history
         Object.values(groupes).forEach((partie, index) => {
             const listItem = document.createElement('li');
             listItem.textContent = `Vous: ${partie.joueur}, Ordinateur: ${partie.ordinateur} - ${partie.resultat} (x${partie.count})`;
@@ -128,14 +128,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Fonction pour afficher le résultat final
+    // Function to display the final result
     function afficherResultatFinal() {
-        // Masque la div "jeu"
+        // Hide the "jeu" div
         document.getElementById('jeu').style.display = 'none';
-        // Affiche la div "fin-de-jeu"
+        // Show the "fin-de-jeu" div
         document.getElementById('fin-de-jeu').style.display = 'block';
 
-        // Affiche le gagnant
+        // Display the winner
         const gagnantJeuElement = document.getElementById('gagnant-jeu');
         if (scoreJoueur > scoreOrdinateur) {
             gagnantJeuElement.textContent = 'Vous avez gagné !';
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gagnantJeuElement.classList.add('égalité');
         }
 
-        // Affiche l'historique final des parties
+        // Display the final game history
         const historiqueFinal = document.getElementById('historique-jeu-final');
         historiqueFinal.innerHTML = '';
         historiqueJeu.forEach((partie) => {
@@ -159,34 +159,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Ajoute un écouteur d'événement de clic au bouton de recommencement
+    // Add click event listener to the restart button
     document.getElementById('recommencer-jeu').addEventListener('click', () => {
         recommencerJeu();
     });
 
-    // Fonction pour réinitialiser le jeu
+    // Function to reset the game
     function reinitialiserJeu() {
         scoreJoueur = 0;
         scoreOrdinateur = 0;
         compteurParties = 0;
         historiqueJeu = [];
-        // Réinitialise les scores affichés
+        // Reset displayed scores
         document.getElementById('score-joueur').textContent = scoreJoueur;
         document.getElementById('score-ordinateur').textContent = scoreOrdinateur;
-        // Réinitialise les choix et le résultat affichés
+        // Reset displayed choices and result
         document.getElementById('choix-ordinateur').textContent = '';
         document.getElementById('choix-vous').textContent = '';
         document.getElementById('resultat-jeu').textContent = '';
         document.getElementById('resultat-jeu').classList.remove('victoire', 'défaite', 'égalité');
-        // Efface l'historique
+        // Clear the history
         const historique = document.getElementById('historique-jeu');
         historique.innerHTML = '';
-        // Affiche la div "jeu" et masque la div "fin-de-jeu"
+        // Show the "jeu" div and hide the "fin-de-jeu" div
         document.getElementById('jeu').style.display = 'block';
         document.getElementById('fin-de-jeu').style.display = 'none';
     }
 
-    // Fonction pour recommencer le jeu
+    // Function to restart the game
     function recommencerJeu() {
         reinitialiserJeu();
     }
