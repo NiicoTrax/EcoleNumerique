@@ -76,7 +76,6 @@ h1 {
     border-radius: 12px;
     font-size: 0.775rem;
     animation: blink 1.5s linear infinite;
-    margin-left: 10px;
 }
 
 /* Blinking keyframes animation */
