@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Animation effect for the H1 */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textShadow {
+    0% {
+        text-shadow: 1px 1px 2px #000, 0 0 25px #ff0000, 0 0 5px #ff0000;
+    }
+    50% {
+        text-shadow: 1px 1px 2px #000, 0 0 25px #00ff00, 0 0 5px #00ff00;
+    }
+    100% {
+        text-shadow: 1px 1px 2px #000, 0 0 25px #0000ff, 0 0 5px #0000ff;
+    }
+}
+
+h1 {
+    animation: slideIn 1s ease-in-out, textShadow 2s infinite alternate;
+}
+
+
+/* Container margin at the top */
+.container {
+    margin-top: 50px;
+}
+
+/* Card styles with transition effects */
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card title margin */
+.card-title {
+    margin-bottom: 1.5rem;
+}
+
+/* Form group margin */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Message display style */
+#message {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Weekly label style with blinking effect */
+.hebdomadaire {
+    display: inline-block;
+    background-color: #ff9800;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    animation: blink 1.5s linear infinite;
+    margin-left: 10px;
+}
+
+/* Blinking keyframes animation */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Blinking effect for alert */
+.blinking-alert {
+    animation: blink-alert 1s linear infinite;
+}
+
+@keyframes blink-alert {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+
+/* Mobile version styles */
+@media (max-width: 767.98px) {
+    .card {
+        margin-bottom: 1rem;
+        transform: none;
+        box-shadow: none;
+    }
+
+    .card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2.card-title {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.875rem;
+    }
+
+    .form-group input {
+        font-size: 0.875rem;
+    }
+
+    .btn {
+        font-size: 0.875rem;
+    }
+
+    #message {
+        font-size: 1rem;
+    }
+}

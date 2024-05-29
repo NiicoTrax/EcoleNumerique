@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de Budget</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Calculateur de Budget</h1>
+        
+        <div class="section card shadow mb-4" id="depenses-fixes-card">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Dépenses fixes</h2>
+                <form id="depenses-fixes-form">
+                    <div class="form-group">
+                        <label for="loyer"><i class="fas fa-home"></i> Loyer et charges:</label>
+                        <input type="number" class="form-control" id="loyer" name="loyer" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="eau"><i class="fas fa-water"></i> Eau/Électricité/Gaz:</label>
+                        <input type="number" class="form-control" id="eau" name="eau" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="telecom"><i class="fas fa-phone"></i> Téléphone - Internet:</label>
+                        <input type="number" class="form-control" id="telecom" name="telecom" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicule"><i class="fas fa-car"></i> Assurance véhicules:</label>
+                        <input type="number" class="form-control" id="vehicule" name="vehicule" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="mutuelle"><i class="fas fa-heartbeat"></i> Mutuelle santé:</label>
+                        <input type="number" class="form-control" id="mutuelle" name="mutuelle" value="0">
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="section card shadow mb-4" id="depenses-courantes-card">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Dépenses courantes</h2>
+                <form id="depenses-courantes-form">
+                    <div class="form-group">
+                        <label for="courses"><i class="fas fa-shopping-cart"></i> Courses: <span class="hebdomadaire">Hebdomadaire</span></label>
+                        <input type="number" class="form-control" id="courses" name="courses" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="transport"><i class="fas fa-bus"></i> Essence/Frais de transport en commun: <span class="hebdomadaire">Hebdomadaire</span></label>
+                        <input type="number" class="form-control" id="transport" name="transport" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="activites"><i class="fas fa-football-ball"></i> Activités sportives et culturelles: <span class="hebdomadaire">Hebdomadaire</span></label>
+                        <input type="number" class="form-control" id="activites" name="activites" value="0">
+                    </div>
+                    <h3 class="text-secondary">Dépenses occasionnelles</h3>
+                    <div class="form-group">
+                        <label for="sorties"><i class="fas fa-glass-cheers"></i> Sorties: <span class="hebdomadaire">Hebdomadaire</span></label>
+                        <input type="number" class="form-control" id="sorties" name="sorties" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="autres-depenses"><i class="fas fa-ellipsis-h"></i> Autres dépenses:</label>
+                        <input type="number" class="form-control" id="autres-depenses" name="autres-depenses" value="0">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="section card shadow mb-4" id="recettes-card">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Calcul des Recettes</h2>
+                <form id="recettes-form">
+                    <div class="form-group">
+                        <label for="salaire"><i class="fas fa-money-bill-wave"></i> Salaire:</label>
+                        <input type="number" class="form-control" id="salaire" name="salaire" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="aides"><i class="fas fa-hand-holding-usd"></i> Les aides (allocations, etc):</label>
+                        <input type="number" class="form-control" id="aides" name="aides" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="rentes"><i class="fas fa-landmark"></i> Les rentes:</label>
+                        <input type="number" class="form-control" id="rentes" name="rentes" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="autres-recettes"><i class="fas fa-ellipsis-h"></i> Autres:</label>
+                        <input type="number" class="form-control" id="autres-recettes" name="autres-recettes" value="0">
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="section card shadow mb-4" id="epargne-card">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Calcul de l'Épargne</h2>
+                <div class="form-group">
+                    <label for="epargne"><i class="fas fa-piggy-bank"></i> Épargne:</label>
+                    <input type="number" class="form-control" id="epargne" name="epargne" value="0">
+                </div>
+            </div>
+        </div>
+        
+        <div class="section card shadow mb-4" id="resultat-card">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Résultat</h2>
+                <button class="btn btn-primary btn-block mb-2" id="calculer"><i class="fas fa-calculator"></i> Calculer</button>
+                <button class="btn btn-secondary btn-block" id="reset"><i class="fas fa-redo"></i> Réinitialiser</button>
+                <div id="message" class="mt-3"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
