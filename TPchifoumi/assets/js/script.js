@@ -4,28 +4,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialise les scores des joueurs et de l'ordinateur
     let scoreJoueur = 0;
     let scoreOrdinateur = 0;
+    // Compteur de parties
+    let compteurParties = 0;
     // Objet pour stocker l'historique des parties
     let historiqueJeu = [];
 
     // Ajoute un écouteur d'événement de clic à chaque élément de choix
     document.querySelectorAll('.choix').forEach(choixElement => {
         choixElement.addEventListener('click', () => {
-            // Obtient le choix du joueur à partir de l'ID de l'image cliquée
-            const choixJoueur = choixElement.id;
-            // Génère un choix aléatoire pour l'ordinateur
-            const choixOrdinateur = choix[Math.floor(Math.random() * choix.length)];
-            // Affiche le choix de vous
-            document.getElementById('choix-vous').textContent = choixJoueur;
-            // Affiche le choix de l'ordinateur
-            document.getElementById('choix-ordinateur').textContent = choixOrdinateur;
-            // Détermine le résultat de la partie
-            const resultat = obtenirResultat(choixJoueur, choixOrdinateur);
-            // Affiche le résultat de la partie
-            mettreAJourResultatJeu(resultat);
-            // Met à jour les scores en fonction du résultat
-            mettreAJourScores(resultat);
-            // Met à jour l'historique des parties
-            mettreAJourHistorique(choixJoueur, choixOrdinateur, resultat);
+            if (compteurParties < 10) {
+                // Obtient le choix du joueur à partir de l'ID de l'image cliquée
+                const choixJoueur = choixElement.id;
+                // Génère un choix aléatoire pour l'ordinateur
+                const choixOrdinateur = choix[Math.floor(Math.random() * choix.length)];
+                // Affiche le choix de vous
+                document.getElementById('choix-vous').textContent = choixJoueur;
+                // Affiche le choix de l'ordinateur
+                document.getElementById('choix-ordinateur').textContent = choixOrdinateur;
+                // Détermine le résultat de la partie
+                const resultat = obtenirResultat(choixJoueur, choixOrdinateur);
+                // Affiche le résultat de la partie
+                mettreAJourResultatJeu(resultat);
+                // Met à jour les scores en fonction du résultat
+                mettreAJourScores(resultat);
+                // Met à jour l'historique des parties
+                mettreAJourHistorique(choixJoueur, choixOrdinateur, resultat);
+                // Incrémente le compteur de parties
+                compteurParties++;
+                
+                if (compteurParties === 10) {
+                    afficherResultatFinal();
+                }
+            }
         });
     });
 
@@ -118,10 +128,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Fonction pour afficher le résultat final
+    function afficherResultatFinal() {
+        // Masque la div "jeu"
+        document.getElementById('jeu').style.display = 'none';
+        // Affiche la div "fin-de-jeu"
+        document.getElementById('fin-de-jeu').style.display = 'block';
+
+        // Affiche le gagnant
+        const gagnantJeuElement = document.getElementById('gagnant-jeu');
+        if (scoreJoueur > scoreOrdinateur) {
+            gagnantJeuElement.textContent = 'Vous avez gagné !';
+            gagnantJeuElement.classList.add('victoire');
+        } else if (scoreJoueur < scoreOrdinateur) {
+            gagnantJeuElement.textContent = 'L\'ordinateur a gagné !';
+            gagnantJeuElement.classList.add('défaite');
+        } else {
+            gagnantJeuElement.textContent = 'C\'est une égalité !';
+            gagnantJeuElement.classList.add('égalité');
+        }
+
+        // Affiche l'historique final des parties
+        const historiqueFinal = document.getElementById('historique-jeu-final');
+        historiqueFinal.innerHTML = '';
+        historiqueJeu.forEach((partie) => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `Vous: ${partie.joueur}, Ordinateur: ${partie.ordinateur} - ${partie.resultat}`;
+            listItem.classList.add(partie.resultat.toLowerCase());
+            historiqueFinal.appendChild(listItem);
+        });
+    }
+
+    // Ajoute un écouteur d'événement de clic au bouton de recommencement
+    document.getElementById('recommencer-jeu').addEventListener('click', () => {
+        recommencerJeu();
+    });
+
     // Fonction pour réinitialiser le jeu
     function reinitialiserJeu() {
         scoreJoueur = 0;
         scoreOrdinateur = 0;
+        compteurParties = 0;
         historiqueJeu = [];
         // Réinitialise les scores affichés
         document.getElementById('score-joueur').textContent = scoreJoueur;
@@ -134,5 +181,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Efface l'historique
         const historique = document.getElementById('historique-jeu');
         historique.innerHTML = '';
+        // Affiche la div "jeu" et masque la div "fin-de-jeu"
+        document.getElementById('jeu').style.display = 'block';
+        document.getElementById('fin-de-jeu').style.display = 'none';
+    }
+
+    // Fonction pour recommencer le jeu
+    function recommencerJeu() {
+        reinitialiserJeu();
     }
 });

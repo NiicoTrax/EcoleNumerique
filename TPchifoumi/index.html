@@ -8,7 +8,8 @@
 </head>
 <body>
     <div id="tableau-de-score">
-        <p id="vous">Vous: <span id="score-joueur">0</span></p>  <p id="ordinateur">  Ordinateur: <span id="score-ordinateur">0</span></p>
+        <p id="vous">Vous: <span id="score-joueur">0</span></p>
+        <p id="ordinateur">Ordinateur: <span id="score-ordinateur">0</span></p>
     </div>
     <div id="jeu">
         <h1>Jeu du Chifoumi</h1>
@@ -36,6 +37,14 @@
             <ul id="historique-jeu"></ul>
         </div>
         <button id="reinitialiser-jeu">Rejouer</button>
+    </div>
+    <div id="fin-de-jeu" style="display:none;">
+        <h1 id="gagnant-jeu">Gagnant</h1>
+        <div id="historique-final">
+            <h2>Historique des parties</h2>
+            <ul id="historique-jeu-final"></ul>
+        </div>
+        <button id="recommencer-jeu">Recommencer</button>
     </div>
     <script src="assets/js/script.js"></script>
 </body>

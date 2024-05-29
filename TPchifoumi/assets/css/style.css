@@ -318,6 +318,88 @@ h1 {
     background-color: #4aa3d8;
 }
 
+#fin-de-jeu {
+    background: #3b3f4a;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    margin-top: 100px;
+}
+
+#gagnant-jeu {
+    font-size: 28px;
+    color: #61dafb;
+    margin-bottom: 20px;
+}
+
+#historique-final {
+    background: #4b5162;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: auto;
+    overflow: hidden;
+}
+
+#historique-final h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #61dafb;
+}
+
+#historique-jeu-final {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#historique-jeu-final li {
+    background: #555a6e;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#historique-jeu-final li.victoire {
+    background-color: rgba(76, 175, 80, 0.3); /* Vert translucide pour victoire */
+}
+
+#historique-jeu-final li.défaite {
+    background-color: rgba(244, 67, 54, 0.3); /* Rouge translucide pour défaite */
+}
+
+#historique-jeu-final li.égalité {
+    background-color: rgba(255, 235, 59, 0.3); /* Jaune translucide pour égalité */
+}
+
+#recommencer-jeu {
+    background-color: #61dafb;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#recommencer-jeu:hover {
+    background-color: #4aa3d8;
+}
+
+
 /* VERSION MOBILE */
 
 @media screen and (max-width: 1024px) {
