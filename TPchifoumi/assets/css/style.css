@@ -109,7 +109,15 @@ h1 {
     margin-top: 10px;
     font-size: 16px;
     color: #ffffff;
-    text-align: center;
+    text-align:center;
+}
+
+#choix-vous {
+    color:white;
+}
+
+#choix-ordinateur{
+    color:white;
 }
 
 #vous {
