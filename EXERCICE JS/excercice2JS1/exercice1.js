@@ -1,57 +1,66 @@
-const values = [];
-const userInput = document.getElementById('userInput');
-const addButton = document.getElementById('addButton');
+const valeurs = [];
+const inputUtilisateur = document.getElementById('inputUtilisateur');
+const boutonAjouter = document.getElementById('boutonAjouter');
 const messagesDiv = document.getElementById('messages');
-const randomValueDiv = document.getElementById('randomValue');
-const fifthValueDiv = document.getElementById('fifthValue');
-const showRandomButton = document.getElementById('showRandomButton');
-const showAllButton = document.getElementById('showAllButton');
-const removeLastButton = document.getElementById('removeLastButton');
-const removeAllButton = document.getElementById('removeAllButton');
+const valeurAleatoireDiv = document.getElementById('valeurAleatoire');
+const cinquiemeValeurDiv = document.getElementById('cinquiemeValeur');
+const boutonAfficherAleatoire = document.getElementById('boutonAfficherAleatoire');
+const boutonAfficherToutes = document.getElementById('boutonAfficherToutes');
+const boutonSupprimerDerniere = document.getElementById('boutonSupprimerDerniere');
+const boutonSupprimerToutes = document.getElementById('boutonSupprimerToutes');
 
-addButton.addEventListener('click', () => {
-    const value = userInput.value.trim();
-    if (value) {
-        values.push(value);
-        userInput.value = '';
+// Event listener for the "Add" button
+boutonAjouter.addEventListener('click', () => {
+    const valeur = inputUtilisateur.value.trim();
+    if (valeur) {
+        valeurs.push(valeur);
+        inputUtilisateur.value = '';
         updateMessages();
     }
 });
 
-showRandomButton.addEventListener('click', () => {
-    if (values.length >= 10) {
-        const randomIndex = Math.floor(Math.random() * values.length);
-        randomValueDiv.textContent = `Valeur aléatoire : ${values[randomIndex]}`;
-    }
-});
+// Event listener for the "Display a random value" button
+boutonAfficherAleatoire.addEventListener('click', displayRandomValue);
 
-showAllButton.addEventListener('click', () => {
-    if (values.length > 0) {
-        const allValues = values.map((value, index) => `${index + 1} - ${value}`).join('\n');
+// Event listener for the "Display all values" button
+boutonAfficherToutes.addEventListener('click', () => {
+    if (valeurs.length > 0) {
+        const allValues = valeurs.map((valeur, index) => `${index + 1} - ${valeur}`).join('\n');
         alert(allValues);
     }
 });
 
-removeLastButton.addEventListener('click', () => {
-    if (values.length > 0) {
-        values.pop();
+// Event listener for the "Delete last value" button
+boutonSupprimerDerniere.addEventListener('click', () => {
+    if (valeurs.length > 0) {
+        valeurs.pop();
         updateMessages();
     }
 });
 
-removeAllButton.addEventListener('click', () => {
-    values.length = 0;
+// Event listener for the "Delete all values" button
+boutonSupprimerToutes.addEventListener('click', () => {
+    valeurs.length = 0;
     updateMessages();
 });
 
+// Function to update the messages and display the 5th value
 function updateMessages() {
-    if (values.length >= 10) {
+    if (valeurs.length >= 10) {
         messagesDiv.textContent = '';
-        randomValueDiv.textContent = '';
-        fifthValueDiv.textContent = `5ème valeur : ${values[4]}`;
+        cinquiemeValeurDiv.textContent = `5th value: ${valeurs[4]}`;
+        displayRandomValue(); // Automatically display a random value after 10 values are entered
     } else {
-        messagesDiv.textContent = 'Entrez au moins 10 valeurs';
-        randomValueDiv.textContent = '';
-        fifthValueDiv.textContent = '';
+        messagesDiv.textContent = 'Enter at least 10 values';
+        valeurAleatoireDiv.textContent = '';
+        cinquiemeValeurDiv.textContent = '';
+    }
+}
+
+// Function to display a random value
+function displayRandomValue() {
+    if (valeurs.length >= 10) {
+        const randomIndex = Math.floor(Math.random() * valeurs.length);
+        valeurAleatoireDiv.textContent = `Random value: ${valeurs[randomIndex]}`;
     }
 }
