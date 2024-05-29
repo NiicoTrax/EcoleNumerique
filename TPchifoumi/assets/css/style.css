@@ -3,7 +3,8 @@ body {
     background-color: #282c34;
     color: #ffffff;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     height: 100vh;
     margin: 0;
@@ -11,9 +12,6 @@ body {
 }
 
 #tableau-de-score {
-    position: absolute;
-    top: 10px;
-    right: 10px;
     background: #3b3f4a;
     padding: 10px 20px;
     border-radius: 8px;
@@ -21,6 +19,13 @@ body {
     font-size: 18px;
     color: #61dafb;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    flex-direction: column;
 }
 
 #tableau-de-score:hover {
@@ -56,9 +61,12 @@ body {
     background: #3b3f4a;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     padding: 20px;
     text-align: center;
+    position: relative;
+    margin-top: 100px; 
 }
 
 h1 {
@@ -71,6 +79,12 @@ h1 {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
+}
+
+.choix-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .choix {
@@ -91,12 +105,19 @@ h1 {
     border-color: #61dafb;
 }
 
+.choix-container p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+}
+
 #vous {
-    color:blue;
+    color: blue;
 }
 
 #ordinateur {
-    color:#e57373;
+    color: #e57373;
 }
 
 #resultat {
@@ -289,12 +310,63 @@ h1 {
     background-color: #4aa3d8;
 }
 
-@media screen and (max-width: 400px) {
+/* VERSION MOBILE */
+
+@media screen and (max-width: 1024px) {
     #tableau-de-score {
-        font-size: 10px;
-        display: flex;
+        font-size: 14px;
+        padding: 10px;
+        right: auto;
+        left: 6%;
+        transform: translateX(-50%);
+        position: relative;
         flex-direction: column;
-        flex-wrap: nowrap;
+        align-items: center;
+        display: flex;
         justify-content: center;
     }
+
+    #jeu {
+        width: 95%;
+        margin-top: 20px;
     }
+}
+
+@media screen and (max-width: 820px) {
+    #tableau-de-score {
+        font-size: 14px;
+        padding: 10px;
+        right: auto;
+        left: 8%;
+        transform: translateX(-50%);
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    #jeu {
+        width: 95%;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #tableau-de-score {
+        font-size: 12px;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        margin: 0 auto 10px auto;
+        left: 12%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+    }
+
+    #jeu {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
