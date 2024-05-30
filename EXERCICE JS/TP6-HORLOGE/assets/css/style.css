@@ -6,9 +6,35 @@ body {
 #horloge
 {
     margin-left: 30%;
-    margin-top: 2%;
+    margin-top: 10%;
     position: relative;
     width: 462px;
     height: 500px;
     background-image: url('../img/horloge.png');
+    background-repeat: no-repeat;
+}
+
+#heure {
+    width: 19px;
+    left: 215px;
+    position: absolute;
+    bottom: 263px;
+    transform-origin: bottom center; 
+}
+
+#minute {
+    width: 35px;
+    left: 226px;
+    position: absolute;
+    bottom: 280px;
+    transform-origin: bottom center; 
+}
+
+#seconde {
+    width: 2px;
+    height: 229px;
+    left: 229px;
+    position: absolute;
+    bottom: 270px;
+    transform-origin: bottom center; 
 }
