@@ -1,0 +1,33 @@
+.aiguille
+{
+    position: absolute;
+    bottom: 283px;
+    transform-origin: bottom center;
+}
+
+
+#horloge
+{
+    margin-left: 30%;
+    margin-top: 2%;
+    position: relative;
+    height: 567px;
+    width: 567px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+#alarmeNum {
+
+    margin-left: 28%;
+    margin-top: 2%;
+}
+
+#affichAlarme {
+    position: absolute;
+    top : 15%;
+    left: 75%;
+    border: 3px solid black;
+    width: 300px;
+    height: 200px;
+}
