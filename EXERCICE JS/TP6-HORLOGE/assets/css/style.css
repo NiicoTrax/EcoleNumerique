@@ -1,0 +1,14 @@
+body {
+    margin:0;
+    padding:0;
+}
+
+#horloge
+{
+    margin-left: 30%;
+    margin-top: 2%;
+    position: relative;
+    width: 462px;
+    height: 500px;
+    background-image: url('../img/horloge.png');
+}
