@@ -1,16 +1,15 @@
-
-    // Listen to an Event on an ID
+// Existing event listeners
 document.getElementById('calculer').addEventListener('click', calculerBudget);
 document.getElementById('reset').addEventListener('click', resetForm);
 
-
-    // Select the field when clicked
+// Existing select on focus
 document.querySelectorAll('input[type="number"]').forEach(input => {
     input.addEventListener('focus', function() {
         this.select();
     });
 });
 
+// Budget calculation function
 function calculerBudget() {
     // Retrieve values for fixed expenses
     const loyer = parseFloat(document.getElementById('loyer').value) || 0;
@@ -102,3 +101,13 @@ function resetForm() {
         input.value = 0;
     });
 }
+
+// New event listener for Enter key
+document.querySelectorAll('input').forEach(input => {
+    input.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            calculerBudget();
+        }
+    });
+});
