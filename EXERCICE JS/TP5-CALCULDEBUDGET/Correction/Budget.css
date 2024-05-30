@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("Fond.jpg");
+    background-size: 100%;
+}
+
+body, html {
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+#Depenses {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 100%;
+    font-size: 17px;
+}
+
+#LC {
+    float: right;
+    position: relative;
+    right: 20px;
+}
+
+#RC {
+    position: relative;
+    left: 10px;
+}
+
+#Eu {
+    float: right;
+    position: relative;
+    right: 20px;
+}
+
+#Elec {
+    position: relative;
+    left: 115px;
+}
+
+#Gz {
+    float: right;
+    position: relative;
+    right: 20px;
+}
+
+#TI {
+    position: relative;
+    left: 50px;
+}
+
+#Habitat {
+    float: right;
+    position: relative;
+    right: 20px;
+}
+
+#Auto {
+    position: relative;
+    left: 40px;
+}
+
+#Snt {
+    float: right;
+    position: relative;
+    right: 20px;
+}
+
+#FG {
+    position: relative;
+    left: 85px;
+}
+
+#IR {
+    float: right;
+    position: relative;
+    right: 20px;
+}
+
+#IL {
+    position: relative;
+    left: 90px;
+}
+
+#Cs {
+    float: right;
+    position: relative;
+    right: 20px;
+}
+
+#EF {
+    position: relative;
+    left: 125px;
+}
+
+#ASC {
+    float: right;
+    position: relative;
+    right: 20px;
+    bottom: 20px;
+}
+
+#TC {
+    position: relative;
+    left: 30px;
+}
+
+#S {
+    position: relative;
+    left: 35%;
+}
+
+#AjoutD {
+    position: relative;
+    left: 30%;
+}
+
+#AjoutR {
+    position: relative;
+    left: 30%;
+}
+
+#Valider {
+    text-align: center;
+    position: relative;
+    left: 40%;
+    top: 40px;
+}
+
+#EE {
+    position: relative;
+    left: 40%;
+}
+
+#Recettes {
+    position: relative;
+    float: right;
+    width: 50%;
+    height: 100%;
+    font-size: 17px;
+}
+
+#SR {
+    float: right;
+    position: relative;
+    right: 25px;
+}
+
+#Ae {
+    position: relative;
+    left: 10%;
+}
+
+#Rt {
+    position: relative;
+    left: 35%;
+}
+
+#Resultats {
+    margin-top: 10%;
+}
+
+#Total {
+    text-align: center;
+}
+
+#Sym, #Somme {
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    left: 45%;
+}
+
+#Budget {
+    position: relative;
+    text-align: center;
+    top: 20px;
+    font-size: 20px;
+    left: 40%;
+}
+
+#BudgetPositif {
+    position: relative;
+    text-align: center;
+    top: 20px;
+    font-size: 20px;
+    left: 20%;
+}
+
+#Reset {
+    position: relative;
+    left: 48%;
+    top: 60px;
+}
+
+#D {
+    position: relative;
+    left: 45%;
+}
+
+#R {
+    position: relative;
+    left: 15%;
+}

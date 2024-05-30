@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cacul Ton Budget</title>
+    <link rel="stylesheet" href="Budget.css">
+</head>
+<body>
+
+<div id="Depenses">
+
+    <h1> Dépenses </h1>
+
+    <label id="LC">
+
+        <span> Loyer & Charges : </span>
+
+        <input id="Loyer" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <label id="RC">
+
+        <span> Remboursement du crédit : </span>
+
+        <input id="Credit" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <br><br>
+
+    <label id="Eu">
+
+        <span> Eau : </span>
+
+        <input id="Eau" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <label id="Elec">
+
+        <span> Electricité : </span>
+
+        <input id="Electricite" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <br><br>
+
+    <label id="Gz">
+
+        <span> Gaz : </span>
+
+        <input id="Gaz" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <label id="TI">
+
+        <span> Téléphone, Internet : </span>
+
+        <input id="Internet" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <br><br>
+
+    <label id="Habitat">
+
+        <span> Assurance Habitation : </span>
+
+        <input id="Habitation" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <label id="Auto">
+
+        <span> Assurances Véhicules : </span>
+
+        <input id="Vehicules" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <br><br>
+
+    <label id="Snt">
+
+        <span> Mutuelle Santé : </span>
+
+        <input id="Sante" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <label id="FG">
+
+        <span> Frais de Garde : </span>
+
+        <input id="Garde" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <br><br>
+
+    <label id="IR">
+
+        <span> Impôts sur le Revenu : </span>
+
+        <input id="IRevenu" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <label id="IL">
+
+        <span> Impôts Locaux : </span>
+
+        <input id="ILocaux" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <br> <br>
+
+    <label id="Cs">
+
+        <span> Courses : </span>
+
+        <input id="Courses" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <label id="EF">
+
+        <span> Essence : </span>
+
+        <input id="Essence" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <br><br>
+
+    <label id="ASC">
+
+        <span> Activités : <br> Sportive et Culturelle : </span>
+
+        <input id="Activites" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <label id="TC">
+
+        <span> Transport en Commun : </span>
+
+        <input id="Transport" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <br><br>
+
+    <label id="S">
+
+        <span>  Sorties : </span>
+
+        <input id="Sortie" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <br> <br>
+
+    <label id="AjoutD">
+
+        <input id="AjoutDNom" type="text">
+
+        <input id="AjoutDNombre" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <br> <br>
+
+    <span id="D"></span>
+
+    <div id="Epargne">
+
+        <h1> Epargne </h1>
+
+        <label id="EE">
+
+            <input id="Eparg" type="number" step="0.01" min="0" value="0">
+
+        </label>
+
+    </div>
+
+</div>
+
+<div id="Recettes">
+
+    <h1> Recettes </h1>
+
+    <label id="SR">
+
+        <span> Salaire : </span>
+
+        <input id="Salaire" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <label id="Ae">
+
+        <span> Aides : </span>
+
+        <input id="Aide" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <br><br>
+
+    <label id="Rt">
+
+        <span> Rentes : </span>
+
+        <input id="Rentes" type="number" step="0.01" min="0" value="0">
+
+    </label>
+
+    <br> <br>
+
+    <label id="AjoutR">
+
+        <input id="AjoutRNom" type="text">
+
+        <input id="AjoutRNombre" type="number" step="0.01" min="0" value="0">
+
+        <br> <br>
+
+        <span id="R"></span>
+
+    </label>
+
+    <div id="Resultats">
+
+        <h1> Resultats </h1>
+
+        <div id="Totaux">
+
+            <h2 id="Total"> Total : </h2>
+
+            <br>
+
+            <span id="Somme">00.00</span><span id="Sym">€</span>
+
+            <br>
+
+            <span id="Budget"> Vous avez un budget : </span>
+
+            <br><br>
+
+            <span id="BudgetPositif"></span>
+
+        </div>
+
+        <button id="Valider" type="button"> Valider tout les Champs <br> Afficher le Résultats</button>
+
+        <br>
+
+        <button id="Reset" type="button"> Reset</button>
+
+    </div>
+
+</div>
+
+<script src="Budget.js"></script>
+
+</body>
+</html>
+
