@@ -19,16 +19,16 @@ body {
     height: 160px;
     left: 216px;
     position: absolute;
-    bottom: 270px;
+    bottom: 268px;
     transform-origin: bottom center;
 }
 
 #minute {
     width: 12px;
-    height: 230px;
-    left: 217px;
+    height: 215px;
+    left: 220px;
     position: absolute;
-    bottom: 270px;
+    bottom: 275px;
     transform-origin: bottom center; 
 }
 
@@ -39,4 +39,20 @@ body {
     position: absolute;
     bottom: 270px;
     transform-origin: bottom center; 
+}
+
+@media only screen and (max-width: 600px) {
+
+    #horloge {
+    margin-left: 30%;
+    margin-top: 10%;
+    position: relative;
+    width: 462px;
+    height: 500px;
+    background-image: url('../img/horloge.png');
+    background-repeat: no-repeat;
+}
+
+
+
 }
