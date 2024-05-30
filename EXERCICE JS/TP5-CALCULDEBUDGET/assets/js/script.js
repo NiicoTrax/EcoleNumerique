@@ -35,32 +35,6 @@ function calculerBudget() {
     // Retrieve the value of savings
     const epargne = parseFloat(document.getElementById('epargne').value) || 0;
 
-    // Check if all required fields are filled
-    const champsvide = document.getElementById('loyer').value !== '' &&
-                            document.getElementById('eau').value !== '' &&
-                            document.getElementById('telecom').value !== '0' &&
-                            document.getElementById('vehicule').value !== '' &&
-                            document.getElementById('mutuelle').value !== '' &&
-                            document.getElementById('courses').value !== '' &&
-                            document.getElementById('transport').value !== '' &&
-                            document.getElementById('activites').value !== '' &&
-                            document.getElementById('sorties').value !== '' &&
-                            document.getElementById('autres-depenses').value !== '' &&
-                            document.getElementById('salaire').value !== '' &&
-                            document.getElementById('aides').value !== '' &&
-                            document.getElementById('rentes').value !== '' &&
-                            document.getElementById('autres-recettes').value !== '' &&
-                            document.getElementById('epargne').value !== '';
-
-    const message = document.getElementById('message');
-    message.innerHTML = '';
-
-    // Alert message
-    if (!champsvide) {
-        message.innerHTML = `<div class="alert alert-danger blinking-alert"><i class="fas fa-exclamation-triangle"></i> Veuillez remplir les champs indispensables au calcul !</div>`;
-        return;
-    }
-
     // Calculate total expenses
     const totalDepenses = loyer + eau + telecom + vehicule + mutuelle + courses + transport + activites + sorties + autresDepenses;
     const totalRecettes = salaire + aides + rentes + autresRecettes;
