@@ -19,14 +19,14 @@ body {
     height: 160px;
     left: 216px;
     position: absolute;
-    bottom: 268px;
+    bottom: 270px;
     transform-origin: bottom center;
 }
 
 #minute {
     width: 12px;
-    height: 215px;
-    left: 220px;
+    height: 210px;
+    left: 225px;
     position: absolute;
     bottom: 275px;
     transform-origin: bottom center; 
@@ -41,18 +41,18 @@ body {
     transform-origin: bottom center; 
 }
 
-@media only screen and (max-width: 600px) {
-
-    #horloge {
-    margin-left: 30%;
-    margin-top: 10%;
-    position: relative;
-    width: 462px;
-    height: 500px;
-    background-image: url('../img/horloge.png');
-    background-repeat: no-repeat;
+#accroche {
+    width: 130px;
+    height: 105px;
+    left: 170px;
+    position: absolute;
+    bottom: 218px;
 }
 
+@media only screen and (max-width: 700px) {
 
-
+    .container {
+    position: relative;
+    right:110px;
+    }
 }
