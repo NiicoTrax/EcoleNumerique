@@ -1,6 +1,10 @@
+
+    // Listen to an Event on an ID
 document.getElementById('calculer').addEventListener('click', calculerBudget);
 document.getElementById('reset').addEventListener('click', resetForm);
 
+
+    // Select the field when clicked
 document.querySelectorAll('input[type="number"]').forEach(input => {
     input.addEventListener('focus', function() {
         this.select();
@@ -33,9 +37,9 @@ function calculerBudget() {
     const epargne = parseFloat(document.getElementById('epargne').value) || 0;
 
     // Check if all required fields are filled
-    const champsvide = document.getElementById('loyer').value !== '0' &&
+    const champsvide = document.getElementById('loyer').value !== '' &&
                             document.getElementById('eau').value !== '' &&
-                            document.getElementById('telecom').value !== '' &&
+                            document.getElementById('telecom').value !== '0' &&
                             document.getElementById('vehicule').value !== '' &&
                             document.getElementById('mutuelle').value !== '' &&
                             document.getElementById('courses').value !== '' &&
@@ -52,6 +56,7 @@ function calculerBudget() {
     const message = document.getElementById('message');
     message.innerHTML = '';
 
+    // Alert message
     if (!champsvide) {
         message.innerHTML = `<div class="alert alert-danger blinking-alert"><i class="fas fa-exclamation-triangle"></i> Veuillez remplir les champs indispensables au calcul !</div>`;
         return;
@@ -76,6 +81,8 @@ function calculerBudget() {
         } else {
             suggestion = 'Vous pourriez envisager un voyage ou faire un investissement plus important.';
         }
+
+        // Alert message
         message.innerHTML = `<div class="alert alert-success"><i class="fas fa-thumbs-up"></i> Votre budget est positif : il vous reste ${budgetRestant}€.<br> ${suggestion}</div>`;
     } else if (budgetRestant < 0) {
         message.innerHTML = `<div class="alert alert-danger"><i class="fas fa-exclamation-triangle"></i> Votre budget est négatif de ${budgetRestant}€. Essayez de réduire vos dépenses.</div>`;
