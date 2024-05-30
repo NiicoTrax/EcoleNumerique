@@ -15,18 +15,20 @@ body {
 }
 
 #heure {
-    width: 19px;
-    left: 215px;
+    width: 12px;
+    height: 160px;
+    left: 216px;
     position: absolute;
-    bottom: 263px;
-    transform-origin: bottom center; 
+    bottom: 265px;
+    transform-origin: bottom center;
 }
 
 #minute {
-    width: 35px;
-    left: 226px;
+    width: 12px;
+    height: 200px;
+    left: 217px;
     position: absolute;
-    bottom: 280px;
+    bottom: 265px;
     transform-origin: bottom center; 
 }
 
