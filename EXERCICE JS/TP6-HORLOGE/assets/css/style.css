@@ -3,9 +3,8 @@ body {
     padding:0;
 }
 
-#horloge
-{
-    margin-left: 30%;
+#horloge {
+    margin: auto;
     margin-top: 10%;
     position: relative;
     width: 462px;
@@ -14,45 +13,39 @@ body {
     background-repeat: no-repeat;
 }
 
+#heure, #minute, #seconde, #accroche {
+    position: absolute;
+    transform-origin: bottom center;
+}
+
 #heure {
     width: 12px;
     height: 160px;
-    left: 216px;
-    position: absolute;
-    bottom: 270px;
-    transform-origin: bottom center;
+    left: 50%;
+    bottom: 275px;
+    transform: translateX(-50%);
 }
 
 #minute {
     width: 12px;
     height: 210px;
-    left: 225px;
-    position: absolute;
+    left: 50%;
     bottom: 275px;
-    transform-origin: bottom center; 
+    transform: translateX(-50%);
 }
 
 #seconde {
     width: 2px;
     height: 229px;
-    left: 229px;
-    position: absolute;
+    left: 50%;
     bottom: 270px;
-    transform-origin: bottom center; 
+    transform: translateX(-50%);
 }
 
 #accroche {
     width: 130px;
     height: 105px;
-    left: 170px;
-    position: absolute;
+    left: 50%;
     bottom: 218px;
-}
-
-@media only screen and (max-width: 700px) {
-
-    .container {
-    position: relative;
-    right:110px;
-    }
+    transform: translateX(-50%);
 }
