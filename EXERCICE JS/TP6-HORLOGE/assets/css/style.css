@@ -21,16 +21,16 @@ body {
 #heure {
     width: 12px;
     height: 160px;
-    left: 50%;
+    left: 49%;
     bottom: 275px;
     transform: translateX(-50%);
 }
 
 #minute {
     width: 12px;
-    height: 210px;
-    left: 50%;
-    bottom: 275px;
+    height: 220px;
+    left: 49%;
+    bottom: 262px;
     transform: translateX(-50%);
 }
 
@@ -43,8 +43,8 @@ body {
 }
 
 #accroche {
-    width: 130px;
-    height: 105px;
+    width: 120px;
+    height: 100px;
     left: 50%;
     bottom: 218px;
     transform: translateX(-50%);
