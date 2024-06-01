@@ -22,7 +22,7 @@ const displayEvent = function(img,id,description,date) {
 
 
 eventsHandler.getEvents().forEach(function(event, index) {
-    displayEvent (event[2],(index+1), event[1], event[4]);
+    displayEvent(event.category,(index+1), event.description, event.startDate);
 });
 
 
@@ -74,7 +74,7 @@ search.addEventListener('input', function(ev) {
         eventsContainer.innerHTML = '';
         eventsDataFiltered.forEach(function(event) {
             let eventID = eventsData.indexOf(event)+1;
-            displayEvent (event[2],eventID, event[1], event[4]);
+            displayEvent (event.category,eventID, event.description, event.startDate);
         });
     }
 
