@@ -13,6 +13,8 @@ catch(error)
     document.getElementsByClassName('container')[0].innerHTML = error;
 }
 
+eventsHandler.getEventById(eventID-1);
+eventsHandler.getCurrentEvent();
 
 const domEventTitle = document.querySelector('h2');
 domEventTitle.innerHTML = eventsData[eventID-1][0];

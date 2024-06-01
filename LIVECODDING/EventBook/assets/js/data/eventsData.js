@@ -63,6 +63,28 @@ const event6 = new Event('Evenement 6',
 );
 
 
+const eventsHandler = {
+    currentEvent : null,
+    events: eventsData,
+    getEvents: function() {
+        return this.events;
+    },
+    searchEventByName: function(searchTerm) {
+        return this.events.filter(function(event) {
+            return (event[0].indexOf(searchTerm) > -1);
+        });
+    },
+    getEventById: function(eventId) {
+        this.currentEvent = this.events[eventId];
+  },
+  getCurrentEvent: function()  {
+    return this.currentEvent;
+  },
+  getEventName: function() {
+    return this.currentEvent[0];
+  }
+};
+
 
 
 

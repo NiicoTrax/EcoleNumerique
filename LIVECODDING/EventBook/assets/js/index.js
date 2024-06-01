@@ -21,7 +21,7 @@ const displayEvent = function(img,id,description,date) {
 }
 
 
-eventsData.forEach(function(event, index) {
+eventsHandler.getEvents().forEach(function(event, index) {
     displayEvent (event[2],(index+1), event[1], event[4]);
 });
 
@@ -67,9 +67,7 @@ eventsData.forEach(function(event, index) {
 
 search.addEventListener('input', function(ev) {
     let searchTerm = (ev.target.value);
-    let eventsDataFiltered = eventsData.filter(function(event) {
-        return (event[0].indexOf(searchTerm) > -1);
-    });
+    let eventsDataFiltered = eventsHandler.searchEventByName(searchTerm);
 
     if(eventsDataFiltered.length > 0)
     {
