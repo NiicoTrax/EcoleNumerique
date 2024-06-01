@@ -1,16 +1,20 @@
+/* Styles généraux */
 body {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
+/* Styles pour l'horloge */
 #horloge {
     margin: auto;
     margin-top: 10%;
     position: relative;
-    width: 462px;
-    height: 500px;
+    width: 464px;
+    height: 543px;
     background-image: url('../img/horloge.png');
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
 }
 
 #heure, #minute, #seconde, #accroche {
@@ -22,7 +26,7 @@ body {
     width: 12px;
     height: 160px;
     left: 49%;
-    bottom: 275px;
+    bottom: 317px;
     transform: translateX(-50%);
 }
 
@@ -30,15 +34,15 @@ body {
     width: 12px;
     height: 220px;
     left: 49%;
-    bottom: 262px;
+    bottom: 317px;
     transform: translateX(-50%);
 }
 
 #seconde {
-    width: 2px;
-    height: 229px;
+    width: 3px;
+    height: 230px;
     left: 50%;
-    bottom: 270px;
+    bottom: 310px;
     transform: translateX(-50%);
 }
 
@@ -46,6 +50,66 @@ body {
     width: 120px;
     height: 100px;
     left: 50%;
-    bottom: 218px;
+    bottom: 260px;
     transform: translateX(-50%);
+}
+
+/* Media Queries pour tablettes */
+@media only screen and (max-width: 768px) {
+    #horloge {
+        width: 316px;
+        height: 370px;
+        background-size: cover; 
+        background-position: center; 
+    }
+    #heure {
+        height: 90px;
+        bottom: 218px;
+        left:153px;
+    }
+    #minute {
+        height: 150px;
+        bottom: 220px;
+        left: 150px;
+    }
+    #seconde {
+        height: 156px;
+        bottom: 210px;
+        left: 158px;
+    }
+    #accroche {
+        width: 100px;
+        height: 80px;
+        bottom: 170px;
+    }
+}
+
+/* Media Queries pour mobiles */
+@media only screen and (max-width: 480px) {
+    #horloge {
+        width: 240px;
+        height: 280px;
+        background-size: cover; 
+        background-position: center; 
+    }
+    #heure {
+        height: 70px;
+        bottom: 165px;
+        left: 118px;
+    }
+    #minute {
+        height: 110px;
+        bottom: 160px;
+        left:108px;
+    }
+    #seconde {
+        height: 119px;
+        bottom: 160px;
+        left:120px;
+    }
+    #accroche {
+        width: 80px;
+        height: 60px;
+        bottom: 125px;
+    }
 }
