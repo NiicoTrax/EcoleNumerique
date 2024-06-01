@@ -33,16 +33,16 @@ body {
 #minute {
     width: 12px;
     height: 220px;
-    left: 49%;
-    bottom: 317px;
+    left: 48%;
+    bottom: 308px;
     transform: translateX(-50%);
 }
 
 #seconde {
-    width: 3px;
+    width: 5px;
     height: 230px;
-    left: 50%;
-    bottom: 310px;
+    left: 49%;
+    bottom: 308px;
     transform: translateX(-50%);
 }
 
@@ -69,7 +69,7 @@ body {
     }
     #minute {
         height: 150px;
-        bottom: 220px;
+        bottom: 200px;
         left: 150px;
     }
     #seconde {
@@ -87,29 +87,32 @@ body {
 /* Media Queries pour mobiles */
 @media only screen and (max-width: 480px) {
     #horloge {
-        width: 240px;
-        height: 280px;
+        width: 237px;
+        height: 277px;
         background-size: cover; 
         background-position: center; 
     }
     #heure {
         height: 70px;
         bottom: 165px;
-        left: 118px;
+        left: 115px;
+        width: 10px;
     }
     #minute {
-        height: 110px;
+        height: 115px;
         bottom: 160px;
-        left:108px;
+        left:110px;
+        width: 10px;
     }
     #seconde {
-        height: 119px;
-        bottom: 160px;
-        left:120px;
+        height: 116px;
+        bottom: 158px;
+        left:116px;
+        width: 5px;
     }
     #accroche {
         width: 80px;
         height: 60px;
-        bottom: 125px;
+        bottom: 130px;
     }
 }
