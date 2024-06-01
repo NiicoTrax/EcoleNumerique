@@ -66,6 +66,7 @@ const event6 = new Event('Evenement 6',
 const eventsHandler = {
     currentEvent : null,
     events: eventsData,
+
     getEvents: function() {
         return this.events;
     },
@@ -82,6 +83,18 @@ const eventsHandler = {
   },
   getEventName: function() {
     return this.currentEvent[0];
+  },
+  getEventDescription: function() {
+    return this.currentEvent[1];
+  },
+  getEventCategory: function() {
+    return this.currentEvent[2];
+  },
+  getEventTickets: function() {
+    return this.currentEvent[3];
+  },
+  getEventStartDate: function() {
+    return this.currentEvent[4];
   }
 };
 

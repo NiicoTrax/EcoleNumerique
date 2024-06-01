@@ -4,8 +4,9 @@ const eventID = parseInt(urlParams.get('eventId'));
 
 const purchaseTicketsForm = document.getElementById('purchase-tickets-form');
 const TicketsAvailableDiv = document.getElementById('tickets-available');
-const eventArray = eventsData[eventID-1];
-const eventTicketsArray = eventArray[3];
+eventsHandler.getEventById(eventID-1);
+
+const eventTicketsArray = eventsHandler.getEventTickets();
 
 TicketsAvailableDiv.innerHTML ='';
 

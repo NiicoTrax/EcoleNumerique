@@ -14,24 +14,24 @@ catch(error)
 }
 
 eventsHandler.getEventById(eventID-1);
-eventsHandler.getCurrentEvent();
+
 
 const domEventTitle = document.querySelector('h2');
-domEventTitle.innerHTML = eventsData[eventID-1][0];
+domEventTitle.innerHTML = eventsHandler.getEventName();
 
 const domEventDescription = document.getElementById('event-description');
-domEventDescription.innerHTML = eventsData[eventID-1][1];
+domEventDescription.innerHTML = eventsHandler.getEventDescription();
 
-document.getElementById('event-image').src = "assets/img/event/"+eventsData[eventID-1][2]+".jpg";
+document.getElementById('event-image').src = "assets/img/event/"+eventsHandler.getEventCategory()+".jpg";
 
-document.getElementById('event-start-date').innerHTML = 'le ' +eventsData[eventID-1][4].toLocaleDateString()+ ' à ' +eventsData[eventID-1][4].toLocaleTimeString();
-document.getElementById('event-start-date').datetime = eventsData[eventID-1][4].toISOString();
+document.getElementById('event-start-date').innerHTML = 'le ' +eventsHandler.getEventStartDate()+ ' à ' +eventsHandler.getEventStartDate().toLocaleTimeString();
+document.getElementById('event-start-date').datetime = eventsHandler.getEventStartDate().toISOString();
 
 const domEventTicketsTable = document.querySelector('table')
 
 const randomPrice = Math.floor((Math.random()*100))+1;
 
-const tickets = eventsData[eventID-1][3];
+const tickets = eventsHandler.getEventTickets();
 
 const displayTicket = function(ticketType, ticketPrice){
 
