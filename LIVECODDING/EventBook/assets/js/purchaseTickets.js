@@ -27,5 +27,4 @@ eventTicketsArray.forEach(function(ticket){
 
 purchaseTicketsInputs[0].addEventListener('change', function() {
     console.log(this.value);
-
 }); */

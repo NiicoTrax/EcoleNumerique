@@ -6,7 +6,7 @@ const eventsData = [
             ['Billet classique',35],
             ['Billet VIP',65]
         ],
-        new Date('2004-06-15T20:00:00')
+        new Date('2024-06-15T20:00:00')
     ],
     ['Evenement 2',
     'premiere du premier événement.<br>Seconde ligne de la description.',
@@ -14,7 +14,7 @@ const eventsData = [
         [
             ['Billet classique',35]
         ],
-        new Date('2004-07-15T19:30:00')
+        new Date('2024-07-15T19:30:00')
     ],
     ['Evenement 3',
     'premiere du premier événement.<br>Seconde ligne de la description.',
@@ -22,7 +22,7 @@ const eventsData = [
         [
             ['Billet aleatoire', Math.floor((Math.random()*100))+1]
         ],
-        new Date('2004-08-15T16:30:00')
+        new Date('2024-08-15T16:30:00')
     ],
     ['Evenement 4',
     'premiere du premier événement.<br>Seconde ligne de la description.',
@@ -30,6 +30,56 @@ const eventsData = [
         [
             ['Billet aleatoire', Math.floor((Math.random()*100))+1]
         ],
-        new Date('2004-09-15T14:00:00')
+        new Date('2024-09-15T14:00:00')
     ]
 ];
+
+const eventObjet = { 
+    name: 'Evenement 5',
+    description: 'premiere du premier événement.<br>Seconde ligne de la description.',
+    category: 'conference',
+    tickets: [
+        ['Billet aleatoire', Math.floor((Math.random()*100))+1]
+    ],
+    startDate: new Date('2024-10-15T14:00:00')
+};
+
+function Event(name,description,category,tickets,startDate)
+{
+    this.name = name;
+    this.description = description;
+    this.category = category;
+    this.tickets = tickets;
+    this.startDate = startDate;
+}
+
+const event6 = new Event('Evenement 6',
+    'premiere du premier événement.<br>Seconde ligne de la description.',
+    'conference',
+    [
+    ['Billet aleatoire', Math.floor((Math.random()*100))+1]
+    ],
+    new Date('2024-10-15T14:00:00') 
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
