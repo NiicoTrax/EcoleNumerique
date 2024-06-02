@@ -1,0 +1,25 @@
+[
+    {"name": "Ampoule", "type": "verte", "image": "assets/images/ampoule.png"},
+    {"name": "Bouteille en verre", "type": "verte", "image": "assets/images/bouteilleenverre.png"},
+    {"name": "Verre à vin cassé", "type": "verte", "image": "assets/images/verreavin.png"},
+    {"name": "Pot de confiture", "type": "verte", "image": "assets/images/potdeconfiture.png"},
+    {"name": "Bocal de conserve", "type": "verte", "image": "assets/images/bocaldeconserve.png"},
+    
+    {"name": "Boîte de pizza", "type": "marron", "image": "assets/images/boitedepizza.png"},
+    {"name": "Déchet organique", "type": "marron", "image": "assets/images/dechetorganique.png"},
+    {"name": "Pomme", "type": "marron", "image": "assets/images/pomme.png"},
+    {"name": "Coquilles d'oeuf", "type": "marron", "image": "assets/images/coquillesdoeuf.png"},
+    {"name": "Marcs de café", "type": "marron", "image": "assets/images/marcsdecafe.png"},
+
+    {"name": "Bouteille de lait", "type": "jaune", "image": "assets/images/bouteilledelait.png"},
+    {"name": "Bouteille de soda", "type": "jaune", "image": "assets/images/bouteilledesoda.png"},
+    {"name": "Bouteille en plastique", "type": "jaune", "image": "assets/images/bouteilleplastique.png"},
+    {"name": "Brique alimentaire", "type": "jaune", "image": "assets/images/briquealimentaire.png"},
+    {"name": "Canette", "type": "jaune", "image": "assets/images/canette.png"},
+
+    {"name": "Carton", "type": "bleue", "image": "assets/images/carton.png"},
+    {"name": "Chaussures", "type": "bleue", "image": "assets/images/chaussures.png"},
+    {"name": "Journal", "type": "bleue", "image": "assets/images/journal.png"},
+    {"name": "Magazine", "type": "bleue", "image": "assets/images/magazine.png"},
+    {"name": "Sac en papier", "type": "bleue", "image": "assets/images/sacenpapier.png"}
+]

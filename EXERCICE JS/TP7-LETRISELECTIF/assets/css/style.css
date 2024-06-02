@@ -1,0 +1,343 @@
+/* General body styling */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 0;
+    height: 100vh;
+    background-image: url('../images/fond.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    user-select: none; /* Prevents text selection */
+}
+
+/* Container styling */
+#container {
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    overflow: hidden;
+    user-select: none; /* Prevents text selection */
+}
+
+/* Header styling */
+header h1 {
+    font-size: 2em;
+    color: #106900;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px #f39c12;
+    user-select: none; /* Prevents text selection */
+}
+
+/* Subtitle styling */
+.subtitle {
+    font-size: 1.2em;
+    color: #106900;
+    margin-bottom: 10px;
+    user-select: none; /* Prevents text selection */
+}
+
+/* Instructions styling */
+#instructions {
+    font-size: 1em;
+    color: #106900;
+    margin-bottom: 10px;
+    user-select: none; /* Prevents text selection */
+}
+
+/* Waste container styling */
+#waste-container {
+    display: inline-block;
+    background: #e0f7fa;
+    padding: 10px;
+    border-radius: 10px;
+    animation: bounceIn 1s; /* Bounce in animation */
+    cursor: grab;
+    border: 2px dashed #16a085;
+    user-select: none; /* Prevents text selection */
+    max-width: 200px;
+}
+
+/* Waste item styling */
+.waste-item {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Bin styling */
+.bin {
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+    margin: 5px;
+    background: #e0e0e0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #bdc3c7;
+    user-select: none; /* Prevents text selection */
+}
+
+/* Bin hover effect */
+.bin:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+/* Bin image styling */
+.bin img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+/* Button styling */
+button {
+    user-select: none; /* Prevents text selection */
+}
+
+/* Hidden class for hiding elements */
+.hidden {
+    display: none;
+}
+
+/* Score and title container styling */
+#score-container, #title-container {
+    text-align: center;
+    margin-bottom: 20px;
+    user-select: none; /* Prevents text selection */
+}
+
+/* Results div styling */
+#results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    overflow-y: auto;
+    max-height: 60vh;
+    user-select: none; /* Prevents text selection */
+}
+
+/* Submit button styling */
+#submit-button {
+    display: none;
+}
+
+/* Result item styling */
+.result-item {
+    background-color: #0b3d91;
+    color: white;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s ease forwards; /* Fade in animation */
+    opacity: 0;
+    transform: translateY(20px);
+    width: calc(50% - 20px);
+    box-sizing: border-box;
+    user-select: none; /* Prevents text selection */
+}
+
+/* Result item image styling */
+.result-item img {
+    margin-right: 10px;
+    width: 40px;
+    height: auto;
+}
+
+/* Score colors */
+.score-low {
+    color: red;
+}
+
+.score-medium {
+    color: orange;
+}
+
+.score-high {
+    color: green;
+}
+
+/* Score mood container styling */
+.score-mood {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10px;
+    user-select: none; /* Prevents text selection */
+}
+
+/* Score mood icon styling */
+.score-mood .fa {
+    font-size: 2em;
+    margin: 5px;
+}
+
+/* Incorrect waste item colors */
+li.jaune {
+    background-color: #E0D42B;
+}
+
+li.bleue {
+    background-color: #16193D;
+}
+
+li.marron {
+    background-color: #69471E;
+}
+
+li.verte {
+    background-color: #0B2E13;
+}
+
+/* Details screen styling */
+#details-screen {
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    text-align: center;
+}
+
+/* Details screen list styling */
+#details-screen ul {
+    text-align: left;
+    margin: 20px auto;
+    width: 70%;
+    list-style-type: none;
+    padding: 0;
+    animation: fadeIn 1s ease forwards; /* Fade in animation */
+}
+
+/* Details screen list item styling */
+#details-screen ul li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Details screen list item hover effect */
+#details-screen ul li:hover {
+    transform: scale(1.05); /* Scale up on hover */
+    opacity: 0.8; /* Reduce opacity on hover */
+}
+
+/* Individual bin colors in details screen */
+#details-screen ul li.verte {
+    background-color: #0B2E13;
+}
+
+#details-screen ul li.jaune {
+    background-color: #E0D42B;
+}
+
+#details-screen ul li.bleue {
+    background-color: #16193D;
+}
+
+#details-screen ul li.marron {
+    background-color: #69471E;
+}
+
+/* Keyframes for fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for bounce in animation */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Media query for screens with max-width of 1200px */
+@media (max-width: 1200px) {
+    .bin {
+        width: 15%;
+    }
+
+    .bin img {
+        width: 50px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .subtitle {
+        font-size: 1.1em;
+    }
+}
+
+/* Media query for screens with max-width of 768px */
+@media (max-width: 768px) {
+    #container {
+        width: 95%;
+    }
+
+    .result-item {
+        width: calc(100% - 20px);
+    }
+
+    #bins {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+
+    .bin {
+        width: 18%;
+    }
+
+    .bin img {
+        width: 40px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+
+    .col-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 23%;
+    }
+
+    #results {
+        max-height: 40vh;
+    }
+}

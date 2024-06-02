@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de Tri Sélectif</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div id="container" class="container mt-5">
+        <header class="text-center">
+            <h1>Jeu de Tri Sélectif</h1>
+            <p class="subtitle">Apprends à trier les déchets en t'amusant!</p>
+        </header>
+        <div id="game-screen">
+            <div id="instructions" class="alert alert-info">Glissez et déposez les déchets dans la poubelle appropriée.</div>
+            <div id="waste-container" class="mb-3 mx-auto"></div>
+            <div id="bins" class="row justify-content-center">
+                <div class="bin col-6 col-md-2 text-center mb-3" data-type="verte">
+                    <img src="assets/images/verte.png" alt="Poubelle Verte" class="img-fluid">
+                    <p>Vert</p>
+                </div>
+                <div class="bin col-6 col-md-2 text-center mb-3" data-type="jaune">
+                    <img src="assets/images/jaune.png" alt="Poubelle Jaune" class="img-fluid">
+                    <p>Jaune</p>
+                </div>
+                <div class="bin col-6 col-md-2 text-center mb-3" data-type="bleue">
+                    <img src="assets/images/bleue.png" alt="Poubelle Bleue" class="img-fluid">
+                    <p>Bleu</p>
+                </div>
+                <div class="bin col-6 col-md-2 text-center mb-3" data-type="marron">
+                    <img src="assets/images/marron.png" alt="Poubelle Marron" class="img-fluid">
+                    <p>Marron</p>
+                </div>
+            </div>
+            <button id="submit-button" class="btn btn-primary mt-3">Voir les résultats</button>
+        </div>
+        <div id="result-screen" class="hidden">
+            <div id="score-container" class="text-center mt-3"></div>
+            <div id="title-container" class="text-center mt-3"></div>
+            <ul id="results" class="list-unstyled"></ul>
+            <button id="detail-button" class="btn btn-info mt-3">Voir les détails des poubelles</button>
+            <button id="restart-button" class="btn btn-secondary mt-3">Recommencer</button>
+        </div>
+        <div id="details-screen" class="hidden">
+            <div class="text-center mt-3">
+                <h2>Détails des Poubelles</h2>
+                <ul id="bin-details" class="list-unstyled">
+                    <li class="bin-detail-item verte"><strong>Verte :</strong> Verre, bouteilles, bocaux.</li>
+                    <li class="bin-detail-item jaune"><strong>Jaune :</strong> Plastique, métal, emballages.</li>
+                    <li class="bin-detail-item bleue"><strong>Bleue :</strong> Papier, carton.</li>
+                    <li class="bin-detail-item marron"><strong>Marron :</strong> Déchets organiques, compostables.</li>
+                </ul>
+                <button id="back-button" class="btn btn-secondary mt-3">Retour</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
