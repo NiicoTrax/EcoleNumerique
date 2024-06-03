@@ -33,6 +33,10 @@ header h1 {
     user-select: none; /* Prevents text selection */
 }
 
+.h2, h2 {
+    font-size: 1.8rem;
+}
+
 /* Subtitle styling */
 .subtitle {
     font-size: 1.2em;
@@ -307,7 +311,7 @@ li.verte {
 @media (max-width: 768px) {
     #container {
         width: 95%;
-        top: -40px;
+        top: 0px;
         position: relative;
     }
 
