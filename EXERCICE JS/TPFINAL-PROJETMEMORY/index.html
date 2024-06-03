@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP - Jeu de Mémory</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="text-center">Jeu de Memory</h1>
+        </header>
+        <main id="game-board" class="row">
+            <!-- Les cartes seront générées ici dynamiquement -->
+        </main>
+        <footer class="text-center mt-4">
+            <button id="reset-btn" class="btn btn-primary">Recommencer</button>
+        </footer>
+    </div>
+
+    <div id="game-over" class="text-center">
+        <h2>Félicitations!</h2>
+        <p>Votre score : <span id="final-score"></span></p>
+        <button id="play-again-btn" class="btn btn-success">Rejouer</button>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
