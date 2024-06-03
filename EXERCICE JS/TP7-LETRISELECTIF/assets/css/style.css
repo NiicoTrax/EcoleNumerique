@@ -250,6 +250,10 @@ li.verte {
     background-color: #69471E;
 }
 
+.bin-detail-item img {
+    width: 50px;
+}
+
 /* Keyframes for fade in animation */
 @keyframes fadeIn {
     from {
@@ -303,6 +307,8 @@ li.verte {
 @media (max-width: 768px) {
     #container {
         width: 95%;
+        top: -40px;
+        position: relative;
     }
 
     .result-item {
@@ -339,5 +345,9 @@ li.verte {
 
     #results {
         max-height: 40vh;
+    }
+
+    .bin-detail-item img {
+        width: 0px;
     }
 }
