@@ -93,7 +93,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #fff;
-    padding: 30px;
+    padding: 70px;
     border: 2px solid #ff5722;
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -126,7 +126,7 @@ h1 {
 #game-over .details {
     font-size: 1rem;
     color: #555;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 #reset-btn, #play-again-btn {
@@ -189,8 +189,8 @@ h1 {
     }
 
     #reset-btn, #play-again-btn {
-        font-size: 0.8rem;
-        padding: 10px;
+        font-size: 1rem;
+        padding: 15px;
     }
 
     h1 {
