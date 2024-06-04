@@ -73,14 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isMatch) {
             firstCard.classList.add('matched');
             secondCard.classList.add('matched');
-            matchSound.play();
             matches++;
             resetTurn();
             if (matches === cardImages.length / 2) {
                 setTimeout(endGame, 1000);
             }
         } else {
-            noMatchSound.play();
             setTimeout(() => {
                 firstCard.classList.remove('flipped');
                 secondCard.classList.remove('flipped');
@@ -107,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
         details.classList.add('details');
         details.innerHTML = `Vous avez trouvé <strong>${matches}</strong> paires en <strong>${attempts}</strong> tentatives.`;
         gameOverScreen.appendChild(details);
-        victorySound.play();
     }
 
     // Reset the game board and start a new game
@@ -117,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gameBoard.classList.remove('d-none');
         gameOverScreen.style.display = 'none';
         header.style.display = 'block'; // Show the header
-        resetBtn.style.display = 'block'; // Show the reset button
+        resetBtn.style.display = ''; // Show the reset button
         const details = document.querySelector('.details');
         if (details) details.remove();
         createBoard();
@@ -130,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gameBoard.classList.remove('d-none');
         gameOverScreen.style.display = 'none';
         header.style.display = 'block'; // Show the header
-        resetBtn.style.display = 'block'; // Show the reset button
+        resetBtn.style.display = ''; // Show the reset button
         const details = document.querySelector('.details');
         if (details) details.remove();
         createBoard();
