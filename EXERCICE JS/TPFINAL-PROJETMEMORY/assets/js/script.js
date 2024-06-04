@@ -26,11 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let attempts = 0;
     let lockBoard = false;
 
-    // Load sound effects
-    const matchSound = new Audio('assets/sounds/match.mp3');
-    const noMatchSound = new Audio('assets/sounds/no-match.mp3');
-    const victorySound = new Audio('assets/sounds/victory.mp3');
-
     // Shuffle function to randomize card positions
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
