@@ -22,7 +22,7 @@ let incorrectWaste = [];
 fetch('assets/js/waste.json')
     .then(response => {
         if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
+            throw new Error('La réponse du réseau n était pas correcte ' + response.statusText);
         }
         return response.json();
     })
@@ -30,7 +30,7 @@ fetch('assets/js/waste.json')
         wasteData = data;
         startGame();
     })
-    .catch(error => console.error('There has been a problem with your fetch operation:', error));
+    .catch(error => console.error('Il y a eu un problème avec votre opération de récupération :', error));
 
 // Function to start the game
 function startGame() {
