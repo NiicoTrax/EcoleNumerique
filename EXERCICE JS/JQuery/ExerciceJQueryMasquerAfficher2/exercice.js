@@ -1,5 +1,4 @@
 // Le code ici
-
 $("p").click(function(){
-    $(this).hide();
+    $(this).hide(5000)
 });
