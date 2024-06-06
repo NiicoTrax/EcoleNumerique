@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let finalScore = document.getElementById('final-score');
     let playAgainBtn = document.getElementById('play-again-btn');
     let header = document.querySelector('header');
+    let detailsBtn = document.getElementById('details-btn');
+    let gameDetails = document.getElementById('game-details');
+    let backBtn = document.getElementById('back-btn'); // Nouveau bouton Retour
 
     // Game variables
     let firstCard = null;
@@ -131,6 +134,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const details = document.querySelector('.details');
         if (details) details.remove();
         createBoard();
+    });
+
+    // Toggle game details display
+    detailsBtn.addEventListener('click', () => {
+        gameDetails.classList.toggle('d-none');
+    });
+
+    // Return to game over screen from game details
+    backBtn.addEventListener('click', () => {
+        gameDetails.classList.add('d-none');
+        gameOverScreen.style.display = 'block';
     });
 
     // Initial setup

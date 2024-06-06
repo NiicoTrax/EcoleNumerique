@@ -7,7 +7,7 @@ body {
     align-items: center;
     height: 20vh;
     background: linear-gradient(288deg, #ffcc00, #ff6f00);
-    background-size: cover
+    background-size: cover;
 }
 
 .container {
@@ -129,14 +129,39 @@ h1 {
     margin-top: 30px;
 }
 
+#game-details {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    border: 2px solid #17a2b8;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    height: 450px;
+    width: 450px;
+}
+
+.d-none {
+    display: none !important;
+}
+
 #reset-btn, #play-again-btn {
+    margin-top: 20px;
+}
+
+#back-btn {
+    margin-top: 20px;
+}
+
+#details-btn, #back-btn {
     margin-top: 20px;
 }
 
 /* Style pour les appareils mobiles avec une largeur de 376px */
 @media (max-width: 376px) {
-
-    
     body {
         height: 40px !important;
     }
@@ -147,6 +172,11 @@ h1 {
         display: grid;
         grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
         gap: 5px;
+    }
+
+    #game-details{
+        height: 450px;
+        width: 350px;
     }
     
     .card {
@@ -168,7 +198,6 @@ h1 {
 
 /* Style pour les petits appareils (téléphones) */
 @media (max-width: 576px) {
-
     body {
         height: 60px;
     }
@@ -179,6 +208,11 @@ h1 {
         display: grid;
         grid-template-columns: repeat(4, 1fr); /* 3 colonnes */
         gap: 0px;
+    }
+
+    #game-details{
+        height: 450px;
+        width: 350px;
     }
     
     .card {
@@ -200,7 +234,6 @@ h1 {
 
 /* Style pour les appareils de taille moyenne (tablettes) */
 @media (min-width: 577px) and (max-width: 768px) {
-
     body {
         height: 80px;
     }
@@ -211,6 +244,11 @@ h1 {
         display: grid;
         grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
         gap: 8px;
+    }
+
+    #game-details{
+        height: 450px;
+        width: 400px;
     }
     
     .card {
@@ -232,7 +270,6 @@ h1 {
 
 /* Style pour les appareils de taille moyenne (tablettes) */
 @media (min-width: 729px) and (max-width: 1024px) {
-
     body {
         height: 100px;
     }

@@ -13,8 +13,7 @@
         <header>
             <h1 class="text-center">Jeu de Memory</h1>
         </header>
-        <main id="game-board" class="row">
-        </main>
+        <main id="game-board" class="row"></main>
         <footer class="text-center mt-4">
             <button id="reset-btn" class="btn btn-primary">Recommencer</button>
         </footer>
@@ -24,6 +23,12 @@
         <h2>Félicitations!</h2>
         <p>Votre score : <span id="final-score"></span></p>
         <button id="play-again-btn" class="btn btn-success">Rejouer</button>
+        <button id="details-btn" class="btn btn-info mt-2">Détails du jeu</button>
+    </div>
+    <div id="game-details" class="text-center d-none">
+        <h2>Règle du Jeu</h2>
+        <p>Le but du jeu de Memory est de trouver toutes les paires de cartes identiques. Chaque fois que vous cliquez sur deux cartes, elles se retournent. Si les cartes sont identiques, elles restent retournées. Sinon, elles se retournent de nouveau. Le jeu se termine lorsque toutes les paires sont trouvées.</p>
+        <button id="back-btn" class="btn btn-secondary mt-2">Retour</button>
     </div>
 
     <script src="assets/js/script.js"></script>
