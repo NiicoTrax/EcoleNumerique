@@ -5,7 +5,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20vh;
+    height: 100vh;
     background: linear-gradient(288deg, #ffcc00, #ff6f00);
     background-size: cover;
 }
@@ -15,7 +15,6 @@ body {
     position: relative;
     width: 100%;
     padding: 15px;
-    height: 20px;
 }
 
 header {
@@ -160,27 +159,56 @@ h1 {
     margin-top: 20px;
 }
 
+#timer {
+    display: none;
+    margin-left: 20px;
+}
+
+#timer h2 {
+    font-size: 1.7rem;
+    animation: blink 1s infinite alternate;
+    top: 14px;
+    position: relative;
+    border: 1px solid blue;
+    color: #fff;
+    background-color: #ff0000;
+    border-color: #ff0000;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 10;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Styles pour les boutons de difficulté */
+.difficulty-buttons {
+    margin-bottom: 20px;
+}
+
 /* Style pour les appareils mobiles avec une largeur de 376px */
 @media (max-width: 376px) {
     body {
-        height: 40px !important;
+        height: 100%;
     }
 
     #game-board {
         max-width: 100%;
         padding: 10px;
         display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+        grid-template-columns: repeat(4, 1fr);
         gap: 5px;
     }
 
-    #game-details{
+    #game-details {
         height: 450px;
         width: 350px;
     }
-    
+
     .card {
-        height: auto;
         width: 70px !important;
         height: 70px !important;
         margin: 3px !important;
@@ -199,27 +227,26 @@ h1 {
 /* Style pour les petits appareils (téléphones) */
 @media (max-width: 576px) {
     body {
-        height: 60px;
+        height: 100%;
     }
 
     #game-board {
         max-width: 100%;
         padding: 10px;
         display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 3 colonnes */
+        grid-template-columns: repeat(4, 1fr);
         gap: 0px;
     }
 
-    #game-details{
+    #game-details {
         height: 450px;
         width: 350px;
     }
-    
+
     .card {
-        height: auto;
-        width: 80px ;
-        height: 80px ;
-        margin: 4px ;
+        width: 80px;
+        height: 80px;
+        margin: 4px;
     }
 
     #reset-btn, #play-again-btn {
@@ -235,27 +262,26 @@ h1 {
 /* Style pour les appareils de taille moyenne (tablettes) */
 @media (min-width: 577px) and (max-width: 768px) {
     body {
-        height: 80px;
+        height: 100%;
     }
 
     #game-board {
         max-width: 100%;
         padding: 15px;
         display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+        grid-template-columns: repeat(4, 1fr);
         gap: 8px;
     }
 
-    #game-details{
+    #game-details {
         height: 450px;
         width: 400px;
     }
-    
+
     .card {
-        height: auto;
-        width: 100px ;
-        height: 100px ;
-        margin: 3px ;
+        width: 100px;
+        height: 100px;
+        margin: 3px;
     }
 
     #reset-btn, #play-again-btn {
@@ -271,27 +297,25 @@ h1 {
 /* Style pour les appareils de taille moyenne (tablettes) */
 @media (min-width: 729px) and (max-width: 1024px) {
     body {
-        height: 100px;
+        height: 100%;
     }
 
     .container, .container-md, .container-sm {
         max-width: 720px;
-        height: 0px;
     }
 
     #game-board {
         max-width: 100%;
         padding: 15px;
         display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+        grid-template-columns: repeat(4, 1fr);
         gap: 8px;
     }
-    
+
     .card {
-        height: auto;
-        width: 100px ;
-        height: 100px ;
-        margin: 3px ;
+        width: 100px;
+        height: 100px;
+        margin: 3px;
     }
 
     #reset-btn, #play-again-btn {

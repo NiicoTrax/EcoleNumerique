@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TP - Jeu de Mémory</title>
+    <title>TP - Jeu de Memory</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -13,9 +13,19 @@
         <header>
             <h1 class="text-center">Jeu de Memory</h1>
         </header>
+        <div class="difficulty-buttons text-center mb-4">
+            <button class="btn btn-success level-btn" data-level="tresfacile">Très Facile</button>
+            <button class="btn btn-success level-btn" data-level="facile">Facile</button>
+            <button class="btn btn-warning level-btn" data-level="moyen">Moyen</button>
+            <button class="btn btn-warning level-btn" data-level="tresmoyen">Très Moyen</button>
+            <button class="btn btn-danger level-btn" data-level="difficile">Difficile</button>
+        </div>
         <main id="game-board" class="row"></main>
         <footer class="text-center mt-4">
             <button id="reset-btn" class="btn btn-primary">Recommencer</button>
+            <div id="timer" class="d-inline-block ml-3">
+                <h2>Temps restant : <span id="time-left"></span></h2>
+            </div>
         </footer>
     </div>
 

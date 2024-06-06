@@ -1,15 +1,73 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Paths to card images
-    const cardImages = [
-        'assets/images/card1.png', 'assets/images/card1.png',
-        'assets/images/card2.png', 'assets/images/card2.png',
-        'assets/images/card3.png', 'assets/images/card3.png',
-        'assets/images/card4.png', 'assets/images/card4.png',
-        'assets/images/card5.png', 'assets/images/card5.png',
-        'assets/images/card6.png', 'assets/images/card6.png',
-        'assets/images/card7.png', 'assets/images/card7.png',
-        'assets/images/card8.png', 'assets/images/card8.png'
-    ];
+    const cardImages = {
+        tresfacile: [
+            'assets/images/Fruits/card1.png', 'assets/images/Fruits/card1.png',
+            'assets/images/Fruits/card2.png', 'assets/images/Fruits/card2.png',
+            'assets/images/Fruits/card3.png', 'assets/images/Fruits/card3.png',
+            'assets/images/Fruits/card4.png', 'assets/images/Fruits/card4.png',
+            'assets/images/Fruits/card5.png', 'assets/images/Fruits/card5.png',
+            'assets/images/Fruits/card6.png', 'assets/images/Fruits/card6.png',
+            'assets/images/Fruits/card7.png', 'assets/images/Fruits/card7.png',
+            'assets/images/Fruits/card8.png', 'assets/images/Fruits/card8.png'
+        ],
+        facile: [
+            'assets/images/Legumes/legume1.png', 'assets/images/Legumes/legume1.png',
+            'assets/images/Legumes/legume2.png', 'assets/images/Legumes/legume2.png',
+            'assets/images/Legumes/legume3.png', 'assets/images/Legumes/legume3.png',
+            'assets/images/Legumes/legume4.png', 'assets/images/Legumes/legume4.png',
+            'assets/images/Legumes/legume5.png', 'assets/images/Legumes/legume5.png',
+            'assets/images/Legumes/legume6.png', 'assets/images/Legumes/legume6.png',
+            'assets/images/Legumes/legume7.png', 'assets/images/Legumes/legume7.png',
+            'assets/images/Legumes/legume8.png', 'assets/images/Legumes/legume8.png'
+        ],
+        moyen: [
+            'assets/images/Emoji/emoji1.png', 'assets/images/Emoji/emoji1.png',
+            'assets/images/Emoji/emoji2.png', 'assets/images/Emoji/emoji2.png',
+            'assets/images/Emoji/emoji3.png', 'assets/images/Emoji/emoji3.png',
+            'assets/images/Emoji/emoji4.png', 'assets/images/Emoji/emoji4.png',
+            'assets/images/Emoji/emoji5.png', 'assets/images/Emoji/emoji5.png',
+            'assets/images/Emoji/emoji6.png', 'assets/images/Emoji/emoji6.png',
+            'assets/images/Emoji/emoji7.png', 'assets/images/Emoji/emoji7.png',
+            'assets/images/Emoji/emoji8.png', 'assets/images/Emoji/emoji8.png',
+            'assets/images/Emoji/emoji9.png', 'assets/images/Emoji/emoji9.png',
+            'assets/images/Emoji/emoji10.png', 'assets/images/Emoji/emoji10.png'
+        ],
+        tresmoyen: [
+            'assets/images/Bonbon/bonbon1.png', 'assets/images/Bonbon/bonbon1.png',
+            'assets/images/Bonbon/bonbon2.png', 'assets/images/Bonbon/bonbon2.png',
+            'assets/images/Bonbon/bonbon3.png', 'assets/images/Bonbon/bonbon3.png',
+            'assets/images/Bonbon/bonbon4.png', 'assets/images/Bonbon/bonbon4.png',
+            'assets/images/Bonbon/bonbon5.png', 'assets/images/Bonbon/bonbon5.png',
+            'assets/images/Bonbon/bonbon6.png', 'assets/images/Bonbon/bonbon6.png',
+            'assets/images/Bonbon/bonbon7.png', 'assets/images/Bonbon/bonbon7.png',
+            'assets/images/Bonbon/bonbon8.png', 'assets/images/Bonbon/bonbon8.png',
+            'assets/images/Bonbon/bonbon9.png', 'assets/images/Bonbon/bonbon9.png',
+            'assets/images/Bonbon/bonbon10.png', 'assets/images/Bonbon/bonbon10.png'
+        ],
+        difficile: [
+            'assets/images/Difficile/dur1.png', 'assets/images/Difficile/dur1.png',
+            'assets/images/Difficile/dur2.png', 'assets/images/Difficile/dur2.png',
+            'assets/images/Difficile/dur3.png', 'assets/images/Difficile/dur3.png',
+            'assets/images/Difficile/dur4.png', 'assets/images/Difficile/dur4.png',
+            'assets/images/Difficile/dur5.png', 'assets/images/Difficile/dur5.png',
+            'assets/images/Difficile/dur6.png', 'assets/images/Difficile/dur6.png',
+            'assets/images/Difficile/dur7.png', 'assets/images/Difficile/dur7.png',
+            'assets/images/Difficile/dur8.png', 'assets/images/Difficile/dur8.png',
+            'assets/images/Difficile/dur9.png', 'assets/images/Difficile/dur9.png',
+            'assets/images/Difficile/dur10.png', 'assets/images/Difficile/dur10.png'
+        ]
+    };
+
+    let currentLevel = 'tresfacile';
+    let timerInterval;
+    let timerStarted = false;
+    const timeLimits = {
+        tresfacile: null,
+        facile: null,
+        moyen: 120,
+        tresmoyen: 120,
+        difficile: 60
+    };
 
     // Selecting necessary elements
     let gameBoard = document.getElementById('game-board');
@@ -20,7 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let header = document.querySelector('header');
     let detailsBtn = document.getElementById('details-btn');
     let gameDetails = document.getElementById('game-details');
-    let backBtn = document.getElementById('back-btn'); // Nouveau bouton Retour
+    let backBtn = document.getElementById('back-btn');
+    let levelButtons = document.querySelectorAll('.level-btn');
+    let timerElement = document.getElementById('timer');
+    let timeLeftElement = document.getElementById('time-left');
 
     // Game variables
     let firstCard = null;
@@ -28,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let matches = 0;
     let attempts = 0;
     let lockBoard = false;
+    let timeLeft;
 
     // Shuffle function to randomize card positions
     function shuffle(array) {
@@ -41,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Create the game board with shuffled cards
     function createBoard() {
         gameBoard.innerHTML = '';
-        let shuffledCards = shuffle(cardImages);
+        let shuffledCards = shuffle(cardImages[currentLevel]);
         shuffledCards.forEach(cardImage => {
             let cardElement = document.createElement('div');
             cardElement.classList.add('card');
@@ -52,10 +114,25 @@ document.addEventListener('DOMContentLoaded', () => {
             cardElement.addEventListener('click', flipCard);
             gameBoard.appendChild(cardElement);
         });
+
+        timerStarted = false;
+        if (timeLimits[currentLevel]) {
+            timerElement.classList.remove('d-none');
+            timeLeft = timeLimits[currentLevel];
+            timeLeftElement.textContent = timeLeft;
+            clearInterval(timerInterval);
+        } else {
+            timerElement.classList.add('d-none');
+        }
     }
 
     // Handle card flip logic
     function flipCard() {
+        if (!timerStarted && timeLimits[currentLevel]) {
+            timerStarted = true;
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
         if (lockBoard || this === firstCard || this.classList.contains('flipped')) return;
 
         this.classList.add('flipped');
@@ -78,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
             secondCard.classList.add('matched');
             matches++;
             resetTurn();
-            if (matches === cardImages.length / 2) {
+            if (matches === cardImages[currentLevel].length / 2) {
                 setTimeout(endGame, 1000);
             }
         } else {
@@ -99,15 +176,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // End the game and display the score
     function endGame() {
+        clearInterval(timerInterval);
         gameBoard.classList.add('d-none');
         gameOverScreen.style.display = 'block';
-        finalScore.textContent = attempts;
-        header.style.display = 'none'; // Hide the header
-        resetBtn.style.display = 'none'; // Hide the reset button
+        let score = calculateScore();
+        finalScore.textContent = score;
+        header.style.display = 'none';
+        resetBtn.style.display = 'none';
         const details = document.createElement('p');
         details.classList.add('details');
-        details.innerHTML = `Vous avez trouvé <strong>${matches}</strong> paires en <strong>${attempts}</strong> tentatives.`;
+        details.innerHTML = `Vous avez trouvé <strong>${matches}</strong> paires en <strong>${attempts}</strong> tentatives. Score final: ${score}`;
         gameOverScreen.appendChild(details);
+    }
+
+    // Calculate the final score
+    function calculateScore() {
+        let baseScore = matches * 100;
+        let penalty = attempts * 10;
+        let timeBonus = timeLeft ? timeLeft * 5 : 0;
+        return baseScore - penalty + timeBonus;
+    }
+
+    // Update the timer
+    function updateTimer() {
+        timeLeft--;
+        timeLeftElement.textContent = timeLeft;
+        if (timeLeft <= 0) {
+            endGame();
+        }
     }
 
     // Reset the game board and start a new game
@@ -116,8 +212,8 @@ document.addEventListener('DOMContentLoaded', () => {
         attempts = 0;
         gameBoard.classList.remove('d-none');
         gameOverScreen.style.display = 'none';
-        header.style.display = 'block'; // Show the header
-        resetBtn.style.display = ''; // Show the reset button
+        header.style.display = 'block';
+        resetBtn.style.display = '';
         const details = document.querySelector('.details');
         if (details) details.remove();
         createBoard();
@@ -129,8 +225,8 @@ document.addEventListener('DOMContentLoaded', () => {
         attempts = 0;
         gameBoard.classList.remove('d-none');
         gameOverScreen.style.display = 'none';
-        header.style.display = 'block'; // Show the header
-        resetBtn.style.display = ''; // Show the reset button
+        header.style.display = 'block';
+        resetBtn.style.display = '';
         const details = document.querySelector('.details');
         if (details) details.remove();
         createBoard();
@@ -145,6 +241,22 @@ document.addEventListener('DOMContentLoaded', () => {
     backBtn.addEventListener('click', () => {
         gameDetails.classList.add('d-none');
         gameOverScreen.style.display = 'block';
+    });
+
+    // Set the game level and create the board
+    levelButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            currentLevel = button.dataset.level;
+            matches = 0;
+            attempts = 0;
+            gameBoard.classList.remove('d-none');
+            gameOverScreen.style.display = 'none';
+            header.style.display = 'block';
+            resetBtn.style.display = '';
+            const details = document.querySelector('.details');
+            if (details) details.remove();
+            createBoard();
+        });
     });
 
     // Initial setup
