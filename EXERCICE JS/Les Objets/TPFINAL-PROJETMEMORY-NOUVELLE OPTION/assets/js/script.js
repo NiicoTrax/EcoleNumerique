@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gameControls.classList.remove('d-none');
             setTimeout(() => {
                 levelSelection.classList.add('d-none');
-            }, 500);
+            }, 0);
             gameOverScreen.style.display = 'none';
             header.style.display = 'block';
             const details = document.querySelector('.details');
