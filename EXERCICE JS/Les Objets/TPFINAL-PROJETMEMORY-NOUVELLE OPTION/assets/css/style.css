@@ -1,0 +1,376 @@
+/* Basic styles for the body */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(288deg, #ffcc00, #ff6f00);
+    background-size: cover;
+}
+
+/* Styles for the container element */
+.container {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    padding: 15px;
+}
+
+/* Styles for the header */
+header {
+    margin-bottom: 20px;
+}
+
+/* Styles for the main title */
+h1 {
+    font-size: 2.5rem;
+    color: #deff22;
+    text-shadow: 3px 3px #333;
+    transition: opacity 0.3s;
+    animation: bounce 1s infinite alternate;
+}
+
+/* Keyframes for the bounce animation */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Styles for the game board */
+#game-board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.24);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* Styles for individual cards */
+.card {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: #001aff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transform: perspective(600px) rotateY(0deg);
+    transition: transform 0.6s, background-color 0.3s;
+    box-shadow: 0 4px 8px rgb(18, 0, 75);
+}
+
+/* Styles for flipped cards */
+.card.flipped {
+    transform: perspective(600px) rotateY(360deg);
+}
+
+/* Styles for matched cards */
+.card.matched {
+    background-color: #8bc34a;
+}
+
+/* Styles for images inside cards */
+.card img {
+    height: 100%;
+    border-radius: 12px;
+    display: none;
+    backface-visibility: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Show images for flipped or matched cards */
+.card.flipped img, .card.matched img {
+    display: block;
+}
+
+/* Styles for the game over screen */
+#game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 70px;
+    border: 2px solid #ff5722;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    display: none;
+    text-align: center;
+    animation: pop-up 0.5s ease-in-out;
+}
+
+/* Keyframes for the pop-up animation */
+@keyframes pop-up {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Styles for the game over title */
+#game-over h2 {
+    font-size: 2rem;
+    color: #8bc34a;
+}
+
+/* Styles for the game over text */
+#game-over p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Styles for additional game details */
+#game-over .details {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 30px;
+}
+
+/* Styles for the game details section */
+#game-details {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    border: 2px solid #17a2b8;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    height: 450px;
+    width: 450px;
+}
+
+/* Hide elements with the .d-none class */
+.d-none {
+    display: none !important;
+}
+
+/* Styles for reset and play again buttons */
+#reset-btn, #play-again-btn {
+    margin-top: 8px;
+}
+
+/* Styles for the back button */
+#back-btn {
+    margin-top: 20px;
+}
+
+/* Styles for the details and back buttons */
+#details-btn, #back-btn {
+    margin-top: 20px;
+}
+
+/* Styles for the timer */
+#timer {
+    display: none;
+    margin-left: 20px;
+}
+
+/* Styles for the timer heading */
+#timer h2 {
+    font-size: 1.7rem;
+    animation: blink 1s infinite alternate;
+    top: -5px;
+    position: relative;
+    border: 1px solid blue;
+    color: #fff;
+    background-color: #ff0000;
+    border-color: #ff0000;
+}
+
+/* Keyframes for the blink animation */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Styles for difficulty buttons */
+.difficulty-buttons {
+    margin-bottom: 20px;
+}
+
+/* Disable text and image selection */
+body, .card, img {
+    user-select: none;
+    -webkit-user-select: none;  /* Safari */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* Internet Explorer/Edge */
+}
+
+/* Styles for mobile devices with width up to 376px */
+@media (max-width: 376px) {
+    body {
+        height: 100%;
+    }
+
+    #game-board {
+        max-width: 100%;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+    }
+
+    #game-details {
+        height: 450px;
+        width: 350px;
+    }
+    #timer h2 {
+        top: 0px;
+    }
+
+    .card {
+        width: 70px !important;
+        height: 70px !important;
+        margin: 3px !important;
+    }
+
+    #reset-btn, #play-again-btn {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Styles for small devices (phones) with width up to 576px */
+@media (max-width: 576px) {
+    body {
+        height: 100%;
+    }
+
+    #game-board {
+        max-width: 100%;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0px;
+    }
+
+    #game-details {
+        height: 450px;
+        width: 350px;
+    }
+
+    #timer h2 {
+        top: 0px;
+    }
+
+    .card {
+        width: 80px;
+        height: 80px;
+        margin: 4px;
+    }
+
+    #reset-btn, #play-again-btn {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Styles for medium devices (tablets) with width between 577px and 768px */
+@media (min-width: 577px) and (max-width: 768px) {
+    body {
+        height: 100%;
+    }
+
+    #game-board {
+        max-width: 100%;
+        padding: 15px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    #game-details {
+        height: 450px;
+        width: 400px;
+    }
+
+    #timer h2 {
+        top: 0px;
+    }
+
+    .card {
+        width: 100px;
+        height: 100px;
+        margin: 3px;
+    }
+
+    #reset-btn, #play-again-btn {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Styles for medium devices (tablets) with width between 729px and 1024px */
+@media (min-width: 729px) and (max-width: 1024px) {
+    body {
+        height: 100%;
+    }
+
+    .container, .container-md, .container-sm {
+        max-width: 720px;
+    }
+
+    #game-board {
+        max-width: 100%;
+        padding: 15px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    #timer h2 {
+        top: 0px;
+    }
+
+    .card {
+        width: 100px;
+        height: 100px;
+        margin: 3px;
+    }
+
+    #reset-btn, #play-again-btn {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP - Jeu de Memory</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="text-center">Jeu de Memory</h1>
+        </header>
+        <div id="level-selection" class="text-center mb-4">
+            <h2>Choisissez un niveau</h2>
+            <button class="btn btn-success level-btn" data-level="tresfacile">Très Facile</button>
+            <button class="btn btn-success level-btn" data-level="facile">Facile</button>
+            <button class="btn btn-warning level-btn" data-level="moyen">Moyen</button>
+            <button class="btn btn-warning level-btn" data-level="tresmoyen">Très Moyen</button>
+            <button class="btn btn-danger level-btn" data-level="difficile">Difficile</button>
+        </div>
+        <main id="game-board" class="row d-none"></main>
+        <div id="game-controls" class="text-center d-none">
+            <button id="restart-btn" class="btn btn-primary">Recommencer</button>
+            <button id="choose-level-btn" class="btn btn-secondary">Choisir un Niveau</button>
+            <div id="timer" class="mt-2">
+                <h2>Temps restant: <span id="time-remaining">0</span>s</h2>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-over" class="text-center">
+        <h2>Félicitations!</h2>
+        <p>Votre score : <span id="final-score"></span></p>
+        <button id="play-again-btn" class="btn btn-success">Rejouer</button>
+        <button id="details-btn" class="btn btn-info mt-2">Détails du jeu</button>
+    </div>
+    <div id="game-details" class="text-center d-none">
+        <h2>Règle du Jeu</h2>
+        <p>Le but du jeu de Memory est de trouver toutes les paires de cartes identiques. Chaque fois que vous cliquez sur deux cartes, elles se retournent. Si les cartes sont identiques, elles restent retournées. Sinon, elles se retournent de nouveau. Le jeu se termine lorsque toutes les paires sont trouvées.</p>
+        <button id="back-btn" class="btn btn-secondary mt-2">Retour</button>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
