@@ -148,7 +148,7 @@ h1 {
 }
 
 #reset-btn, #play-again-btn {
-    margin-top: 20px;
+    margin-top: -20px;
 }
 
 #back-btn {
@@ -167,7 +167,7 @@ h1 {
 #timer h2 {
     font-size: 1.7rem;
     animation: blink 1s infinite alternate;
-    top: 14px;
+    top: -5px;
     position: relative;
     border: 1px solid blue;
     color: #fff;
@@ -189,6 +189,14 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* Désactiver la sélection de texte et d'images */
+body, .card, img {
+    user-select: none;
+    -webkit-user-select: none;  /* Safari */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* Internet Explorer/Edge */
+}
+
 /* Style pour les appareils mobiles avec une largeur de 376px */
 @media (max-width: 376px) {
     body {
@@ -207,6 +215,10 @@ h1 {
         height: 450px;
         width: 350px;
     }
+    #timer h2 {
+        top: 0px;
+    }
+    
 
     .card {
         width: 70px !important;
@@ -241,6 +253,10 @@ h1 {
     #game-details {
         height: 450px;
         width: 350px;
+    }
+
+    #timer h2 {
+        top: 0px;
     }
 
     .card {
@@ -278,6 +294,10 @@ h1 {
         width: 400px;
     }
 
+    #timer h2 {
+        top: 0px;
+    }
+
     .card {
         width: 100px;
         height: 100px;
@@ -310,6 +330,10 @@ h1 {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 8px;
+    }
+
+    #timer h2 {
+        top: 0px;
     }
 
     .card {
