@@ -1,0 +1,61 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f06, #a0f);
+    color: white;
+    overflow: hidden;
+}
+
+.keys {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.key {
+    border: 0.4rem solid white;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+    transition: all 0.07s ease;
+    width: 10rem;
+    text-align: center;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.key kbd {
+    display: block;
+    font-size: 4rem;
+}
+
+.key .sound {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #ffd700;
+}
+
+.key.playing {
+    transform: scale(1.1);
+    border-color: #ffd700;
+    box-shadow: 0 0 1.5rem #ffd700;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.key.playing kbd {
+    color: #ffd700;
+}
+
+.key:active {
+    transform: scale(1.1);
+    border-color: #ffd700;
+    box-shadow: 0 0 1.5rem #ffd700;
+    background: rgba(255, 255, 255, 0.2);
+}
