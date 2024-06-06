@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -8,6 +9,30 @@ body {
     background: linear-gradient(135deg, #f06, #a0f);
     color: white;
     overflow: hidden;
+}
+
+.title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    background: linear-gradient(90deg, #fff, #ffd700, #ff8c00, #fff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 4s ease infinite;
+    margin-bottom: 2rem;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .keys {
@@ -36,17 +61,39 @@ body {
 }
 
 .key .sound {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     color: #ffd700;
 }
 
+@keyframes colorScroll {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        box-shadow: 0 0 1.5rem #ffd700, 0 0 3rem rgba(255, 140, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 2rem #ffd700, 0 0 4rem rgba(255, 140, 0, 0.75);
+    }
+    100% {
+        box-shadow: 0 0 1.5rem #ffd700, 0 0 3rem rgba(255, 140, 0, 0.5);
+    }
+}
+
 .key.playing {
     transform: scale(1.1);
     border-color: #ffd700;
-    box-shadow: 0 0 1.5rem #ffd700;
-    background: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(to bottom, #ffd700, #ff8c00);
+    background-size: 100% 200%;
+    animation: colorScroll 0.5s linear infinite, pulsate 1s ease-in-out infinite;
 }
 
 .key.playing kbd {
@@ -58,4 +105,60 @@ body {
     border-color: #ffd700;
     box-shadow: 0 0 1.5rem #ffd700;
     background: rgba(255, 255, 255, 0.2);
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 1200px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .key {
+        width: 8rem;
+        font-size: 1.2rem;
+    }
+
+    .key kbd {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .key {
+        width: 6rem;
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .key kbd {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 1rem;
+    }
+    
+    .keys {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .key {
+        width: 5rem;
+        font-size: 0.8rem;
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .key kbd {
+        font-size: 1.5rem;
+    }
 }
