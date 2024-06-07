@@ -89,26 +89,26 @@ $(document).ready(function() {
             { question: "Quel joueur de tennis a gagné 13 fois Roland-Garros?", options: ["Roger Federer", "Novak Djokovic", "Rafael Nadal", "Bjorn Borg"], answer: 2 },
         ],
         code_de_la_route: [
-            { question: "Que signifie ce panneau de signalisation?", options: ["Danger", "Priorité", "Interdiction", "Obligation"], answer: 0, image: "../assets/images/danger.png" },
-            { question: "Quelle est la vitesse maximale autorisée en agglomération?", options: ["30 km/h", "50 km/h", "70 km/h", "90 km/h"], answer: 1, image: "../assets/images/50km.png" },
-            { question: "Que doit-on faire lorsqu'un feu de signalisation est rouge?", options: ["Accélérer", "Ralentir", "S'arrêter", "Tourner à droite"], answer: 2, image: "../assets/images/stop.png" },
-            { question: "Quelle est la distance de sécurité recommandée entre deux véhicules?", options: ["10 mètres", "20 mètres", "30 mètres", "50 mètres"], answer: 2 },
-            { question: "Que signifie ce panneau de signalisation?", options: ["Interdiction de tourner à droite", "Route barrée", "Sens interdit", "Priorité à droite"], answer: 2, image: "../assets/images/sens_interdit.png" },
-            { question: "Quelle est la vitesse maximale autorisée sur une autoroute en France?", options: ["100 km/h", "110 km/h", "120 km/h", "130 km/h"], answer: 3, image: "../assets/images/130km.png" },
-            { question: "Que doit-on faire lorsqu'un bus scolaire s'arrête pour faire descendre des enfants?", options: ["Accélérer", "Dépasser le bus", "S'arrêter", "Klaxonner"], answer: 2 },
-            { question: "Quelle est la signification des lignes jaunes sur la chaussée?", options: ["Stationnement interdit", "Voie réservée", "Travaux", "Passage piéton"], answer: 2 },
-            { question: "Que signifie ce panneau de signalisation?", options: ["Obligation de tourner à droite", "Obligation de tourner à gauche", "Obligation de continuer tout droit", "Fin d'obligation"], answer: 2, image:"../assets/images/obligation_droite.png" },
-            { question: "Quelle est la signification d'un feu de signalisation clignotant orange?", options: ["S'arrêter", "Priorité à droite", "Ralentir et passer avec prudence", "Tourner à droite"], answer: 2 },
-            { question: "Que doit-on faire en cas de panne sur une autoroute?", options: ["Continuer à rouler", "S'arrêter sur la voie de droite", "Se garer sur la bande d'arrêt d'urgence", "Klaxonner"], answer: 2 },
-            { question: "Que signifie ce panneau de signalisation?", options: ["Interdiction de dépasser", "Stationnement interdit", "Route glissante", "Interdiction de tourner à droite"], answer: 0, image: "../assets/images/interdition_depasser.png" },
-            { question: "Quelle est la vitesse maximale autorisée sur une route nationale en France?", options: ["70 km/h", "80 km/h", "90 km/h", "100 km/h"], answer: 2, image: "../assets/images/vitesse.png" },
-            { question: "Que doit-on faire lorsqu'un piéton traverse sur un passage piéton?", options: ["Accélérer", "S'arrêter", "Klaxonner", "Dépasser"], answer: 1 },
-            { question: "Quelle est la signification des lignes blanches continues sur la chaussée?", options: ["Interdiction de dépasser", "Voie réservée", "Stationnement interdit", "Passage piéton"], answer: 0 },
-            { question: "Que doit-on faire lorsqu'un cycliste circule sur la chaussée?", options: ["Accélérer", "Ralentir et garder une distance de sécurité", "Klaxonner", "Dépasser sans précaution"], answer: 1 },
-            { question: "Que signifie ce panneau de signalisation?", options: ["Route barrée", "Sens interdit", "Priorité à la circulation venant en sens inverse", "Route à sens unique"], answer: 2, image: "../assets/images/priorite_inverse.png" },
-            { question: "Quelle est la signification des bandes blanches sur une route?", options: ["Voie réservée", "Travaux", "Passage piéton", "Interdiction de stationner"], answer: 2 },
-            { question: "Que doit-on faire lorsqu'un véhicule de secours arrive derrière avec ses sirènes?", options: ["Accélérer", "Ralentir", "S'arrêter", "Se ranger sur le côté pour le laisser passer"], answer: 3 },
-            { question: "Que signifie ce panneau de signalisation?", options: ["Obligation de tourner à gauche", "Obligation de tourner à droite", "Obligation de continuer tout droit", "Fin d'obligation"], answer: 2, image: "../assets/images/obligation_tout_droit.png" },
+            { question: "Que signifie ce panneau de signalisation?", options: ["Danger", "Priorité", "Interdiction", "Obligation"], answer: 0, icon: "fa-exclamation-triangle" },
+            { question: "Quelle est la vitesse maximale autorisée en agglomération?", options: ["30 km/h", "50 km/h", "70 km/h", "90 km/h"], answer: 1, icon: "fa-tachometer-alt" },
+            { question: "Que doit-on faire lorsqu'un feu de signalisation est rouge?", options: ["Accélérer", "Ralentir", "S'arrêter", "Tourner à droite"], answer: 2, icon: "fa-hand-paper" },
+            { question: "Quelle est la distance de sécurité recommandée entre deux véhicules?", options: ["10 mètres", "20 mètres", "30 mètres", "50 mètres"], answer: 2, icon: "fa-car" },
+            { question: "Que signifie ce panneau de signalisation?", options: ["Interdiction de tourner à droite", "Route barrée", "Sens interdit", "Priorité à droite"], answer: 2, icon: "fa-ban" },
+            { question: "Quelle est la vitesse maximale autorisée sur une autoroute en France?", options: ["100 km/h", "110 km/h", "120 km/h", "130 km/h"], answer: 3, icon: "fa-tachometer-alt" },
+            { question: "Que doit-on faire lorsqu'un bus scolaire s'arrête pour faire descendre des enfants?", options: ["Accélérer", "Dépasser le bus", "S'arrêter", "Klaxonner"], answer: 2, icon: "fa-bus" },
+            { question: "Quelle est la signification des lignes jaunes sur la chaussée?", options: ["Stationnement interdit", "Voie réservée", "Travaux", "Passage piéton"], answer: 2, icon: "fa-road" },
+            { question: "Que signifie ce panneau de signalisation?", options: ["Obligation de tourner à droite", "Obligation de tourner à gauche", "Obligation de continuer tout droit", "Fin d'obligation"], answer: 2, icon: "fa-arrow-right" },
+            { question: "Quelle est la signification d'un feu de signalisation clignotant orange?", options: ["S'arrêter", "Priorité à droite", "Ralentir et passer avec prudence", "Tourner à droite"], answer: 2, icon: "fa-traffic-light" },
+            { question: "Que doit-on faire en cas de panne sur une autoroute?", options: ["Continuer à rouler", "S'arrêter sur la voie de droite", "Se garer sur la bande d'arrêt d'urgence", "Klaxonner"], answer: 2, icon: "fa-tools" },
+            { question: "Que signifie ce panneau de signalisation?", options: ["Interdiction de dépasser", "Stationnement interdit", "Route glissante", "Interdiction de tourner à droite"], answer: 0, icon: "fa-ban" },
+            { question: "Quelle est la vitesse maximale autorisée sur une route nationale en France?", options: ["70 km/h", "80 km/h", "90 km/h", "100 km/h"], answer: 2, icon: "fa-tachometer-alt" },
+            { question: "Que doit-on faire lorsqu'un piéton traverse sur un passage piéton?", options: ["Accélérer", "S'arrêter", "Klaxonner", "Dépasser"], answer: 1, icon: "fa-walking" },
+            { question: "Quelle est la signification des lignes blanches continues sur la chaussée?", options: ["Interdiction de dépasser", "Voie réservée", "Stationnement interdit", "Passage piéton"], answer: 0, icon: "fa-road" },
+            { question: "Que doit-on faire lorsqu'un cycliste circule sur la chaussée?", options: ["Accélérer", "Ralentir et garder une distance de sécurité", "Klaxonner", "Dépasser sans précaution"], answer: 1, icon: "fa-bicycle" },
+            { question: "Que signifie ce panneau de signalisation?", options: ["Route barrée", "Sens interdit", "Priorité à la circulation venant en sens inverse", "Route à sens unique"], answer: 2, icon: "fa-arrow-left" },
+            { question: "Quelle est la signification des bandes blanches sur une route?", options: ["Voie réservée", "Travaux", "Passage piéton", "Interdiction de stationner"], answer: 2, icon: "fa-road" },
+            { question: "Que doit-on faire lorsqu'un véhicule de secours arrive derrière avec ses sirènes?", options: ["Accélérer", "Ralentir", "S'arrêter", "Se ranger sur le côté pour le laisser passer"], answer: 3, icon: "fa-ambulance" },
+            { question: "Que signifie ce panneau de signalisation?", options: ["Obligation de tourner à gauche", "Obligation de tourner à droite", "Obligation de continuer tout droit", "Fin d'obligation"], answer: 2, icon: "fa-arrow-up" },
         ]
     };
 
@@ -129,7 +129,7 @@ $(document).ready(function() {
         selectedQuestions = [...questions[theme]]; // Copier les questions sélectionnées
         shuffle(selectedQuestions); // Mélanger les questions avant de commencer
         $('#start-screen').fadeOut(500, function() {
-            $('#question-screen').fadeIn(500);
+            $('#question-screen').removeClass('d-none').fadeIn(500);
             displayQuestion();
         });
     });
@@ -172,9 +172,9 @@ $(document).ready(function() {
         $('#question-text').text(q.question);
         $('#options-container').empty();
 
-        // Afficher l'image si elle existe
-        if (q.image) {
-            $('#question-text').append(`<br><img src="images/${q.image}" alt="${q.question}" class="img-fluid mt-3">`);
+        // Afficher l'icône si elle existe
+        if (q.icon) {
+            $('#question-text').append(`<br><i class="fas ${q.icon} fa-3x mt-3"></i>`);
         }
 
         q.options.forEach((option, index) => {
@@ -200,7 +200,7 @@ $(document).ready(function() {
             summaryHtml += `
                 <div class="result-item ${answerClass}" style="display: none;">
                     <p><strong>Question:</strong> ${q.question}</p>
-                    ${q.image ? `<img src="images/${q.image}" alt="${q.question}" class="img-fluid mt-3">` : ''}
+                    ${q.icon ? `<i class="fas ${q.icon} fa-3x mt-3"></i>` : ''}
                     <p><strong>Votre réponse:</strong> ${q.options[userAnswers[index]]}</p>
                     <p><strong>Bonne réponse:</strong> ${q.options[q.answer]}</p>
                     <hr>

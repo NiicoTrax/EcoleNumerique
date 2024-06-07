@@ -108,8 +108,8 @@ body {
 }
 
 .option input[type="radio"]:checked + label {
-    background-color: #28a745;
-    border-color: #28a745;
+    background-color: #ff7b00;
+    border-color: #fffb00;
     color: white;
 }
 
