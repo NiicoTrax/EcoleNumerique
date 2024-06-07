@@ -1,37 +1,38 @@
 body {
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
-    height: 100vh;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Background gradient */
+    height: 100vh; /* Full viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
+    margin: 0; /* Remove default margin */
     font-family: Arial, sans-serif;
-    overflow: hidden; /* Prevent horizontal scroll */
+    overflow: hidden; /* Hide overflow */
 }
 
 .container {
-    height: 90vh; /* Make sure the container does not exceed the viewport height */
+    height: 90vh; /* Container height */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #quiz-container {
-    max-width: 700px;
+    max-width: 700px; /* Max width of the quiz container */
     width: 100%;
-    height: 100%;
+    height: 915px; /* Fixed height for the container */
     overflow-y: auto; /* Enable vertical scrolling */
     background-color: #4A3E88;
     border-radius: 20px; /* Rounded corners */
-    padding: 20px; /* Add padding */
+    padding: 20px; /* Padding inside the container */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 .text-white {
-    color: white;
+    color: white; /* Text color white */
 }
 
 .bg-purple {
-    background-color: #4A3E88;
+    background-color: #4A3E88; /* Background color purple */
 }
 
 .theme-btn {
@@ -39,153 +40,158 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient background */
     color: white;
     border: none;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 15px;
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    padding: 15px; /* Padding inside the button */
     overflow: hidden;
-    margin-bottom: 10px; /* Space between buttons */
+    margin-bottom: 10px; /* Margin bottom */
 }
 
 .theme-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Lift the button on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
 }
 
 .theme-icon {
-    font-size: 2em;
-    margin-right: 15px;
+    font-size: 2em; /* Icon size */
+    margin-right: 15px; /* Margin right */
 }
 
 .theme-text {
-    font-size: 1.2em;
-    font-weight: bold;
+    font-size: 1.2em; /* Text size */
+    font-weight: bold; /* Bold text */
 }
 
 .option {
-    margin: 10px 0;
+    margin: 10px 0; /* Margin top and bottom */
     display: flex;
     align-items: center;
 }
 
 .option input[type="radio"] {
-    display: none;
+    display: none; /* Hide radio input */
 }
 
 .option label {
     display: flex;
     align-items: center;
-    padding: 20px;
-    border: 2px solid white;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-    width: 100%; /* Make sure the label takes the full width */
-    text-align: center; /* Center the text */
-    color: white;
-    font-weight: bold;
-    background-color: #4A3E88;
-    word-wrap: break-word; /* Ensure long words break to fit within the container */
+    padding: 20px; /* Padding inside the label */
+    border: 2px solid white; /* White border */
+    border-radius: 30px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+    width: 100%; /* Full width */
+    text-align: center; /* Center text */
+    color: white; /* Text color white */
+    font-weight: bold; /* Bold text */
+    background-color: #4A3E88; /* Background color */
+    word-wrap: break-word; /* Wrap long words */
 }
 
 .option label::before {
-    content: attr(data-option);
+    content: attr(data-option); /* Display option letter */
     background: white;
-    color: #4A3E88;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
+    color: #4A3E88; /* Text color */
+    border-radius: 50%; /* Rounded shape */
+    width: 35px; /* Fixed width */
+    height: 35px; /* Fixed height */
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
-    font-size: 1.2em;
-    margin-right: 10px;
+    font-weight: bold; /* Bold text */
+    font-size: 1.2em; /* Text size */
+    margin-right: 10px; /* Margin right */
 }
 
 .option label:hover {
-    background-color: #6359A6;
-    border-color: #6359A6;
+    background-color: #6359A6; /* Background color on hover */
+    border-color: #6359A6; /* Border color on hover */
 }
 
 .option input[type="radio"]:checked + label {
-    background-color: #28a745;
-    border-color: #28a745;
-    color: white;
+    background-color: #ffae00; /* Background color when checked */
+    border-color: #d9ff00; /* Border color when checked */
+    color: white; /* Text color when checked */
 }
 
 .correct {
-    background-color: #28a745 !important;
-    color: white;
+    background-color: #28a745 !important; /* Green background for correct answers */
+    color: white; /* White text */
 }
 
 .incorrect {
-    background-color: #dc3545 !important;
-    color: white;
+    background-color: #dc3545 !important; /* Red background for incorrect answers */
+    color: white; /* White text */
 }
 
 #summary p {
-    text-align: left;
+    text-align: left; /* Left aligned text */
 }
 
 .badge-light {
-    background-color: white;
-    color: #4A3E88;
+    background-color: white; /* Light badge background */
+    color: #4A3E88; /* Text color */
 }
 
 .img-fluid {
-    max-width: 100px;
-    height: auto;
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
     display: block;
-    margin: 0 auto;
+    margin: 0 auto; /* Center image */
 }
 
-/* Center question-screen and result-screen */
+.mt-3 {
+    margin-top: 1rem !important; /* Margin top */
+}
+
 #question-screen,
 #result-screen {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: column; /* Column layout */
+    justify-content: flex-start; /* Align items to the start */
     align-items: center;
     height: 100%;
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 20px; /* Padding inside the screen */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
-#question-screen .lead {
-    font-size: 1.5em;
+#question-screen .lead,
+#result-screen .lead {
+    font-size: 1.5em; /* Font size */
 }
 
 #options-container {
-    width: 100%;
+    width: 100%; /* Full width */
 }
 
 .custom-btn {
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
-    color: white;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
+    color: white; /* Text color */
     border: none;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 10px 20px;
-    margin: 0 10px;
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    padding: 10px 20px; /* Padding inside the button */
+    margin: 0 10px; /* Margin left and right */
 }
 
 .custom-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Lift the button on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
 }
 
-/* Styles for the theme button container */
 .d-grid.gap-2.col-6.mx-auto {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
-    gap: 20px; /* Space between buttons */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid layout */
+    gap: 20px; /* Gap between grid items */
     justify-content: center;
     align-items: center;
-    transition: all 0.3s ease; /* Smooth transition */
+    transition: all 0.3s ease; /* Smooth transitions */
 }
 
-/* Additional hover effects for the theme buttons */
 .theme-btn:hover::before {
     content: '';
     position: absolute;
@@ -193,6 +199,190 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent overlay */
     pointer-events: none;
+}
+
+.d-none {
+    display: none !important; /* Hide element */
+}
+
+#summary {
+    margin-top: 20px; /* Margin top */
+    padding: 20px; /* Padding inside the summary */
+    background-color: #f9f9f9; /* Light background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.result-item {
+    padding: 10px; /* Padding inside the item */
+    border-radius: 5px; /* Rounded corners */
+    margin: 10px; /* Margin */
+}
+
+.result-item.correct {
+    background-color: #28a745 !important; /* Green background for correct answers */
+    color: white; /* White text */
+}
+
+.result-item.incorrect {
+    background-color: #dc3545 !important; /* Red background for incorrect answers */
+    color: white; /* White text */
+}
+
+#summary .row {
+    display: flex;
+    flex-wrap: wrap; /* Wrap items */
+}
+
+#summary .result-item {
+    flex: 0 0 calc(50% - 20px); /* Flexible layout */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+#summary .result-item p {
+    text-align: left; /* Left aligned text */
+}
+
+/* Media Queries */
+
+/* Small devices (up to 600px) */
+@media only screen and (max-width: 600px) {
+    #quiz-container {
+        padding: 10px; /* Reduced padding */
+    }
+
+    .theme-btn {
+        padding: 10px; /* Reduced padding */
+        font-size: 1em; /* Smaller text */
+    }
+
+    .theme-icon {
+        font-size: 1.5em; /* Smaller icon */
+    }
+
+    .theme-text {
+        font-size: 1em; /* Smaller text */
+    }
+
+    .option label {
+        padding: 15px; /* Reduced padding */
+        font-size: 1em; /* Smaller text */
+    }
+
+    .custom-btn {
+        padding: 5px 10px; /* Reduced padding */
+        font-size: 0.8em; /* Smaller text */
+    }
+
+    .result-item {
+        flex: 0 0 calc(100% - 10px); /* Full width */
+        margin: 5px; /* Reduced margin */
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px to 768px) */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    #quiz-container {
+        padding: 15px; /* Increased padding */
+    }
+
+    .theme-btn {
+        padding: 12px; /* Increased padding */
+        font-size: 1.1em; /* Larger text */
+    }
+
+    .theme-icon {
+        font-size: 1.75em; /* Larger icon */
+    }
+
+    .theme-text {
+        font-size: 1.1em; /* Larger text */
+    }
+
+    .option label {
+        padding: 18px; /* Increased padding */
+        font-size: 1.1em; /* Larger text */
+    }
+
+    .custom-btn {
+        padding: 7px 15px; /* Increased padding */
+        font-size: 0.9em; /* Larger text */
+    }
+
+    .result-item {
+        flex: 0 0 calc(50% - 10px); /* Half width */
+        margin: 5px; /* Reduced margin */
+    }
+}
+
+/* Medium devices (landscape tablets, 768px to 992px) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    #quiz-container {
+        padding: 20px; /* Default padding */
+    }
+
+    .theme-btn {
+        padding: 14px; /* Increased padding */
+        font-size: 1.2em; /* Larger text */
+    }
+
+    .theme-icon {
+        font-size: 2em; /* Larger icon */
+    }
+
+    .theme-text {
+        font-size: 1.2em; /* Larger text */
+    }
+
+    .option label {
+        padding: 20px; /* Default padding */
+        font-size: 1.2em; /* Larger text */
+    }
+
+    .custom-btn {
+        padding: 8px 18px; /* Increased padding */
+        font-size: 1em; /* Default text size */
+    }
+
+    .result-item {
+        flex: 0 0 calc(50% - 10px); /* Half width */
+        margin: 5px; /* Reduced margin */
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 993px) {
+    #quiz-container {
+        padding: 20px; /* Default padding */
+    }
+
+    .theme-btn {
+        padding: 15px; /* Default padding */
+        font-size: 1.3em; /* Larger text */
+    }
+
+    .theme-icon {
+        font-size: 2.5em; /* Larger icon */
+    }
+
+    .theme-text {
+        font-size: 1.3em; /* Larger text */
+    }
+
+    .option label {
+        padding: 20px; /* Default padding */
+        font-size: 1.3em; /* Larger text */
+    }
+
+    .custom-btn {
+        padding: 10px 20px; /* Default padding */
+        font-size: 1.1em; /* Larger text */
+    }
+
+    .result-item {
+        flex: 0 0 calc(50% - 20px); /* Half width */
+        margin: 10px; /* Increased margin */
+    }
 }
