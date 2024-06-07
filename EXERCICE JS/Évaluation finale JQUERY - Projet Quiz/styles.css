@@ -108,8 +108,8 @@ body {
 }
 
 .option input[type="radio"]:checked + label {
-    background-color: #ff7b00;
-    border-color: #fffb00;
+    background-color: #28a745;
+    border-color: #28a745;
     color: white;
 }
 
@@ -155,4 +155,19 @@ body {
 
 #options-container {
     width: 100%;
+}
+
+.custom-btn {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px 20px;
+    margin: 0 10px;
+}
+
+.custom-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }

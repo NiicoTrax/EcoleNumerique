@@ -157,6 +157,15 @@ $(document).ready(function() {
         }
     });
 
+    $('#retour-btn').click(function() {
+        $('#question-screen').fadeOut(500, function() {
+            $('#start-screen').fadeIn(500);
+        });
+        currentQuestion = 0;
+        score = 0;
+        userAnswers = [];
+    });
+
     $('#restart-btn').click(function() {
         $('#result-screen').fadeOut(500, function() {
             $('#start-screen').fadeIn(500);
