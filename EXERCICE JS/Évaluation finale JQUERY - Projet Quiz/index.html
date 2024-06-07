@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz en jQuery</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div id="quiz-container" class="card shadow-lg p-3 mb-5 bg-purple rounded">
+            <div id="start-screen" class="text-center">
+                <h1 class="display-4 text-white">Bienvenue au Quiz!</h1>
+                <p class="lead text-white">Choisissez une thématique pour commencer</p>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-light btn-lg mt-3 theme-btn" data-theme="geographie">
+                        <div class="theme-icon"><i class="fas fa-globe-americas"></i></div>
+                        <div class="theme-text">Géographie</div>
+                    </button>
+                    <button class="btn btn-light btn-lg mt-3 theme-btn" data-theme="culture">
+                        <div class="theme-icon"><i class="fas fa-landmark"></i></div>
+                        <div class="theme-text">Culture Générale</div>
+                    </button>
+                    <button class="btn btn-light btn-lg mt-3 theme-btn" data-theme="cinema">
+                        <div class="theme-icon"><i class="fas fa-film"></i></div>
+                        <div class="theme-text">Cinéma</div>
+                    </button>
+                    <button class="btn btn-light btn-lg mt-3 theme-btn" data-theme="sport">
+                        <div class="theme-icon"><i class="fas fa-futbol"></i></div>
+                        <div class="theme-text">Sport</div>
+                    </button>
+                    <button class="btn btn-light btn-lg mt-3 theme-btn" data-theme="code_de_la_route">
+                        <div class="theme-icon"><i class="fas fa-car"></i></div>
+                        <div class="theme-text">Code de la route</div>
+                    </button>
+                </div>
+            </div>
+            <div id="question-screen" class="text-center d-none">
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="badge badge-light" id="question-number">Question 1 / 20</span>
+                </div>
+                <div id="question-text" class="lead text-white mb-4"></div>
+                <div id="options-container" class="row row-cols-1 row-cols-md-2 g-3"></div>
+                <button id="next-btn" class="btn btn-light btn-lg mt-3" style="display:none;">Question Suivante</button>
+            </div>
+            <div id="result-screen" class="text-center d-none">
+                <h2 class="display-5 text-white">Résultats</h2>
+                <div id="score" class="lead text-white"></div>
+                <div id="summary" class="mt-3"></div>
+                <button id="restart-btn" class="btn btn-light btn-lg mt-3">Rejouer</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
