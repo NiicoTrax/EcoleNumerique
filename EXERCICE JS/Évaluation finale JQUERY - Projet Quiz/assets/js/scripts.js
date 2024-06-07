@@ -105,7 +105,7 @@ $(document).ready(function() {
     function displayResults() {
         $('#question-screen').hide();
         $('#result-screen').removeClass('d-none').fadeIn(500);
-        $('#score').text(`You scored ${score} out of ${selectedQuestions.length}`);
+        $('#score').text(`Votre score est de ${score} sur ${selectedQuestions.length}`);
         let summaryHtml = '<div class="row">'; 
         selectedQuestions.forEach((q, index) => {
             let isCorrect = userAnswers[index] == q.answer;
@@ -114,8 +114,8 @@ $(document).ready(function() {
                 <div class="col-6 result-item ${answerClass} mb-3">
                     <p><strong>Question:</strong> ${q.question}</p>
                     ${q.image ? `<img src="${q.image}" class="img-fluid mt-3">` : ''}
-                    <p><strong>Your answer:</strong> ${q.options[userAnswers[index]]}</p>
-                    <p><strong>Correct answer:</strong> ${q.options[q.answer]}</p>
+                    <p><strong>Votre réponse:</strong> ${q.options[userAnswers[index]]}</p>
+                    <p><strong>Réponse correct:</strong> ${q.options[q.answer]}</p>
                 </div>
             `;
         });

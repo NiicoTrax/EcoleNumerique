@@ -137,7 +137,7 @@ body {
 }
 
 .img-fluid {
-    max-width: 100%; /* Responsive image */
+    max-width: 50%; /* Responsive image */
     height: auto; /* Maintain aspect ratio */
     display: block;
     margin: 0 auto; /* Center image */
