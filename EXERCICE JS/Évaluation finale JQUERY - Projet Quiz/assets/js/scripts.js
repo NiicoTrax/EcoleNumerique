@@ -32,7 +32,7 @@ $(document).ready(function() {
     $('#next-btn').click(function() {
         let selectedOption = $('input[name="option"]:checked').val();
         if (selectedOption === undefined) {
-            alert("Please select an answer");
+            alert("Veuillez sélectionner une réponse");
             return;
         }
 
