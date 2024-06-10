@@ -1,35 +1,35 @@
 <?php
 
-// Premiere ligne
+// Première ligne
 $i = 1;
+while($i < 6) { 
+    echo $i;
+    $i++;
+}
 
-($i < 6)
-  echo $i;
-  $i++;
-
-//Deuxieme ligne
 echo"<br><br>";
 
+// Deuxième ligne
 $i = 1;
-
- {
-     echo $i;
-     $i++;
- }  ($i < 6);
+do {
+    echo $i;
+    $i++;
+} while($i < 6); 
 
 echo"<br><br>";
-//Troisieme ligne
- ($i = 0; $i < 10; ) {
+
+// Troisième ligne
+for($i = 0; $i < 10; $i++) { 
+    echo $i;
+}
+
+echo"<br><br>";
+
+// Quatrième ligne
+$colors = array("rouge", "vert", "bleu", "jaune");
+foreach($colors as $x) { 
     echo $x;
 }
 
-
-echo"<br><br>";
-//Quatrieme ligne
-$colors = array("red", "green", "blue", "yellow");
-
- ($colors  $x) {
-    echo $x;
-}
-
+?>
 
