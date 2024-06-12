@@ -1,0 +1,57 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 80%;
+    max-width: 800px;
+    margin: 20px;
+    padding: 20px;
+}
+
+h1, h2 {
+    background: #6a11cb;
+    background: -webkit-linear-gradient(to right, #2575fc, #6a11cb);
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin: -20px -20px 20px -20px;
+    border-radius: 8px 8px 0 0;
+}
+
+.exercise {
+    padding: 10px 20px;
+    border-left: 4px solid #2575fc;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 5px 0;
+}
+
+.exercise p:nth-child(even) {
+    background: #f0f0f0;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.exercise p:nth-child(odd) {
+    background: #e0e0e0;
+    padding: 5px;
+    border-radius: 4px;
+}
