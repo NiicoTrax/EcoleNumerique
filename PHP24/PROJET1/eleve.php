@@ -18,7 +18,7 @@
                 <div class="section-content">
                 <?php 
                     $genre = $eleve['genre'] ?? ''; 
-                    $image = ($genre === 'Homme') ? 'profilh.png' : 'profilf.png';
+                    $image = ($genre === 'Masculin') ? 'profilh.png' : 'profilf.png';
                 ?>
                 <img class="profile-picture" src="assets/images/<?= $image ?>" alt="Photo de l'élève">
                 <br>
