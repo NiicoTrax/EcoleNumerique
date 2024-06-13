@@ -7,7 +7,7 @@
             "age" => 17,
             "genre" => "Homme",
             "ville" => "Lille",
-            "passions" => ["Football", "Lecture", "Jeux vidéo"]
+            "passions" => ["Chant", "Snowboard", "Cyclisme", "Lecture"]
         ],
         1 => [
             "nom" => "Martin",
@@ -15,7 +15,7 @@
             "age" => 17,
             "genre" => "Homme",
             "ville" => "Lille",
-            "passions" => ["Basketball", "Cinéma", "Musique"]
+            "passions" => ["Couture", "Canoë", "Sculpture", "Théâtre"]
         ],
         2 => [
             "nom" => "Durand",
@@ -23,7 +23,7 @@
             "age" => 17,
             "genre" => "Femme",
             "ville" => "Lille",
-            "passions" => ["Danse", "Peinture", "Voyages"]
+            "passions" => ["Yoga", "Plongée", "Théâtre", "Course à pied"]
         ],
         3 => [
             "nom" => "Lemoine",
@@ -31,7 +31,7 @@
             "age" => 17,
             "genre" => "Femme",
             "ville" => "Lille",
-            "passions" => ["Natation", "Voyages", "Cuisine"]
+            "passions" => ["Tennis", "Ping-pong", "Handball", "Cyclisme"]
         ],
         4 => [
             "nom" => "Girard",
@@ -39,7 +39,7 @@
             "genre" => "Homme",
             "age" => 17,
             "ville" => "Lille",
-            "passions" => ["Escalade", "Musique", "Photographie"]
+            "passions" => ["Cinéma", "Basketball", "Karaté", "Musique"]
         ],
         5 => [
             "nom" => "Moreau",
@@ -47,7 +47,7 @@
             "age" => 17,
             "genre" => "Femme",
             "ville" => "Lille",
-            "passions" => ["Théâtre", "Lecture", "Randonnée"]
+            "passions" => ["Volleyball", "Cyclisme", "Kayak", "Karaté"]
         ],
         6 => [
             "nom" => "Perrin",
@@ -55,7 +55,7 @@
             "age" => 17,
             "genre" => "Homme",
             "ville" => "Lille",
-            "passions" => ["Jeux vidéo", "Cyclisme", "Pêche"]
+            "passions" => ["Hockey", "Rugby", "Couture", "Informatique"]
         ],
         7 => [
             "nom" => "Rousseau",
@@ -63,7 +63,7 @@
             "age" => 17,
             "genre" => "Femme",
             "ville" => "Lille",
-            "passions" => ["Danse", "Musique", "Voyages"]
+            "passions" => ["Jardinage", "Surf", "Escalade", "Plongée"]
         ],
         8 => [
             "nom" => "Bernard",
@@ -71,7 +71,7 @@
             "age" => 17,
             "genre" => "Homme",
             "ville" => "Lille",
-            "passions" => ["Football", "Lecture", "Peinture"]
+            "passions" => ["Ping-pong", "Théâtre", "Hockey", "Cinéma"]
         ],
         9 => [
             "nom" => "Durant",
@@ -79,7 +79,7 @@
             "age" => 17,
             "genre" => "Femme",
             "ville" => "Lille",
-            "passions" => ["Photographie", "Cinéma", "Cuisine"]
+            "passions" => ["Broderie", "Randonnée", "Musique", "Danse"]
         ],
         10 => [
             "nom" => "Lefevre",
@@ -87,7 +87,7 @@
             "age" => 17,
             "genre" => "Homme",
             "ville" => "Lille",
-            "passions" => ["Tennis", "Lecture", "Voyages"]
+            "passions" => ["Ski", "Snowboard", "Écriture", "Équitation"]
         ],
         11 => [
             "nom" => "Lopez",
@@ -95,7 +95,7 @@
             "age" => 17,
             "genre" => "Femme",
             "ville" => "Lille",
-            "passions" => ["Musique", "Danse", "Peinture"]
+            "passions" => ["Badminton", "Couture", "Vélo", "Randonnée"]
         ],
         12 => [
             "nom" => "Muller",
@@ -103,7 +103,7 @@
             "age" => 17,
             "genre" => "Homme",
             "ville" => "Lille",
-            "passions" => ["Escalade", "Lecture", "Jeux vidéo"]
+            "passions" => ["Aquariophilie", "Tricot", "Handball", "Théâtre"]
         ],
         13 => [
             "nom" => "Leroy",
@@ -111,7 +111,7 @@
             "age" => 17,
             "genre" => "Femme",
             "ville" => "Lille",
-            "passions" => ["Football", "Musique", "Voyages"]
+            "passions" => ["Volleyball", "Badminton", "Karaté", "Course à pied"]
         ],
         14 => [
             "nom" => "Fontaine",
@@ -119,7 +119,7 @@
             "age" => 17,
             "genre" => "Homme",
             "ville" => "Lille",
-            "passions" => ["Basketball", "Cinéma", "Randonnée"]
+            "passions" => ["Pêche", "Boxe", "Yoga", "Handball"]
         ],
         15 => [
             "nom" => "Robin",
@@ -127,7 +127,7 @@
             "age" => 17,
             "genre" => "Femme",
             "ville" => "Lille",
-            "passions" => ["Natation", "Cuisine", "Voyages"]
+            "passions" => ["Cyclisme", "Jardinage", "Football", "Ping-pong"]
         ],
         16 => [
             "nom" => "Garnier",
@@ -135,7 +135,7 @@
             "age" => 17,
             "genre" => "Homme",
             "ville" => "Lille",
-            "passions" => ["Football", "Lecture", "Théâtre"]
+            "passions" => ["Voyage", "Badminton", "Escalade", "Golf"]
         ],
         17 => [
             "nom" => "Faure",
@@ -143,7 +143,7 @@
             "age" => 17,
             "genre" => "Femme",
             "ville" => "Lille",
-            "passions" => ["Musique", "Danse", "Photographie"]
+            "passions" => ["Sculpture", "Astronomie", "Vélo", "Snowboard"]
         ],
         18 => [
             "nom" => "Dumont",
@@ -151,7 +151,7 @@
             "age" => 17,
             "genre" => "Homme",
             "ville" => "Lille",
-            "passions" => ["Escalade", "Cinéma", "Voyages"]
+            "passions" => ["Équitation", "Tricot", "Patinage", "Ski"]
         ],
         19 => [
             "nom" => "Blanc",
@@ -159,7 +159,7 @@
             "age" => 17,
             "genre" => "Femme",
             "ville" => "Lille",
-            "passions" => ["Randonnée", "Peinture", "Lecture"]
+            "passions" => ["Pêche", "Patinage", "Informatique", "Peinture"]
         ],
         20 => [
             "nom" => "Flore",
@@ -167,7 +167,7 @@
             "age" => 17,
             "genre" => "Homme",
             "ville" => "Lille",
-            "passions" => ["Randonnée", "Football", "Equitation"]
+            "passions" => ["Écriture", "Snowboard", "Karaté", "Ping-pong"]
         ]
     ];
 

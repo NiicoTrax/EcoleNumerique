@@ -1,57 +1,50 @@
 /* Style général */
-body { 
-    font-family: 'Arial', sans-serif; 
-    margin: 0; 
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
     padding: 0;
-    background-color: #f0f8ff;
+    background: linear-gradient(135deg, #f0f8ff, #e6e6fa);
     color: #333;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding: 20px;
-    overflow: hidden;
+    justify-content: flex-start;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* Conteneur principal */
 .container {
     width: 90%;
-    max-width: 600px;
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    background: #ffffff00;
     border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
     margin: 20px 0;
     text-align: center;
     overflow-y: auto;
     max-height: 100%;
 }
-.container:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
 
 /* Titre principal */
-h1 { 
+h1 {
     color: #ff4500;
-    text-align: center; 
-    font-size: 2.5em; 
-    margin: 20px 0; 
+    text-align: center;
+    font-size: 2.5em;
+    margin: 20px 0;
     text-shadow: 2px 2px #ffe4b5;
 }
 
 /* Liste des élèves */
-ul { 
-    list-style-type: none; 
-    padding: 0; 
+ul {
+    list-style-type: none;
+    padding: 0;
     margin: 0;
 }
-ul li { 
-    margin: 10px 0; 
+ul li {
+    margin: 10px 0;
     padding: 15px;
-    border-bottom: 1px solid #ddd; 
+    border-bottom: 1px solid #ddd;
     transition: background 0.3s, transform 0.3s;
     display: flex;
     align-items: center;
@@ -60,7 +53,7 @@ ul li {
 ul li:last-child {
     border-bottom: none;
 }
-ul li:hover { 
+ul li:hover {
     background: #f1f1f1;
     transform: scale(1.02);
 }
@@ -108,18 +101,18 @@ ul li:hover {
     transition: background-color 0.3s;
 }
 .student-link:hover {
-    background-color: #0056b3;
+    background-color: #2600ff;
 }
 
 /* Liens */
-a { 
-    text-decoration: none; 
-    color: #007BFF; 
+a {
+    text-decoration: none;
+    color: #007BFF;
     font-size: 1.2em;
     transition: color 0.3s;
 }
-a:hover { 
-    color: #ff0000; 
+a:hover {
+    color: #ffffff;
 }
 
 /* Retour lien */
@@ -139,29 +132,23 @@ a:hover {
     transform: scale(1.05);
 }
 
-/* Conteneur principal eleve.php*/
+/* Conteneur principal eleve.php */
 .details-container {
-    background: #fff;
+    background: #ffffff00;
     padding: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    width: 80%;
+    width: 60%;
     max-height: 100%;
     margin: 20px auto;
     text-align: left;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.details-container:hover {
-    transform: scale(1.02);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
 }
 
 /* Titre principal eleve.php */
-h1 { 
+h1 {
     color: #ff4500;
-    text-align: center; 
-    font-size: 2.5em; 
-    margin: 0 0 20px 0; 
+    text-align: center;
+    font-size: 2.5em;
+    margin: 0 0 20px 0;
     text-shadow: 2px 2px #ffe4b5;
 }
 
@@ -216,7 +203,7 @@ h1 {
 .back-link {
     display: block;
     text-align: center;
-    margin: 20px 0;
+    margin: 0px 0px;
     padding: 10px;
     background: #ff4500;
     color: #fff;
@@ -229,19 +216,130 @@ h1 {
     transform: scale(1);
 }
 
+/* Liste des passions */
 ul.passions {
-    list-style-type: disc; 
-    padding-left: 20px;
-    margin-top: 10px;
-    background-color: #ffffff00;
-    padding: 10px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 ul.passions li {
-    margin-bottom: 5px;
-    font-size: 1.1em;
-    color: #333;
-    list-style-type: none;
+    box-sizing: border-box;
+    background: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 10px;
+}
+
+ul.passions li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Bouton ajouter des passions */
+.add-passion-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.add-passion-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Formulaire ajouter des passions */
+.add-passion-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.add-passion-form input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.add-passion-form button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.add-passion-form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Responsive Design for Passions List */
+@media (max-width: 768px) {
+    ul.passions {
+        flex-direction: row; /
+    }
+    ul.passions li {
+        flex: 1 1 calc(25% - 10px); 
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    ul.passions {
+        flex-direction: row; 
+    }
+    ul.passions li {
+        flex: 1 1 calc(25% - 10px);
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .student-item {
+        width: 30; 
+    }
+    .container {
+        width: 95%;
+    }
+    .details-container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .student-item {
+        width: 30%;
+    }
+    .container {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .details-container {
+        width: 95%;
+    }
 }

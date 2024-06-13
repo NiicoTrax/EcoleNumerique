@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Liste des élèves</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
