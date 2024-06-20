@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Projet 2 - Connexion</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="container">
@@ -17,10 +15,11 @@
         </form>
         <?php 
         if (isset($_GET['error']) && $_GET['error'] == 1) {
-            echo '<p class="error-message">Mot de passe incorrect. Veuillez réessayer.</p>';
+            echo '<p class="error-message"><i class="fa-solid fa-triangle-exclamation" style="color: #ff0000;"></i> Mot de passe incorrect. Veuillez réessayer.</p>';
         }
         ?>
     </div>
     <?php include('assets/includes/footer.php'); ?>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+/* PROGRESS BAR */
+
 document.addEventListener('DOMContentLoaded', () => {
     const progressBars = document.querySelectorAll('.progress-bar');
 
@@ -6,3 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
         bar.style.width = progress + '%';
     });
 });
+
+
+/* Right Click Prohibited */
+document.oncontextmenu = function() {
+    return false;
+  }

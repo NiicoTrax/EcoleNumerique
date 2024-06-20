@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-
+/* body page */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: #f0f0f0;
@@ -13,6 +13,7 @@ body {
     padding-top: 60px;
 }
 
+/* header & footer */
 header, footer {
     background-color: #2c3e50;
     color: #fff;
@@ -24,14 +25,17 @@ header, footer {
     z-index: 1000;
 }
 
+/* header */
 header {
     top: 0;
 }
 
+/* footer */
 footer {
     bottom: 0;
 }
 
+/* ul browser header */
 header nav ul {
     list-style: none;
     padding: 0;
@@ -39,10 +43,12 @@ header nav ul {
     justify-content: center;
 }
 
+/* li browser header */
 header nav ul li {
     margin: 0 1em;
 }
 
+/*   text browser header */
 header nav ul li a {
     color: #fff;
     text-decoration: none;
@@ -50,15 +56,27 @@ header nav ul li a {
     transition: color 0.3s ease;
 }
 
+/* text effect */
 header nav ul li a:hover {
     color: #18bc9c;
 }
 
+.logo {
+    width: 50px;
+    height: 40px;
+    position: relative;
+    right: 450px;
+}
+
+
+/* Paragraph */
 h1, h2, h3 {
     color: #2c3e50;
     margin-bottom: 20px;
+    text-align: center;
 }
 
+/* Bio.php container alert */
 .message-container {
     display: flex;
     justify-content: center;
@@ -67,6 +85,20 @@ h1, h2, h3 {
     text-align: center;
 }
 
+.message-container i {
+    animation-duration: .8s;
+    animation-name: clignoter;
+    animation-iteration-count: infinite;
+    transition: none;
+}
+
+@keyframes clignoter {
+    0%   { opacity:1; }
+    50%   {opacity:0; }
+    100% { opacity:1; }
+  }
+
+/* Bio.php message alert */
 .login-message {
     padding: 20px;
     border: 2px solid #333;
@@ -86,6 +118,7 @@ h1, h2, h3 {
     }
 }
 
+/* Bio.php  */
 .bio-container {
     display: flex;
     flex-direction: column;
@@ -120,7 +153,7 @@ h1, h2, h3 {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    text-align: center; /* Center the text content */
+    text-align: center; 
 }
 
 .bio-content:hover {
@@ -150,7 +183,7 @@ h1, h2, h3 {
     padding-left: 0;
     margin-bottom: 20px;
     list-style: none;
-    text-align: left; /* Left align the list items */
+    text-align: left; 
 }
 
 .bio-content ul li {
@@ -160,27 +193,31 @@ h1, h2, h3 {
 }
 
 .bio-content ul li::before {
-    content: '\2022'; /* Unicode bullet symbol */
+    content: '\2022'; 
     color: #18bc9c;
     position: absolute;
     left: 0;
 }
 
+/* Container Progress Bar */
 .skill-bar {
     margin: 10px 0;
 }
 
+/* title Progress Bar */
 .skill-bar span {
     display: block;
     font-weight: bold;
 }
 
+/*  Progress Bar */
 .progress {
     background-color: #e0e0e0;
     border-radius: 20px;
     overflow: hidden;
 }
 
+/*  Progress Bar */
 .progress-bar {
     height: 20px;
     background-color: #18bc9c;
@@ -189,11 +226,14 @@ h1, h2, h3 {
     transition: width 1s ease-in-out;
 }
 
+/* connection error message */
 .error-message {
     color: red;
     text-align: center;
+    font-size: 1.4em;
 }
 
+/* Login Form */
 form {
     margin: 2em auto;
     width: 300px;
@@ -203,12 +243,15 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Login Form Password, Button */
 form label, form input, form button {
     display: block;
     width: 100%;
     margin-bottom: 1em;
+    text-align: center;
 }
 
+/* Login Form Button */
 form button {
     background-color: #2c3e50;
     color: #fff;
@@ -219,6 +262,28 @@ form button {
     transition: background-color 0.3s ease;
 }
 
+/* Login Form Button effect */
 form button:hover {
     background-color: #18bc9c;
+}
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width : 720px) {
+    .login-message {
+        font-size: 0.8em;
+    }
+
+    .error-message {
+        font-size: 1em;
+    }
+
+    .bio-content h3 {
+        font-size: 1.5em;
+    }
+
+    .logo {
+        right: 20px;
+    }
 }

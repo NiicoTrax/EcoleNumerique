@@ -16,9 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-    include('header.php');
-    echo '<div class="message-container"><p class="login-message">Veuillez vous connecter pour accéder à cette page</p></div>';
-    include('footer.php');
+    include('assets/includes/header.php');
+    echo '<div class="message-container"><p class="login-message"><i class="fa-solid fa-triangle-exclamation" style="color: #ff0000;"></i> Veuillez vous <a href="../projet2/login.php">connecter</a> pour accéder à cette page <i class="fa-solid fa-triangle-exclamation" style="color: #ff0000;"></i></p></div>';
+    include('assets/includes/footer.php');
     exit();
 }
 
@@ -29,8 +29,6 @@ include('assets/includes/header.php');
 <head>
     <meta charset="UTF-8">
     <title>Projet 2 - Bio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="bio-container">
@@ -124,7 +122,7 @@ include('assets/includes/header.php');
             <h3>Projets récents</h3>
             <ul>
                 <li><strong>Création d'un jeu Quiz</strong>: Développement d'une plateforme de jeu de quizz en ligne complète avec plusieurs thèmes disponible.</li>
-                <li><strong>Création d'une fiche Eleve</strong>: Création d'un site web permettant aux utilisateurs de consulter une fiche élève disponible.</li>
+                <li><strong>Création d'une fiche Elève</strong>: Création d'un site web permettant aux utilisateurs de consulter une fiche élève disponible.</li>
             </ul>
         </div>
     </div>

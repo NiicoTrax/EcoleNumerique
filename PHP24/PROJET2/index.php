@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Projet 2 - Accueil</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
 <main>
@@ -29,5 +27,6 @@
     </main>
 
     <?php include('assets/includes/footer.php'); ?>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
