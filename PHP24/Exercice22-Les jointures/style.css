@@ -1,0 +1,114 @@
+body {
+    padding: 20px;
+    background-color: #f0f2f5;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+h1 {
+    margin-bottom: 40px;
+    color: #333;
+    font-weight: 300;
+    text-align: center;
+}
+
+.student-card {
+    margin-bottom: 20px;
+    padding: 0;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+
+.student-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    background-color: #ffc107;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+}
+
+.card-section {
+    padding: 20px;
+}
+
+.section-title {
+    background-color: #fdd835;
+    padding: 5px 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.student-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.student-avatar {
+    margin-right: 20px;
+}
+
+.student-avatar img {
+    width: 120px;
+    height: 150px;
+    border-radius: 5px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+.student-details table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.student-details th, .student-details td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.competence-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.competence-list li {
+    margin: 5px 0;
+}
+
+.competence-title {
+    font-weight: bold;
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.competence-title:hover {
+    color: #0056b3;
+}
+
+.competence-chart {
+    margin-top: 10px;
+    display: none;
+}
+
+h3 {
+    color: #444;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
