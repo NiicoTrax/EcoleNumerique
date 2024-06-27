@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+}
+
+/* Dashboard container to hold sidebar and main content */
+.dashboard-container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar styling */
+.sidebar {
+    background-color: #2c3e50;
+    padding: 20px;
+    width: 250px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Profile section inside the sidebar */
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Profile image styling */
+.profile img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+/* Profile name styling */
+.profile h2 {
+    margin: 10px 0;
+}
+
+/* Profile email styling */
+.profile p {
+    color: #bbb;
+}
+
+/* Sidebar navigation styling */
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Sidebar navigation items */
+.sidebar-nav ul li {
+    margin: 15px 0;
+}
+
+/* Sidebar navigation links */
+.sidebar-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Sidebar navigation links hover effect */
+.sidebar-nav ul li a:hover {
+    background-color: #34495e;
+}
+
+/* Main content area */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #ecf0f1;
+    overflow-y: auto;
+}
+
+/* Main header styling */
+header h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Dashboard widgets container */
+.dashboard-widgets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Individual widget styling */
+.widget {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    flex: 1 1 200px;
+    transition: transform 0.3s;
+}
+
+/* Widget hover effect */
+.widget:hover {
+    transform: scale(1.05);
+}
+
+/* Widget icon styling */
+.widget-icon {
+    font-size: 2em;
+    margin-right: 20px;
+}
+
+/* Widget icon colors */
+.widget-icon.blue {
+    color: #3498db;
+}
+
+.widget-icon.purple {
+    color: #9b59b6;
+}
+
+.widget-icon.green {
+    color: #2ecc71;
+}
+
+.widget-icon.teal {
+    color: #1abc9c;
+}
+
+.widget-icon.orange {
+    color: #e67e22;
+}
+
+.widget-icon.red {
+    color: #e74c3c;
+}
+
+/* Widget information styling */
+.widget-info h3 {
+    margin: 0 0 10px 0;
+}
+
+.widget-info p {
+    margin: 0;
+    color: #7f8c8d;
+}
+
+/* General button styling */
+.button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button hover effect */
+.button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
