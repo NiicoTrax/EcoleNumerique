@@ -15,7 +15,7 @@ if ($stmt->rowCount() > 0) {
     $sql = "INSERT INTO utilisateurs (nom_utilisateur, email, mot_de_passe) VALUES (?, ?, ?)";
     $stmt = $pdo->prepare($sql);
     if ($stmt->execute([$nom_utilisateur, $email, $mot_de_passe])) {
-        echo "Inscription réussie. <a href='connexion.php'>Se connecter</a>";
+        echo '<script>alert("Inscription réussie !"); window.location.href="connexion.php";</script>';
     } else {
         echo "Une erreur est survenue lors de l'inscription.";
     }
