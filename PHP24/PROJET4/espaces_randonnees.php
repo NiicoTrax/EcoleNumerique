@@ -67,4 +67,4 @@ $randos = $pdo->query("SELECT * FROM hiking")->fetchAll(PDO::FETCH_ASSOC);
     <input type="submit" value="Ajouter">
 </form>
 
-<?php include 'assets/icnludes/footer.php'; ?>
+<?php include 'assets/includes/footer.php'; ?>

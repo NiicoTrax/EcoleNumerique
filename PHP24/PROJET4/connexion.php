@@ -1,13 +1,29 @@
 <?php $pageTitle = "Connexion"; ?>
-<?php include 'assets/includes/header.php'; ?>
+<?php require 'assets/includes/header.php'; ?>
 
-<form action="exec_connexion.php" method="post">
-    <h2>Connexion</h2>
-    <label for="email">Email:</label>
-    <input type="email" name="email" required>
-    <label for="password">Mot de passe:</label>
-    <input type="password" name="password" required>
-    <input type="submit" value="Se connecter">
-</form>
+<?php
+    if (isset($_GET['error']) && $_GET['error'] == 1) {
+        echo '<p style="color: red;">Erreur lors de la connexion ! Veuillez vérifier vos informations !</p>';
+    }
+    ?>
 
-<?php include 'assets/includes/footer.php'; ?>
+    <form action="exec_connexion.php" method="post">
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required><br>
+        <button type="submit">Se connecter</button>
+    </form>
+
+<?php require 'assets/includes/footer.php'; ?>
+
+
+
+
+
+
+
+
+
+
+

@@ -14,7 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['user'] = $user['name'];
         header("Location: espaces_randonnees.php");
     } else {
-        echo "Mauvais Email ou Mot de Passe";
+        header('Location: connexion.php?error=1');
+        exit;
     }
 }
 ?>

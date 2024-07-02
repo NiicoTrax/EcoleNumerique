@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  Dim 30 juin 2024 à 23:59
+-- Généré le :  mar. 02 juil. 2024 à 09:52
 -- Version du serveur :  5.7.17
 -- Version de PHP :  7.1.3
 
@@ -56,10 +56,10 @@ INSERT INTO `hiking` (`id`, `name`, `difficulty`, `distance`, `duration`, `heigh
 
 CREATE TABLE `utilisateurs` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `name` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `email` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `password` varchar(255) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `utilisateurs`
