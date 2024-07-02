@@ -22,7 +22,7 @@ let incorrectWaste = [];
 fetch('assets/js/waste.json')
     .then(response => {
         if (!response.ok) {
-            throw new Error('La réponse du réseau n était pas correcte ' + response.statusText);
+            throw new Error('La réponse du json n était pas correcte ' + response.statusText);
         }
         return response.json();
     })
