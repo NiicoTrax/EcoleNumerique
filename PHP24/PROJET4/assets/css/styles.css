@@ -1,5 +1,12 @@
-@charset "UTF-8"; 
+/* 
+ * Main Stylesheet
+ * This stylesheet contains the primary styling for the website, ensuring a responsive and visually appealing design.
+ */
 
+/* Charset declaration for proper encoding */
+@charset "UTF-8";
+
+/* Global styles for the HTML and body elements */
 html, body {
     height: 100%;
     margin: 0;
@@ -8,17 +15,20 @@ html, body {
     color: #333;
 }
 
+/* Flex container to ensure the body takes the full height and centers content vertically */
 body {
     display: flex;
     flex-direction: column;
 }
 
+/* Main container styling */
 .main-container {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
+/* Header section with a background image and centered text */
 header {
     background: url('../images/reunion-background.jpg') no-repeat center center;
     background-size: cover;
@@ -31,12 +41,14 @@ header {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
+/* Header title styling */
 header h1 {
     font-size: 3em;
     text-align: center;
     padding: 0 20px;
 }
 
+/* Navigation bar styling */
 nav {
     width: 100%;
     background: #007bff;
@@ -48,6 +60,7 @@ nav {
     box-sizing: border-box;
 }
 
+/* Navigation menu styling */
 nav .menu {
     list-style: none;
     display: flex;
@@ -55,11 +68,13 @@ nav .menu {
     padding: 0;
 }
 
+/* Individual menu item styling */
 nav .menu li {
     margin: 0 15px;
     position: relative;
 }
 
+/* Menu link styling */
 nav .menu li a {
     color: white;
     text-decoration: none;
@@ -67,10 +82,12 @@ nav .menu li a {
     transition: color 0.3s ease;
 }
 
+/* Hover effect for menu links */
 nav .menu li a:hover {
     color: #ffeb3b;
 }
 
+/* Underline effect for active menu items */
 nav .menu li::after {
     content: '';
     display: block;
@@ -83,10 +100,12 @@ nav .menu li::after {
     left: 0;
 }
 
+/* Underline effect on hover */
 nav .menu li:hover::after {
     width: 100%;
 }
 
+/* Login button styling */
 nav .login-button {
     background: #f44336;
     color: white;
@@ -96,11 +115,13 @@ nav .login-button {
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover effect for login button */
 nav .login-button:hover {
     background: #d32f2f;
     transform: scale(1.1);
 }
 
+/* Container styling for main content */
 .container {
     flex: 1;
     width: 90%;
@@ -112,10 +133,12 @@ nav .login-button:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+/* Section styling */
 .section {
     margin-top: 20px;
 }
 
+/* Section header styling */
 .section h2 {
     margin-top: 0;
     color: #007bff;
@@ -123,17 +146,20 @@ nav .login-button:hover {
     text-transform: uppercase;
 }
 
+/* Paragraph and list styling within sections */
 .section p, .section ul {
     font-size: 1.1em;
     line-height: 1.6;
     color: #555;
 }
 
+/* Unordered list styling within sections */
 .section ul {
     list-style-type: none;
     padding-left: 0;
 }
 
+/* List item styling with custom bullet */
 .section ul li {
     background: url('icon-check.png') no-repeat left center;
     background-size: 20px;
@@ -141,6 +167,7 @@ nav .login-button:hover {
     margin-bottom: 10px;
 }
 
+/* Button and submit input styling */
 button, input[type="submit"] {
     background: #007bff;
     color: white;
@@ -151,16 +178,19 @@ button, input[type="submit"] {
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover effect for buttons and submit inputs */
 button:hover, input[type="submit"]:hover {
     background: #0056b3;
     transform: scale(1.05);
 }
 
+/* Label styling */
 label {
     display: block;
     margin: 10px 0 5px;
 }
 
+/* Input field styling */
 input[type="text"], input[type="email"], input[type="password"], select {
     width: 100%;
     padding: 10px;
@@ -170,12 +200,14 @@ input[type="text"], input[type="email"], input[type="password"], select {
     box-sizing: border-box;
 }
 
+/* Image container styling */
 .images {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
+/* Individual image styling */
 .images img {
     width: 30%;
     border-radius: 8px;
@@ -183,23 +215,27 @@ input[type="text"], input[type="email"], input[type="password"], select {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+/* Table styling */
 table {
     width: 100%;
     margin-top: 20px;
     border-collapse: collapse;
 }
 
+/* Table cell styling */
 table th, table td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: center;
 }
 
+/* Table header styling */
 table th {
     background: #4caf50;
     color: white;
 }
 
+/* User info section styling */
 .user-info {
     display: flex;
     justify-content: space-between;
@@ -208,6 +244,7 @@ table th {
     margin-top: 20px;
 }
 
+/* Logout button styling */
 .logout-button {
     background: #f44336;
     color: white;
@@ -216,10 +253,12 @@ table th {
     border-radius: 4px;
 }
 
+/* Hover effect for logout button */
 .logout-button:hover {
     background: #d32f2f;
 }
 
+/* Footer styling */
 footer {
     background: #007bff;
     color: white;
@@ -229,6 +268,7 @@ footer {
     width: 100%;
 }
 
+/* Media query for screens narrower than 768 pixels */
 @media (max-width: 768px) {
     nav .menu {
         flex-direction: column;
