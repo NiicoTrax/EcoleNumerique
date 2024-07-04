@@ -16,7 +16,7 @@ $randos = $pdo->query("SELECT * FROM hiking")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <?php $pageTitle = "Espace Randonnées"; ?>
-<?php include 'assets/includes/headerclient.php'; ?>
+<?php include 'assets/includes/header.php'; ?>
 
 <div class="user-info">
     <h1>Bonjour, <?php echo $_SESSION['user']; ?></h1>

@@ -23,9 +23,9 @@ if (session_status() == PHP_SESSION_NONE) {
                 <?php endif; ?>
             </ul>
             <?php if (isset($_SESSION['user'])): ?>
-                <a href="deconnexion.php" class="login-button">Se déconnecter</a>
+                <a href="deconnexion.php" class="login-button">déconnection</a>
             <?php else: ?>
-                <a href="connexion.php" class="login-button">Se connecter</a>
+                <a href="connexion.php" class="login-button">Connexion</a>
             <?php endif; ?>
         </nav>
         <header>
