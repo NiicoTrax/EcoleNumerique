@@ -13,6 +13,8 @@ $stmt->execute();
 $difficulty_levels = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $randos = $pdo->query("SELECT * FROM hiking")->fetchAll(PDO::FETCH_ASSOC);
+
+var_dump($randos);
 ?>
 
 <?php $pageTitle = "Espace Randonnées"; ?>
