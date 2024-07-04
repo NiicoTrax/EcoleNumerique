@@ -6,6 +6,8 @@ class personnage {
     // La propriété id est privée, je ne peux pas la modifier ou la lire directement en dehors de cette classe
     private $id;
 
+    private $nom
+
     // Constructeur de ma classe permettant de définir des valeurs par défaut lorsqu'elle est instanciée
     public function __construct()
     {
