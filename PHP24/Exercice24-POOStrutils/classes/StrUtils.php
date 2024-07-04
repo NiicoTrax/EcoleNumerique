@@ -30,6 +30,6 @@ class StrUtils {
 
     // Méthode pour appliquer du gras, de l'italique et du souligné
     public function uglify() {
-        return $this->bold() . ' ' . $this->italic() . ' ' . $this->underline();
+        return $this->bold() . ' ' . $this->italic() . ' ' . $this->underline() ;
     }
 }

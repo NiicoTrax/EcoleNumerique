@@ -3,7 +3,7 @@
 
 require "classes/StrUtils.php";
 
-$utils = new StrUtils("Salut à tous");
+$utils = new StrUtils("Salut à tous, je suis nouveau !");
 
 Echo "Bold : ".$utils->bold();
 
@@ -21,4 +21,4 @@ Echo "Capitalize : ".$utils->capitalize();
 
 Echo "<br><br>";
 
-Echo "Bold, Italic, Underline, Capitalize : ".$utils->uglify();
+Echo "Bold, Italic, Underline : ".$utils->uglify();
