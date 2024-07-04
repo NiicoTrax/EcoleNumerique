@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mar. 02 juil. 2024 à 09:52
+-- Généré le :  jeu. 04 juil. 2024 à 10:33
 -- Version du serveur :  5.7.17
 -- Version de PHP :  7.1.3
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `hiking` (
   `id` int(11) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
-  `difficulty` enum('très facile','facile','moyen','difficile','très difficile') NOT NULL,
+  `difficulty` enum('Très facile','Facile','Moyen','Difficile','Très difficile') NOT NULL,
   `distance` int(11) NOT NULL COMMENT 'in km',
   `duration` time NOT NULL,
   `height_difference` int(6) NOT NULL COMMENT 'in m'
@@ -42,11 +42,11 @@ CREATE TABLE `hiking` (
 --
 
 INSERT INTO `hiking` (`id`, `name`, `difficulty`, `distance`, `duration`, `height_difference`) VALUES
-(6, 'Pierre', 'difficile', 15, '06:00:00', 1500),
-(7, 'Jacques', 'très difficile', 18, '08:00:00', 1700),
-(8, 'Manon', 'moyen', 12, '05:00:00', 1200),
-(9, 'Sylvie', 'facile', 6, '02:00:00', 200),
-(10, 'George', 'moyen', 10, '04:00:00', 900);
+(6, 'Pierre', 'Difficile', 15, '06:00:00', 1500),
+(7, 'Jacques', 'Très difficile', 18, '08:00:00', 1700),
+(8, 'Manon', 'Moyen', 12, '05:00:00', 1200),
+(9, 'Sylvie', 'Facile', 6, '02:00:00', 200),
+(10, 'George', 'Moyen', 10, '04:00:00', 900);
 
 -- --------------------------------------------------------
 
@@ -66,7 +66,8 @@ CREATE TABLE `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`id`, `name`, `email`, `password`) VALUES
-(1, 'Niico', 'nicolaslegaye@live.fr', 'Tigresse5632');
+(1, 'Niico', 'nicolaslegaye@live.fr', 'Tigresse5632'),
+(2, 'admin', 'admin@admin.com', 'admin123');
 
 --
 -- Index pour les tables déchargées
@@ -97,7 +98,7 @@ ALTER TABLE `hiking`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
