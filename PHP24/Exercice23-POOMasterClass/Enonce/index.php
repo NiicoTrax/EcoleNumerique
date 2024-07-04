@@ -1,23 +1,24 @@
 <?php
 
-include"classes/personnage.php";
+require_once 'classes/personnage.php';
 
-// Creation d'une instance de la classe personnage
-$perso = new personnage();
+// Création d'une instance de la classe Personnage
+$perso = new Personnage('John Doe');
 
-echo $perso->nom;
+// Utilisation des méthodes getter et setter pour accéder à la propriété nom
+echo 'Nom du personnage : ' . $perso->getNom() . '<br>';
 
-echo"<br><br>";
+// Modifier le nom du personnage
+$perso->setNom('Jane Doe');
+echo 'Nom du personnage modifié : ' . $perso->getNom() . '<br>';
 
+// Déplacement du personnage
+$perso->walkLeft();
+$perso->walkTop();
+$perso->walkBottom();
 
+// Affichage de la position actuelle du personnage (facultatif)
+echo 'Position X : ' . $perso->getPositionX() . '<br>';
+echo 'Position Y : ' . $perso->getPositionY() . '<br>';
 
-$perso2 = new personnage();
-$perso2->nom = "Robert";
-echo $perso2->nom;
-
-
-
-$perso->walkRight();
-$perso->walkRight();
-$perso->walkRight();
-$perso->walkRight();
+?>
