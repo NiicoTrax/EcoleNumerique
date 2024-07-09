@@ -1,77 +1,71 @@
 <?php
-require_once 'includes/init.php';
+include 'includes/header.php';
+include 'config/database.php'; // Inclusion du fichier de configuration de la base de données
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $isbn = $_POST['isbn'];
-    $titre = $_POST['titre'];
-    $auteur = $_POST['auteur'];
-    $annee_publication = $_POST['annee_publication'];
-    $genre = $_POST['genre'];
-
-    $stmt = $pdo->prepare("UPDATE livres SET titre = ?, auteur = ?, annee_publication = ?, genre = ? WHERE isbn = ?");
-    $stmt->execute([$titre, $auteur, $annee_publication, $genre, $isbn]);
-
-    header('Location: afficher_livres.php');
-    exit();
+// Connexion à la base de données
+try {
+    $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8";
+    $options = [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    ];
+    $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
+} catch (PDOException $e) {
+    die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
-if (isset($_GET['isbn'])) {
-    $stmt = $pdo->prepare("SELECT * FROM livres WHERE isbn = ?");
-    $stmt->execute([$_GET['isbn']]);
-    $livre = $stmt->fetch();
-
-    if (!$livre) {
-        die("Livre non trouvé.");
-    }
-}
+// Récupérer les livres
+$sql = "SELECT id, isbn, titre, auteur, annee_publication, genre FROM livres";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$livres = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Modifier un Livre</title>
-</head>
-<body>
-    <?php include 'includes/header.php'; ?>
-    <div class="container-fluid">
-        <div class="row">
-            <?php include 'includes/sidebar.php'; ?>
-            <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <h2 class="mt-4">Modifier un Livre</h2>
-                <div class="card">
-                    <div class="card-body">
-                        <form action="modifier_livre.php" method="post">
-                            <input type="hidden" name="isbn" value="<?= htmlspecialchars($livre['isbn'], ENT_QUOTES, 'UTF-8') ?>">
-                            <div class="form-group">
-                                <label for="titre">Titre</label>
-                                <input type="text" class="form-control" id="titre" name="titre" value="<?= htmlspecialchars($livre['titre'], ENT_QUOTES, 'UTF-8') ?>" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="auteur">Auteur</label>
-                                <input type="text" class="form-control" id="auteur" name="auteur" value="<?= htmlspecialchars($livre['auteur'], ENT_QUOTES, 'UTF-8') ?>" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="annee_publication">Année de Publication</label>
-                                <input type="number" class="form-control" id="annee_publication" name="annee_publication" value="<?= htmlspecialchars($livre['annee_publication'], ENT_QUOTES, 'UTF-8') ?>" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="genre">Genre</label>
-                                <input type="text" class="form-control" id="genre" name="genre" value="<?= htmlspecialchars($livre['genre'], ENT_QUOTES, 'UTF-8') ?>" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Modifier</button>
-                        </form>
-                    </div>
+<div class="container-fluid">
+    <div class="row">
+        <main class="col-md-12 ml-sm-auto col-lg-12 px-4">
+            <h2>Modifier un Livre</h2>
+            <div class="card">
+                <div class="card-body">
+                    <?php if (!empty($livres)): ?>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>ISBN</th>
+                                <th>Titre</th>
+                                <th>Auteur</th>
+                                <th>Année de publication</th>
+                                <th>Genre</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($livres as $livre): ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($livre['id']); ?></td>
+                                <td><?php echo htmlspecialchars($livre['isbn']); ?></td>
+                                <td><?php echo htmlspecialchars($livre['titre']); ?></td>
+                                <td><?php echo htmlspecialchars($livre['auteur']); ?></td>
+                                <td><?php echo htmlspecialchars($livre['annee_publication']); ?></td>
+                                <td><?php echo htmlspecialchars($livre['genre']); ?></td>
+                                <td>
+                                    <a href="modifier_livre_form.php?id=<?php echo $livre['id']; ?>" class="btn btn-primary">Modifier</a>
+                                    <a href="supprimer_livre.php?id=<?php echo $livre['id']; ?>" class="btn btn-danger">Supprimer</a>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                    <?php else: ?>
+                        <p>Aucun livre trouvé.</p>
+                    <?php endif; ?>
                 </div>
-            </main>
-        </div>
+            </div>
+        </main>
     </div>
-    <?php include 'includes/footer.php'; ?>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+</div>
+
+<?php
+include 'includes/footer.php';
+?>

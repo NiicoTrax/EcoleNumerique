@@ -1,5 +1,18 @@
 <?php
-require_once 'includes/init.php';
+include 'includes/header.php';
+include 'config/database.php';
+
+// Connexion à la base de données
+try {
+    $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8";
+    $options = [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    ];
+    $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
+} catch (PDOException $e) {
+    die("Erreur de connexion à la base de données : " . $e->getMessage());
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm'])) {
     $isbn = $_POST['isbn'];
@@ -22,17 +35,12 @@ if (isset($_GET['isbn'])) {
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.amazonaws.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
     <title>Supprimer un Livre</title>
 </head>
 <body>
-    <?php include 'includes/header.php'; ?>
+    
     <div class="container-fluid">
         <div class="row">
-            <?php include 'includes/sidebar.php'; ?>
             <main class="col-md-9 ml-sm-auto col-lg-10 px-4 main-content">
                 <h2 class="mt-4">Supprimer un Livre</h2>
                 <div class="card">
@@ -55,8 +63,5 @@ if (isset($_GET['isbn'])) {
         </div>
     </div>
     <?php include 'includes/footer.php'; ?>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.amazonaws.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,67 +1,54 @@
-<div id="sidebarMenu" class="sidebar">
-    <h2>Menu</h2>
-    <a class="nav-link" href="index.php">Accueil</a>
-
-    <div class="nav flex-column">
-        <a class="nav-link" href="#submenuLivres" data-toggle="collapse" aria-expanded="false">Livres</a>
-        <div class="collapse" id="submenuLivres">
-            <ul class="flex-column pl-3">
-                <li class="nav-item">
-                    <a class="nav-link" href="afficher_livres.php">Afficher tout les livres</a>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vpK02SmR9fj6Rv8u3IYkYWiPtnqn5YyMwlf+0WnRCuI6a5O9WufO7KvvGx9sAfyL" crossorigin="anonymous">
+    <title>Gestion de Bibliothèque</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Bibliothèque</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="livresDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-book"></i> Livres
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="livresDropdown">
+                        <a class="dropdown-item" href="afficher_livres.php">Afficher tous les livres</a>
+                        <a class="dropdown-item" href="ajouter_livre.php">Ajouter un livre</a>
+                        <a class="dropdown-item" href="modifier_livre.php">Modifier un livre</a>
+                        <a class="dropdown-item" href="supprimer_livre.php">Supprimer un livre</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ajouter_livre.php">Ajouter un Livre</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="membresDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-users"></i> Membres
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="membresDropdown">
+                        <a class="dropdown-item" href="afficher_membres.php">Afficher tous les membres</a>
+                        <a class="dropdown-item" href="ajouter_membre.php">Ajouter un membre</a>
+                        <a class="dropdown-item" href="modifier_membre.php">Modifier un membre</a>
+                        <a class="dropdown-item" href="supprimer_membre.php">Supprimer un membre</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="supprimer_livre.php">Supprimer un Livre</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="modifier_livre.php">Modifier un Livre</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="nav flex-column">
-        <a class="nav-link" href="#submenuMembres" data-toggle="collapse" aria-expanded="false">Membres</a>
-        <div class="collapse" id="submenuMembres">
-            <ul class="flex-column pl-3">
-                <li class="nav-item">
-                    <a class="nav-link" href="afficher_membres.php">Afficher tout les membres</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ajouter_membre.php">Ajouter un Membre</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="supprimer_membre.php">Supprimer un Membre</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="modifier_membre.php">Modifier un Membre</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="nav flex-column">
-        <a class="nav-link" href="#submenuEmprunts" data-toggle="collapse" aria-expanded="false">Emprunts</a>
-        <div class="collapse" id="submenuEmprunts">
-            <ul class="flex-column pl-3">
-                <li class="nav-item">
-                    <a class="nav-link" href="afficher_emprunts.php">Afficher tout les emprunts</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ajouter_emprunt.php">Ajouter un Emprunt</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="supprimer_emprunt.php">Supprimer un Emprunt</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="modifier_emprunt.php">Modifier un Emprunt</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="empruntsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-book-reader"></i> Emprunts
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="empruntsDropdown">
+                        <a class="dropdown-item" href="afficher_emprunts.php">Afficher tous les emprunts</a>
+                        <a class="dropdown-item" href="ajouter_emprunt.php">Ajouter un emprunt</a>
+                        <a class="dropdown-item" href="modifier_emprunt.php">Modifier un emprunt</a>
+                        <a class="dropdown-item" href="supprimer_emprunt.php">Supprimer un emprunt</a>
+                    </div>
                 </li>
             </ul>
         </div>
-    </div>
-
-    <a class="nav-link" href="contact.php">Contact</a>
-    <a class="nav-link" href="logout.php">Déconnexion</a>
-</div>
+    </nav>

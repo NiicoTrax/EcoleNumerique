@@ -14,30 +14,40 @@ try {
     die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
-// Récupérer les livres pour le menu déroulant
-$sqlLivres = "SELECT id, titre, auteur FROM livres";
+// Récupérer les informations de l'emprunt
+$id = $_GET['id'];
+$sql = "SELECT * FROM emprunts WHERE id = ?";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$id]);
+$emprunt = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$emprunt) {
+    die("Emprunt non trouvé.");
+}
+
+// Récupérer les listes des livres et des membres pour les options du formulaire
+$sqlLivres = "SELECT id, titre FROM livres";
 $stmtLivres = $pdo->prepare($sqlLivres);
 $stmtLivres->execute();
 $livres = $stmtLivres->fetchAll(PDO::FETCH_ASSOC);
 
-// Récupérer les membres pour le menu déroulant
 $sqlMembres = "SELECT id, nom FROM membres";
 $stmtMembres = $pdo->prepare($sqlMembres);
 $stmtMembres->execute();
 $membres = $stmtMembres->fetchAll(PDO::FETCH_ASSOC);
 
-// Ajout de l'emprunt
+// Mise à jour de l'emprunt
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_livre = $_POST['id_livre'];
     $id_membre = $_POST['id_membre'];
     $date_emprunt = $_POST['date_emprunt'];
     $date_retour = $_POST['date_retour'];
 
-    $sqlInsert = "INSERT INTO emprunts (id_livre, id_membre, date_emprunt, date_retour) VALUES (?, ?, ?, ?)";
-    $stmtInsert = $pdo->prepare($sqlInsert);
-    $stmtInsert->execute([$id_livre, $id_membre, $date_emprunt, $date_retour]);
+    $sqlUpdate = "UPDATE emprunts SET id_livre = ?, id_membre = ?, date_emprunt = ?, date_retour = ? WHERE id = ?";
+    $stmtUpdate = $pdo->prepare($sqlUpdate);
+    $stmtUpdate->execute([$id_livre, $id_membre, $date_emprunt, $date_retour, $id]);
 
-    header("Location: afficher_emprunts.php");
+    header("Location: modifier_emprunt.php");
     exit;
 }
 ?>
@@ -45,25 +55,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="container-fluid">
     <div class="row">
         <main class="col-md-12 ml-sm-auto col-lg-12 px-4">
-            <h2>Ajouter Emprunt</h2>
+            <h2>Modifier Emprunt</h2>
             <div class="card">
                 <div class="card-body">
                     <form method="POST">
                         <div class="form-group">
                             <label for="id_livre">Livre</label>
-                            <select id="id_livre" name="id_livre" class="form-control selectpicker" data-live-search="true">
+                            <select id="id_livre" name="id_livre" class="form-control">
                                 <?php foreach ($livres as $livre): ?>
-                                    <option value="<?php echo $livre['id']; ?>">
-                                        <?php echo htmlspecialchars($livre['titre'] . " - " . $livre['auteur']); ?>
+                                    <option value="<?php echo $livre['id']; ?>" <?php echo $livre['id'] == $emprunt['id_livre'] ? 'selected' : ''; ?>>
+                                        <?php echo htmlspecialchars($livre['titre']); ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="id_membre">Membre</label>
-                            <select id="id_membre" name="id_membre" class="form-control selectpicker" data-live-search="true">
+                            <select id="id_membre" name="id_membre" class="form-control">
                                 <?php foreach ($membres as $membre): ?>
-                                    <option value="<?php echo $membre['id']; ?>">
+                                    <option value="<?php echo $membre['id']; ?>" <?php echo $membre['id'] == $emprunt['id_membre'] ? 'selected' : ''; ?>>
                                         <?php echo htmlspecialchars($membre['nom']); ?>
                                     </option>
                                 <?php endforeach; ?>
@@ -71,13 +81,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="form-group">
                             <label for="date_emprunt">Date d'emprunt</label>
-                            <input type="date" id="date_emprunt" name="date_emprunt" class="form-control" required>
+                            <input type="date" id="date_emprunt" name="date_emprunt" class="form-control" value="<?php echo htmlspecialchars($emprunt['date_emprunt']); ?>">
                         </div>
                         <div class="form-group">
                             <label for="date_retour">Date de retour</label>
-                            <input type="date" id="date_retour" name="date_retour" class="form-control" required>
+                            <input type="date" id="date_retour" name="date_retour" class="form-control" value="<?php echo htmlspecialchars($emprunt['date_retour']); ?>">
                         </div>
-                        <button type="submit" class="btn btn-primary">Ajouter</button>
+                        <button type="submit" class="btn btn-primary">Mettre à jour</button>
                     </form>
                 </div>
             </div>

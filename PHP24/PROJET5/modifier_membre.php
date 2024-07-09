@@ -1,72 +1,67 @@
 <?php
-require_once 'includes/init.php';
+include 'includes/header.php';
+include 'config/database.php'; 
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $id = $_POST['id'];
-    $nom = $_POST['nom'];
-    $email = $_POST['email'];
-    $date_adhesion = $_POST['date_adhesion'];
-
-    $stmt = $pdo->prepare("UPDATE membres SET nom = ?, email = ?, date_adhesion = ? WHERE id = ?");
-    $stmt->execute([$nom, $email, $date_adhesion, $id]);
-
-    header('Location: afficher_membres.php');
-    exit();
+// Connexion à la base de données
+try {
+    $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8";
+    $options = [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    ];
+    $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
+} catch (PDOException $e) {
+    die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
-if (isset($_GET['id'])) {
-    $stmt = $pdo->prepare("SELECT * FROM membres WHERE id = ?");
-    $stmt->execute([$_GET['id']]);
-    $membre = $stmt->fetch();
-
-    if (!$membre) {
-        die("Membre non trouvé.");
-    }
-}
+// Récupérer les membres
+$sql = "SELECT id, nom, email, date_adhesion FROM membres";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$membres = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.amazonaws.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Modifier un Membre</title>
-</head>
-<body>
-    <?php include 'includes/header.php'; ?>
-    <div class="container-fluid">
-        <div class="row">
-            <?php include 'includes/sidebar.php'; ?>
-            <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <h2 class="mt-4">Modifier un Membre</h2>
-                <div class="card">
-                    <div class="card-body">
-                        <form action="modifier_membre.php" method="post">
-                            <input type="hidden" name="id" value="<?= htmlspecialchars($membre['id'], ENT_QUOTES, 'UTF-8') ?>">
-                            <div class="form-group">
-                                <label for="nom">Nom</label>
-                                <input type="text" class="form-control" id="nom" name="nom" value="<?= htmlspecialchars($membre['nom'], ENT_QUOTES, 'UTF-8') ?>" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" value="<?= htmlspecialchars($membre['email'], ENT_QUOTES, 'UTF-8') ?>" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="date_adhesion">Date d'Adhésion</label>
-                                <input type="date" class="form-control" id="date_adhesion" name="date_adhesion" value="<?= htmlspecialchars($membre['date_adhesion'], ENT_QUOTES, 'UTF-8') ?>" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Modifier</button>
-                        </form>
-                    </div>
+<div class="container-fluid">
+    <div class="row">
+        <main class="col-md-12 ml-sm-auto col-lg-12 px-4">
+            <h2>Modifier un Membre</h2>
+            <div class="card">
+                <div class="card-body">
+                    <?php if (!empty($membres)): ?>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nom</th>
+                                <th>Email</th>
+                                <th>Date d'adhésion</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($membres as $membre): ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($membre['id']); ?></td>
+                                <td><?php echo htmlspecialchars($membre['nom']); ?></td>
+                                <td><?php echo htmlspecialchars($membre['email']); ?></td>
+                                <td><?php echo htmlspecialchars($membre['date_adhesion']); ?></td>
+                                <td>
+                                    <a href="modifier_membre_form.php?id=<?php echo $membre['id']; ?>" class="btn btn-primary">Modifier</a>
+                                    <a href="supprimer_membre.php?id=<?php echo $membre['id']; ?>" class="btn btn-danger">Supprimer</a>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                    <?php else: ?>
+                        <p>Aucun membre trouvé.</p>
+                    <?php endif; ?>
                 </div>
-            </main>
-        </div>
+            </div>
+        </main>
     </div>
-    <?php include 'includes/footer.php'; ?>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.amazonaws.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+</div>
+
+<?php
+include 'includes/footer.php';
+?>

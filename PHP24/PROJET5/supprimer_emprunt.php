@@ -1,62 +1,68 @@
 <?php
-require_once 'includes/init.php';
+include 'includes/header.php';
+include 'config/database.php'; // Inclusion du fichier de configuration de la base de données
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm'])) {
-    $id = $_POST['id'];
-    $stmt = $pdo->prepare("DELETE FROM emprunts WHERE id = ?");
-    $stmt->execute([$id]);
-    header('Location: afficher_emprunts.php');
-    exit();
+// Connexion à la base de données
+try {
+    $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8";
+    $options = [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    ];
+    $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
+} catch (PDOException $e) {
+    die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
-if (isset($_GET['id'])) {
-    $stmt = $pdo->prepare("SELECT * FROM emprunts WHERE id = ?");
-    $stmt->execute([$_GET['id']]);
-    $emprunt = $stmt->fetch();
-    if (!$emprunt) {
-        die("Emprunt non trouvé.");
-    }
+// Logique pour supprimer un emprunt
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_emprunt'])) {
+    $id_emprunt = $_POST['id_emprunt'];
+
+    $sqlDelete = "DELETE FROM emprunts WHERE id = ?";
+    $stmtDelete = $pdo->prepare($sqlDelete);
+    $stmtDelete->execute([$id_emprunt]);
+
+    $message = "Emprunt supprimé avec succès.";
 }
+
+// Récupérer tous les emprunts pour l'afficher dans le formulaire
+$sqlEmprunts = "SELECT e.id, l.titre, l.auteur, m.nom, e.date_emprunt, e.date_retour 
+                FROM emprunts e 
+                JOIN livres l ON e.id_livre = l.id 
+                JOIN membres m ON e.id_membre = m.id";
+$stmtEmprunts = $pdo->prepare($sqlEmprunts);
+$stmtEmprunts->execute();
+$emprunts = $stmtEmprunts->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Supprimer un Emprunt</title>
-</head>
-<body>
-    <?php include 'includes/header.php'; ?>
-    <div class="container-fluid">
-        <div class="row">
-            <?php include 'includes/sidebar.php'; ?>
-            <main class="col-md-9 ml-sm-auto col-lg-10 px-4 main-content">
-                <h2 class="mt-4">Supprimer un Emprunt</h2>
-                <div class="card">
-                    <div class="card-body">
-                        <form action="supprimer_emprunt.php" method="post">
-                            <input type="hidden" name="id" value="<?= htmlspecialchars($emprunt['id'], ENT_QUOTES, 'UTF-8') ?>">
-                            <p>Êtes-vous sûr de vouloir supprimer cet emprunt ?</p>
-                            <ul>
-                                <li>ID Livre: <?= htmlspecialchars($emprunt['id_livre'], ENT_QUOTES, 'UTF-8') ?></li>
-                                <li>ID Membre: <?= htmlspecialchars($emprunt['id_membre'], ENT_QUOTES, 'UTF-8') ?></li>
-                                <li>Date d'Emprunt: <?= htmlspecialchars($emprunt['date_emprunt'], ENT_QUOTES, 'UTF-8') ?></li>
-                                <li>Date de Retour: <?= htmlspecialchars($emprunt['date_retour'], ENT_QUOTES, 'UTF-8') ?></li>
-                            </ul>
-                            <button type="submit" name="confirm" class="btn btn-danger">Confirmer</button>
-                            <a href="afficher_emprunts.php" class="btn btn-secondary">Annuler</a>
-                        </form>
-                    </div>
+<div class="container-fluid">
+    <div class="row">
+        <main class="col-md-12 ml-sm-auto col-lg-12 px-4">
+            <h2>Supprimer Emprunt</h2>
+            <?php if (isset($message)): ?>
+                <div class="alert alert-success"><?php echo $message; ?></div>
+            <?php endif; ?>
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="id_emprunt">Sélectionner un emprunt</label>
+                            <select id="id_emprunt" name="id_emprunt" class="form-control selectpicker" data-live-search="true">
+                                <?php foreach ($emprunts as $emprunt): ?>
+                                    <option value="<?php echo $emprunt['id']; ?>">
+                                        <?php echo htmlspecialchars("{$emprunt['titre']} - {$emprunt['auteur']} emprunté par {$emprunt['nom']} du {$emprunt['date_emprunt']} au {$emprunt['date_retour']}"); ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-danger">Supprimer</button>
+                    </form>
                 </div>
-            </main>
-        </div>
+            </div>
+        </main>
     </div>
-    <?php include 'includes/footer.php'; ?>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+</div>
+
+<?php
+include 'includes/footer.php';
+?>
