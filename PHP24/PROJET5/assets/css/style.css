@@ -1,0 +1,187 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+nav {
+    background: #444;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input, form select, form button {
+    display: block;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Login and Register Styles */
+.auth-container {
+    display: flex;
+    height: 100vh;
+}
+
+.auth-left, .auth-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-left {
+    background: url('../img/library.jpg') no-repeat center center/cover;
+}
+
+.auth-right {
+    background: #333;
+    color: #fff;
+    padding: 40px;
+}
+
+.auth-right h2 {
+    margin-bottom: 20px;
+}
+
+.auth-right form {
+    width: 100%;
+}
+
+.auth-right form input, .auth-right form button {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.auth-right form button {
+    background: #ff5722;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.auth-right form button:hover {
+    background: #e64a19;
+}
+
+.auth-right p {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.auth-right p a {
+    color: #ff5722;
+    text-decoration: none;
+}
+
+.auth-right p a:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background: #333;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1000;
+    transition: width 0.2s;
+}
+
+.sidebar:hover {
+    width: 250px;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.sidebar a:hover {
+    background: #444;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    flex: 1;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.table th {
+    background: #333;
+    color: #fff;
+}
+
+.table tbody tr:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+.table tbody tr:hover {
+    background: #f1f1f1;
+}
