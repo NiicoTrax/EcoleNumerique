@@ -49,6 +49,17 @@
                         <a class="dropdown-item" href="supprimer_emprunt.php">Supprimer un emprunt</a>
                     </div>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="empruntsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-book-reader"></i> Administration
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="empruntsDropdown">
+                    <a class="dropdown-item" href="register.php">Afficher tout les Utilisateurs</a>
+                        <a class="dropdown-item" href="register.php">Ajouter un Utilisateur</a>
+                        <a class="dropdown-item" href="modifier_utilisateur.php">Modifier Utilisateur</a>
+                        <a class="dropdown-item" href="supprimer_utilisateur.php">Supprimer un Utilisateur</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>

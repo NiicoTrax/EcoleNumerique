@@ -1,55 +1,66 @@
 <?php
-require_once 'includes/init.php';
-include 'config/database.php';
+include 'auth.php';
+include 'includes/header.php';
+include 'config/database.php'; // Inclusion du fichier de configuration de la base de données
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm'])) {
-    $id = $_POST['id'];
-    $stmt = $pdo->prepare("DELETE FROM membres WHERE id = ?");
-    $stmt->execute([$id]);
-    header('Location: afficher_membres.php');
-    exit();
+// Connexion à la base de données
+try {
+    $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8";
+    $options = [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    ];
+    $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
+} catch (PDOException $e) {
+    die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
-if (isset($_GET['id'])) {
-    $stmt = $pdo->prepare("SELECT * FROM membres WHERE id = ?");
-    $stmt->execute([$_GET['id']]);
-    $membre = $stmt->fetch();
-    if (!$membre) {
-        die("Membre non trouvé.");
-    }
+// Logique pour supprimer un membre
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_membre'])) {
+    $id_membre = $_POST['id_membre'];
+
+    $sqlDelete = "DELETE FROM membres WHERE id = ?";
+    $stmtDelete = $pdo->prepare($sqlDelete);
+    $stmtDelete->execute([$id_membre]);
+
+    $message = "Membre supprimé avec succès.";
 }
+
+// Récupérer tous les membres pour les afficher dans le formulaire
+$sqlMembres = "SELECT id, nom, email FROM membres";
+$stmtMembres = $pdo->prepare($sqlMembres);
+$stmtMembres->execute();
+$membres = $stmtMembres->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<?php include 'includes/header.php'; ?>
-    <title>Supprimer un Membre</title>
-</head>
-<body>
-    
-    <div class="container-fluid">
-        <div class="row">
-            <main class="col-md-9 ml-sm-auto col-lg-10 px-4 main-content">
-                <h2 class="mt-4">Supprimer un Membre</h2>
-                <div class="card">
-                    <div class="card-body">
-                        <form action="supprimer_membre.php" method="post">
-                            <input type="hidden" name="id" value="<?= htmlspecialchars($membre['id'], ENT_QUOTES, 'UTF-8') ?>">
-                            <p>Êtes-vous sûr de vouloir supprimer ce membre ?</p>
-                            <ul>
-                                <li>Nom: <?= htmlspecialchars($membre['nom'], ENT_QUOTES, 'UTF-8') ?></li>
-                                <li>Email: <?= htmlspecialchars($membre['email'], ENT_QUOTES, 'UTF-8') ?></li>
-                                <li>Date d'Adhésion: <?= htmlspecialchars($membre['date_adhesion'], ENT_QUOTES, 'UTF-8') ?></li>
-                            </ul>
-                            <button type="submit" name="confirm" class="btn btn-danger">Confirmer</button>
-                            <a href="afficher_membres.php" class="btn btn-secondary">Annuler</a>
-                        </form>
-                    </div>
+<div class="container-fluid">
+    <div class="row">
+        <main class="col-md-12 ml-sm-auto col-lg-12 px-4">
+            <h2>Supprimer Membre</h2>
+            <?php if (isset($message)): ?>
+                <div class="alert alert-success"><?php echo $message; ?></div>
+            <?php endif; ?>
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="id_membre">Sélectionner un membre</label>
+                            <select id="id_membre" name="id_membre" class="form-control selectpicker" data-live-search="true">
+                                <?php foreach ($membres as $membre): ?>
+                                    <option value="<?php echo $membre['id']; ?>">
+                                        <?php echo htmlspecialchars("{$membre['nom']} - {$membre['email']}"); ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-danger">Supprimer</button>
+                    </form>
                 </div>
-            </main>
-        </div>
+            </div>
+        </main>
     </div>
-    <?php include 'includes/footer.php'; ?>
-</body>
-</html>
+</div>
+
+<?php
+include 'includes/footer.php';
+?>

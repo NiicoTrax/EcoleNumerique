@@ -1,5 +1,6 @@
 <?php
 require_once 'includes/init.php';
+include 'auth.php';
 
 $tousLesEmprunts = $bibliotheque->listerTousLesEmprunts();
 ?>

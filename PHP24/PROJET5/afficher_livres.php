@@ -1,5 +1,6 @@
 <?php
 require_once 'includes/init.php';
+include 'auth.php';
 
 // Récupérer tous les livres en utilisant la méthode statique de la classe Livre
 $tousLesLivres = Livre::getAllLivres($pdo);
