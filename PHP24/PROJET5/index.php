@@ -49,18 +49,13 @@ $livres_disponibles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/index.css">
     <title>Gestion de Bibliothèque</title>
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
 
     <div id="main-content" class="container mt-4">
-        <h1 class="mb-4">Dashboard</h1>
+        <h1 class="mb-4">Bonjour, <?php echo htmlspecialchars($username); ?></h1>
         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="card-custom card-primary">

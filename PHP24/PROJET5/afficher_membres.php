@@ -13,7 +13,7 @@ $tousLesMembres = $bibliotheque->listerTousLesMembres();
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row">
+        <div class="row2">
             
             <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <h2 class="mt-4">Membres Inscrits</h2>
