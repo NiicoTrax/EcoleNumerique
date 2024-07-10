@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mar. 09 juil. 2024 à 13:18
+-- Généré le :  mer. 10 juil. 2024 à 15:04
 -- Version du serveur :  5.7.17
 -- Version de PHP :  7.1.3
 
@@ -42,7 +42,8 @@ CREATE TABLE `emprunts` (
 
 INSERT INTO `emprunts` (`id`, `id_livre`, `id_membre`, `date_emprunt`, `date_retour`) VALUES
 (1, 1, 1, '2023-06-01', '2023-06-15'),
-(2, 2, 2, '2023-07-01', '2023-07-15');
+(2, 2, 2, '2023-07-01', '2023-07-15'),
+(3, 3, 2, '2024-07-10', '2024-07-13');
 
 -- --------------------------------------------------------
 
@@ -89,6 +90,25 @@ INSERT INTO `membres` (`id`, `nom`, `email`, `date_adhesion`) VALUES
 (1, 'Alice Johnson', 'alice.johnson@example.com', '2022-01-15'),
 (2, 'Bob Smith', 'bob.smith@example.com', '2021-03-22');
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`) VALUES
+(1, 'Niico', '$2y$10$1X/mnHqMYm9yGjMG1aG.e.d0U7cUJF8RDHXJxfwhclsQc04/tB1Wu');
+
 --
 -- Index pour les tables déchargées
 --
@@ -114,6 +134,13 @@ ALTER TABLE `membres`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -121,7 +148,7 @@ ALTER TABLE `membres`
 -- AUTO_INCREMENT pour la table `emprunts`
 --
 ALTER TABLE `emprunts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT pour la table `livres`
 --
@@ -132,6 +159,11 @@ ALTER TABLE `livres`
 --
 ALTER TABLE `membres`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT pour la table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Contraintes pour les tables déchargées
 --
