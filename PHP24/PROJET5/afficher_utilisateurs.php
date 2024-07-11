@@ -44,5 +44,6 @@ $users = $stmt->fetchAll();
         </table>
         <a href="register.php" class="btn btn-primary">Ajouter un utilisateur</a>
     </div>
+    <?php include 'includes/footer.php'; ?>
 </body>
 </html>

@@ -3,14 +3,11 @@ require_once 'includes/init.php';
 include 'auth.php';
 include 'includes/header.php';
 
-
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-$limit = 10; // Nombre de livres par page
+$limit = 10;
 $offset = ($page - 1) * $limit;
 
-
 $search = isset($_GET['search']) ? trim($_GET['search']) : '';
-
 
 if ($search) {
     $tousLesLivres = Livre::searchLivres($pdo, $search, $limit, $offset);

@@ -7,12 +7,62 @@ body {
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#main-content {
+    flex: 1;
+}
+
+/* HEADER & NAVIGATOR */
+
 header {
     background: #333;
     color: #fff;
     padding: 15px 20px;
     text-align: center;
 }
+
+.navbar {
+    background: linear-gradient(90deg, #4b6cb7, #182848);
+}
+.navbar-brand img {
+    max-height: 40px;
+    margin-right: 10px;
+}
+.navbar-nav .nav-item .nav-link {
+    color: #fff;
+}
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ddd;
+}
+.navbar-nav .nav-item .dropdown-menu {
+    background: #182848;
+    border: none;
+}
+.navbar-nav .nav-item .dropdown-menu .dropdown-item {
+    color: #fff;
+}
+.navbar-nav .nav-item .dropdown-menu .dropdown-item:hover {
+    background: #4b6cb7;
+    color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(255 255 255) !important;
+}
+
+
+/* CONTAINER */
+
+.container {
+    margin-top: 40px;
+}
+
 
 .container-fluid {
     margin-top: 70px;
@@ -22,6 +72,9 @@ header {
     align-items: center;
     flex-direction: column;
 }
+
+
+/* FORMULAIRE */
 
 form label {
     display: block;
@@ -35,15 +88,19 @@ form input, form select, form button {
     width: 100%;
 }
 
+/* FOOTER */
+
 footer {
     background-color: #343a40;
     color: #ffffff;
     padding: 10px 0;
     text-align: center;
-    position: fixed;
+    position: relative;
     width: 100%;
-    bottom: 0;
+    bottom: -20px;
 }
+
+/* Table improvements */
 
 .table {
     width: 100%;
@@ -55,6 +112,8 @@ footer {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: left;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .table th {
@@ -70,6 +129,11 @@ footer {
     background: #f1f1f1;
 }
 
+.table-wrapper {
+    margin-top: 20px;
+}
+
+/* TITRE PAGE */
 h1 {
     font-family: 'Arial', sans-serif;
     color: #ffffff;
@@ -113,6 +177,7 @@ h2::after {
 
 h1, h2 {
     transition: color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 20px;
 }
 
 h1:hover, h2:hover {
@@ -120,6 +185,8 @@ h1:hover, h2:hover {
     transform: scale(1.05);
 }
 
+
+/* CONTAINER */
 .row {
     display: -ms-flexbox;
     display: flex;
@@ -161,3 +228,61 @@ h1:hover, h2:hover {
     margin: 0 5px;
 }
 
+/* CARD HOME */
+.card-custom {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    transition: all 0.3s ease;
+    text-align: center;
+    color: #fff;
+}
+
+.card-custom h5 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-custom .card-text {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.card-custom .btn {
+    border-radius: 5px;
+    font-size: 14px;
+    color: #c304ff;
+    border: 1px solid #fff;
+}
+
+.card-custom .btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.card-primary {
+    background-color: #007bff;
+}
+
+.card-warning {
+    background-color: #ffc107;
+}
+
+.card-success {
+    background-color: #28a745;
+}
+
+.card-danger {
+    background-color: #dc3545;
+}
+
+.card-custom .icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    margin-top: 10px;
+}

@@ -55,20 +55,28 @@ class Livre {
         $this->genre = $genre;
     }
 
-    // Méthode statique pour récupérer tous les livres depuis la base de données
+    // Méthode statique pour récupérer tous les livres
     public static function getAllLivres($pdo) {
         $stmt = $pdo->query('SELECT * FROM livres');
         $livres = [];
-        while ($row = $stmt->fetch()) {
-            $livres[] = new Livre(
-                $row['isbn'],
-                $row['titre'],
-                $row['auteur'],
-                $row['annee_publication'],
-                $row['genre']
-            );
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            if (self::isValidLivre($row)) {
+                $livres[] = new Livre(
+                    $row['isbn'],
+                    $row['titre'],
+                    $row['auteur'],
+                    $row['annee_publication'],
+                    $row['genre']
+                );
+            }
         }
         return $livres;
+    }
+
+    // Méthode statique pour vérifier la validité des données du livre
+    private static function isValidLivre($row) {
+        return isset($row['isbn'], $row['titre'], $row['auteur'], $row['annee_publication'], $row['genre']) &&
+               !empty($row['isbn']) && !empty($row['titre']) && !empty($row['auteur']) && !empty($row['annee_publication']) && !empty($row['genre']);
     }
 
     // Méthode statique pour récupérer les livres par page
@@ -78,14 +86,16 @@ class Livre {
         $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
         $stmt->execute();
         $livres = [];
-        while ($row = $stmt->fetch()) {
-            $livres[] = new Livre(
-                $row['isbn'],
-                $row['titre'],
-                $row['auteur'],
-                $row['annee_publication'],
-                $row['genre']
-            );
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            if (self::isValidLivre($row)) {
+                $livres[] = new Livre(
+                    $row['isbn'],
+                    $row['titre'],
+                    $row['auteur'],
+                    $row['annee_publication'],
+                    $row['genre']
+                );
+            }
         }
         return $livres;
     }
@@ -105,14 +115,16 @@ class Livre {
         $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
         $stmt->execute();
         $livres = [];
-        while ($row = $stmt->fetch()) {
-            $livres[] = new Livre(
-                $row['isbn'],
-                $row['titre'],
-                $row['auteur'],
-                $row['annee_publication'],
-                $row['genre']
-            );
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            if (self::isValidLivre($row)) {
+                $livres[] = new Livre(
+                    $row['isbn'],
+                    $row['titre'],
+                    $row['auteur'],
+                    $row['annee_publication'],
+                    $row['genre']
+                );
+            }
         }
         return $livres;
     }
@@ -126,5 +138,4 @@ class Livre {
         return $stmt->fetchColumn();
     }
 }
-
 ?>

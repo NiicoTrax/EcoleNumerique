@@ -1,30 +1,29 @@
-        document.addEventListener('DOMContentLoaded', () => {
-            const searchInput = document.getElementById('searchInput');
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('searchInput');
+    const tableBody = document.getElementById('livreTable');
+    const loadingMessage = document.createElement('tr');
+    loadingMessage.innerHTML = '<td colspan="5">Chargement...</td>';
 
-            searchInput.addEventListener('keyup', function() {
-                const query = this.value.toLowerCase();
-                fetch(`search.php?search=${query}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        const tableBody = document.getElementById('livreTable');
-                        tableBody.innerHTML = '';
-                        if (data.length > 0) {
-                            data.forEach(livre => {
-                                const row = document.createElement('tr');
-                                row.innerHTML = `
-                                    <td>${livre.isbn}</td>
-                                    <td>${livre.titre}</td>
-                                    <td>${livre.auteur}</td>
-                                    <td>${livre.annee_publication}</td>
-                                    <td>${livre.genre}</td>
-                                `;
-                                tableBody.appendChild(row);
-                            });
-                        } else {
-                            const row = document.createElement('tr');
-                            row.innerHTML = '<td colspan="5">Aucun livre trouvé.</td>';
-                            tableBody.appendChild(row);
-                        }
-                    });
+    function fetchLivres(query = '', offset = 0) {
+        tableBody.innerHTML = '';
+        tableBody.appendChild(loadingMessage);
+
+        fetch(`search.php?search=${encodeURIComponent(query)}&offset=${offset}`)
+            .then(response => response.text())
+            .then(html => {
+                tableBody.innerHTML = html;
+            })
+            .catch(error => {
+                tableBody.innerHTML = `<tr><td colspan="5">Erreur de chargement: ${error.message}</td></tr>`;
+                console.error('Erreur de chargement:', error);
             });
-        });
+    }
+
+    searchInput.addEventListener('keyup', function() {
+        const query = this.value.toLowerCase();
+        fetchLivres(query);
+    });
+
+    // Fetch all books on initial load
+    fetchLivres('');
+});
