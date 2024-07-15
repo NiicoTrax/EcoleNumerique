@@ -20,7 +20,7 @@ $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
 $offset = ($page - 1) * $empruntsParPage;
 
-$sql = "SELECT e.id, l.titre AS livre, m.nom AS membre, e.date_emprunt, e.date_retour FROM emprunts e
+$sql = "SELECT e.id, l.titre AS livre, l.auteur AS auteur, m.nom AS membre, e.date_emprunt, e.date_retour FROM emprunts e
         JOIN livres l ON e.id_livre = l.id
         JOIN membres m ON e.id_membre = m.id
         LIMIT :limit OFFSET :offset";
@@ -50,6 +50,7 @@ $totalPages = ceil($totalEmprunts / $empruntsParPage);
                             <tr>
                                 <th>ID</th>
                                 <th>Livre</th>
+                                <th>Auteur</th>
                                 <th>Membre</th>
                                 <th>Date d'emprunt</th>
                                 <th>Date de retour</th>
@@ -61,6 +62,7 @@ $totalPages = ceil($totalEmprunts / $empruntsParPage);
                             <tr>
                                 <td><?php echo htmlspecialchars($emprunt['id']); ?></td>
                                 <td><?php echo htmlspecialchars($emprunt['livre']); ?></td>
+                                <td><?php echo htmlspecialchars($emprunt['auteur']); ?></td>
                                 <td><?php echo htmlspecialchars($emprunt['membre']); ?></td>
                                 <td><?php echo htmlspecialchars($emprunt['date_emprunt']); ?></td>
                                 <td><?php echo htmlspecialchars($emprunt['date_retour']); ?></td>

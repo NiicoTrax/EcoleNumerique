@@ -41,55 +41,6 @@ class Livre {
         return $this->genre;
     }
 
-    // Setter method for ISBN
-    public function setIsbn($isbn) {
-        $this->isbn = $isbn;
-    }
-
-    // Setter method for title
-    public function setTitre($titre) {
-        $this->titre = $titre;
-    }
-
-    // Setter method for author
-    public function setAuteur($auteur) {
-        $this->auteur = $auteur;
-    }
-
-    // Setter method for publication year
-    public function setAnneePublication($anneePublication) {
-        $this->anneePublication = $anneePublication;
-    }
-
-    // Setter method for genre
-    public function setGenre($genre) {
-        $this->genre = $genre;
-    }
-
-    // Static method to get all books from the database
-    public static function getAllLivres($pdo) {
-        $stmt = $pdo->query('SELECT * FROM livres');
-        $livres = [];
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            if (self::isValidLivre($row)) {
-                $livres[] = new Livre(
-                    $row['isbn'],
-                    $row['titre'],
-                    $row['auteur'],
-                    $row['annee_publication'],
-                    $row['genre']
-                );
-            }
-        }
-        return $livres;
-    }
-
-    // Private method to validate a book row
-    private static function isValidLivre($row) {
-        return isset($row['isbn'], $row['titre'], $row['auteur'], $row['annee_publication'], $row['genre']) &&
-               !empty($row['isbn']) && !empty($row['titre']) && !empty($row['auteur']) && !empty($row['annee_publication']) && !empty($row['genre']);
-    }
-
     // Static method to get books with pagination
     public static function getLivresParPage($pdo, $limit, $offset) {
         $stmt = $pdo->prepare('SELECT * FROM livres LIMIT :limit OFFSET :offset');
@@ -98,23 +49,15 @@ class Livre {
         $stmt->execute();
         $livres = [];
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            if (self::isValidLivre($row)) {
-                $livres[] = new Livre(
-                    $row['isbn'],
-                    $row['titre'],
-                    $row['auteur'],
-                    $row['annee_publication'],
-                    $row['genre']
-                );
-            }
+            $livres[] = new Livre(
+                $row['isbn'],
+                $row['titre'],
+                $row['auteur'],
+                $row['annee_publication'],
+                $row['genre']
+            );
         }
         return $livres;
-    }
-
-    // Static method to get the total number of books in the database
-    public static function getNombreTotalDeLivres($pdo) {
-        $stmt = $pdo->query('SELECT COUNT(*) FROM livres');
-        return $stmt->fetchColumn();
     }
 
     // Static method to search for books with pagination
@@ -127,17 +70,21 @@ class Livre {
         $stmt->execute();
         $livres = [];
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            if (self::isValidLivre($row)) {
-                $livres[] = new Livre(
-                    $row['isbn'],
-                    $row['titre'],
-                    $row['auteur'],
-                    $row['annee_publication'],
-                    $row['genre']
-                );
-            }
+            $livres[] = new Livre(
+                $row['isbn'],
+                $row['titre'],
+                $row['auteur'],
+                $row['annee_publication'],
+                $row['genre']
+            );
         }
         return $livres;
+    }
+
+    // Static method to get the total number of books in the database
+    public static function getNombreTotalDeLivres($pdo) {
+        $stmt = $pdo->query('SELECT COUNT(*) FROM livres');
+        return $stmt->fetchColumn();
     }
 
     // Static method to get the total number of books matching the search criteria

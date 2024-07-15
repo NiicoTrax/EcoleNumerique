@@ -31,7 +31,7 @@ $totalPages = ceil($totalLivres / $limit);
             <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <h2 class="mt-4 mb-4">Livres Disponibles</h2>
                 <form method="GET" action="">
-                    <input class="form-control mb-4" name="search" id="searchInput" type="text" placeholder="Rechercher un livre..." value="<?= htmlspecialchars($search, ENT_QUOTES, 'UTF-8') ?>">
+                    <input class="form-control mb-4" name="search" id="searchInput" type="text" placeholder="Rechercher un livre...">
                 </form>
                 <table class="table table-striped mt-3">
                     <thead>
@@ -65,7 +65,7 @@ $totalPages = ceil($totalLivres / $limit);
                     <ul class="pagination">
                         <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
                             <li class="page-item <?= ($i == $page) ? 'active' : '' ?>">
-                                <a class="page-link" href="?page=<?= $i ?>&search=<?= htmlspecialchars($search, ENT_QUOTES, 'UTF-8') ?>"><?= $i ?></a>
+                                <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
                             </li>
                         <?php endfor; ?>
                     </ul>

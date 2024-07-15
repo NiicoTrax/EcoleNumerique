@@ -1,6 +1,18 @@
 <?php
-require_once 'includes/init.php';
 include 'auth.php';
+include 'includes/header.php';
+include 'config/database.php';
+
+try {
+    $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8";
+    $options = [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    ];
+    $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
+} catch (PDOException $e) {
+    die("Erreur de connexion à la base de données : " . $e->getMessage());
+}
 
 $empruntsParPage = 10;
 
@@ -8,83 +20,88 @@ $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
 $offset = ($page - 1) * $empruntsParPage;
 
-$tousLesEmprunts = $bibliotheque->listerTousLesEmprunts($empruntsParPage, $offset);
+$sql = "SELECT e.id, l.titre AS livre, l.auteur AS auteur, m.nom AS membre, e.date_emprunt, e.date_retour FROM emprunts e
+        JOIN livres l ON e.id_livre = l.id
+        JOIN membres m ON e.id_membre = m.id
+        LIMIT :limit OFFSET :offset";
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(':limit', $empruntsParPage, PDO::PARAM_INT);
+$stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+$stmt->execute();
+$emprunts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$totalEmprunts = $bibliotheque->compterTousLesEmprunts();
+
+$sqlCount = "SELECT COUNT(*) FROM emprunts";
+$stmtCount = $pdo->prepare($sqlCount);
+$stmtCount->execute();
+$totalEmprunts = $stmtCount->fetchColumn();
 $totalPages = ceil($totalEmprunts / $empruntsParPage);
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<?php include 'includes/header.php'; ?>
-</head>
-<body>
-    <div class="container-fluid">
-        <div class="row2">
-            <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <h2 class="mt-4">Emprunts en Cours</h2>
-                <input class="form-control" id="searchInput" type="text" placeholder="Rechercher un emprunt...">
-                <table class="table table-striped mt-3">
-                    <thead>
-                        <tr>
-                            <th>ID Emprunt</th>
-                            <th>ID Livre</th>
-                            <th>Nom Membre</th>
-                            <th>Date d'Emprunt</th>
-                            <th>Date de Retour</th>
-                        </tr>
-                    </thead>
-                    <tbody id="empruntTable">
-                        <?php foreach ($tousLesEmprunts as $emprunt) : 
-                            $membre = $bibliotheque->rechercherMembreParId($emprunt->getIdMembre());
-                            ?>
+<div class="container-fluid">
+    <div class="row">
+        <main class="col-md-12 ml-sm-auto col-lg-12 px-4">
+            <h2>Afficher les Emprunts</h2>
+            <div class="card">
+                <div class="card-body">
+                    <?php if (!empty($emprunts)): ?>
+                    <table class="table">
+                        <thead>
                             <tr>
-                                <td><?= htmlspecialchars($emprunt->getIdEmprunt(), ENT_QUOTES, 'UTF-8') ?></td>
-                                <td><?= htmlspecialchars($emprunt->getIdLivre(), ENT_QUOTES, 'UTF-8') ?></td>
-                                <td><?= htmlspecialchars($membre->getNom(), ENT_QUOTES, 'UTF-8') ?></td>
-                                <td><?= htmlspecialchars($emprunt->getDateEmprunt(), ENT_QUOTES, 'UTF-8') ?></td>
-                                <td><?= htmlspecialchars($emprunt->getDateRetour(), ENT_QUOTES, 'UTF-8') ?></td>
+                                <th>ID</th>
+                                <th>Livre</th>
+                                <th>Auteur</th>
+                                <th>Membre</th>
+                                <th>Date d'emprunt</th>
+                                <th>Date de retour</th>
                             </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($emprunts as $emprunt): ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($emprunt['id']); ?></td>
+                                <td><?php echo htmlspecialchars($emprunt['livre']); ?></td>
+                                <td><?php echo htmlspecialchars($emprunt['auteur']); ?></td>
+                                <td><?php echo htmlspecialchars($emprunt['membre']); ?></td>
+                                <td><?php echo htmlspecialchars($emprunt['date_emprunt']); ?></td>
+                                <td><?php echo htmlspecialchars($emprunt['date_retour']); ?></td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
 
-                <nav aria-label="Page navigation">
-                    <ul class="pagination">
-                        <?php if($page > 1): ?>
-                        <li class="page-item">
-                            <a class="page-link" href="?page=<?= $page - 1; ?>" aria-label="Précédent">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <?php endif; ?>
-                        <?php for($i = 1; $i <= $totalPages; $i++): ?>
-                        <li class="page-item <?php if($i == $page) echo 'active'; ?>">
-                            <a class="page-link" href="?page=<?= $i; ?>"><?= $i; ?></a>
-                        </li>
-                        <?php endfor; ?>
-                        <?php if($page < $totalPages): ?>
-                        <li class="page-item">
-                            <a class="page-link" href="?page=<?= $page + 1; ?>" aria-label="Suivant">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                        <?php endif; ?>
-                    </ul>
-                </nav>
-            </main>
-        </div>
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <?php if($page > 1): ?>
+                            <li class="page-item">
+                                <a class="page-link" href="?page=<?= $page - 1; ?>" aria-label="Précédent">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <?php endif; ?>
+                            <?php for($i = 1; $i <= $totalPages; $i++): ?>
+                            <li class="page-item <?php if($i == $page) echo 'active'; ?>">
+                                <a class="page-link" href="?page=<?= $i; ?>"><?= $i; ?></a>
+                            </li>
+                            <?php endfor; ?>
+                            <?php if($page < $totalPages): ?>
+                            <li class="page-item">
+                                <a class="page-link" href="?page=<?= $page + 1; ?>" aria-label="Suivant">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                            <?php endif; ?>
+                        </ul>
+                    </nav>
+                    <?php else: ?>
+                        <p>Aucun emprunt trouvé.</p>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </main>
     </div>
-    <?php include 'includes/footer.php'; ?>
-    <script>
-        document.getElementById('searchInput').addEventListener('keyup', function() {
-            var input = this.value.toLowerCase();
-            var rows = document.querySelectorAll('#empruntTable tr');
-            rows.forEach(row => {
-                row.style.display = row.innerText.toLowerCase().includes(input) ? '' : 'none';
-            });
-        });
-    </script>
-</body>
-</html>
+</div>
+
+<?php
+include 'includes/footer.php';
+?>

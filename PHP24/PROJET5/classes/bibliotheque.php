@@ -36,6 +36,16 @@ class Bibliotheque {
         return null;
     }
 
+    // Method to search for a book by ID
+    public function rechercherLivreParId($id) {
+        foreach ($this->livres as $livre) {
+            if ($livre->getId() === $id) {
+                return $livre;
+            }
+        }
+        return null;
+    }
+
     // Method to search for a book by title
     public function rechercherLivreParTitre($titre) {
         foreach ($this->livres as $livre) {
@@ -152,7 +162,15 @@ class Bibliotheque {
 
     // Method to list all loans with optional limit and offset
     public function listerTousLesEmprunts($limit = 10, $offset = 0) {
-        return array_slice($this->emprunts, $offset, $limit);
+        $result = array_slice($this->emprunts, $offset, $limit);
+        foreach ($result as $emprunt) {
+            $livre = $this->rechercherLivreParId($emprunt->getIdLivre());
+            $membre = $this->rechercherMembreParId($emprunt->getIdMembre());
+            $emprunt->livreTitre = $livre->getTitre();
+            $emprunt->livreAuteur = $livre->getAuteur();
+            $emprunt->membreNom = $membre->getNom();
+        }
+        return $result;
     }
 
     // Method to count all loans in the library
