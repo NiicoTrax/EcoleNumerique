@@ -1,9 +1,8 @@
 <?php
 include 'auth.php';
 include 'includes/header.php';
-include 'config/database.php'; // Inclusion du fichier de configuration de la base de données
+include 'config/database.php'; 
 
-// Connexion à la base de données
 try {
     $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8";
     $options = [
@@ -15,7 +14,6 @@ try {
     die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
-// Logique pour supprimer un emprunt
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_emprunt'])) {
     $id_emprunt = $_POST['id_emprunt'];
 
@@ -26,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_emprunt'])) {
     $message = "Emprunt supprimé avec succès.";
 }
 
-// Récupérer tous les emprunts pour l'afficher dans le formulaire
 $sqlEmprunts = "SELECT e.id, l.titre, l.auteur, m.nom, e.date_emprunt, e.date_retour 
                 FROM emprunts e 
                 JOIN livres l ON e.id_livre = l.id 

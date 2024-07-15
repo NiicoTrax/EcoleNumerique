@@ -1,20 +1,17 @@
 <?php
 include 'auth.php';
-include 'config/database.php'; // Inclusion du fichier de configuration de la base de données
+include 'config/database.php'; 
 include 'includes/header.php';
 
-// Traitement de la suppression de l'utilisateur
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['user_id'])) {
     $user_id = $_POST['user_id'];
 
-    // Vérifier si l'utilisateur existe
     $sql = "SELECT * FROM users WHERE id = ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$user_id]);
     $user = $stmt->fetch();
 
     if ($user) {
-        // Supprimer l'utilisateur
         $sql = "DELETE FROM users WHERE id = ?";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$user_id]);
@@ -24,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['user_id'])) {
     }
 }
 
-// Récupérer tous les utilisateurs pour les afficher dans le menu déroulant
 $sql = "SELECT id, username FROM users";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();

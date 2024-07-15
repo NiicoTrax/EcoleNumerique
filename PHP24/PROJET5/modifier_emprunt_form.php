@@ -1,9 +1,8 @@
 <?php
 include 'auth.php';
 include 'includes/header.php';
-include 'config/database.php'; // Inclusion du fichier de configuration de la base de données
+include 'config/database.php'; 
 
-// Connexion à la base de données
 try {
     $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8";
     $options = [
@@ -15,7 +14,6 @@ try {
     die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
-// Récupérer les informations de l'emprunt
 $id = $_GET['id'];
 $sql = "SELECT * FROM emprunts WHERE id = ?";
 $stmt = $pdo->prepare($sql);
@@ -26,7 +24,6 @@ if (!$emprunt) {
     die("Emprunt non trouvé.");
 }
 
-// Récupérer les listes des livres et des membres pour les options du formulaire
 $sqlLivres = "SELECT id, titre FROM livres";
 $stmtLivres = $pdo->prepare($sqlLivres);
 $stmtLivres->execute();
@@ -37,7 +34,6 @@ $stmtMembres = $pdo->prepare($sqlMembres);
 $stmtMembres->execute();
 $membres = $stmtMembres->fetchAll(PDO::FETCH_ASSOC);
 
-// Mise à jour de l'emprunt
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_livre = $_POST['id_livre'];
     $id_membre = $_POST['id_membre'];

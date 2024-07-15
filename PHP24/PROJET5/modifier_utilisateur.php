@@ -1,12 +1,10 @@
 <?php
 include 'auth.php';
 include 'includes/header.php';
-include 'config/database.php'; // Inclusion du fichier de configuration de la base de données
+include 'config/database.php'; 
 
-// Initialisation du message de confirmation
 $message = '';
 
-// Récupération des informations de l'utilisateur à modifier
 if (isset($_GET['id'])) {
     $user_id = $_GET['id'];
 
@@ -22,7 +20,6 @@ if (isset($_GET['id'])) {
     die("ID utilisateur manquant.");
 }
 
-// Traitement du formulaire de modification
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = !empty($_POST['password']) ? password_hash($_POST['password'], PASSWORD_BCRYPT) : $user['password'];
@@ -32,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute([$username, $password, $user_id]);
 
     $message = "Utilisateur modifié avec succès.";
-    // Actualiser les informations de l'utilisateur
     $user['username'] = $username;
     $user['password'] = $password;
 }

@@ -4,7 +4,6 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 include 'config/database.php';
 
-// Vérifiez si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;
@@ -12,7 +11,6 @@ if (!isset($_SESSION['user_id'])) {
 
 $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
 
-// Récupérer les statistiques
 $stmt = $pdo->query("SELECT COUNT(*) FROM livres");
 $nombre_livres = $stmt->fetchColumn();
 
@@ -22,7 +20,6 @@ $nombre_membres = $stmt->fetchColumn();
 $stmt = $pdo->query("SELECT COUNT(*) FROM emprunts");
 $nombre_emprunts = $stmt->fetchColumn();
 
-// Récupérer les livres empruntés (limité à 5)
 $stmt = $pdo->query("
     SELECT e.id, l.titre, l.auteur, e.date_emprunt, e.date_retour 
     FROM emprunts e 
@@ -32,7 +29,6 @@ $stmt = $pdo->query("
 ");
 $livres_empruntes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Récupérer les livres disponibles (limité à 5)
 $currentDate = date('Y-m-d');
 $stmt = $pdo->query("
     SELECT l.id, l.titre, l.auteur 

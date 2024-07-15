@@ -1,12 +1,11 @@
 <?php
 include 'auth.php';
 include 'includes/header.php';
-include 'config/database.php'; // Inclusion du fichier de configuration de la base de données
+include 'config/database.php'; 
 
 $message = '';
 $user_id = $_SESSION['user_id'];
 
-// Récupération des informations de l'utilisateur connecté
 $sql = "SELECT * FROM users WHERE id = ?";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$user_id]);

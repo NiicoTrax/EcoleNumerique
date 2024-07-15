@@ -2,19 +2,14 @@
 require_once 'includes/init.php';
 include 'auth.php';
 
-// Définir le nombre de membres par page
 $membresParPage = 10;
 
-// Obtenir le numéro de page actuel à partir de l'URL, par défaut à 1 si non défini
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
-// Calculer l'offset
 $offset = ($page - 1) * $membresParPage;
 
-// Récupérer les membres avec limite et offset
 $tousLesMembres = $bibliotheque->listerTousLesMembres($membresParPage, $offset);
 
-// Récupérer le nombre total de membres
 $totalMembres = $bibliotheque->compterTousLesMembres();
 $totalPages = ceil($totalMembres / $membresParPage);
 ?>

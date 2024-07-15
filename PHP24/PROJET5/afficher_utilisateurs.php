@@ -1,9 +1,8 @@
 <?php
 include 'auth.php';
 include 'includes/header.php';
-include 'config/database.php'; // Inclusion du fichier de configuration de la base de données
+include 'config/database.php';
 
-// Récupérer tous les utilisateurs
 $sql = "SELECT * FROM users";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();

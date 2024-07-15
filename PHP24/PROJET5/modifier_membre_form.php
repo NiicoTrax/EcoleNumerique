@@ -3,7 +3,6 @@ include 'auth.php';
 include 'includes/header.php';
 include 'config/database.php'; 
 
-// Connexion à la base de données
 try {
     $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8";
     $options = [
@@ -15,7 +14,6 @@ try {
     die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
-// Récupérer les informations du membre
 $id = $_GET['id'];
 $sql = "SELECT * FROM membres WHERE id = ?";
 $stmt = $pdo->prepare($sql);
@@ -26,7 +24,6 @@ if (!$membre) {
     die("Membre non trouvé.");
 }
 
-// Mise à jour du membre
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nom = $_POST['nom'];
     $email = $_POST['email'];

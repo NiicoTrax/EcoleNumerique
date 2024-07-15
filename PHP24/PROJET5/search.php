@@ -2,20 +2,17 @@
 require_once 'includes/init.php';
 
 try {
-    // Récupérer le terme de recherche
     $search = isset($_GET['search']) ? trim($_GET['search']) : '';
 
-    $limit = 10; // Limite à 10 résultats pour des raisons de performance
+    $limit = 10; 
     $offset = isset($_GET['offset']) ? (int)$_GET['offset'] : 0;
 
-    // Rechercher les livres correspondants
     if ($search !== '') {
         $livres = Livre::searchLivres($pdo, $search, $limit, $offset);
     } else {
         $livres = Livre::getLivresParPage($pdo, $limit, $offset);
     }
 
-    // Générer le HTML
     $html = '';
     foreach ($livres as $livre) {
         $html .= '<tr>';

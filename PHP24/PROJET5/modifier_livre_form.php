@@ -1,9 +1,7 @@
 <?php
 include 'auth.php';
 include 'includes/header.php';
-include 'config/database.php'; // Inclusion du fichier de configuration de la base de données
-
-// Connexion à la base de données
+include 'config/database.php'; 
 try {
     $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8";
     $options = [
@@ -15,7 +13,6 @@ try {
     die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
-// Récupérer les informations du livre
 $id = $_GET['id'];
 $sql = "SELECT * FROM livres WHERE id = ?";
 $stmt = $pdo->prepare($sql);
@@ -26,7 +23,6 @@ if (!$livre) {
     die("Livre non trouvé.");
 }
 
-// Mise à jour du livre
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $isbn = $_POST['isbn'];
     $titre = $_POST['titre'];
