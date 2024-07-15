@@ -3,12 +3,29 @@ include 'auth.php';
 include 'includes/header.php';
 include 'config/database.php'; 
 
+// Définir le nombre de livres par page
+$livresParPage = 10;
 
-// Récupérer les livres
-$sql = "SELECT id, isbn, titre, auteur, annee_publication, genre FROM livres";
+// Obtenir le numéro de page actuel à partir de l'URL, par défaut à 1 si non défini
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
+// Calculer l'offset
+$offset = ($page - 1) * $livresParPage;
+
+// Récupérer les livres avec limite et offset
+$sql = "SELECT id, isbn, titre, auteur, annee_publication, genre FROM livres LIMIT :limit OFFSET :offset";
 $stmt = $pdo->prepare($sql);
+$stmt->bindParam(':limit', $livresParPage, PDO::PARAM_INT);
+$stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
 $stmt->execute();
 $livres = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Récupérer le nombre total de livres
+$sqlCount = "SELECT COUNT(*) FROM livres";
+$stmtCount = $pdo->prepare($sqlCount);
+$stmtCount->execute();
+$totalLivres = $stmtCount->fetchColumn();
+$totalPages = ceil($totalLivres / $livresParPage);
 ?>
 
 <div class="container-fluid">
@@ -50,6 +67,30 @@ $livres = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <?php else: ?>
                         <p>Aucun livre trouvé.</p>
                     <?php endif; ?>
+
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <?php if($page > 1): ?>
+                            <li class="page-item">
+                                <a class="page-link" href="?page=<?php echo $page - 1; ?>" aria-label="Précédent">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <?php endif; ?>
+                            <?php for($i = 1; $i <= $totalPages; $i++): ?>
+                            <li class="page-item <?php if($i == $page) echo 'active'; ?>">
+                                <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                            </li>
+                            <?php endfor; ?>
+                            <?php if($page < $totalPages): ?>
+                            <li class="page-item">
+                                <a class="page-link" href="?page=<?php echo $page + 1; ?>" aria-label="Suivant">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                            <?php endif; ?>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </main>

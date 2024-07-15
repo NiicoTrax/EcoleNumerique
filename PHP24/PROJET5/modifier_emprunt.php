@@ -1,9 +1,8 @@
 <?php
 include 'auth.php';
 include 'includes/header.php';
-include 'config/database.php'; // Inclusion du fichier de configuration de la base de données
+include 'config/database.php';
 
-// Connexion à la base de données
 try {
     $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8";
     $options = [
@@ -15,13 +14,28 @@ try {
     die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
-// Récupérer les emprunts
+$empruntsParPage = 10;
+
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
+$offset = ($page - 1) * $empruntsParPage;
+
 $sql = "SELECT e.id, l.titre AS livre, m.nom AS membre, e.date_emprunt, e.date_retour FROM emprunts e
         JOIN livres l ON e.id_livre = l.id
-        JOIN membres m ON e.id_membre = m.id";
+        JOIN membres m ON e.id_membre = m.id
+        LIMIT :limit OFFSET :offset";
 $stmt = $pdo->prepare($sql);
+$stmt->bindParam(':limit', $empruntsParPage, PDO::PARAM_INT);
+$stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
 $stmt->execute();
 $emprunts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+$sqlCount = "SELECT COUNT(*) FROM emprunts";
+$stmtCount = $pdo->prepare($sqlCount);
+$stmtCount->execute();
+$totalEmprunts = $stmtCount->fetchColumn();
+$totalPages = ceil($totalEmprunts / $empruntsParPage);
 ?>
 
 <div class="container-fluid">
@@ -58,6 +72,30 @@ $emprunts = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <?php endforeach; ?>
                         </tbody>
                     </table>
+
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <?php if($page > 1): ?>
+                            <li class="page-item">
+                                <a class="page-link" href="?page=<?= $page - 1; ?>" aria-label="Précédent">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <?php endif; ?>
+                            <?php for($i = 1; $i <= $totalPages; $i++): ?>
+                            <li class="page-item <?php if($i == $page) echo 'active'; ?>">
+                                <a class="page-link" href="?page=<?= $i; ?>"><?= $i; ?></a>
+                            </li>
+                            <?php endfor; ?>
+                            <?php if($page < $totalPages): ?>
+                            <li class="page-item">
+                                <a class="page-link" href="?page=<?= $page + 1; ?>" aria-label="Suivant">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                            <?php endif; ?>
+                        </ul>
+                    </nav>
                     <?php else: ?>
                         <p>Aucun emprunt trouvé.</p>
                     <?php endif; ?>

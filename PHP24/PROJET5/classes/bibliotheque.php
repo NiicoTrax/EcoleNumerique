@@ -74,8 +74,12 @@ class Bibliotheque {
         return false;
     }
 
-    public function listerTousLesMembres() {
-        return $this->membres;
+    public function listerTousLesMembres($limit = 10, $offset = 0) {
+        return array_slice($this->membres, $offset, $limit);
+    }
+
+    public function compterTousLesMembres() {
+        return count($this->membres);
     }
 
     public function rechercherMembreParId($id) {
@@ -129,8 +133,12 @@ class Bibliotheque {
         return false;
     }
 
-    public function listerTousLesEmprunts() {
-        return $this->emprunts;
+    public function listerTousLesEmprunts($limit = 10, $offset = 0) {
+        return array_slice($this->emprunts, $offset, $limit);
+    }
+
+    public function compterTousLesEmprunts() {
+        return count($this->emprunts);
     }
 
     public function rechercherEmpruntParIdLivre($idLivre) {

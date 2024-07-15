@@ -1,7 +1,7 @@
 <?php
 include 'auth.php';
 include 'includes/header.php';
-include 'config/database.php'; 
+include 'config/database.php';
 
 // Connexion à la base de données
 try {
@@ -15,11 +15,29 @@ try {
     die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
-// Récupérer les membres
-$sql = "SELECT id, nom, email, date_adhesion FROM membres";
+// Définir le nombre de membres par page
+$membresParPage = 10;
+
+// Obtenir le numéro de page actuel à partir de l'URL, par défaut à 1 si non défini
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
+// Calculer l'offset
+$offset = ($page - 1) * $membresParPage;
+
+// Récupérer les membres avec limite et offset
+$sql = "SELECT id, nom, email, date_adhesion FROM membres LIMIT :limit OFFSET :offset";
 $stmt = $pdo->prepare($sql);
+$stmt->bindParam(':limit', $membresParPage, PDO::PARAM_INT);
+$stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
 $stmt->execute();
 $membres = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Récupérer le nombre total de membres
+$sqlCount = "SELECT COUNT(*) FROM membres";
+$stmtCount = $pdo->prepare($sqlCount);
+$stmtCount->execute();
+$totalMembres = $stmtCount->fetchColumn();
+$totalPages = ceil($totalMembres / $membresParPage);
 ?>
 
 <div class="container-fluid">
@@ -54,6 +72,31 @@ $membres = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <?php endforeach; ?>
                         </tbody>
                     </table>
+
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <?php if($page > 1): ?>
+                            <li class="page-item">
+                                <a class="page-link" href="?page=<?= $page - 1; ?>" aria-label="Précédent">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <?php endif; ?>
+                            <?php for($i = 1; $i <= $totalPages; $i++): ?>
+                            <li class="page-item <?php if($i == $page) echo 'active'; ?>">
+                                <a class="page-link" href="?page=<?= $i; ?>"><?= $i; ?></a>
+                            </li>
+                            <?php endfor; ?>
+                            <?php if($page < $totalPages): ?>
+                            <li class="page-item">
+                                <a class="page-link" href="?page=<?= $page + 1; ?>" aria-label="Suivant">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                            <?php endif; ?>
+                        </ul>
+                    </nav>
                     <?php else: ?>
                         <p>Aucun membre trouvé.</p>
                     <?php endif; ?>
