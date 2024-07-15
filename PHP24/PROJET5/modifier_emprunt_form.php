@@ -1,6 +1,5 @@
 <?php
 include 'auth.php';
-include 'includes/header.php';
 include 'config/database.php'; 
 
 try {
@@ -44,9 +43,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmtUpdate = $pdo->prepare($sqlUpdate);
     $stmtUpdate->execute([$id_livre, $id_membre, $date_emprunt, $date_retour, $id]);
 
-    header("Location: modifier_emprunt.php");
+    $message = "Emprunt modifié avec succès.";
+    header("Location: modifier_emprunt.php?message=" . urlencode($message));
     exit;
 }
+?>
+
+<?php
+include 'includes/header.php';
 ?>
 
 <div class="container-fluid">
@@ -58,33 +62,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <form method="POST">
                         <div class="form-group">
                             <label for="id_livre">Livre</label>
-                            <select id="id_livre" name="id_livre" class="form-control">
+                            <select name="id_livre" id="id_livre" class="form-control">
                                 <?php foreach ($livres as $livre): ?>
-                                    <option value="<?php echo $livre['id']; ?>" <?php echo $livre['id'] == $emprunt['id_livre'] ? 'selected' : ''; ?>>
-                                        <?php echo htmlspecialchars($livre['titre']); ?>
+                                    <option value="<?php echo $livre['id']; ?>" <?php echo $emprunt['id_livre'] == $livre['id'] ? 'selected' : ''; ?>>
+                                        <?php echo $livre['titre']; ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="id_membre">Membre</label>
-                            <select id="id_membre" name="id_membre" class="form-control">
+                            <select name="id_membre" id="id_membre" class="form-control">
                                 <?php foreach ($membres as $membre): ?>
-                                    <option value="<?php echo $membre['id']; ?>" <?php echo $membre['id'] == $emprunt['id_membre'] ? 'selected' : ''; ?>>
-                                        <?php echo htmlspecialchars($membre['nom']); ?>
+                                    <option value="<?php echo $membre['id']; ?>" <?php echo $emprunt['id_membre'] == $membre['id'] ? 'selected' : ''; ?>>
+                                        <?php echo $membre['nom']; ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="date_emprunt">Date d'emprunt</label>
-                            <input type="date" id="date_emprunt" name="date_emprunt" class="form-control" value="<?php echo htmlspecialchars($emprunt['date_emprunt']); ?>">
+                            <input type="date" name="date_emprunt" id="date_emprunt" class="form-control" value="<?php echo $emprunt['date_emprunt']; ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="date_retour">Date de retour</label>
-                            <input type="date" id="date_retour" name="date_retour" class="form-control" value="<?php echo htmlspecialchars($emprunt['date_retour']); ?>">
+                            <input type="date" name="date_retour" id="date_retour" class="form-control" value="<?php echo $emprunt['date_retour']; ?>" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Mettre à jour</button>
+                        <button type="submit" class="btn btn-primary">Enregistrer</button>
                     </form>
                 </div>
             </div>

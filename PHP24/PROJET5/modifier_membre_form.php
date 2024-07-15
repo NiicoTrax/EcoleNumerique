@@ -1,6 +1,5 @@
 <?php
 include 'auth.php';
-include 'includes/header.php';
 include 'config/database.php'; 
 
 try {
@@ -33,9 +32,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmtUpdate = $pdo->prepare($sqlUpdate);
     $stmtUpdate->execute([$nom, $email, $date_adhesion, $id]);
 
-    header("Location: modifier_membre.php");
+    $message = "Membre modifié avec succès.";
+    header("Location: modifier_membre.php?message=" . urlencode($message));
     exit;
 }
+?>
+
+<?php
+include 'includes/header.php';
 ?>
 
 <div class="container-fluid">

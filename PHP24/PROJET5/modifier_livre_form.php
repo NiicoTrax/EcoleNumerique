@@ -1,6 +1,5 @@
 <?php
 include 'auth.php';
-include 'includes/header.php';
 include 'config/database.php'; 
 try {
     $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8";
@@ -34,9 +33,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmtUpdate = $pdo->prepare($sqlUpdate);
     $stmtUpdate->execute([$isbn, $titre, $auteur, $annee_publication, $genre, $id]);
 
-    header("Location: modifier_livre.php");
+    $message = "Livre modifié avec succès.";
+    header("Location: modifier_livre.php?message=" . urlencode($message));
     exit;
 }
+?>
+
+<?php
+include 'includes/header.php';
 ?>
 
 <div class="container-fluid">

@@ -3,6 +3,8 @@ include 'auth.php';
 include 'includes/header.php';
 include 'config/database.php';
 
+
+
 try {
     $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8";
     $options = [
@@ -14,6 +16,7 @@ try {
     die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
+$message = isset($_GET['message']) ? $_GET['message'] : '';
 $empruntsParPage = 10;
 
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
@@ -42,6 +45,11 @@ $totalPages = ceil($totalEmprunts / $empruntsParPage);
     <div class="row">
         <main class="col-md-12 ml-sm-auto col-lg-12 px-4">
             <h2>Modifier un Emprunt</h2>
+            <?php if ($message): ?>
+                <div class="alert alert-success">
+                    <?php echo $message; ?>
+                </div>
+            <?php endif; ?>
             <div class="card">
                 <div class="card-body">
                     <?php if (!empty($emprunts)): ?>

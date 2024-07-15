@@ -14,6 +14,7 @@ try {
     die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
+$message = isset($_GET['message']) ? $_GET['message'] : '';
 $membresParPage = 10;
 
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
@@ -38,6 +39,11 @@ $totalPages = ceil($totalMembres / $membresParPage);
     <div class="row">
         <main class="col-md-12 ml-sm-auto col-lg-12 px-4">
             <h2>Modifier un Membre</h2>
+            <?php if ($message): ?>
+                <div class="alert alert-success">
+                    <?php echo $message; ?>
+                </div>
+            <?php endif; ?>
             <div class="card">
                 <div class="card-body">
                     <?php if (!empty($membres)): ?>
