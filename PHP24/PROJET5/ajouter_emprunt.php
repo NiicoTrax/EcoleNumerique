@@ -1,9 +1,8 @@
 <?php
 include 'auth.php';
 include 'includes/header.php';
-include 'config/database.php'; // Inclusion du fichier de configuration de la base de données
+include 'config/database.php'; 
 
-// Connexion à la base de données
 try {
     $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8";
     $options = [
@@ -15,19 +14,16 @@ try {
     die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
-// Récupérer les livres pour le menu déroulant
 $sqlLivres = "SELECT id, titre, auteur FROM livres";
 $stmtLivres = $pdo->prepare($sqlLivres);
 $stmtLivres->execute();
 $livres = $stmtLivres->fetchAll(PDO::FETCH_ASSOC);
 
-// Récupérer les membres pour le menu déroulant
 $sqlMembres = "SELECT id, nom FROM membres";
 $stmtMembres = $pdo->prepare($sqlMembres);
 $stmtMembres->execute();
 $membres = $stmtMembres->fetchAll(PDO::FETCH_ASSOC);
 
-// Ajout de l'emprunt
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_livre = $_POST['id_livre'];
     $id_membre = $_POST['id_membre'];

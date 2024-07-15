@@ -3,16 +3,12 @@ include 'auth.php';
 include 'includes/header.php';
 include 'config/database.php'; 
 
-// Définir le nombre de livres par page
 $livresParPage = 10;
 
-// Obtenir le numéro de page actuel à partir de l'URL, par défaut à 1 si non défini
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
-// Calculer l'offset
 $offset = ($page - 1) * $livresParPage;
 
-// Récupérer les livres avec limite et offset
 $sql = "SELECT id, isbn, titre, auteur, annee_publication, genre FROM livres LIMIT :limit OFFSET :offset";
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(':limit', $livresParPage, PDO::PARAM_INT);
@@ -20,7 +16,6 @@ $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
 $stmt->execute();
 $livres = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Récupérer le nombre total de livres
 $sqlCount = "SELECT COUNT(*) FROM livres";
 $stmtCount = $pdo->prepare($sqlCount);
 $stmtCount->execute();

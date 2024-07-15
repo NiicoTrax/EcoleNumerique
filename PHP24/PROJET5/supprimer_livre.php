@@ -1,9 +1,8 @@
 <?php
 include 'auth.php';
 include 'includes/header.php';
-include 'config/database.php'; // Inclusion du fichier de configuration de la base de données
+include 'config/database.php'; 
 
-// Connexion à la base de données
 try {
     $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8";
     $options = [
@@ -15,7 +14,6 @@ try {
     die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
-// Logique pour supprimer un livre
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_livre'])) {
     $id_livre = $_POST['id_livre'];
 
@@ -26,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_livre'])) {
     $message = "Livre supprimé avec succès.";
 }
 
-// Récupérer tous les livres pour les afficher dans le formulaire
 $sqlLivres = "SELECT id, titre, auteur FROM livres";
 $stmtLivres = $pdo->prepare($sqlLivres);
 $stmtLivres->execute();
@@ -34,7 +31,7 @@ $livres = $stmtLivres->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div class="container-fluid">
-    <div class<div class="container-fluid">
+    <div class="container-fluid">
     <div class="row">
         <main class="col-md-12 ml-sm-auto col-lg-12 px-4">
             <h2>Supprimer Livre</h2>

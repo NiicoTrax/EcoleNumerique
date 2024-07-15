@@ -1,9 +1,8 @@
 <?php
 include 'auth.php';
 include 'includes/header.php';
-include 'config/database.php'; // Inclusion du fichier de configuration de la base de données
+include 'config/database.php'; 
 
-// Connexion à la base de données
 try {
     $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8";
     $options = [
@@ -15,7 +14,6 @@ try {
     die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
-// Logique pour supprimer un membre
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_membre'])) {
     $id_membre = $_POST['id_membre'];
 
@@ -26,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_membre'])) {
     $message = "Membre supprimé avec succès.";
 }
 
-// Récupérer tous les membres pour les afficher dans le formulaire
 $sqlMembres = "SELECT id, nom, email FROM membres";
 $stmtMembres = $pdo->prepare($sqlMembres);
 $stmtMembres->execute();

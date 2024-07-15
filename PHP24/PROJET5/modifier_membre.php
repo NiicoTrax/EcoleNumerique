@@ -3,7 +3,6 @@ include 'auth.php';
 include 'includes/header.php';
 include 'config/database.php';
 
-// Connexion à la base de données
 try {
     $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8";
     $options = [
@@ -15,16 +14,12 @@ try {
     die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
-// Définir le nombre de membres par page
 $membresParPage = 10;
 
-// Obtenir le numéro de page actuel à partir de l'URL, par défaut à 1 si non défini
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
-// Calculer l'offset
 $offset = ($page - 1) * $membresParPage;
 
-// Récupérer les membres avec limite et offset
 $sql = "SELECT id, nom, email, date_adhesion FROM membres LIMIT :limit OFFSET :offset";
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(':limit', $membresParPage, PDO::PARAM_INT);
@@ -32,7 +27,6 @@ $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
 $stmt->execute();
 $membres = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Récupérer le nombre total de membres
 $sqlCount = "SELECT COUNT(*) FROM membres";
 $stmtCount = $pdo->prepare($sqlCount);
 $stmtCount->execute();
@@ -73,7 +67,6 @@ $totalPages = ceil($totalMembres / $membresParPage);
                         </tbody>
                     </table>
 
-                    <!-- Pagination -->
                     <nav aria-label="Page navigation">
                         <ul class="pagination">
                             <?php if($page > 1): ?>

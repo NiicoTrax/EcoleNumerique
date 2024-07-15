@@ -55,7 +55,6 @@ class Livre {
         $this->genre = $genre;
     }
 
-    // Méthode statique pour récupérer tous les livres
     public static function getAllLivres($pdo) {
         $stmt = $pdo->query('SELECT * FROM livres');
         $livres = [];
@@ -73,13 +72,11 @@ class Livre {
         return $livres;
     }
 
-    // Méthode statique pour vérifier la validité des données du livre
     private static function isValidLivre($row) {
         return isset($row['isbn'], $row['titre'], $row['auteur'], $row['annee_publication'], $row['genre']) &&
                !empty($row['isbn']) && !empty($row['titre']) && !empty($row['auteur']) && !empty($row['annee_publication']) && !empty($row['genre']);
     }
 
-    // Méthode statique pour récupérer les livres par page
     public static function getLivresParPage($pdo, $limit, $offset) {
         $stmt = $pdo->prepare('SELECT * FROM livres LIMIT :limit OFFSET :offset');
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
@@ -100,13 +97,11 @@ class Livre {
         return $livres;
     }
 
-    // Méthode statique pour obtenir le nombre total de livres
     public static function getNombreTotalDeLivres($pdo) {
         $stmt = $pdo->query('SELECT COUNT(*) FROM livres');
         return $stmt->fetchColumn();
     }
 
-    // Méthode statique pour rechercher des livres avec pagination
     public static function searchLivres($pdo, $search, $limit, $offset) {
         $search = "%$search%";
         $stmt = $pdo->prepare('SELECT * FROM livres WHERE titre LIKE :search OR auteur LIKE :search OR genre LIKE :search LIMIT :limit OFFSET :offset');
@@ -129,7 +124,6 @@ class Livre {
         return $livres;
     }
 
-    // Méthode statique pour obtenir le nombre total de livres correspondant à une recherche
     public static function getNombreTotalDeLivresRecherche($pdo, $search) {
         $search = "%$search%";
         $stmt = $pdo->prepare('SELECT COUNT(*) FROM livres WHERE titre LIKE :search OR auteur LIKE :search OR genre LIKE :search');

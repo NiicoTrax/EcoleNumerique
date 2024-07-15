@@ -2,19 +2,14 @@
 require_once 'includes/init.php';
 include 'auth.php';
 
-// Définir le nombre d'emprunts par page
 $empruntsParPage = 10;
 
-// Obtenir le numéro de page actuel à partir de l'URL, par défaut à 1 si non défini
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
-// Calculer l'offset
 $offset = ($page - 1) * $empruntsParPage;
 
-// Récupérer les emprunts avec limite et offset
 $tousLesEmprunts = $bibliotheque->listerTousLesEmprunts($empruntsParPage, $offset);
 
-// Récupérer le nombre total d'emprunts
 $totalEmprunts = $bibliotheque->compterTousLesEmprunts();
 $totalPages = ceil($totalEmprunts / $empruntsParPage);
 ?>
@@ -55,7 +50,6 @@ $totalPages = ceil($totalEmprunts / $empruntsParPage);
                     </tbody>
                 </table>
 
-                <!-- Pagination -->
                 <nav aria-label="Page navigation">
                     <ul class="pagination">
                         <?php if($page > 1): ?>

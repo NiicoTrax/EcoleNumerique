@@ -1,5 +1,4 @@
 <?php
-// Configuration de la base de données
 if (!defined('DB_HOST')) {
     define('DB_HOST', 'localhost');
 }
@@ -13,7 +12,6 @@ if (!defined('DB_PASS')) {
     define('DB_PASS', '');
 }
 
-// Connexion à la base de données
 try {
     $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8";
     $options = [
