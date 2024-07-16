@@ -60,6 +60,7 @@ header {
 
 .navbar-dark .navbar-nav .nav-link {
     color: rgb(255 255 255) !important; /* Forces link color to white */
+	text-align: center; /* Text center */
 }
 
 /* CONTAINER */
