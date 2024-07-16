@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sstienface
- * Date: 11/12/2018
- * Time: 14:35
- */
+
 ?>
 
 <body>
@@ -23,60 +18,37 @@
 
 <?php
 
-
-
-// On récupere le parametre utilisateur appelé controller
+// On récupère le paramètre utilisateur appelé controller
 $controller = $_REQUEST['controller'];
 $action = $_REQUEST['action'];
 
-
-
-switch($controller)
-{
-    case"utilisateurs":
-
-
-
+switch ($controller) {
+    case "utilisateurs":
         require "model/Utilisateurs.php";
         require "controller/UtilisateursController.php";
 
-
-
         $ctrl = new UtilisateursController();
 
-
-
-        switch($action)
-        {
-            case"UsersList":
+        switch ($action) {
+            case "UsersList":
                 $ctrl->UsersList();
                 break;
 
-            case"UserDelete":
+            case "UserDelete":
                 // Implémentation à faire ici
+                $ctrl->UserDelete();
                 break;
 
-            case"UserCreate":
+            case "UserCreate":
                 // Implémentation à faire ici
+                $ctrl->UserCreate();
                 break;
 
             default:
-                //Par défaut , je souhaite lister mes utilisteurs
+                // Par défaut, je souhaite lister mes utilisateurs
                 $ctrl->UsersList();
                 break;
         }
-
         break;
 }
-
-
-
-
-
-
-
-
-
-
-
-
+?>
